@@ -1,0 +1,13 @@
+PURCHASE ORDER
+
+FO Number Onder Date
+Po-sal7e 2025-01-07
+Fairmont Materials 2025-04-07
+Net 60 uso
+* sku Description ay Unie Amount
+2 oy Nylon lock nut M0 2a 7382 L768
+2 Fwetoss Flat washer M10, stainless 22 1353 237.66
+3 cs-0375 Concrete sleave anchor 3/8 36 8.27 297.72
+Subsatl 2,367.06
+To 025% 195.28
+ToTAL 2,562.34

@@ -1,0 +1,613 @@
+{
+  "doc_id": "PO00009",
+  "render_revision": "2026-08-12-terms-wrap",
+  "source": "synthetic purchase order, drawn by an external document generator and frozen here; the pages, renderings and ground truth in this folder are the whole artifact",
+  "n_rows": 5,
+  "printed": {
+    "po_number": "PO-97790",
+    "order_date": "2026-10-07",
+    "due_date": "2026-12-07",
+    "vendor": "Fairmont Materials",
+    "terms": "2/10 Net 30",
+    "currency": "USD",
+    "subtotal_cents": "1,969.61",
+    "tax_cents": "162.49",
+    "total_cents": "2,132.10"
+  },
+  "rows": [
+    {
+      "anchor": "TR-0372",
+      "cells": {
+        "row": "1",
+        "sku": "TR-0372",
+        "description": "Threaded rod 3/8in, 6ft",
+        "quantity": "22",
+        "unit_price_cents": "26.47",
+        "amount_cents": "582.34"
+      }
+    },
+    {
+      "anchor": "CS-0375",
+      "cells": {
+        "row": "2",
+        "sku": "CS-0375",
+        "description": "Concrete sleeve anchor 3/8",
+        "quantity": "17",
+        "unit_price_cents": "1.49",
+        "amount_cents": "25.33"
+      }
+    },
+    {
+      "anchor": "PB-0404",
+      "cells": {
+        "row": "3",
+        "sku": "PB-0404",
+        "description": "Post base, 4x4 adjustable",
+        "quantity": "7",
+        "unit_price_cents": "3.62",
+        "amount_cents": "25.34"
+      }
+    },
+    {
+      "anchor": "AB-0506",
+      "cells": {
+        "row": "4",
+        "sku": "AB-0506",
+        "description": "Anchor bolt 1/2in x 6in",
+        "quantity": "15",
+        "unit_price_cents": "68.20",
+        "amount_cents": "1,023.00"
+      }
+    },
+    {
+      "anchor": "SS-1403",
+      "cells": {
+        "row": "5",
+        "sku": "SS-1403",
+        "description": "Structural screw #14 x 3in",
+        "quantity": "20",
+        "unit_price_cents": "15.68",
+        "amount_cents": "313.60"
+      }
+    }
+  ],
+  "values": {
+    "po_number": "PO-97790",
+    "order_date": "2026-10-07",
+    "due_date": "2026-12-07",
+    "vendor": "Fairmont Materials",
+    "terms": "2/10 Net 30",
+    "currency": "USD",
+    "subtotal_cents": 196961,
+    "tax_cents": 16249,
+    "total_cents": 213210,
+    "line_items": [
+      {
+        "row": 1,
+        "sku": "TR-0372",
+        "description": "Threaded rod 3/8in, 6ft",
+        "quantity": 22,
+        "unit_price_cents": 2647,
+        "amount_cents": 58234
+      },
+      {
+        "row": 2,
+        "sku": "CS-0375",
+        "description": "Concrete sleeve anchor 3/8",
+        "quantity": 17,
+        "unit_price_cents": 149,
+        "amount_cents": 2533
+      },
+      {
+        "row": 3,
+        "sku": "PB-0404",
+        "description": "Post base, 4x4 adjustable",
+        "quantity": 7,
+        "unit_price_cents": 362,
+        "amount_cents": 2534
+      },
+      {
+        "row": 4,
+        "sku": "AB-0506",
+        "description": "Anchor bolt 1/2in x 6in",
+        "quantity": 15,
+        "unit_price_cents": 6820,
+        "amount_cents": 102300
+      },
+      {
+        "row": 5,
+        "sku": "SS-1403",
+        "description": "Structural screw #14 x 3in",
+        "quantity": 20,
+        "unit_price_cents": 1568,
+        "amount_cents": 31360
+      }
+    ]
+  },
+  "files": {
+    "150": {
+      "png": "PO00009_150.png",
+      "pdf": "PO00009_150.pdf",
+      "width": 1228,
+      "height": 400,
+      "regions": {
+        "po_number": [
+          72,
+          122,
+          117,
+          129
+        ],
+        "order_date": [
+          637,
+          122,
+          689,
+          129
+        ],
+        "vendor": [
+          72,
+          155,
+          156,
+          163
+        ],
+        "due_date": [
+          637,
+          156,
+          689,
+          163
+        ],
+        "terms": [
+          72,
+          190,
+          125,
+          197
+        ],
+        "currency": [
+          637,
+          190,
+          656,
+          197
+        ],
+        "line_items[0].row": [
+          72,
+          250,
+          78,
+          257
+        ],
+        "line_items[0].sku": [
+          111,
+          250,
+          150,
+          257
+        ],
+        "line_items[0].description": [
+          201,
+          249,
+          306,
+          258
+        ],
+        "line_items[0].quantity": [
+          462,
+          250,
+          473,
+          257
+        ],
+        "line_items[0].unit_price_cents": [
+          532,
+          250,
+          558,
+          257
+        ],
+        "line_items[0].amount_cents": [
+          632,
+          250,
+          664,
+          257
+        ],
+        "line_items[1].row": [
+          72,
+          264,
+          78,
+          271
+        ],
+        "line_items[1].sku": [
+          112,
+          264,
+          150,
+          271
+        ],
+        "line_items[1].description": [
+          202,
+          263,
+          326,
+          271
+        ],
+        "line_items[1].quantity": [
+          462,
+          264,
+          473,
+          271
+        ],
+        "line_items[1].unit_price_cents": [
+          532,
+          264,
+          552,
+          271
+        ],
+        "line_items[1].amount_cents": [
+          632,
+          264,
+          658,
+          271
+        ],
+        "line_items[2].row": [
+          72,
+          278,
+          78,
+          285
+        ],
+        "line_items[2].sku": [
+          112,
+          278,
+          150,
+          285
+        ],
+        "line_items[2].description": [
+          202,
+          277,
+          318,
+          287
+        ],
+        "line_items[2].quantity": [
+          462,
+          278,
+          468,
+          285
+        ],
+        "line_items[2].unit_price_cents": [
+          532,
+          278,
+          552,
+          285
+        ],
+        "line_items[2].amount_cents": [
+          632,
+          278,
+          658,
+          285
+        ],
+        "line_items[3].row": [
+          72,
+          292,
+          78,
+          299
+        ],
+        "line_items[3].sku": [
+          112,
+          292,
+          151,
+          299
+        ],
+        "line_items[3].description": [
+          202,
+          291,
+          304,
+          299
+        ],
+        "line_items[3].quantity": [
+          462,
+          292,
+          473,
+          299
+        ],
+        "line_items[3].unit_price_cents": [
+          532,
+          292,
+          558,
+          299
+        ],
+        "line_items[3].amount_cents": [
+          632,
+          292,
+          672,
+          300
+        ],
+        "line_items[4].row": [
+          72,
+          306,
+          78,
+          313
+        ],
+        "line_items[4].sku": [
+          112,
+          306,
+          150,
+          313
+        ],
+        "line_items[4].description": [
+          202,
+          305,
+          322,
+          313
+        ],
+        "line_items[4].quantity": [
+          462,
+          306,
+          474,
+          313
+        ],
+        "line_items[4].unit_price_cents": [
+          532,
+          306,
+          558,
+          313
+        ],
+        "line_items[4].amount_cents": [
+          632,
+          306,
+          664,
+          313
+        ],
+        "subtotal_cents": [
+          632,
+          340,
+          672,
+          348
+        ],
+        "tax_cents": [
+          632,
+          354,
+          664,
+          361
+        ],
+        "total_cents": [
+          632,
+          368,
+          676,
+          376
+        ]
+      }
+    },
+    "300": {
+      "png": "PO00009_300.png",
+      "pdf": "PO00009_300.pdf",
+      "width": 2455,
+      "height": 800,
+      "regions": {
+        "po_number": [
+          144,
+          244,
+          233,
+          257
+        ],
+        "order_date": [
+          1275,
+          244,
+          1380,
+          257
+        ],
+        "vendor": [
+          144,
+          311,
+          311,
+          325
+        ],
+        "due_date": [
+          1275,
+          312,
+          1380,
+          325
+        ],
+        "terms": [
+          144,
+          380,
+          250,
+          395
+        ],
+        "currency": [
+          1275,
+          380,
+          1313,
+          393
+        ],
+        "line_items[0].row": [
+          144,
+          500,
+          155,
+          513
+        ],
+        "line_items[0].sku": [
+          223,
+          500,
+          299,
+          513
+        ],
+        "line_items[0].description": [
+          403,
+          499,
+          612,
+          515
+        ],
+        "line_items[0].quantity": [
+          924,
+          500,
+          947,
+          513
+        ],
+        "line_items[0].unit_price_cents": [
+          1064,
+          500,
+          1116,
+          513
+        ],
+        "line_items[0].amount_cents": [
+          1264,
+          500,
+          1327,
+          513
+        ],
+        "line_items[1].row": [
+          144,
+          528,
+          155,
+          541
+        ],
+        "line_items[1].sku": [
+          224,
+          528,
+          300,
+          541
+        ],
+        "line_items[1].description": [
+          404,
+          527,
+          652,
+          543
+        ],
+        "line_items[1].quantity": [
+          924,
+          528,
+          947,
+          541
+        ],
+        "line_items[1].unit_price_cents": [
+          1064,
+          528,
+          1104,
+          541
+        ],
+        "line_items[1].amount_cents": [
+          1264,
+          528,
+          1316,
+          541
+        ],
+        "line_items[2].row": [
+          144,
+          556,
+          155,
+          569
+        ],
+        "line_items[2].sku": [
+          224,
+          556,
+          300,
+          569
+        ],
+        "line_items[2].description": [
+          404,
+          555,
+          635,
+          573
+        ],
+        "line_items[2].quantity": [
+          924,
+          556,
+          935,
+          569
+        ],
+        "line_items[2].unit_price_cents": [
+          1064,
+          556,
+          1104,
+          569
+        ],
+        "line_items[2].amount_cents": [
+          1264,
+          556,
+          1316,
+          569
+        ],
+        "line_items[3].row": [
+          144,
+          584,
+          155,
+          597
+        ],
+        "line_items[3].sku": [
+          224,
+          584,
+          301,
+          597
+        ],
+        "line_items[3].description": [
+          404,
+          583,
+          609,
+          599
+        ],
+        "line_items[3].quantity": [
+          924,
+          584,
+          947,
+          597
+        ],
+        "line_items[3].unit_price_cents": [
+          1064,
+          584,
+          1116,
+          597
+        ],
+        "line_items[3].amount_cents": [
+          1264,
+          584,
+          1344,
+          599
+        ],
+        "line_items[4].row": [
+          144,
+          612,
+          155,
+          625
+        ],
+        "line_items[4].sku": [
+          224,
+          612,
+          299,
+          625
+        ],
+        "line_items[4].description": [
+          404,
+          611,
+          645,
+          625
+        ],
+        "line_items[4].quantity": [
+          924,
+          612,
+          947,
+          625
+        ],
+        "line_items[4].unit_price_cents": [
+          1064,
+          612,
+          1116,
+          625
+        ],
+        "line_items[4].amount_cents": [
+          1264,
+          612,
+          1327,
+          625
+        ],
+        "subtotal_cents": [
+          1264,
+          680,
+          1344,
+          695
+        ],
+        "tax_cents": [
+          1264,
+          708,
+          1327,
+          721
+        ],
+        "total_cents": [
+          1264,
+          736,
+          1353,
+          752
+        ]
+      }
+    }
+  }
+}

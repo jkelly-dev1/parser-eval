@@ -1,0 +1,69 @@
+# WHAT THIS FILE IS FOR, IN ONE SENTENCE: keep out the things a clone can
+# rebuild, and keep in everything a reader needs to check the numbers.
+#
+# THE DEFAULT HERE IS TO SHIP. This repository's entire claim is that the
+# documents ship WITH the tests, because a benchmark whose corpus exists only as
+# URLs stops being reproducible the moment a link moves. A .gitignore that
+# excluded the corpus, the renders, the manifests and both evidence files while
+# tracking only the hand labels would fail NOTHING on the way out: the push
+# succeeds, every file that is supposed to exist exists, and the published
+# repository is a set of answers with the questions removed. IF YOU ADD A LINE
+# HERE, CHECK IT WITH `git check-ignore -v <path>` AGAINST SOMETHING THAT MUST
+# SHIP.
+
+# --------------------------------------------------------------------------
+# BUILD OUTPUT AND DOWNLOADS. 5.8 GB, all reconstructible from the install
+# scripts. These are the only things in the tree that genuinely must not ship.
+# --------------------------------------------------------------------------
+envs/
+vendor/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# --------------------------------------------------------------------------
+# EVERYTHING BELOW THIS LINE IS DELIBERATELY TRACKED. The entries are written
+# out rather than left implicit so that a later edit has to argue with a
+# comment before it can drop one of them.
+#
+# Sample_Documents/     the source documents themselves, plus PROVENANCE.txt,
+#                       which states the basis on which each one may be
+#                       redistributed. The documents ARE the corpus.
+#
+# real/sources.json     the manifest: which document, which page. Replacing a
+#                       corpus is a data edit, and this is the data.
+# real/pages/*.pdf      the cut page, which is what the PDF parsers read
+# real/pages/*_300.png  the render, which is what the OCR floor and the hosted
+#                       models read
+# real/pages/*.truth.json   the hand labels and the arithmetic rules
+# real/pages/index.json     what the builder detected about each page
+# real/pages/cross_checks.json  the identities that run BETWEEN pages
+#
+#     A missing index.json or cross_checks.json does not look like damage. The
+#     labels are still there, reconcile.py still reports a clean pass on what
+#     it can see, and the cross-page checks simply never run. That is the
+#     quietest possible failure of a repository whose subject is quiet failure.
+#
+# corpus/               the synthetic purchase orders, at 150 and 300 DPI. The
+#                       README reports results measured on them, and the script
+#                       that generated them is no longer in this repository, so
+#                       these files are now the only copy. Citing results from a
+#                       corpus nobody can obtain is the exact failure this
+#                       project spends its length describing.
+#
+# out/  out_real/       every parser's raw text output, the token counts, and
+#                       scores.json / reconcile.json.
+#
+#     THE HOSTED RUNS ARE EVIDENCE AND CANNOT BE REGENERATED. They cost money,
+#     and this project's own finding is that the two hosted endpoints do not
+#     return the same bytes twice. Re-running them does not reproduce these
+#     numbers -- it produces different ones. The local runs are reproducible and
+#     ship anyway, because 6 MB is a cheap price for letting a reader diff a
+#     parser's actual output against the label it missed.
+# --------------------------------------------------------------------------
+
+# Operating-system and editor droppings, which are neither.
+.DS_Store
+Thumbs.db
+*.swp
+*~

@@ -1,0 +1,26 @@
+PURCHASE ORDER
+PO Number
+Order Date
+PO-14313
+2026-12-04
+Vendor
+Due Date
+Cascade Industrial
+2027-02-04
+Terms
+Currency
+Net 30
+usD
+#
+1
+2
+3
+Concrete sleeve anchor 3/8 | 28 | 24.95
+Nylon lock nut M10 | 17 | 76.49
+Structural screw #14 x 3in | 35 | 37.15
+Subtotal
+3,299.18
+Tax 825%
+272.18
+TOTAL
+3,571.36

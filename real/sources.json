@@ -1,0 +1,38 @@
+[
+  {
+    "doc_id": "fdic_balance",
+    "file": "Sample_Documents/fdic-ar-1956.pdf",
+    "page": 36,
+    "note": "FDIC balance sheet, 30 June 1956. Scanned with an OCR layer. Every subtotal exact and the sheet balances: assets = liabilities + fund = 1,822,462,212."
+  },
+  {
+    "doc_id": "fdic_income",
+    "file": "Sample_Documents/fdic-ar-1956.pdf",
+    "page": 37,
+    "note": "FDIC statement of income and deposit insurance fund, FY1956. Its closing fund figure 1,690,818,394 also appears on fdic_balance -- a cross-page invariant."
+  },
+  {
+    "doc_id": "fdic_earnings",
+    "file": "Sample_Documents/fdic-ar-1956.pdf",
+    "page": 144,
+    "note": "Table 114, earnings and expenses of insured commercial banks by state. Landscape on a portrait page, 33 rows and 11 numeric columns. TWO-DIMENSIONAL ARITHMETIC, and the two directions are not equally strong: ACROSS each row the US column equals Alaska plus Puerto Rico plus Other plus Continental US, exact to the unit on all 33 rows; DOWN each column the components miss the printed total by 1 to 4, because amounts are printed in thousands and each is rounded on its own, so those sums carry tolerance 5. Six of the eleven columns are labeled: the five that carry the row identity, plus Connecticut, the rightmost column on the page."
+  },
+  {
+    "doc_id": "census29_wages",
+    "file": "Sample_Documents/RG29-2790961-2926-1929-504-00025.jpg",
+    "page": 1,
+    "note": "1929 Census of Manufactures schedule, sheet 2, FILLED IN BY HAND. Employees, salaries, materials and products. Three handwritten sums check: 10,951 + 60 + 300 = 11,311; 3,120 + 6,630 + 14,500 = 24,250; 1 + 2 = 3 salaried men. Struck-through corrections, marginal annotations in other hands, noisy skewed grayscale scan."
+  },
+  {
+    "doc_id": "census29_sales",
+    "file": "Sample_Documents/RG29-2790961-2926-1929-504-00034.jpg",
+    "page": 1,
+    "note": "Same schedule, sheet 3. Sparse hand-filled form: power equipment, fuel, distribution of sales. 35,000 + 2,000 = 37,000 checks against the handwritten total. Two signatures, and 'x x x x x' fill patterns in cells that do not apply."
+  },
+  {
+    "doc_id": "fdic2023_balance",
+    "file": "Sample_Documents/fdic-ar-2023.pdf",
+    "page": 134,
+    "note": "FDIC Annual Report 2023, Deposit Insurance Fund balance sheet as of December 31, printed page 132. THE ONLY BORN-DIGITAL PAGE IN THE CORPUS: typeset by InDesign, with a real text layer rather than somebody else's OCR over a photograph of paper. It is the SAME PUBLICATION as fdic_balance, 67 years later, which makes the pair a direct measurement of what the text layer is worth -- the 1956 sheet is a scan carrying an ABBYY layer, this one was never scanned at all. TWO YEAR COLUMNS (2023 and 2022), so a parser must keep them apart; NEGATIVE FIGURES IN PARENTHESES; and four figures embedded in label prose, two per year. Ten sums, all exact to the dollar, and the sheet balances in both years."
+  }
+]

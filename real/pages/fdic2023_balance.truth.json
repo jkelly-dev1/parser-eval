@@ -1,0 +1,328 @@
+{
+  "doc_id": "fdic2023_balance",
+  "source": "Sample_Documents/fdic-ar-2023.pdf page 134 (FDIC Annual Report 2023, Deposit Insurance Fund Balance Sheet as of December 31, printed page 132)",
+  "kind": "born-digital",
+  "text_layer": "typeset",
+  "labeling": "Hand-labeled by reading the 300 DPI render and checked against the typeset text layer. TWELVE SUMS, ALL EXACT TO THE DOLLAR in both year columns, and the sheet balances in both years, so the labels are verified rather than merely careful.\n\nTHIS IS THE ONLY BORN-DIGITAL PAGE IN THE CORPUS AND THAT IS ITS JOB. Every other page is a photograph of paper; three of them carry an OCR layer somebody else produced, and on those pages the strongest 'parser' in the comparison is the text layer itself doing nothing. This page was never scanned: InDesign wrote its text layer, so a parser that reads it is reading what the publisher typeset rather than inheriting another tool's OCR. It is the SAME PUBLICATION as fdic_balance, 67 years apart, which is as close to a controlled comparison as a real corpus gets.\n\nNEGATIVE FIGURES ARE PRINTED IN PARENTHESES and are labeled that way, because that is what is on the page. reconcile.py reads a figure wholly wrapped in parentheses as negative; the sums here are therefore written as the page states them rather than rearranged into absolute values, which a column carrying both signs does not permit.\n\nFOUR FIGURES SIT INSIDE LABEL PROSE, two per year: the amortized cost of the Treasury securities and the allowances netted out of receivables from resolutions. They are in italic parentheses inside the row label, not in either money column, and no sum on the page reaches them -- they are labeled because extracting a figure from a sentence is a different problem from extracting one from a ruled column, and because a parser that hoovers up every number on the page will offer them as if they were column values.",
+  "printed": {
+    "page_number": "132",
+    "section_head": "FINANCIAL SECTION",
+    "org": "Federal Deposit Insurance Corporation",
+    "title": "Deposit Insurance Fund Balance Sheet",
+    "as_of": "As of December 31",
+    "units_note": "(Dollars in Thousands)",
+    "col_2023": "2023",
+    "col_2022": "2022",
+    "heading_assets": "ASSETS",
+    "heading_liabilities": "LIABILITIES",
+    "heading_fund_balance": "FUND BALANCE",
+    "heading_aoci": "ACCUMULATED OTHER COMPREHENSIVE INCOME",
+    "contingent_heading": "Contingent liabilities:",
+    "off_balance_sheet": "Off-balance-sheet exposure (Note 17)",
+    "footnote": "The accompanying notes are an integral part of these financial statements.",
+    "running_foot": "FEDERAL DEPOSIT INSURANCE CORPORATION",
+    "annual_report_foot": "ANNUAL REPORT 2023",
+    "amortized_cost_2023": "18,958,454",
+    "amortized_cost_2022": "125,427,772",
+    "allowances_2023": "69,361,715",
+    "allowances_2022": "40,047,224"
+  },
+  "rows": [
+    {
+      "key": "cash",
+      "anchor": "Cash and cash equivalents",
+      "cells": {
+        "y2023": "4,872,657",
+        "y2022": "2,599,206"
+      }
+    },
+    {
+      "key": "treasuries",
+      "anchor": "Investment in U.S. Treasury securities",
+      "cells": {
+        "y2023": "18,928,885",
+        "y2022": "122,442,357"
+      }
+    },
+    {
+      "key": "assess_recv",
+      "anchor": "Assessments receivable",
+      "cells": {
+        "y2023": "3,235,766",
+        "y2022": "2,159,249"
+      }
+    },
+    {
+      "key": "special_recv",
+      "anchor": "Special assessments receivable",
+      "cells": {
+        "y2023": "20,423,184",
+        "y2022": "0"
+      }
+    },
+    {
+      "key": "int_recv",
+      "anchor": "Interest receivable on investments and other assets, net",
+      "cells": {
+        "y2023": "145,780",
+        "y2022": "688,061"
+      }
+    },
+    {
+      "key": "resolutions",
+      "anchor": "Receivables from resolutions",
+      "cells": {
+        "y2023": "97,778,346",
+        "y2022": "520,555"
+      }
+    },
+    {
+      "key": "property",
+      "anchor": "Property and equipment, net",
+      "cells": {
+        "y2023": "319,733",
+        "y2022": "360,141"
+      }
+    },
+    {
+      "key": "rou_assets",
+      "anchor": "Operating lease right-of-use assets",
+      "cells": {
+        "y2023": "80,747",
+        "y2022": "92,406"
+      }
+    },
+    {
+      "key": "total_assets",
+      "anchor": "Total Assets",
+      "cells": {
+        "y2023": "145,785,098",
+        "y2022": "128,861,975"
+      }
+    },
+    {
+      "key": "payables",
+      "anchor": "Accounts payable and other liabilities",
+      "cells": {
+        "y2023": "410,515",
+        "y2022": "268,216"
+      }
+    },
+    {
+      "key": "lease_liab",
+      "anchor": "Operating lease liabilities",
+      "cells": {
+        "y2023": "101,617",
+        "y2022": "111,205"
+      }
+    },
+    {
+      "key": "res_liab",
+      "anchor": "Liabilities due to resolutions",
+      "cells": {
+        "y2023": "22,513,085",
+        "y2022": "846"
+      }
+    },
+    {
+      "key": "postret_liab",
+      "anchor": "Postretirement benefit liability",
+      "cells": {
+        "y2023": "255,574",
+        "y2022": "231,781"
+      }
+    },
+    {
+      "key": "anticipated",
+      "anchor": "Anticipated failure of insured institutions",
+      "cells": {
+        "y2023": "725,877",
+        "y2022": "31,233"
+      }
+    },
+    {
+      "key": "litigation",
+      "anchor": "Litigation losses",
+      "cells": {
+        "y2023": "450",
+        "y2022": "800"
+      }
+    },
+    {
+      "key": "total_liab",
+      "anchor": "Total Liabilities",
+      "cells": {
+        "y2023": "24,007,118",
+        "y2022": "644,081"
+      }
+    },
+    {
+      "key": "acc_net_inc",
+      "anchor": "Accumulated Net Income",
+      "cells": {
+        "y2023": "121,797,208",
+        "y2022": "131,176,093"
+      }
+    },
+    {
+      "key": "unreal_loss",
+      "anchor": "Unrealized (loss) on U.S. Treasury securities, net",
+      "cells": {
+        "y2023": "(29,569)",
+        "y2022": "(2,985,415)"
+      }
+    },
+    {
+      "key": "unreal_gain",
+      "anchor": "Unrealized postretirement benefit gain",
+      "cells": {
+        "y2023": "10,341",
+        "y2022": "27,216"
+      }
+    },
+    {
+      "key": "total_aoci",
+      "anchor": "Total Accumulated Other Comprehensive (Loss)",
+      "cells": {
+        "y2023": "(19,228)",
+        "y2022": "(2,958,199)"
+      }
+    },
+    {
+      "key": "total_fb",
+      "anchor": "Total Fund Balance",
+      "cells": {
+        "y2023": "121,777,980",
+        "y2022": "128,217,894"
+      }
+    },
+    {
+      "key": "total_lfb",
+      "anchor": "Total Liabilities and Fund Balance",
+      "cells": {
+        "y2023": "145,785,098",
+        "y2022": "128,861,975"
+      }
+    }
+  ],
+  "reconciliation": {
+    "note": "Twelve sums, six per year column, all exact to the dollar. The last one in each year is the balance sheet's defining assertion -- total assets equals total liabilities and fund balance -- written as a one-term sum, which is how this checker expresses an identity.\n\nTHE TWO YEAR COLUMNS ARE THE POINT OF DOING BOTH. Every sum exists twice with the same shape and different figures, so a parser that merges the columns, or reads 2022 where 2023 was asked for, produces arithmetic that is individually plausible and collectively impossible. The 2022 column is also the one carrying a printed 0 and an 846, figures small enough to be lost next to a 122,442,357 in the same column.",
+    "sums": [
+      {
+        "name": "total_assets.y2023",
+        "of": [
+          "cash.y2023",
+          "treasuries.y2023",
+          "assess_recv.y2023",
+          "special_recv.y2023",
+          "int_recv.y2023",
+          "resolutions.y2023",
+          "property.y2023",
+          "rou_assets.y2023"
+        ],
+        "equals": "total_assets.y2023"
+      },
+      {
+        "name": "total_liabilities.y2023",
+        "of": [
+          "payables.y2023",
+          "lease_liab.y2023",
+          "res_liab.y2023",
+          "postret_liab.y2023",
+          "anticipated.y2023",
+          "litigation.y2023"
+        ],
+        "equals": "total_liab.y2023"
+      },
+      {
+        "name": "total_aoci.y2023",
+        "of": [
+          "unreal_loss.y2023",
+          "unreal_gain.y2023"
+        ],
+        "equals": "total_aoci.y2023"
+      },
+      {
+        "name": "total_fund_balance.y2023",
+        "of": [
+          "acc_net_inc.y2023",
+          "total_aoci.y2023"
+        ],
+        "equals": "total_fb.y2023"
+      },
+      {
+        "name": "liabilities_plus_fund_balance.y2023",
+        "of": [
+          "total_liab.y2023",
+          "total_fb.y2023"
+        ],
+        "equals": "total_lfb.y2023"
+      },
+      {
+        "name": "sheet_balances.y2023",
+        "of": [
+          "total_assets.y2023"
+        ],
+        "equals": "total_lfb.y2023"
+      },
+      {
+        "name": "total_assets.y2022",
+        "of": [
+          "cash.y2022",
+          "treasuries.y2022",
+          "assess_recv.y2022",
+          "special_recv.y2022",
+          "int_recv.y2022",
+          "resolutions.y2022",
+          "property.y2022",
+          "rou_assets.y2022"
+        ],
+        "equals": "total_assets.y2022"
+      },
+      {
+        "name": "total_liabilities.y2022",
+        "of": [
+          "payables.y2022",
+          "lease_liab.y2022",
+          "res_liab.y2022",
+          "postret_liab.y2022",
+          "anticipated.y2022",
+          "litigation.y2022"
+        ],
+        "equals": "total_liab.y2022"
+      },
+      {
+        "name": "total_aoci.y2022",
+        "of": [
+          "unreal_loss.y2022",
+          "unreal_gain.y2022"
+        ],
+        "equals": "total_aoci.y2022"
+      },
+      {
+        "name": "total_fund_balance.y2022",
+        "of": [
+          "acc_net_inc.y2022",
+          "total_aoci.y2022"
+        ],
+        "equals": "total_fb.y2022"
+      },
+      {
+        "name": "liabilities_plus_fund_balance.y2022",
+        "of": [
+          "total_liab.y2022",
+          "total_fb.y2022"
+        ],
+        "equals": "total_lfb.y2022"
+      },
+      {
+        "name": "sheet_balances.y2022",
+        "of": [
+          "total_assets.y2022"
+        ],
+        "equals": "total_lfb.y2022"
+      }
+    ]
+  },
+  "not_labeled": "The note references in the row labels -- (Note 3), (Note 12) and so on -- are labeled as part of the anchor text rather than as fields of their own. They are cross-references, not values, and a parser that returns them is not telling us anything about its ability to read the sheet.\n\nThe dollar signs printed at the head of each section's first figure and on the total lines are typography rather than data; the figures are labeled without them, as on the 1956 sheet."
+}

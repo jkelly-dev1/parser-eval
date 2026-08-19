@@ -1,0 +1,57 @@
+{
+  "parser": "docling",
+  "version": "docling 2.120.1 (docling-core 2.91.0)",
+  "source": "pdf",
+  "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
+  "total_seconds": 23.0,
+  "records": [
+    {
+      "doc_id": "census29_sales",
+      "dpi": 300,
+      "seconds": 4.31,
+      "chars": 3015,
+      "error": null,
+      "text_file": "census29_sales_300.txt"
+    },
+    {
+      "doc_id": "census29_wages",
+      "dpi": 300,
+      "seconds": 5.5,
+      "chars": 4430,
+      "error": null,
+      "text_file": "census29_wages_300.txt"
+    },
+    {
+      "doc_id": "fdic2023_balance",
+      "dpi": 300,
+      "seconds": 22.95,
+      "chars": 4787,
+      "error": null,
+      "text_file": "fdic2023_balance_300.txt"
+    },
+    {
+      "doc_id": "fdic_balance",
+      "dpi": 300,
+      "seconds": 55.45,
+      "chars": 10921,
+      "error": null,
+      "text_file": "fdic_balance_300.txt"
+    },
+    {
+      "doc_id": "fdic_earnings",
+      "dpi": 300,
+      "seconds": 13.75,
+      "chars": 31178,
+      "error": null,
+      "text_file": "fdic_earnings_300.txt"
+    },
+    {
+      "doc_id": "fdic_income",
+      "dpi": 300,
+      "seconds": 8.41,
+      "chars": 10612,
+      "error": null,
+      "text_file": "fdic_income_300.txt"
+    }
+  ]
+}

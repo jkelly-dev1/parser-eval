@@ -1,0 +1,122 @@
+{
+  "doc_id": "census29_wages",
+  "source": "Sample_Documents/RG29-2790961-2926-1929-504-00025.jpg (1929 Census of Manufactures schedule, sheet 2; NARA catalog 50607213, 'Texas: Industry No. 504 - Steel Engraving'; Use and Access both Unrestricted)",
+  "kind": "scanned",
+  "text_layer": "none",
+  "labeling": "Hand-labeled by reading the 300 DPI render at magnification. THE HANDWRITTEN ENTRIES ARE THE POINT: every value below except the printed form labels was written by hand in 1929, in ink and pencil, by more than one person. THE LABELS ARE CHECKED BY THE FORM'S OWN ARITHMETIC -- seven sums the sheet asserts about itself, including one written by a clerk in the margin. Values are labeled WITHOUT thousands separators because the writer did not use them: the sheet reads 14500, not 14,500.",
+  "printed": {
+    "form_item_5": "PERSONS ENGAGED",
+    "form_item_7": "SALARIES AND WAGES",
+    "form_item_8": "MATERIALS, FUEL, AND ELECTRIC CURRENT",
+    "form_item_9": "PRODUCTS",
+    "col_male": "MALE",
+    "col_female": "FEMALE",
+    "col_quantity": "QUANTITY",
+    "col_value": "VALUE",
+    "label_total_salaried": "Total salaried employees (sum of b and c)",
+    "label_aggregate": "Aggregate of salaries and wages (sum of items a, b, and c)",
+    "label_total_materials": "Total cost of materials, fuel, and electric current (sum of a, b, and c)",
+    "label_total_products": "Total value of products",
+    "hw_persons_total": "15",
+    "hw_officers_male": "1",
+    "hw_managers_male": "2",
+    "hw_managers_female": "1",
+    "hw_salaried_male": "3",
+    "hw_salaried_female": "1",
+    "hw_wage_earners_male": "8",
+    "hw_wage_earners_female": "3",
+    "hw_month_jan": "11",
+    "hw_month_feb": "11",
+    "hw_month_mar": "11",
+    "hw_month_apr": "11",
+    "hw_month_may": "11",
+    "hw_month_jun": "11",
+    "hw_month_jul": "11",
+    "hw_month_aug": "11",
+    "hw_month_sep": "11",
+    "hw_month_oct": "11",
+    "hw_month_nov": "11",
+    "hw_month_dec": "11",
+    "hw_months_annotation": "132",
+    "hw_officers_salaries": "3120",
+    "hw_managers_salaries": "6630",
+    "hw_wage_earners_paid": "14500",
+    "hw_salaries_aggregate": "24250",
+    "hw_salaried_pay_annotation": "9750",
+    "hw_materials_cost": "10951",
+    "hw_fuel_cost": "60",
+    "hw_electric_cost": "300",
+    "hw_materials_total": "11311",
+    "hw_product_a": "Engraving dies",
+    "hw_product_b": "Plate Printing"
+  },
+  "rows": [],
+  "reconciliation": {
+    "note": "Seven relationships the sheet asserts about itself, all in handwriting. Two are worth singling out. The monthly employment check multiplies out to a figure a clerk pencilled into a box (132 = twelve months at 11), and the 9750 beside the salary aggregate is that same clerk adding the two salaried lines. SO THE ANNOTATIONS ARE CHECKABLE TOO, which is unusual: a marginal note written by a second hand in 1929 verifies the labels taken from the first.",
+    "sums": [
+      {
+        "name": "salaried_male",
+        "of": [
+          "hw_officers_male",
+          "hw_managers_male"
+        ],
+        "equals": "hw_salaried_male"
+      },
+      {
+        "name": "persons_engaged",
+        "of": [
+          "hw_salaried_male",
+          "hw_salaried_female",
+          "hw_wage_earners_male",
+          "hw_wage_earners_female"
+        ],
+        "equals": "hw_persons_total"
+      },
+      {
+        "name": "wage_earners_by_month",
+        "of": [
+          "hw_month_jan",
+          "hw_month_feb",
+          "hw_month_mar",
+          "hw_month_apr",
+          "hw_month_may",
+          "hw_month_jun",
+          "hw_month_jul",
+          "hw_month_aug",
+          "hw_month_sep",
+          "hw_month_oct",
+          "hw_month_nov",
+          "hw_month_dec"
+        ],
+        "equals": "hw_months_annotation"
+      },
+      {
+        "name": "salaried_pay_annotation",
+        "of": [
+          "hw_officers_salaries",
+          "hw_managers_salaries"
+        ],
+        "equals": "hw_salaried_pay_annotation"
+      },
+      {
+        "name": "salaries_aggregate",
+        "of": [
+          "hw_officers_salaries",
+          "hw_managers_salaries",
+          "hw_wage_earners_paid"
+        ],
+        "equals": "hw_salaries_aggregate"
+      },
+      {
+        "name": "materials_total",
+        "of": [
+          "hw_materials_cost",
+          "hw_fuel_cost",
+          "hw_electric_cost"
+        ],
+        "equals": "hw_materials_total"
+      }
+    ]
+  },
+  "not_labeled": "THE TWO PRODUCT VALUES AND THEIR TOTAL ARE DELIBERATELY NOT LABELED, because they cannot be read with confidence at any magnification available. The second reads as either 15108 or 14508, and the total as either 24601 or 24001 -- and the two ambiguities are consistent with each other, so the arithmetic cannot break the tie either. A ground truth is what a careful reader can be SURE of; a value that needs a guess would make every parser that guessed differently look wrong for agreeing with a coin flip. The product NAMES are labeled, because the handwriting there is legible and reading handwritten words is exactly what separates the tool families. Also unlabeled: the dense printed instruction paragraphs, which every parser reads and which would dilute the score away from the handwriting this page exists to test."
+}

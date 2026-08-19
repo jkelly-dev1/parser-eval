@@ -1,0 +1,57 @@
+{
+  "parser": "marker",
+  "version": "marker-pdf 2.0.0 (surya-ocr 0.22.1), CPU",
+  "source": "pdf",
+  "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
+  "total_seconds": 0.3,
+  "records": [
+    {
+      "doc_id": "census29_sales",
+      "dpi": 300,
+      "seconds": 275.9,
+      "chars": 6560,
+      "error": null,
+      "text_file": "census29_sales_300.txt"
+    },
+    {
+      "doc_id": "census29_wages",
+      "dpi": 300,
+      "seconds": 405.82,
+      "chars": 5956,
+      "error": null,
+      "text_file": "census29_wages_300.txt"
+    },
+    {
+      "doc_id": "fdic2023_balance",
+      "dpi": 300,
+      "seconds": 0.34,
+      "chars": 6524,
+      "error": null,
+      "text_file": "fdic2023_balance_300.txt"
+    },
+    {
+      "doc_id": "fdic_balance",
+      "dpi": 300,
+      "seconds": 52.31,
+      "chars": 4124,
+      "error": null,
+      "text_file": "fdic_balance_300.txt"
+    },
+    {
+      "doc_id": "fdic_earnings",
+      "dpi": 300,
+      "seconds": 0.44,
+      "chars": 11467,
+      "error": null,
+      "text_file": "fdic_earnings_300.txt"
+    },
+    {
+      "doc_id": "fdic_income",
+      "dpi": 300,
+      "seconds": 0.41,
+      "chars": 6985,
+      "error": null,
+      "text_file": "fdic_income_300.txt"
+    }
+  ]
+}

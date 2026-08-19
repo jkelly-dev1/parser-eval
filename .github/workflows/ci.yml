@@ -1,0 +1,128 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Cancel an in-flight run when the same branch is pushed again.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # This job installs nothing at all: score.py, reconcile.py and
+  # cloud_cost.py are pure standard library on purpose: every published
+  # number except the two hosted columns can be re-derived by a reader with
+  # nothing but a Python interpreter and this repository. If that ever stops
+  # being true this job goes red, which is the signal that "you can check my
+  # arithmetic without installing 5.8 GB of virtualenvs" has quietly become
+  # false.
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # pytest is the only install, and the only one there will ever be. The
+      # grader, the reconciler and the cost script are pure standard library
+      # on purpose. If this line ever needs a second package, the claim that a
+      # reader can recheck the arithmetic with an interpreter and this
+      # repository alone has stopped being true.
+      - name: Install pytest only
+        run: |
+          python -m pip install --upgrade pip
+          pip install "pytest>=8,<10"
+
+      - name: Tests
+        run: python -m pytest -q
+
+      # The ground truth checks itself before any parser is graded. 105
+      # arithmetic rules the documents assert about themselves, plus 7 that
+      # run between pages. These caught four of the author's own labeling
+      # errors on a 1956 scan, which is the reason the corpus was chosen for
+      # pages that carry internal arithmetic at all.
+      #
+      # The result is asserted by grep rather than by exit code, because a
+      # checker that declines to run a rule and a checker that agrees with it
+      # both exit zero. That confusion is defect 17 in this project's own
+      # history: a rule silently skipped 7 of 33 rows and reported a clean
+      # pass over the other 26.
+      - name: Labels satisfy the documents' own arithmetic
+        run: |
+          python3 reconcile.py --corpus real/pages | tee /tmp/labels.txt
+          grep -q "0 label errors found" /tmp/labels.txt
+
+      # Re-derive the published numbers from the published parser output, then
+      # require git to report no change. README.md and FINDINGS.txt quote
+      # figures out of these two files; this step is what makes "the prose
+      # matches the evidence" a check rather than a promise. If a future edit
+      # touches the grader without regenerating the artifacts, or edits an
+      # artifact by hand, this goes red on the diff.
+      - name: Scores and reconciliation regenerate byte-for-byte
+        run: |
+          python3 score.py --corpus real/pages --out out_real
+          python3 reconcile.py --corpus real/pages --scores out_real/scores.json
+          git diff --exit-code out_real/scores.json out_real/reconcile.json
+
+      # Free, no key, no network: it reads the token counts already stored
+      # beside the hosted runs. It fails if a stored usage record stops
+      # parsing, which is how a published dollar figure goes quietly missing.
+      - name: Cost re-computes from the stored token counts
+        run: python3 cloud_cost.py --all
+
+  # Separate job because it needs poppler-utils. The control is the only
+  # parser in the comparison that CI can honestly re-run: the other six are
+  # either gigabytes of model weights or a paid endpoint that does not return
+  # the same bytes twice. It is also the most important row in the table; it
+  # does no work, and three of the seven tools score below it.
+  control:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install poppler-utils
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends poppler-utils
+
+      # BIT-FOR-BIT, not "close enough". pdftotext over a committed PDF is
+      # deterministic, so the shipped textlayer output is exactly what a
+      # reader regenerates. This is the one place the corpus, a parser and a
+      # committed result can be checked against each other end to end.
+      #
+      # It writes to a temp directory rather than over out_real/textlayer, so
+      # a failure leaves the evidence intact to be compared against.
+      #
+      # The manifest.json file is excluded for one named reason: it records
+      # wall-clock seconds per page, which cannot be identical between two
+      # runs and says nothing about whether the text came back right. Every
+      # file that carries a measurement is compared. An exclusion without a
+      # reason beside it is how a check quietly stops checking.
+      - name: The control reproduces its committed output exactly
+        run: |
+
+      # A README is prose and drifts; out_real/*.json is evidence and does not.
+      # This rebuilds each published figure from the JSON and requires the
+      # exact string, so a re-run that shifts a number fails loudly rather than
+      # leaving the document quietly wrong.
+      - name: README numbers match the shipped results
+        run: python check_readme_numbers.py
+          python3 adapters/run_textlayer.py --corpus real/pages --out /tmp/textlayer
+          diff -r --exclude=manifest.json out_real/textlayer /tmp/textlayer

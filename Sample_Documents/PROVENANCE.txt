@@ -1,0 +1,296 @@
+SOURCE DOCUMENTS AND WHY EACH ONE MAY BE SHIPPED
+=================================================
+Every document in this folder must be redistributable, because the corpus
+ships with the code. A benchmark whose documents exist only as URLs stops
+being reproducible the moment a link moves.
+
+The bar is a POSITIVE statement of rights, not an absence of a restriction.
+"I could not find a prohibition" is what disqualified the first corpus.
+
+
+WHAT THE CORPUS ACTUALLY USES
+-----------------------------
+Seven files are here. FOUR OF THEM ARE USED. The corpus is six pages and 425
+hand-labeled values, cut from these:
+
+  document                                   pages  corpus page ids
+  fdic-ar-1956.pdf                             3    fdic_balance, fdic_income,
+                                                    fdic_earnings
+  fdic-ar-2023.pdf                             1    fdic2023_balance
+  RG29-...-00025.jpg                           1    census29_wages
+  RG29-...-00034.jpg                           1    census29_sales
+  RG29-...-00029.jpg                           0    carried, not used
+  RG29-...-00037.jpg                           0    carried, not used
+  1901_Census1900_Vol1Pt2_Census-Bureau.pdf    0    carried, not used
+
+THE LAST THREE ARE CARRIED RATHER THAN USED, AND THEY ARE 14 OF THIS FOLDER'S
+30 MB. Each one is here because its rights are already established and it
+answers a question the corpus cannot yet ask -- see the "not used" note in
+each entry. real/sources.json is the authority on what is cut and labeled;
+this table follows it.
+
+
+1901_Census1900_Vol1Pt2_Census-Bureau.pdf
+-----------------------------------------
+  What      Twelfth Census of the United States, taken in 1900. Volume 1,
+            Population, Part 2. Published 1901. 94 pages, scanned.
+  Source    US Census Bureau
+            https://www2.census.gov/library/publications/decennial/1900/
+            volume-1/volume-1-p2.pdf
+  Rights    Covered twice over, which is why it was chosen:
+            (a) PUBLISHED 1901. Anything published in the United States
+                before 1930 is in the public domain by age, regardless of
+                anything else.
+            (b) A work of the Census Office, a US federal agency. Works of
+                the US government prepared by officers or employees as part
+                of their official duties are not subject to copyright.
+            Neither argument depends on a website's terms page remaining
+            online -- both of the pages consulted for other candidates
+            returned 404 while this was being checked.
+  Not used  No page from this document is in the corpus, and it is KEPT ON
+            ITS MERITS: it tests a case no page in the corpus can ask, a text
+            layer that is present and lying rather than absent or correct.
+            Cutting it is the obvious next extension.
+  Why it is here
+            PDF page 40 (printed lvi) is the hardest page found so far: TWO
+            independent seven-column tables side by side, 1900 type, foxing
+            and scan noise, ruled columns, dotted leaders, superscript
+            footnote markers.
+            It carries PER-ROW ARITHMETIC -- 1900 population minus 1890
+            population equals the printed increase, and that increase over
+            the 1890 figure gives the printed percentage. Amherst county:
+            17,864 - 17,551 = 313, and 313/17,551 = 1.8%.
+            It also has a property no document in the first corpus had: ITS
+            EMBEDDED TEXT LAYER IS OCR OUTPUT AND THE OCR IS WRONG. The page
+            header extracts as "l'Ol'Ul,ATl(JN IN" and a county name as
+            "Amhtor.t". A parser that trusts the text layer inherits those
+            errors and reports them with confidence.
+
+
+RG29-2790961-2926-1929-504-000{25,29,34,37}.jpg
+-----------------------------------------------
+  What      Four sheets from a 1929 Census of Manufactures schedule, FILLED
+            IN BY HAND. Grayscale scans, about 1,820 x 2,420 pixels each. The
+            filename is the National Archives' own: record group 29 (Records
+            of the Bureau of the Census), followed by the series and item
+            identifiers and the sheet number.
+  Source    US National Archives and Records Administration, catalog record
+            50607213.
+  Rights    Federal records of the Bureau of the Census, created by census
+            officers in the course of their official duties, and so not
+            subject to copyright on the same basis as the two Census Bureau
+            and two FDIC publications here. NARA's catalog record states both
+            the USE RESTRICTION and the ACCESS RESTRICTION as "Unrestricted".
+            That is the positive statement this folder requires, and it comes
+            from the holding institution rather than from an inference.
+  Privacy   RECORDED RATHER THAN GLOSSED, because handwriting is the one case
+            where the rights question and the privacy question come apart.
+            These are schedules about BUSINESSES -- employees, payroll,
+            materials, products, fuel, sales -- not about households or named
+            individuals, which is what disqualified every other handwriting
+            source considered. They do carry the handwriting and, on sheet 3,
+            the signatures of the officers who completed the form in 1929.
+            The records are 97 years old, they are federal records, and NARA
+            has released them without an access or use restriction. There is
+            no living-individual data here in any ordinary sense, and no
+            personal financial or household information at all.
+  Used      00025 is corpus page census29_wages. 00034 is census29_sales.
+            00029 and 00037 were downloaded from the same series as
+            candidates and are NOT cut into the corpus; they are 2 MB each
+            and nothing in the repository references them.
+  Why it is here
+            THESE ARE THE ONLY PAGES IN THE CORPUS WITH NO TEXT LAYER AT ALL,
+            and the only ones that separate the tool families instead of
+            ranking them. Every other page has something a parser can copy;
+            on these, a tool either reads pixels or returns nothing. The
+            control that returns the embedded text layer scores 0.0% on both,
+            which is what a floor looks like.
+
+            00025, sheet 2. Employees, salaries, materials and products.
+            Three handwritten sums check against the hand labels:
+              10,951 + 60 + 300      = 11,311
+              3,120 + 6,630 + 14,500 = 24,250
+              1 + 2                  = 3 salaried men
+            Struck-through corrections, marginal annotations in a second and
+            third hand, and a noisy skewed grayscale scan.
+
+            00034, sheet 3. The same schedule, sparsely filled: power
+            equipment, fuel, distribution of sales. 35,000 + 2,000 = 37,000
+            checks against the handwritten total. Two signatures, and
+            "x x x x x" fill patterns in the cells that do not apply --
+            a mark meaning "none" that is not a value and must not be read
+            as one.
+
+
+fdic-ar-1956.pdf
+-----------------
+  What      Federal Deposit Insurance Corporation, Annual Report 1956.
+            176 pages, scanned, with an ABBYY FineReader OCR text layer.
+  Source    Obtained via https://www.fdic.gov/history/1900-1919
+            The scan itself is FRASER's: the page footers read "Digitized for
+            FRASER / http://fraser.stlouisfed.org/ / Federal Reserve Bank of
+            St. Louis".
+  Rights    The FDIC is a US federal agency, so its annual report is a work
+            prepared by federal officers and employees as part of their
+            official duties and is not subject to copyright. The audit letter
+            inside it is signed by the Comptroller General -- GAO, also
+            federal.
+            The scan being FRASER's does not change that: a faithful
+            photographic reproduction of a public-domain document does not
+            attract a new copyright in the United States. FRASER's own rights
+            page returned HTTP 403 when checked on 2026-08-16, so no statement
+            from them is quoted here -- the basis is the underlying document,
+            not the scanner.
+            ONE EXCEPTION IS WORTH STATING RATHER THAN ASSUMING: a
+            government publication can REPRINT third-party copyrighted
+            material, and federal-works status does not extend to what it
+            reprints. The three pages graded here carry none -- they are FDIC
+            and GAO financial statements throughout. A page chosen later that reproduces an outside chart
+            or photograph would need its own look.
+  Used      Pages 36, 37 and 144, as corpus pages fdic_balance, fdic_income
+            and fdic_earnings.
+  Why it is here
+            THE ARITHMETIC IS EXACT AND THERE IS A LOT OF IT, which is what
+            makes hand labels verifiable rather than merely careful.
+
+            page 36, balance sheet at 30 June 1956. Nested three deep:
+              1,810,140,116 + 6,707,097               = 1,816,847,213
+              five receivership items                 = 11,277,003
+              11,277,003 - 8,346,249                  = 2,930,754
+              five asset lines                        = 1,822,462,212
+              six liability lines                     = 131,643,818
+              131,643,818 + 1,690,818,394             = 1,822,462,212
+            THE SHEET BALANCES: assets equal liabilities plus fund, exactly.
+
+            page 37, statement of income. Chains further, and its closing fund
+            figure 1,690,818,394 is the same one that appears on page 36 -- a
+            CROSS-PAGE invariant, which nothing in the first corpus had.
+
+            page 144, Table 114, earnings and expenses by state. TWO-
+            DIMENSIONAL: total rows sum their sub-rows, AND the US column
+            equals Continental US plus Alaska, Puerto Rico and Other on every
+            row (7,211,080 + 6,658 + 11,759 + 2,424 = 7,231,921). A misread
+            digit breaks either its row or its column.
+
+            The pages are hard in the ways that matter: dotted leaders, three
+            indent levels encoding hierarchy, values landing in different
+            columns by level, footnote references inside labels, a line item
+            whose value is the single digit 1, and numbers embedded in label
+            prose ("face value, $1,815,200,000") that are NOT column values.
+            Page 144 is additionally rotated 90 degrees on a portrait page
+            with eleven numeric columns.
+  Note      IT IS A SCAN CARRYING AN ACCURATE OCR LAYER -- one full-page JBIG2
+            image per page with ABBYY text over it. Spot-checked figures in
+            the layer are correct. So a parser reading the text layer inherits
+            ABBYY's work while one reading the pixels does its own, and those
+            are different measurements.
+            SEPARATING THEM IS WHY THE CORPUS HAS A CONTROL: an adapter that
+            returns the embedded text layer and does no work at all. On these
+            three pages it beats several real parsers, which means those tools
+            were relaying ABBYY rather than reading the page. build_scan.py
+            attacks the same question from the other side, by re-rendering
+            pages into image-only PDFs so that nothing but the pixels remains.
+
+
+fdic-ar-2023.pdf
+-----------------
+  What      Federal Deposit Insurance Corporation, Annual Report 2023.
+            250 pages, BORN-DIGITAL. Typeset in Adobe InDesign 19.2 and
+            written out by Adobe PDF Library 17.0; the PDF is tagged and its
+            text layer is the publisher's own, not anyone's OCR.
+  Source    https://www.fdic.gov/about/financial-reports/reports/
+            2023annualreport/2023-arfinal.pdf
+  Rights    A work of the United States Government, on the same basis as the
+            1956 report above, and the byline supports it rather than merely
+            permitting it: the PDF's own metadata names the author as
+            "FDIC - Division of Finance/Jannie Eaddy". That is an agency
+            division and a named employee, NOT a contractor -- the test that
+            disqualified the HUD document listed under CONSIDERED AND NOT
+            INCLUDED below.
+
+            The FDIC states the position itself: "Information that is created
+            by or for the US government on this site is within the public
+            domain. Public domain information on the FDIC Archive may be
+            freely distributed and copied. However, it is requested that in
+            any subsequent use of this work, FDIC be given appropriate
+            acknowledgment." THAT ACKNOWLEDGMENT IS GIVEN HERE AND IN THE
+            README, because it was asked for.
+
+            READ HONESTLY, THE PROVENANCE OF THAT QUOTE HAS A WRINKLE AND IT
+            IS RECORDED RATHER THAN SMOOTHED OVER. The statement is on
+            archive.fdic.gov, which returns 403 to automated requests; it was
+            read from the Internet Archive's capture of that page, not from
+            the live page, and the report itself was downloaded from
+            www.fdic.gov. The primary basis for shipping it is therefore the
+            statutory one -- a work of the US Government is not subject to
+            copyright -- with the agency's own policy as corroboration. An
+            operator who wants the live page confirmed should open it in a
+            browser, where it serves normally.
+
+            No copyright notice, credit line or third-party photo attribution
+            appears anywhere in the 250 pages.
+  Used      Page 134 (printed 132), as corpus page fdic2023_balance.
+  Why it is here
+            IT IS THE ONLY BORN-DIGITAL PAGE IN THE CORPUS, and it exists to
+            answer a question the scans cannot. Three pages here are scans
+            carrying somebody else's OCR, and on those the strongest
+            "parser" in the comparison turns out to be the embedded text
+            layer doing nothing at all. That result is only interpretable
+            against a page whose text layer was typeset rather than guessed.
+
+            IT IS ALSO THE SAME PUBLICATION AS fdic-ar-1956.pdf, 67 YEARS
+            LATER. The 1956 balance sheet and the 2023 balance sheet are the
+            same statement of the same fund, one a photograph of paper and
+            one never scanned at all. That is as close to a controlled
+            comparison as a corpus of real documents is going to get.
+
+            Page 134 (printed 132) is the Deposit Insurance Fund balance
+            sheet: TWO YEAR COLUMNS, so a parser must keep 2023 and 2022
+            apart; NEGATIVE FIGURES PRINTED IN PARENTHESES, which is a sign
+            and not punctuation; four figures buried in italic parentheses
+            inside row labels; and twelve sums that close to the dollar in
+            both years, with the sheet balancing in each.
+
+
+CONSIDERED AND NOT INCLUDED
+---------------------------
+Review_Of_Structure_Materials.pdf, US Department of Housing and Urban
+Development. NOT INCLUDED because it was prepared under contract by NAHB
+Research Center, Inc. A contractor is not a government employee, the report's
+own disclaimer distances it from the US Government, and it credits a
+third-party cover photograph. CHECK THE BYLINE, NOT THE DOMAIN: a .gov URL is
+not a statement of rights, and this is the document that proves it.
+
+Federal Reserve statistical release H.4.1. A good born-digital dense table
+with real internal arithmetic. NOT INCLUDED because the Board's copyright and
+legal-notices pages both returned 404 and no positive statement of rights
+could be read from the publisher. The federal-works rule probably covers it;
+"probably" is not the bar.
+
+NIST Special Database 19, the obvious handwriting dataset. Freely
+downloadable, but the page carries no license language and NIST's own guidance
+is to contact them for terms.
+
+
+THE HANDWRITTEN PAGE, AND HOW IT WAS RESOLVED
+---------------------------------------------
+
+The single most valuable page in the first corpus was a hand-filled form,
+because it was the only one that separated the tool families completely --
+zero values recovered by the conventional parsers against most of the page by
+a VLM. A corpus without one collapses into "everything works".
+
+THE OBSTACLE WAS NEVER COPYRIGHT, IT WAS PRIVACY. The handwriting sources that
+are easy to find are genuine records carrying a private individual's hand:
+census population schedules, draft cards, ship manifests. Public domain, and
+still somebody's personal data. The fallback proposal was to MANUFACTURE one
+-- print a public-domain form, fill it in by hand, photocopy it crooked, scan
+it -- which would have been unambiguously ours to ship at the cost of making
+the difficulty artificial.
+
+THAT WAS NOT NEEDED. The 1929 Census of Manufactures schedules above are the
+resolution: real records, real pencil, real corrections and marginalia, and
+they are about BUSINESSES rather than people, released by NARA with neither an
+access nor a use restriction. The corpus gets genuine handwriting without
+publishing anyone's private information, and the difficulty is the document's
+own rather than something staged.

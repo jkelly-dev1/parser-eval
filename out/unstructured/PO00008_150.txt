@@ -1,0 +1,25 @@
+PURCHASE ORDER
+PO Number
+PO-69164
+Vendor
+Lakeside Fabrication
+Terms
+2/10 Net 30
+SD-1200 | Selfdrilling screw #12 | 33 | 78.32 | 2,584.5¢
+AB-0506 | Anchor bok U/2in x 6in | 18 | $5.97 | 1,007
+FW-10SS | Flat washer M10, stainless |  | 335.82 | 1,007 .4¢
+LN-1ONY | Nylon lock nut M10 | 12 | 16.12 | 193.44
+JH-0208 | Joist hanger, 2x8 | 37 | 34.63 | 1,281.31
++
+wom woh oe
+Tax 825%
+TOTAL
+Order Date
+2026-06-14
+Due Date
+2026-09-14
+Currency
+usD
+6,074.23
+$01.12
+6,575.35

@@ -1,0 +1,57 @@
+{
+  "parser": "tesseract",
+  "version": "tesseract 5.5.0",
+  "source": "png",
+  "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
+  "total_seconds": 0.7,
+  "records": [
+    {
+      "doc_id": "census29_sales",
+      "dpi": 300,
+      "seconds": 1.12,
+      "chars": 2917,
+      "error": null,
+      "text_file": "census29_sales_300.txt"
+    },
+    {
+      "doc_id": "census29_wages",
+      "dpi": 300,
+      "seconds": 1.3,
+      "chars": 3174,
+      "error": null,
+      "text_file": "census29_wages_300.txt"
+    },
+    {
+      "doc_id": "fdic2023_balance",
+      "dpi": 300,
+      "seconds": 0.74,
+      "chars": 1760,
+      "error": null,
+      "text_file": "fdic2023_balance_300.txt"
+    },
+    {
+      "doc_id": "fdic_balance",
+      "dpi": 300,
+      "seconds": 1.11,
+      "chars": 2914,
+      "error": null,
+      "text_file": "fdic_balance_300.txt"
+    },
+    {
+      "doc_id": "fdic_earnings",
+      "dpi": 300,
+      "seconds": 2.03,
+      "chars": 4265,
+      "error": null,
+      "text_file": "fdic_earnings_300.txt"
+    },
+    {
+      "doc_id": "fdic_income",
+      "dpi": 300,
+      "seconds": 1.27,
+      "chars": 4303,
+      "error": null,
+      "text_file": "fdic_income_300.txt"
+    }
+  ]
+}

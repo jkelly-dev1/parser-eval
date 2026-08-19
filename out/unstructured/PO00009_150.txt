@@ -1,0 +1,17 @@
+PURCHASE ORDER
+PO Number
+Order Date
+PO-97790
+2026-10-07
+Vendor
+Due Date
+Net 30 |  |  |  | Currency
+ |  |  | usD
+SKU | Description | Qty | Unit | Amount
+TR-0372 | Threaded rod 3/8in, 6ft | 22 | 26.47 | 582.34
+CS-0375 | Concrete sleeve anchor 3/8 | 17 | 1.49 | 25.33
+ | Post base, 4x4 adjustable | 7 |  | 25.34
+PB-0404 |  |  | 3.62 | 
+AB-0506 $S-1403 | Anchor bok L/2in x 6in Structural screw #14 x 3in | 15 20 | 68.20 15.68 | 1,023.00 313.60
+ |  | Subtotal | 1,969.61
+ |  | Tax 825% | 162.49

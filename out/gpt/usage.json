@@ -1,0 +1,162 @@
+[
+  {
+    "doc_id": "PO00000",
+    "dpi": 150,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 771,
+    "output_tokens": 342,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00000",
+    "dpi": 300,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 2565,
+    "output_tokens": 342,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00001",
+    "dpi": 150,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 771,
+    "output_tokens": 668,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00001",
+    "dpi": 300,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 2565,
+    "output_tokens": 320,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00002",
+    "dpi": 150,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 724,
+    "output_tokens": 255,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00002",
+    "dpi": 300,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 2380,
+    "output_tokens": 237,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00003",
+    "dpi": 150,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 724,
+    "output_tokens": 235,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00003",
+    "dpi": 300,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 2380,
+    "output_tokens": 221,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00004",
+    "dpi": 150,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 771,
+    "output_tokens": 518,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00004",
+    "dpi": 300,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 2473,
+    "output_tokens": 522,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00005",
+    "dpi": 150,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 724,
+    "output_tokens": 348,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00005",
+    "dpi": 300,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 2380,
+    "output_tokens": 245,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00006",
+    "dpi": 150,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 724,
+    "output_tokens": 502,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00006",
+    "dpi": 300,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 2380,
+    "output_tokens": 231,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00007",
+    "dpi": 150,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 771,
+    "output_tokens": 303,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00007",
+    "dpi": 300,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 2473,
+    "output_tokens": 260,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00008",
+    "dpi": 150,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 771,
+    "output_tokens": 313,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00008",
+    "dpi": 300,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 2473,
+    "output_tokens": 294,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00009",
+    "dpi": 150,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 771,
+    "output_tokens": 595,
+    "stop": "completed"
+  },
+  {
+    "doc_id": "PO00009",
+    "dpi": 300,
+    "model": "gpt-5.6-sol",
+    "input_tokens": 2473,
+    "output_tokens": 295,
+    "stop": "completed"
+  }
+]

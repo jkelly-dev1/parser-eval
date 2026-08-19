@@ -1,0 +1,248 @@
+================================================================================
+PARSER-EVAL -- FINDINGS
+Seven ways to get text out of a document, measured on six real pages
+================================================================================
+Corpus   6 pages, 425 hand-labeled values, 105 arithmetic rules within pages
+         and 7 identities between them. Every page ships with the code.
+Hardware 12-core CPU, no GPU. Local tools ran on this machine; two hosted
+         models ran over an API and cost $1.12 for the whole corpus.
+Date     2026-08-17. Prices and model versions in cloud_cost.py and the
+         manifests beside each run.
+
+READ THIS FIRST: the ground truth is verified by the documents' own
+arithmetic, not by care alone. 105 sums and identities are checked against the
+hand labels before any parser is graded, and every one of them holds. Four
+labels were typed wrong during the work and all four were caught that way.
+
+
+1. THE RESULT IN ONE TABLE
+-----------------------------
+Percentage of labeled values recovered, in the right row.
+
+  page                fields    gpt claude marker textlyr unstr docling tess
+  fdic2023_balance*       65  100.0  100.0   92.3   100.0  95.4    95.4  98.5
+  fdic_balance            37  100.0  100.0   64.9    91.9  89.2    91.9  78.4
+  fdic_income             40   97.5   97.5   47.5    92.5  85.0    85.0  85.0
+  fdic_earnings          207   99.0   98.6   93.2    94.7  83.6    66.2  84.5
+  census29_wages          44   93.2   88.6   38.6     0.0  15.9    34.1   9.1
+  census29_sales          32   96.9  100.0   81.2     0.0  25.0    68.8  34.4
+  ------------------------------------------------------------------------
+  CORPUS                 425   98.4   97.9   79.8    78.1  74.6    71.5  74.6
+  seconds per page              64.1   57.4  122.5     0.0   6.6    18.4   1.3
+
+  * born-digital. Every other page is a photograph of paper.
+  textlyr is not a parser. See section 2. It is the control.
+
+The two hosted models are ahead of everything local by roughly twenty points,
+and they are the only tools that read handwriting at all. That is the headline
+and it is not the interesting part.
+
+
+2. THE CONTROL IS THE FINDING: THREE OF SEVEN TOOLS LOSE TO DOING NOTHING
+---------------------------------------------------------------------------
+A scanned PDF often arrives with a text layer somebody else's OCR put there
+years ago. `textlayer` is not a parser: it runs pdftotext over the file and
+returns whatever layer is already inside, in 0.0 seconds. It was added as a
+control after Marker finished three pages in 0.4 seconds each without ever
+starting its vision model.
+
+  ON EVERY PAGE THAT HAS A TEXT LAYER, THE CONTROL MATCHES OR BEATS DOCLING,
+  UNSTRUCTURED AND TESSERACT. On the born-digital page it scores 100% and
+  ties the hosted models. On the 1956 earnings table it scores 94.7% while
+  Docling scores 66.2%, Tesseract 84.5% and Unstructured 83.6%. On
+  fdic_balance the control and Docling tie exactly, 91.9% each.
+
+Three of the four local tools are worse than the answer already sitting in the
+file, at 6 to 18 seconds a page against zero. On the born-digital page every
+tool that processes it does worse than the file it was given: Docling 95.4%,
+Marker 92.3%, Tesseract 92.3%, against the layer's 100%.
+
+WHAT THIS DOES NOT SAY. It does not say those tools are broken, and it is not
+an argument against them. Relaying an existing text layer is fast, cheap and
+usually right, and a production system probably should. It says that on a page
+with a text layer, "Docling scored 91.9%" and "Docling read the page" are
+different claims, and only the control separates them. On the FDIC pages,
+Marker's and Docling's figures are a 99-100% subset of the embedded layer.
+
+THE CONTROL ALSO MARKS THE FLOOR. On the two 1929 census schedules -- real
+photographs of paper with no text layer at all -- it scores 0.0% and every
+other tool does real work. A corpus with only one kind of page cannot ask this
+question, which is why the born-digital page was added.
+
+
+3. THE SAME TOOL, A THOUSAND TIMES SLOWER, DEPENDING ON THE FILE
+-------------------------------------------------------------------
+Marker took 0.4, 0.3 and 0.4 seconds on the three FDIC pages and 405.8 and
+275.9 seconds on the two census schedules. Same tool, same machine, same run.
+It has a vision model, surya-2 served through llama.cpp, and it invokes it
+only when there is no text layer to relay. The 1000x is not variance; it is
+two different programs behind one command.
+
+FOR CAPACITY PLANNING THAT IS THE WHOLE STORY. A queue of scanned-with-OCR
+documents runs at sub-second-per-page; the same queue of camera-captured or
+photocopied documents runs at seven minutes a page on this hardware. Nothing
+in the tool's interface tells you which you are about to get.
+
+MARKER DID NOT WEDGE ON THIS CORPUS, and the earlier report that it wedges
+reproducibly is not withdrawn. It hangs after roughly six pages of VISION
+work; this corpus only asks for two. The wedge is still there, it was simply
+not reached. Run it one document at a time and kill llama-server by name.
+
+
+4. WHERE THE QUIET FAILURES ACTUALLY WERE
+--------------------------------------------
+A payload score splits misses into ABSENT (a hole; loud) and CORRUPT (a
+same-shape look-alike). The arithmetic asks the further question: does the
+error break a sum the document asserts about itself?
+
+  parser        holds  survives  broken  incomplete   (105 within-page rules)
+  gpt             103         0       2           0
+  claude          100         0       4           1
+  marker           82         2       2          19
+  textlayer        92         2       1          10
+  docling          54         2       9          40
+  unstructured     36         1      15          53
+  tesseract        26         0      10          69
+
+SURVIVES is the category that matters: a figure came back wrong and the
+arithmetic still balanced, so nothing downstream can tell. Seven rule
+instances survived, and they are not all equally alarming. FOUR OF THE SEVEN
+ARE ONE OCR ARTIFACT: Marker and the text layer both returned the earnings
+page's bottom line as "2,027,324!", a stray exclamation mark picked up from a
+speck on the 1956 scan, in two rules each. The digits are right and the
+arithmetic holds, but the token would FAIL a downstream cast to a number
+(`typed: false` in the scores), so it is loud where it counts. Marker inherits
+it because it is relaying that text layer, which is section 2 again.
+
+THE OTHER THREE ARE THE REAL THING: wrong digits, arithmetic intact, and the
+value would cast cleanly into a numeric field. All three are on the 1956
+earnings table.
+
+  DOCLING READ TWO CELLS WRONG IN A WAY THAT CANCELS. On the losses total row
+  it returned Alaska as 945 (printed 935) and Puerto Rico as 285 (printed
+  295). Plus ten and minus ten. The row still adds to 993,534, the extraction
+  passes every check, and two figures are wrong. This is the error class the
+  whole exercise was built to find, and it is not a contrived one -- it is two
+  ordinary digit misreads that happened to land in opposite directions in the
+  same row.
+
+  TWO MORE SURVIVED BECAUSE OF A TOLERANCE, AND THAT IS A COST WE CHOSE.
+  Docling read 490 for 491 and Unstructured 1,355 for 1,352, both of them
+  values a numeric field would accept without complaint. The earnings table
+  prints rounded thousands, so its column sums cannot be checked exactly; they
+  carry tolerance 5 and by construction cannot see an error smaller than 5.
+  Both of these walked through that gap. THE EXACT CHECKS ON THE SAME PAGE DID
+  THEIR JOB: the 33 row identities close to the unit, and it was one of those
+  that caught Docling's canceling pair. Where a page lets you check exactly,
+  check exactly; a tolerance is a hole with a documented size.
+
+THE HOSTED MODELS PRODUCED NO QUIET FAILURES AT ALL. Between them 6 sums broke
+and 0 survived: when they are wrong, the arithmetic says so. That is a
+different and more useful failure profile than being right more often.
+
+CROSS-PAGE COHERENCE. Seven identities tie the 1956 income statement to the
+1956 balance sheet -- the closing fund is the balance sheet's fund, note 1's
+credits are its liability lines. A parser can read both pages
+self-consistently and still contradict itself between them; only an identity
+between the pages catches it. Claude, Marker, Docling, Unstructured and the
+control hold all 7. GPT breaks 1. Tesseract breaks 1 and cannot run another.
+
+
+5. STRUCTURE IS A SEPARATE SKILL FROM READING
+------------------------------------------------
+  parser        rows anchored   values in the WRONG row   values missing
+  gpt                  75/75                          0                3
+  claude               69/75                          1                1
+  docling              49/75                         46               71
+  textlayer            47/75                          0               88
+  marker               44/75                          8               64
+  unstructured         42/75                         10               96
+  tesseract            73/75                          7              146
+
+Tesseract finds 73 of 75 rows -- more than any other local tool -- and still
+recovers only 74.6%: it preserves the shape of the page and misreads the
+contents. Docling does the opposite, recovering figures while losing the row
+they belong to: it put 56 exactly-correct values in the wrong row, every one
+of them on the wide landscape table. A figure in the wrong row is a quiet error by
+construction: it is character-perfect, so nothing that compares text can see
+it, and it is only wrong relative to a structure the parser has already lost.
+
+THE WIDE LANDSCAPE TABLE IS WHERE THE LOCAL TOOLS SEPARATE. On
+fdic_earnings -- 33 rows, 11 numeric columns, printed sideways relative to the
+page -- Docling drops to 66.2% while Tesseract holds 84.5% and Unstructured
+83.6%, and the hosted models hold 98.6% and 99.0% against the text layer's
+94.7%. Docling's loss here is structural rather than optical: 56 of the values
+it missed came back character-perfect in the wrong row.
+
+
+6. HANDWRITING IS STILL A DIFFERENT PROBLEM
+----------------------------------------------
+The two 1929 Census of Manufactures schedules are hand-filled forms: pencil,
+struck-through corrections, marginal annotations in other hands, a skewed
+grayscale scan.
+
+  page             gpt  claude  marker  docling  unstr  tess  textlayer
+  census29_wages  93.2    88.6    38.6     34.1   15.9   9.1        0.0
+  census29_sales  96.9   100.0    81.2     68.8   25.0  34.4        0.0
+
+Tesseract recovers 9.1% of a handwritten page. The hosted models recover
+88-100%. THE TOOL FAMILY IS THE WHOLE DECISION HERE and no amount of tuning
+closes a gap that size. This reproduces the finding from the discarded first
+corpus, on entirely different documents.
+
+
+7. COST, AND WHAT IT BUYS
+----------------------------
+Measured from the responses' own token counts, 6 pages each:
+
+  claude   29,814 in   11,510 out   $0.4368   $0.0728/page
+  gpt      33,241 in   17,338 out   $0.6863   $0.1144/page
+
+The same page is consistently cheaper on one provider than the other: identical
+pixels cost about 12% more input tokens on OpenAI, and GPT emitted 51% more
+output tokens for the same six pages.
+
+Nine cents a page against zero for the text layer and 1.3 seconds for
+Tesseract. Whether that is expensive depends entirely on the page: on the
+born-digital balance sheet it buys nothing at all, because the free control
+already scores 100%. On the handwritten schedule it buys the difference
+between 9% and 93%, which is the difference between having the data and not.
+
+THE OBVIOUS PIPELINE FALLS OUT OF THE TABLE. Take the text layer when there is
+one and it is typeset. Spend the nine cents on the pages that are photographs
+of paper, and especially on the handwritten ones. Nothing in this corpus
+argues for running a local parser over a page whose text layer is already
+good, and the born-digital row argues actively against it.
+
+
+8. WHAT WOULD CHANGE THESE NUMBERS
+-------------------------------------
+CORPUS SIZE. Six pages. Every figure here is a measurement of these six pages
+and the aggregate is dominated by one of them: fdic_earnings carries 207 of
+the 425 values, so the corpus row is close to the earnings row for any tool
+that struggles with wide tables. Read the per-page table, not the total.
+
+THE HOSTED MODELS ARE NOT REPRODUCIBLE. Measured on the first corpus: the same
+page twice returned identical bytes from Marker and different scores from both
+hosted endpoints. That is inference configuration rather than architecture --
+a VLM can be deterministic -- but it means these two rows would move slightly
+on a re-run and the local rows would not.
+
+GRADING CHOICES ARE ARGUABLE. A value is credited when it comes back in the
+right row, matched after folding case, accents, currency signs and thousands
+separators. Accounting parentheses are treated as a minus sign, so a tool
+returning "(29,569)" or "-29,569" is right and one returning "29,569" is
+wrong. THE GRADER AND THE ARITHMETIC CHECKER ARE WHERE AN ERROR HERE WOULD
+CONCENTRATE, not the tools being measured, and an error in either does not
+look like an error -- it looks like a result. A single sign convention read
+two ways manufactures quiet failures that never happened, across every tool at
+once, and the only tell is that all seven fail one field identically. Read
+every number above with that in mind: a comparison project is first a test of
+the thing doing the comparing.
+
+WHAT IS NOT MEASURED HERE. Layout fidelity, reading order, figure extraction,
+multi-page documents, and every page whose text layer is WRONG rather than
+missing -- the 1900 census volume in Sample_Documents has exactly that
+property and is not yet cut into the corpus. Also untested: whether the
+150 DPI cliff that halves raw OCR affects these pages, since the real corpus
+renders at 300 only.

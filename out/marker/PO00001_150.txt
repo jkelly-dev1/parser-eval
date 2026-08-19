@@ -1,0 +1,22 @@
+# PURCHASE ORDER
+
+| PO Number         | Order Date |
+|-------------------|------------|
+| PO-52057          | 2026-02-26 |
+| Vendor            | Due Date   |
+| Northgate Trading | 2026-05-26 |
+| Terms             | Currency   |
+| 2/10 Net 30       | USD        |
+
+| #     | SKU     | Description                | Qty          | Unit  | Amount          |
+|-------|---------|----------------------------|--------------|-------|-----------------|
+| 1     | SD-1200 | Self-drilling screw #12    | 9            | 93.65 | 842.85          |
+| 2     | PB-0404 | Post base, 4x4 adjustable  | 19           | 23.53 | 447.07          |
+| 3     | FW-10SS | Flat washer M10, stainless | 37           | 12.08 | 446.96          |
+| 4     | TR-0372 | Threaded rod 3/8in, 6ft    | 7            | 62.86 | 440.02          |
+| 5     | CS-0375 | Concrete sleeve anchor 3/8 | 2            | 64.50 | 129.00          |
+| 6     | AB-0506 | Anchor bolt 1/2in x 6in    | 9            | 82.63 | 743.67          |
+| <hr/> |         |                            |              |       |                 |
+|       |         |                            | Subtotal     |       | 3,049.57        |
+|       |         |                            | Tax 8.25%    |       | 251.59          |
+|       |         |                            | <b>TOTAL</b> |       | <b>3,301.16</b> |

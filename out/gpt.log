@@ -1,0 +1,23 @@
+  PO00000_150           5.6s     751 chars
+  PO00000_300           4.9s     750 chars
+  PO00001_150           8.3s     751 chars
+  PO00001_300           4.8s     713 chars
+  PO00002_150           5.7s     566 chars
+  PO00002_300           3.9s     529 chars
+  PO00003_150           4.8s     551 chars
+  PO00003_300           5.0s     518 chars
+  PO00004_150           7.7s     612 chars
+  PO00004_300          10.1s     573 chars
+  PO00005_150           5.3s     557 chars
+  PO00005_300           4.2s     556 chars
+  PO00006_150           6.8s     560 chars
+  PO00006_300          13.7s     544 chars
+  PO00007_150           6.7s     661 chars
+  PO00007_300          18.3s     587 chars
+  PO00008_150           4.9s     686 chars
+  PO00008_300           8.1s     648 chars
+  PO00009_150          17.4s     695 chars
+  PO00009_300           6.7s     651 chars
+
+gpt: 20 pages in 152.7s -> out/gpt
+tokens: 32064 in, 7046 out over 20 page(s)  ->  out/gpt/usage.json

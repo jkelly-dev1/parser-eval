@@ -1,0 +1,4325 @@
+{
+  "n": 10,
+  "dpis": [
+    150,
+    300
+  ],
+  "render_revision": "2026-08-12-terms-wrap",
+  "note": "Synthetic purchase orders, image-only PDFs (no text layer). Ground truth is the string printed on the page.",
+  "documents": [
+    {
+      "doc_id": "PO00000",
+      "files": {
+        "150": {
+          "png": "PO00000_150.png",
+          "pdf": "PO00000_150.pdf",
+          "width": 1228,
+          "height": 414,
+          "regions": {
+            "po_number": [
+              72,
+              122,
+              117,
+              129
+            ],
+            "order_date": [
+              637,
+              122,
+              690,
+              129
+            ],
+            "vendor": [
+              72,
+              155,
+              147,
+              165
+            ],
+            "due_date": [
+              637,
+              156,
+              690,
+              163
+            ],
+            "terms": [
+              72,
+              190,
+              125,
+              197
+            ],
+            "currency": [
+              637,
+              190,
+              656,
+              197
+            ],
+            "line_items[0].row": [
+              72,
+              250,
+              78,
+              257
+            ],
+            "line_items[0].sku": [
+              112,
+              250,
+              150,
+              257
+            ],
+            "line_items[0].description": [
+              202,
+              249,
+              318,
+              259
+            ],
+            "line_items[0].quantity": [
+              462,
+              250,
+              474,
+              257
+            ],
+            "line_items[0].unit_price_cents": [
+              532,
+              250,
+              558,
+              257
+            ],
+            "line_items[0].amount_cents": [
+              632,
+              250,
+              672,
+              258
+            ],
+            "line_items[1].row": [
+              72,
+              264,
+              78,
+              271
+            ],
+            "line_items[1].sku": [
+              112,
+              264,
+              150,
+              271
+            ],
+            "line_items[1].description": [
+              202,
+              263,
+              322,
+              271
+            ],
+            "line_items[1].quantity": [
+              462,
+              264,
+              468,
+              271
+            ],
+            "line_items[1].unit_price_cents": [
+              532,
+              264,
+              558,
+              271
+            ],
+            "line_items[1].amount_cents": [
+              632,
+              264,
+              664,
+              271
+            ],
+            "line_items[2].row": [
+              72,
+              278,
+              78,
+              285
+            ],
+            "line_items[2].sku": [
+              112,
+              278,
+              151,
+              285
+            ],
+            "line_items[2].description": [
+              202,
+              277,
+              289,
+              287
+            ],
+            "line_items[2].quantity": [
+              462,
+              278,
+              473,
+              285
+            ],
+            "line_items[2].unit_price_cents": [
+              532,
+              278,
+              552,
+              285
+            ],
+            "line_items[2].amount_cents": [
+              632,
+              278,
+              663,
+              285
+            ],
+            "line_items[3].row": [
+              72,
+              292,
+              78,
+              299
+            ],
+            "line_items[3].sku": [
+              112,
+              292,
+              157,
+              299
+            ],
+            "line_items[3].description": [
+              202,
+              291,
+              302,
+              300
+            ],
+            "line_items[3].quantity": [
+              462,
+              292,
+              473,
+              299
+            ],
+            "line_items[3].unit_price_cents": [
+              532,
+              292,
+              558,
+              299
+            ],
+            "line_items[3].amount_cents": [
+              632,
+              292,
+              664,
+              299
+            ],
+            "line_items[4].row": [
+              72,
+              306,
+              78,
+              313
+            ],
+            "line_items[4].sku": [
+              112,
+              306,
+              151,
+              313
+            ],
+            "line_items[4].description": [
+              202,
+              305,
+              304,
+              313
+            ],
+            "line_items[4].quantity": [
+              462,
+              306,
+              474,
+              313
+            ],
+            "line_items[4].unit_price_cents": [
+              532,
+              306,
+              558,
+              313
+            ],
+            "line_items[4].amount_cents": [
+              632,
+              306,
+              664,
+              313
+            ],
+            "line_items[5].row": [
+              72,
+              320,
+              78,
+              327
+            ],
+            "line_items[5].sku": [
+              112,
+              320,
+              150,
+              327
+            ],
+            "line_items[5].description": [
+              202,
+              319,
+              326,
+              327
+            ],
+            "line_items[5].quantity": [
+              462,
+              320,
+              474,
+              327
+            ],
+            "line_items[5].unit_price_cents": [
+              532,
+              320,
+              558,
+              327
+            ],
+            "line_items[5].amount_cents": [
+              632,
+              320,
+              672,
+              328
+            ],
+            "subtotal_cents": [
+              632,
+              354,
+              672,
+              362
+            ],
+            "tax_cents": [
+              632,
+              368,
+              664,
+              375
+            ],
+            "total_cents": [
+              632,
+              382,
+              676,
+              390
+            ]
+          }
+        },
+        "300": {
+          "png": "PO00000_300.png",
+          "pdf": "PO00000_300.pdf",
+          "width": 2455,
+          "height": 828,
+          "regions": {
+            "po_number": [
+              144,
+              244,
+              233,
+              257
+            ],
+            "order_date": [
+              1275,
+              244,
+              1380,
+              257
+            ],
+            "vendor": [
+              144,
+              311,
+              294,
+              329
+            ],
+            "due_date": [
+              1275,
+              312,
+              1380,
+              325
+            ],
+            "terms": [
+              144,
+              380,
+              250,
+              395
+            ],
+            "currency": [
+              1275,
+              380,
+              1313,
+              393
+            ],
+            "line_items[0].row": [
+              144,
+              500,
+              155,
+              513
+            ],
+            "line_items[0].sku": [
+              224,
+              500,
+              300,
+              513
+            ],
+            "line_items[0].description": [
+              404,
+              499,
+              635,
+              517
+            ],
+            "line_items[0].quantity": [
+              924,
+              500,
+              947,
+              513
+            ],
+            "line_items[0].unit_price_cents": [
+              1064,
+              500,
+              1116,
+              513
+            ],
+            "line_items[0].amount_cents": [
+              1264,
+              500,
+              1344,
+              515
+            ],
+            "line_items[1].row": [
+              144,
+              528,
+              155,
+              541
+            ],
+            "line_items[1].sku": [
+              224,
+              528,
+              299,
+              541
+            ],
+            "line_items[1].description": [
+              404,
+              527,
+              645,
+              541
+            ],
+            "line_items[1].quantity": [
+              924,
+              528,
+              935,
+              541
+            ],
+            "line_items[1].unit_price_cents": [
+              1064,
+              528,
+              1116,
+              541
+            ],
+            "line_items[1].amount_cents": [
+              1264,
+              528,
+              1327,
+              541
+            ],
+            "line_items[2].row": [
+              144,
+              556,
+              155,
+              569
+            ],
+            "line_items[2].sku": [
+              224,
+              556,
+              302,
+              569
+            ],
+            "line_items[2].description": [
+              404,
+              555,
+              577,
+              573
+            ],
+            "line_items[2].quantity": [
+              924,
+              556,
+              947,
+              569
+            ],
+            "line_items[2].unit_price_cents": [
+              1064,
+              556,
+              1104,
+              569
+            ],
+            "line_items[2].amount_cents": [
+              1264,
+              556,
+              1327,
+              569
+            ],
+            "line_items[3].row": [
+              144,
+              584,
+              155,
+              597
+            ],
+            "line_items[3].sku": [
+              224,
+              584,
+              315,
+              597
+            ],
+            "line_items[3].description": [
+              404,
+              583,
+              604,
+              599
+            ],
+            "line_items[3].quantity": [
+              924,
+              584,
+              947,
+              597
+            ],
+            "line_items[3].unit_price_cents": [
+              1064,
+              584,
+              1116,
+              597
+            ],
+            "line_items[3].amount_cents": [
+              1264,
+              584,
+              1327,
+              597
+            ],
+            "line_items[4].row": [
+              144,
+              612,
+              155,
+              625
+            ],
+            "line_items[4].sku": [
+              224,
+              612,
+              301,
+              625
+            ],
+            "line_items[4].description": [
+              404,
+              611,
+              609,
+              627
+            ],
+            "line_items[4].quantity": [
+              924,
+              612,
+              947,
+              625
+            ],
+            "line_items[4].unit_price_cents": [
+              1064,
+              612,
+              1116,
+              625
+            ],
+            "line_items[4].amount_cents": [
+              1264,
+              612,
+              1327,
+              625
+            ],
+            "line_items[5].row": [
+              144,
+              640,
+              155,
+              653
+            ],
+            "line_items[5].sku": [
+              224,
+              640,
+              300,
+              653
+            ],
+            "line_items[5].description": [
+              404,
+              639,
+              652,
+              655
+            ],
+            "line_items[5].quantity": [
+              924,
+              640,
+              947,
+              653
+            ],
+            "line_items[5].unit_price_cents": [
+              1064,
+              640,
+              1116,
+              653
+            ],
+            "line_items[5].amount_cents": [
+              1264,
+              640,
+              1344,
+              655
+            ],
+            "subtotal_cents": [
+              1264,
+              708,
+              1344,
+              723
+            ],
+            "tax_cents": [
+              1264,
+              736,
+              1327,
+              749
+            ],
+            "total_cents": [
+              1264,
+              764,
+              1353,
+              780
+            ]
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "PO00001",
+      "files": {
+        "150": {
+          "png": "PO00001_150.png",
+          "pdf": "PO00001_150.pdf",
+          "width": 1228,
+          "height": 414,
+          "regions": {
+            "po_number": [
+              72,
+              122,
+              117,
+              129
+            ],
+            "order_date": [
+              637,
+              122,
+              690,
+              129
+            ],
+            "vendor": [
+              72,
+              155,
+              153,
+              165
+            ],
+            "due_date": [
+              637,
+              156,
+              690,
+              163
+            ],
+            "terms": [
+              72,
+              190,
+              125,
+              197
+            ],
+            "currency": [
+              637,
+              190,
+              656,
+              197
+            ],
+            "line_items[0].row": [
+              72,
+              250,
+              78,
+              257
+            ],
+            "line_items[0].sku": [
+              112,
+              250,
+              151,
+              257
+            ],
+            "line_items[0].description": [
+              202,
+              249,
+              303,
+              259
+            ],
+            "line_items[0].quantity": [
+              462,
+              250,
+              468,
+              257
+            ],
+            "line_items[0].unit_price_cents": [
+              532,
+              250,
+              558,
+              257
+            ],
+            "line_items[0].amount_cents": [
+              632,
+              250,
+              663,
+              257
+            ],
+            "line_items[1].row": [
+              72,
+              264,
+              78,
+              271
+            ],
+            "line_items[1].sku": [
+              112,
+              264,
+              150,
+              271
+            ],
+            "line_items[1].description": [
+              202,
+              263,
+              318,
+              273
+            ],
+            "line_items[1].quantity": [
+              462,
+              264,
+              474,
+              271
+            ],
+            "line_items[1].unit_price_cents": [
+              532,
+              264,
+              558,
+              271
+            ],
+            "line_items[1].amount_cents": [
+              632,
+              264,
+              663,
+              271
+            ],
+            "line_items[2].row": [
+              72,
+              278,
+              78,
+              285
+            ],
+            "line_items[2].sku": [
+              112,
+              278,
+              152,
+              285
+            ],
+            "line_items[2].description": [
+              202,
+              277,
+              322,
+              286
+            ],
+            "line_items[2].quantity": [
+              462,
+              278,
+              473,
+              285
+            ],
+            "line_items[2].unit_price_cents": [
+              532,
+              278,
+              558,
+              285
+            ],
+            "line_items[2].amount_cents": [
+              632,
+              278,
+              664,
+              285
+            ],
+            "line_items[3].row": [
+              72,
+              292,
+              78,
+              299
+            ],
+            "line_items[3].sku": [
+              111,
+              292,
+              150,
+              299
+            ],
+            "line_items[3].description": [
+              201,
+              291,
+              306,
+              300
+            ],
+            "line_items[3].quantity": [
+              462,
+              292,
+              468,
+              299
+            ],
+            "line_items[3].unit_price_cents": [
+              532,
+              292,
+              558,
+              299
+            ],
+            "line_items[3].amount_cents": [
+              632,
+              292,
+              663,
+              299
+            ],
+            "line_items[4].row": [
+              72,
+              306,
+              78,
+              313
+            ],
+            "line_items[4].sku": [
+              112,
+              306,
+              150,
+              313
+            ],
+            "line_items[4].description": [
+              202,
+              305,
+              326,
+              313
+            ],
+            "line_items[4].quantity": [
+              462,
+              306,
+              468,
+              313
+            ],
+            "line_items[4].unit_price_cents": [
+              532,
+              306,
+              558,
+              313
+            ],
+            "line_items[4].amount_cents": [
+              632,
+              306,
+              664,
+              313
+            ],
+            "line_items[5].row": [
+              72,
+              320,
+              78,
+              327
+            ],
+            "line_items[5].sku": [
+              112,
+              320,
+              151,
+              327
+            ],
+            "line_items[5].description": [
+              202,
+              319,
+              304,
+              327
+            ],
+            "line_items[5].quantity": [
+              462,
+              320,
+              468,
+              327
+            ],
+            "line_items[5].unit_price_cents": [
+              532,
+              320,
+              558,
+              327
+            ],
+            "line_items[5].amount_cents": [
+              632,
+              320,
+              663,
+              327
+            ],
+            "subtotal_cents": [
+              632,
+              354,
+              672,
+              362
+            ],
+            "tax_cents": [
+              632,
+              368,
+              664,
+              375
+            ],
+            "total_cents": [
+              632,
+              382,
+              676,
+              390
+            ]
+          }
+        },
+        "300": {
+          "png": "PO00001_300.png",
+          "pdf": "PO00001_300.pdf",
+          "width": 2455,
+          "height": 828,
+          "regions": {
+            "po_number": [
+              144,
+              244,
+              233,
+              257
+            ],
+            "order_date": [
+              1275,
+              244,
+              1380,
+              257
+            ],
+            "vendor": [
+              144,
+              311,
+              307,
+              329
+            ],
+            "due_date": [
+              1275,
+              312,
+              1380,
+              325
+            ],
+            "terms": [
+              144,
+              380,
+              250,
+              395
+            ],
+            "currency": [
+              1275,
+              380,
+              1313,
+              393
+            ],
+            "line_items[0].row": [
+              144,
+              500,
+              155,
+              513
+            ],
+            "line_items[0].sku": [
+              224,
+              500,
+              302,
+              513
+            ],
+            "line_items[0].description": [
+              404,
+              499,
+              607,
+              517
+            ],
+            "line_items[0].quantity": [
+              924,
+              500,
+              935,
+              513
+            ],
+            "line_items[0].unit_price_cents": [
+              1064,
+              500,
+              1116,
+              513
+            ],
+            "line_items[0].amount_cents": [
+              1264,
+              500,
+              1327,
+              513
+            ],
+            "line_items[1].row": [
+              144,
+              528,
+              155,
+              541
+            ],
+            "line_items[1].sku": [
+              224,
+              528,
+              300,
+              541
+            ],
+            "line_items[1].description": [
+              404,
+              527,
+              635,
+              545
+            ],
+            "line_items[1].quantity": [
+              924,
+              528,
+              947,
+              541
+            ],
+            "line_items[1].unit_price_cents": [
+              1064,
+              528,
+              1116,
+              541
+            ],
+            "line_items[1].amount_cents": [
+              1264,
+              528,
+              1327,
+              541
+            ],
+            "line_items[2].row": [
+              144,
+              556,
+              155,
+              569
+            ],
+            "line_items[2].sku": [
+              224,
+              556,
+              304,
+              569
+            ],
+            "line_items[2].description": [
+              404,
+              555,
+              642,
+              571
+            ],
+            "line_items[2].quantity": [
+              924,
+              556,
+              947,
+              569
+            ],
+            "line_items[2].unit_price_cents": [
+              1064,
+              556,
+              1116,
+              569
+            ],
+            "line_items[2].amount_cents": [
+              1264,
+              556,
+              1327,
+              569
+            ],
+            "line_items[3].row": [
+              144,
+              584,
+              155,
+              597
+            ],
+            "line_items[3].sku": [
+              223,
+              584,
+              299,
+              597
+            ],
+            "line_items[3].description": [
+              403,
+              583,
+              612,
+              599
+            ],
+            "line_items[3].quantity": [
+              924,
+              584,
+              935,
+              597
+            ],
+            "line_items[3].unit_price_cents": [
+              1064,
+              584,
+              1116,
+              597
+            ],
+            "line_items[3].amount_cents": [
+              1264,
+              584,
+              1327,
+              597
+            ],
+            "line_items[4].row": [
+              144,
+              612,
+              155,
+              625
+            ],
+            "line_items[4].sku": [
+              224,
+              612,
+              300,
+              625
+            ],
+            "line_items[4].description": [
+              404,
+              611,
+              652,
+              627
+            ],
+            "line_items[4].quantity": [
+              924,
+              612,
+              935,
+              625
+            ],
+            "line_items[4].unit_price_cents": [
+              1064,
+              612,
+              1116,
+              625
+            ],
+            "line_items[4].amount_cents": [
+              1264,
+              612,
+              1327,
+              625
+            ],
+            "line_items[5].row": [
+              144,
+              640,
+              155,
+              653
+            ],
+            "line_items[5].sku": [
+              224,
+              640,
+              301,
+              653
+            ],
+            "line_items[5].description": [
+              404,
+              639,
+              609,
+              655
+            ],
+            "line_items[5].quantity": [
+              924,
+              640,
+              935,
+              653
+            ],
+            "line_items[5].unit_price_cents": [
+              1064,
+              640,
+              1116,
+              653
+            ],
+            "line_items[5].amount_cents": [
+              1264,
+              640,
+              1327,
+              653
+            ],
+            "subtotal_cents": [
+              1264,
+              708,
+              1344,
+              723
+            ],
+            "tax_cents": [
+              1264,
+              736,
+              1327,
+              749
+            ],
+            "total_cents": [
+              1264,
+              764,
+              1353,
+              780
+            ]
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "PO00002",
+      "files": {
+        "150": {
+          "png": "PO00002_150.png",
+          "pdf": "PO00002_150.pdf",
+          "width": 1228,
+          "height": 372,
+          "regions": {
+            "po_number": [
+              72,
+              122,
+              117,
+              129
+            ],
+            "order_date": [
+              637,
+              122,
+              689,
+              129
+            ],
+            "vendor": [
+              72,
+              155,
+              164,
+              163
+            ],
+            "due_date": [
+              637,
+              156,
+              689,
+              163
+            ],
+            "terms": [
+              72,
+              190,
+              125,
+              197
+            ],
+            "currency": [
+              637,
+              190,
+              656,
+              197
+            ],
+            "line_items[0].row": [
+              72,
+              250,
+              78,
+              257
+            ],
+            "line_items[0].sku": [
+              112,
+              250,
+              157,
+              257
+            ],
+            "line_items[0].description": [
+              202,
+              249,
+              302,
+              258
+            ],
+            "line_items[0].quantity": [
+              462,
+              250,
+              474,
+              257
+            ],
+            "line_items[0].unit_price_cents": [
+              532,
+              250,
+              558,
+              257
+            ],
+            "line_items[0].amount_cents": [
+              632,
+              250,
+              672,
+              258
+            ],
+            "line_items[1].row": [
+              72,
+              264,
+              78,
+              271
+            ],
+            "line_items[1].sku": [
+              112,
+              264,
+              150,
+              271
+            ],
+            "line_items[1].description": [
+              202,
+              263,
+              322,
+              271
+            ],
+            "line_items[1].quantity": [
+              462,
+              264,
+              473,
+              271
+            ],
+            "line_items[1].unit_price_cents": [
+              532,
+              264,
+              558,
+              271
+            ],
+            "line_items[1].amount_cents": [
+              632,
+              264,
+              672,
+              272
+            ],
+            "line_items[2].row": [
+              72,
+              278,
+              78,
+              285
+            ],
+            "line_items[2].sku": [
+              112,
+              278,
+              151,
+              285
+            ],
+            "line_items[2].description": [
+              202,
+              277,
+              304,
+              285
+            ],
+            "line_items[2].quantity": [
+              462,
+              278,
+              474,
+              285
+            ],
+            "line_items[2].unit_price_cents": [
+              532,
+              278,
+              563,
+              285
+            ],
+            "line_items[2].amount_cents": [
+              632,
+              278,
+              672,
+              286
+            ],
+            "subtotal_cents": [
+              632,
+              312,
+              672,
+              320
+            ],
+            "tax_cents": [
+              632,
+              326,
+              663,
+              333
+            ],
+            "total_cents": [
+              632,
+              340,
+              676,
+              348
+            ]
+          }
+        },
+        "300": {
+          "png": "PO00002_300.png",
+          "pdf": "PO00002_300.pdf",
+          "width": 2455,
+          "height": 744,
+          "regions": {
+            "po_number": [
+              144,
+              244,
+              233,
+              257
+            ],
+            "order_date": [
+              1275,
+              244,
+              1380,
+              257
+            ],
+            "vendor": [
+              144,
+              311,
+              327,
+              325
+            ],
+            "due_date": [
+              1275,
+              312,
+              1380,
+              325
+            ],
+            "terms": [
+              144,
+              380,
+              250,
+              395
+            ],
+            "currency": [
+              1275,
+              380,
+              1313,
+              393
+            ],
+            "line_items[0].row": [
+              144,
+              500,
+              155,
+              513
+            ],
+            "line_items[0].sku": [
+              224,
+              500,
+              315,
+              513
+            ],
+            "line_items[0].description": [
+              404,
+              499,
+              604,
+              515
+            ],
+            "line_items[0].quantity": [
+              924,
+              500,
+              947,
+              513
+            ],
+            "line_items[0].unit_price_cents": [
+              1064,
+              500,
+              1116,
+              513
+            ],
+            "line_items[0].amount_cents": [
+              1264,
+              500,
+              1344,
+              515
+            ],
+            "line_items[1].row": [
+              144,
+              528,
+              155,
+              541
+            ],
+            "line_items[1].sku": [
+              224,
+              528,
+              299,
+              541
+            ],
+            "line_items[1].description": [
+              404,
+              527,
+              645,
+              541
+            ],
+            "line_items[1].quantity": [
+              924,
+              528,
+              947,
+              541
+            ],
+            "line_items[1].unit_price_cents": [
+              1064,
+              528,
+              1116,
+              541
+            ],
+            "line_items[1].amount_cents": [
+              1264,
+              528,
+              1344,
+              543
+            ],
+            "line_items[2].row": [
+              144,
+              556,
+              155,
+              569
+            ],
+            "line_items[2].sku": [
+              224,
+              556,
+              301,
+              569
+            ],
+            "line_items[2].description": [
+              404,
+              555,
+              609,
+              571
+            ],
+            "line_items[2].quantity": [
+              924,
+              556,
+              947,
+              569
+            ],
+            "line_items[2].unit_price_cents": [
+              1064,
+              556,
+              1127,
+              569
+            ],
+            "line_items[2].amount_cents": [
+              1264,
+              556,
+              1344,
+              571
+            ],
+            "subtotal_cents": [
+              1264,
+              624,
+              1344,
+              639
+            ],
+            "tax_cents": [
+              1264,
+              652,
+              1327,
+              665
+            ],
+            "total_cents": [
+              1264,
+              680,
+              1353,
+              696
+            ]
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "PO00003",
+      "files": {
+        "150": {
+          "png": "PO00003_150.png",
+          "pdf": "PO00003_150.pdf",
+          "width": 1228,
+          "height": 372,
+          "regions": {
+            "po_number": [
+              72,
+              122,
+              117,
+              129
+            ],
+            "order_date": [
+              637,
+              122,
+              690,
+              129
+            ],
+            "vendor": [
+              72,
+              155,
+              155,
+              163
+            ],
+            "due_date": [
+              637,
+              156,
+              690,
+              163
+            ],
+            "terms": [
+              72,
+              190,
+              102,
+              197
+            ],
+            "currency": [
+              637,
+              190,
+              656,
+              197
+            ],
+            "line_items[0].row": [
+              72,
+              250,
+              78,
+              257
+            ],
+            "line_items[0].sku": [
+              112,
+              250,
+              150,
+              257
+            ],
+            "line_items[0].description": [
+              202,
+              249,
+              326,
+              257
+            ],
+            "line_items[0].quantity": [
+              462,
+              250,
+              474,
+              257
+            ],
+            "line_items[0].unit_price_cents": [
+              532,
+              250,
+              558,
+              257
+            ],
+            "line_items[0].amount_cents": [
+              632,
+              250,
+              664,
+              257
+            ],
+            "line_items[1].row": [
+              72,
+              264,
+              78,
+              271
+            ],
+            "line_items[1].sku": [
+              112,
+              264,
+              151,
+              271
+            ],
+            "line_items[1].description": [
+              202,
+              263,
+              289,
+              273
+            ],
+            "line_items[1].quantity": [
+              462,
+              264,
+              473,
+              271
+            ],
+            "line_items[1].unit_price_cents": [
+              532,
+              264,
+              558,
+              271
+            ],
+            "line_items[1].amount_cents": [
+              632,
+              264,
+              672,
+              272
+            ],
+            "line_items[2].row": [
+              72,
+              278,
+              78,
+              285
+            ],
+            "line_items[2].sku": [
+              112,
+              278,
+              150,
+              285
+            ],
+            "line_items[2].description": [
+              202,
+              277,
+              322,
+              285
+            ],
+            "line_items[2].quantity": [
+              462,
+              278,
+              473,
+              285
+            ],
+            "line_items[2].unit_price_cents": [
+              532,
+              278,
+              558,
+              285
+            ],
+            "line_items[2].amount_cents": [
+              632,
+              278,
+              672,
+              286
+            ],
+            "subtotal_cents": [
+              632,
+              312,
+              672,
+              320
+            ],
+            "tax_cents": [
+              632,
+              326,
+              664,
+              333
+            ],
+            "total_cents": [
+              632,
+              340,
+              676,
+              348
+            ]
+          }
+        },
+        "300": {
+          "png": "PO00003_300.png",
+          "pdf": "PO00003_300.pdf",
+          "width": 2455,
+          "height": 744,
+          "regions": {
+            "po_number": [
+              144,
+              244,
+              233,
+              257
+            ],
+            "order_date": [
+              1275,
+              244,
+              1380,
+              257
+            ],
+            "vendor": [
+              144,
+              311,
+              311,
+              325
+            ],
+            "due_date": [
+              1275,
+              312,
+              1380,
+              325
+            ],
+            "terms": [
+              144,
+              380,
+              204,
+              393
+            ],
+            "currency": [
+              1275,
+              380,
+              1313,
+              393
+            ],
+            "line_items[0].row": [
+              144,
+              500,
+              155,
+              513
+            ],
+            "line_items[0].sku": [
+              224,
+              500,
+              300,
+              513
+            ],
+            "line_items[0].description": [
+              404,
+              499,
+              652,
+              515
+            ],
+            "line_items[0].quantity": [
+              924,
+              500,
+              947,
+              513
+            ],
+            "line_items[0].unit_price_cents": [
+              1064,
+              500,
+              1116,
+              513
+            ],
+            "line_items[0].amount_cents": [
+              1264,
+              500,
+              1327,
+              513
+            ],
+            "line_items[1].row": [
+              144,
+              528,
+              155,
+              541
+            ],
+            "line_items[1].sku": [
+              224,
+              528,
+              302,
+              541
+            ],
+            "line_items[1].description": [
+              404,
+              527,
+              577,
+              545
+            ],
+            "line_items[1].quantity": [
+              924,
+              528,
+              947,
+              541
+            ],
+            "line_items[1].unit_price_cents": [
+              1064,
+              528,
+              1116,
+              541
+            ],
+            "line_items[1].amount_cents": [
+              1264,
+              528,
+              1344,
+              543
+            ],
+            "line_items[2].row": [
+              144,
+              556,
+              155,
+              569
+            ],
+            "line_items[2].sku": [
+              224,
+              556,
+              299,
+              569
+            ],
+            "line_items[2].description": [
+              404,
+              555,
+              645,
+              569
+            ],
+            "line_items[2].quantity": [
+              924,
+              556,
+              947,
+              569
+            ],
+            "line_items[2].unit_price_cents": [
+              1064,
+              556,
+              1116,
+              569
+            ],
+            "line_items[2].amount_cents": [
+              1264,
+              556,
+              1344,
+              571
+            ],
+            "subtotal_cents": [
+              1264,
+              624,
+              1344,
+              639
+            ],
+            "tax_cents": [
+              1264,
+              652,
+              1327,
+              665
+            ],
+            "total_cents": [
+              1264,
+              680,
+              1353,
+              696
+            ]
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "PO00004",
+      "files": {
+        "150": {
+          "png": "PO00004_150.png",
+          "pdf": "PO00004_150.pdf",
+          "width": 1228,
+          "height": 386,
+          "regions": {
+            "po_number": [
+              72,
+              122,
+              117,
+              129
+            ],
+            "order_date": [
+              637,
+              122,
+              689,
+              129
+            ],
+            "vendor": [
+              72,
+              155,
+              169,
+              165
+            ],
+            "due_date": [
+              637,
+              156,
+              689,
+              163
+            ],
+            "terms": [
+              72,
+              190,
+              102,
+              197
+            ],
+            "currency": [
+              637,
+              190,
+              656,
+              197
+            ],
+            "line_items[0].row": [
+              72,
+              250,
+              78,
+              257
+            ],
+            "line_items[0].sku": [
+              112,
+              250,
+              151,
+              257
+            ],
+            "line_items[0].description": [
+              202,
+              249,
+              289,
+              259
+            ],
+            "line_items[0].quantity": [
+              462,
+              250,
+              468,
+              257
+            ],
+            "line_items[0].unit_price_cents": [
+              532,
+              250,
+              558,
+              257
+            ],
+            "line_items[0].amount_cents": [
+              632,
+              250,
+              664,
+              257
+            ],
+            "line_items[1].row": [
+              72,
+              264,
+              78,
+              271
+            ],
+            "line_items[1].sku": [
+              112,
+              264,
+              157,
+              271
+            ],
+            "line_items[1].description": [
+              202,
+              263,
+              302,
+              272
+            ],
+            "line_items[1].quantity": [
+              462,
+              264,
+              473,
+              271
+            ],
+            "line_items[1].unit_price_cents": [
+              532,
+              264,
+              558,
+              271
+            ],
+            "line_items[1].amount_cents": [
+              632,
+              264,
+              663,
+              271
+            ],
+            "line_items[2].row": [
+              72,
+              278,
+              78,
+              285
+            ],
+            "line_items[2].sku": [
+              112,
+              278,
+              151,
+              285
+            ],
+            "line_items[2].description": [
+              202,
+              277,
+              303,
+              287
+            ],
+            "line_items[2].quantity": [
+              462,
+              278,
+              474,
+              285
+            ],
+            "line_items[2].unit_price_cents": [
+              532,
+              278,
+              558,
+              285
+            ],
+            "line_items[2].amount_cents": [
+              632,
+              278,
+              664,
+              285
+            ],
+            "line_items[3].row": [
+              72,
+              292,
+              78,
+              299
+            ],
+            "line_items[3].sku": [
+              112,
+              292,
+              151,
+              299
+            ],
+            "line_items[3].description": [
+              202,
+              291,
+              304,
+              299
+            ],
+            "line_items[3].quantity": [
+              462,
+              292,
+              474,
+              299
+            ],
+            "line_items[3].unit_price_cents": [
+              532,
+              292,
+              558,
+              299
+            ],
+            "line_items[3].amount_cents": [
+              632,
+              292,
+              672,
+              300
+            ],
+            "subtotal_cents": [
+              632,
+              326,
+              672,
+              334
+            ],
+            "tax_cents": [
+              632,
+              340,
+              663,
+              347
+            ],
+            "total_cents": [
+              632,
+              354,
+              676,
+              362
+            ]
+          }
+        },
+        "300": {
+          "png": "PO00004_300.png",
+          "pdf": "PO00004_300.pdf",
+          "width": 2455,
+          "height": 772,
+          "regions": {
+            "po_number": [
+              144,
+              244,
+              233,
+              257
+            ],
+            "order_date": [
+              1275,
+              244,
+              1380,
+              257
+            ],
+            "vendor": [
+              144,
+              311,
+              338,
+              329
+            ],
+            "due_date": [
+              1275,
+              312,
+              1380,
+              325
+            ],
+            "terms": [
+              144,
+              380,
+              204,
+              393
+            ],
+            "currency": [
+              1275,
+              380,
+              1313,
+              393
+            ],
+            "line_items[0].row": [
+              144,
+              500,
+              155,
+              513
+            ],
+            "line_items[0].sku": [
+              224,
+              500,
+              302,
+              513
+            ],
+            "line_items[0].description": [
+              404,
+              499,
+              577,
+              517
+            ],
+            "line_items[0].quantity": [
+              924,
+              500,
+              935,
+              513
+            ],
+            "line_items[0].unit_price_cents": [
+              1064,
+              500,
+              1116,
+              513
+            ],
+            "line_items[0].amount_cents": [
+              1264,
+              500,
+              1327,
+              513
+            ],
+            "line_items[1].row": [
+              144,
+              528,
+              155,
+              541
+            ],
+            "line_items[1].sku": [
+              224,
+              528,
+              315,
+              541
+            ],
+            "line_items[1].description": [
+              404,
+              527,
+              604,
+              543
+            ],
+            "line_items[1].quantity": [
+              924,
+              528,
+              947,
+              541
+            ],
+            "line_items[1].unit_price_cents": [
+              1064,
+              528,
+              1116,
+              541
+            ],
+            "line_items[1].amount_cents": [
+              1264,
+              528,
+              1327,
+              541
+            ],
+            "line_items[2].row": [
+              144,
+              556,
+              155,
+              569
+            ],
+            "line_items[2].sku": [
+              224,
+              556,
+              302,
+              569
+            ],
+            "line_items[2].description": [
+              404,
+              555,
+              607,
+              573
+            ],
+            "line_items[2].quantity": [
+              924,
+              556,
+              947,
+              569
+            ],
+            "line_items[2].unit_price_cents": [
+              1064,
+              556,
+              1116,
+              569
+            ],
+            "line_items[2].amount_cents": [
+              1264,
+              556,
+              1327,
+              569
+            ],
+            "line_items[3].row": [
+              144,
+              584,
+              155,
+              597
+            ],
+            "line_items[3].sku": [
+              224,
+              584,
+              301,
+              597
+            ],
+            "line_items[3].description": [
+              404,
+              583,
+              609,
+              599
+            ],
+            "line_items[3].quantity": [
+              924,
+              584,
+              947,
+              597
+            ],
+            "line_items[3].unit_price_cents": [
+              1064,
+              584,
+              1116,
+              597
+            ],
+            "line_items[3].amount_cents": [
+              1264,
+              584,
+              1344,
+              599
+            ],
+            "subtotal_cents": [
+              1264,
+              652,
+              1344,
+              667
+            ],
+            "tax_cents": [
+              1264,
+              680,
+              1327,
+              693
+            ],
+            "total_cents": [
+              1264,
+              708,
+              1353,
+              724
+            ]
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "PO00005",
+      "files": {
+        "150": {
+          "png": "PO00005_150.png",
+          "pdf": "PO00005_150.pdf",
+          "width": 1228,
+          "height": 372,
+          "regions": {
+            "po_number": [
+              72,
+              122,
+              117,
+              129
+            ],
+            "order_date": [
+              637,
+              122,
+              689,
+              129
+            ],
+            "vendor": [
+              72,
+              155,
+              159,
+              165
+            ],
+            "due_date": [
+              637,
+              156,
+              689,
+              163
+            ],
+            "terms": [
+              72,
+              190,
+              102,
+              197
+            ],
+            "currency": [
+              637,
+              190,
+              656,
+              197
+            ],
+            "line_items[0].row": [
+              72,
+              250,
+              78,
+              257
+            ],
+            "line_items[0].sku": [
+              112,
+              250,
+              150,
+              257
+            ],
+            "line_items[0].description": [
+              202,
+              249,
+              326,
+              257
+            ],
+            "line_items[0].quantity": [
+              462,
+              250,
+              474,
+              257
+            ],
+            "line_items[0].unit_price_cents": [
+              532,
+              250,
+              558,
+              257
+            ],
+            "line_items[0].amount_cents": [
+              632,
+              250,
+              672,
+              258
+            ],
+            "line_items[1].row": [
+              72,
+              264,
+              78,
+              271
+            ],
+            "line_items[1].sku": [
+              111,
+              264,
+              150,
+              271
+            ],
+            "line_items[1].description": [
+              201,
+              263,
+              306,
+              272
+            ],
+            "line_items[1].quantity": [
+              462,
+              264,
+              473,
+              271
+            ],
+            "line_items[1].unit_price_cents": [
+              532,
+              264,
+              558,
+              271
+            ],
+            "line_items[1].amount_cents": [
+              632,
+              264,
+              663,
+              271
+            ],
+            "line_items[2].row": [
+              72,
+              278,
+              78,
+              285
+            ],
+            "line_items[2].sku": [
+              112,
+              278,
+              151,
+              285
+            ],
+            "line_items[2].description": [
+              202,
+              277,
+              303,
+              287
+            ],
+            "line_items[2].quantity": [
+              462,
+              278,
+              473,
+              285
+            ],
+            "line_items[2].unit_price_cents": [
+              532,
+              278,
+              558,
+              285
+            ],
+            "line_items[2].amount_cents": [
+              632,
+              278,
+              664,
+              285
+            ],
+            "subtotal_cents": [
+              632,
+              312,
+              672,
+              320
+            ],
+            "tax_cents": [
+              632,
+              326,
+              663,
+              333
+            ],
+            "total_cents": [
+              632,
+              340,
+              676,
+              348
+            ]
+          }
+        },
+        "300": {
+          "png": "PO00005_300.png",
+          "pdf": "PO00005_300.pdf",
+          "width": 2455,
+          "height": 744,
+          "regions": {
+            "po_number": [
+              144,
+              244,
+              233,
+              257
+            ],
+            "order_date": [
+              1275,
+              244,
+              1380,
+              257
+            ],
+            "vendor": [
+              144,
+              311,
+              318,
+              329
+            ],
+            "due_date": [
+              1275,
+              312,
+              1380,
+              325
+            ],
+            "terms": [
+              144,
+              380,
+              204,
+              393
+            ],
+            "currency": [
+              1275,
+              380,
+              1313,
+              393
+            ],
+            "line_items[0].row": [
+              144,
+              500,
+              155,
+              513
+            ],
+            "line_items[0].sku": [
+              224,
+              500,
+              300,
+              513
+            ],
+            "line_items[0].description": [
+              404,
+              499,
+              652,
+              515
+            ],
+            "line_items[0].quantity": [
+              924,
+              500,
+              947,
+              513
+            ],
+            "line_items[0].unit_price_cents": [
+              1064,
+              500,
+              1116,
+              513
+            ],
+            "line_items[0].amount_cents": [
+              1264,
+              500,
+              1344,
+              515
+            ],
+            "line_items[1].row": [
+              144,
+              528,
+              155,
+              541
+            ],
+            "line_items[1].sku": [
+              223,
+              528,
+              299,
+              541
+            ],
+            "line_items[1].description": [
+              403,
+              527,
+              612,
+              543
+            ],
+            "line_items[1].quantity": [
+              924,
+              528,
+              947,
+              541
+            ],
+            "line_items[1].unit_price_cents": [
+              1064,
+              528,
+              1116,
+              541
+            ],
+            "line_items[1].amount_cents": [
+              1264,
+              528,
+              1327,
+              541
+            ],
+            "line_items[2].row": [
+              144,
+              556,
+              155,
+              569
+            ],
+            "line_items[2].sku": [
+              224,
+              556,
+              302,
+              569
+            ],
+            "line_items[2].description": [
+              404,
+              555,
+              607,
+              573
+            ],
+            "line_items[2].quantity": [
+              924,
+              556,
+              947,
+              569
+            ],
+            "line_items[2].unit_price_cents": [
+              1064,
+              556,
+              1116,
+              569
+            ],
+            "line_items[2].amount_cents": [
+              1264,
+              556,
+              1327,
+              569
+            ],
+            "subtotal_cents": [
+              1264,
+              624,
+              1344,
+              639
+            ],
+            "tax_cents": [
+              1264,
+              652,
+              1327,
+              665
+            ],
+            "total_cents": [
+              1264,
+              680,
+              1353,
+              696
+            ]
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "PO00006",
+      "files": {
+        "150": {
+          "png": "PO00006_150.png",
+          "pdf": "PO00006_150.pdf",
+          "width": 1228,
+          "height": 372,
+          "regions": {
+            "po_number": [
+              72,
+              122,
+              117,
+              129
+            ],
+            "order_date": [
+              637,
+              122,
+              689,
+              129
+            ],
+            "vendor": [
+              72,
+              155,
+              156,
+              163
+            ],
+            "due_date": [
+              637,
+              156,
+              689,
+              163
+            ],
+            "terms": [
+              72,
+              190,
+              102,
+              197
+            ],
+            "currency": [
+              637,
+              190,
+              656,
+              197
+            ],
+            "line_items[0].row": [
+              72,
+              250,
+              78,
+              257
+            ],
+            "line_items[0].sku": [
+              112,
+              250,
+              151,
+              257
+            ],
+            "line_items[0].description": [
+              202,
+              249,
+              289,
+              259
+            ],
+            "line_items[0].quantity": [
+              462,
+              250,
+              474,
+              257
+            ],
+            "line_items[0].unit_price_cents": [
+              532,
+              250,
+              558,
+              257
+            ],
+            "line_items[0].amount_cents": [
+              632,
+              250,
+              672,
+              258
+            ],
+            "line_items[1].row": [
+              72,
+              264,
+              78,
+              271
+            ],
+            "line_items[1].sku": [
+              112,
+              264,
+              152,
+              271
+            ],
+            "line_items[1].description": [
+              202,
+              263,
+              322,
+              272
+            ],
+            "line_items[1].quantity": [
+              462,
+              264,
+              473,
+              271
+            ],
+            "line_items[1].unit_price_cents": [
+              532,
+              264,
+              558,
+              271
+            ],
+            "line_items[1].amount_cents": [
+              632,
+              264,
+              664,
+              271
+            ],
+            "line_items[2].row": [
+              72,
+              278,
+              78,
+              285
+            ],
+            "line_items[2].sku": [
+              112,
+              278,
+              150,
+              285
+            ],
+            "line_items[2].description": [
+              202,
+              277,
+              326,
+              285
+            ],
+            "line_items[2].quantity": [
+              462,
+              278,
+              474,
+              285
+            ],
+            "line_items[2].unit_price_cents": [
+              532,
+              278,
+              552,
+              285
+            ],
+            "line_items[2].amount_cents": [
+              632,
+              278,
+              663,
+              285
+            ],
+            "subtotal_cents": [
+              632,
+              312,
+              672,
+              320
+            ],
+            "tax_cents": [
+              632,
+              326,
+              664,
+              333
+            ],
+            "total_cents": [
+              632,
+              340,
+              676,
+              348
+            ]
+          }
+        },
+        "300": {
+          "png": "PO00006_300.png",
+          "pdf": "PO00006_300.pdf",
+          "width": 2455,
+          "height": 744,
+          "regions": {
+            "po_number": [
+              144,
+              244,
+              233,
+              257
+            ],
+            "order_date": [
+              1275,
+              244,
+              1380,
+              257
+            ],
+            "vendor": [
+              144,
+              311,
+              311,
+              325
+            ],
+            "due_date": [
+              1275,
+              312,
+              1380,
+              325
+            ],
+            "terms": [
+              144,
+              380,
+              204,
+              393
+            ],
+            "currency": [
+              1275,
+              380,
+              1313,
+              393
+            ],
+            "line_items[0].row": [
+              144,
+              500,
+              155,
+              513
+            ],
+            "line_items[0].sku": [
+              224,
+              500,
+              302,
+              513
+            ],
+            "line_items[0].description": [
+              404,
+              499,
+              577,
+              517
+            ],
+            "line_items[0].quantity": [
+              924,
+              500,
+              947,
+              513
+            ],
+            "line_items[0].unit_price_cents": [
+              1064,
+              500,
+              1116,
+              513
+            ],
+            "line_items[0].amount_cents": [
+              1264,
+              500,
+              1344,
+              515
+            ],
+            "line_items[1].row": [
+              144,
+              528,
+              155,
+              541
+            ],
+            "line_items[1].sku": [
+              224,
+              528,
+              304,
+              541
+            ],
+            "line_items[1].description": [
+              404,
+              527,
+              642,
+              543
+            ],
+            "line_items[1].quantity": [
+              924,
+              528,
+              947,
+              541
+            ],
+            "line_items[1].unit_price_cents": [
+              1064,
+              528,
+              1116,
+              541
+            ],
+            "line_items[1].amount_cents": [
+              1264,
+              528,
+              1327,
+              541
+            ],
+            "line_items[2].row": [
+              144,
+              556,
+              155,
+              569
+            ],
+            "line_items[2].sku": [
+              224,
+              556,
+              300,
+              569
+            ],
+            "line_items[2].description": [
+              404,
+              555,
+              652,
+              571
+            ],
+            "line_items[2].quantity": [
+              924,
+              556,
+              947,
+              569
+            ],
+            "line_items[2].unit_price_cents": [
+              1064,
+              556,
+              1104,
+              569
+            ],
+            "line_items[2].amount_cents": [
+              1264,
+              556,
+              1327,
+              569
+            ],
+            "subtotal_cents": [
+              1264,
+              624,
+              1344,
+              639
+            ],
+            "tax_cents": [
+              1264,
+              652,
+              1327,
+              665
+            ],
+            "total_cents": [
+              1264,
+              680,
+              1353,
+              696
+            ]
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "PO00007",
+      "files": {
+        "150": {
+          "png": "PO00007_150.png",
+          "pdf": "PO00007_150.pdf",
+          "width": 1228,
+          "height": 386,
+          "regions": {
+            "po_number": [
+              72,
+              122,
+              117,
+              129
+            ],
+            "order_date": [
+              637,
+              122,
+              690,
+              129
+            ],
+            "vendor": [
+              72,
+              155,
+              153,
+              165
+            ],
+            "due_date": [
+              637,
+              156,
+              690,
+              163
+            ],
+            "terms": [
+              72,
+              190,
+              125,
+              197
+            ],
+            "currency": [
+              637,
+              190,
+              656,
+              197
+            ],
+            "line_items[0].row": [
+              72,
+              250,
+              78,
+              257
+            ],
+            "line_items[0].sku": [
+              112,
+              250,
+              157,
+              257
+            ],
+            "line_items[0].description": [
+              202,
+              249,
+              302,
+              258
+            ],
+            "line_items[0].quantity": [
+              462,
+              250,
+              468,
+              257
+            ],
+            "line_items[0].unit_price_cents": [
+              532,
+              250,
+              558,
+              257
+            ],
+            "line_items[0].amount_cents": [
+              632,
+              250,
+              663,
+              257
+            ],
+            "line_items[1].row": [
+              72,
+              264,
+              78,
+              271
+            ],
+            "line_items[1].sku": [
+              112,
+              264,
+              152,
+              271
+            ],
+            "line_items[1].description": [
+              202,
+              263,
+              322,
+              272
+            ],
+            "line_items[1].quantity": [
+              462,
+              264,
+              474,
+              271
+            ],
+            "line_items[1].unit_price_cents": [
+              532,
+              264,
+              558,
+              271
+            ],
+            "line_items[1].amount_cents": [
+              632,
+              264,
+              664,
+              271
+            ],
+            "line_items[2].row": [
+              72,
+              278,
+              78,
+              285
+            ],
+            "line_items[2].sku": [
+              112,
+              278,
+              150,
+              285
+            ],
+            "line_items[2].description": [
+              202,
+              277,
+              322,
+              285
+            ],
+            "line_items[2].quantity": [
+              462,
+              278,
+              474,
+              285
+            ],
+            "line_items[2].unit_price_cents": [
+              532,
+              278,
+              558,
+              285
+            ],
+            "line_items[2].amount_cents": [
+              632,
+              278,
+              664,
+              285
+            ],
+            "line_items[3].row": [
+              72,
+              292,
+              78,
+              299
+            ],
+            "line_items[3].sku": [
+              112,
+              292,
+              151,
+              299
+            ],
+            "line_items[3].description": [
+              202,
+              291,
+              304,
+              299
+            ],
+            "line_items[3].quantity": [
+              462,
+              292,
+              474,
+              299
+            ],
+            "line_items[3].unit_price_cents": [
+              532,
+              292,
+              558,
+              299
+            ],
+            "line_items[3].amount_cents": [
+              632,
+              292,
+              672,
+              300
+            ],
+            "subtotal_cents": [
+              632,
+              326,
+              672,
+              334
+            ],
+            "tax_cents": [
+              632,
+              340,
+              664,
+              347
+            ],
+            "total_cents": [
+              632,
+              354,
+              676,
+              362
+            ]
+          }
+        },
+        "300": {
+          "png": "PO00007_300.png",
+          "pdf": "PO00007_300.pdf",
+          "width": 2455,
+          "height": 772,
+          "regions": {
+            "po_number": [
+              144,
+              244,
+              233,
+              257
+            ],
+            "order_date": [
+              1275,
+              244,
+              1380,
+              257
+            ],
+            "vendor": [
+              144,
+              311,
+              307,
+              329
+            ],
+            "due_date": [
+              1275,
+              312,
+              1380,
+              325
+            ],
+            "terms": [
+              144,
+              380,
+              250,
+              395
+            ],
+            "currency": [
+              1275,
+              380,
+              1313,
+              393
+            ],
+            "line_items[0].row": [
+              144,
+              500,
+              155,
+              513
+            ],
+            "line_items[0].sku": [
+              224,
+              500,
+              315,
+              513
+            ],
+            "line_items[0].description": [
+              404,
+              499,
+              604,
+              515
+            ],
+            "line_items[0].quantity": [
+              924,
+              500,
+              935,
+              513
+            ],
+            "line_items[0].unit_price_cents": [
+              1064,
+              500,
+              1116,
+              513
+            ],
+            "line_items[0].amount_cents": [
+              1264,
+              500,
+              1327,
+              513
+            ],
+            "line_items[1].row": [
+              144,
+              528,
+              155,
+              541
+            ],
+            "line_items[1].sku": [
+              224,
+              528,
+              304,
+              541
+            ],
+            "line_items[1].description": [
+              404,
+              527,
+              642,
+              543
+            ],
+            "line_items[1].quantity": [
+              924,
+              528,
+              947,
+              541
+            ],
+            "line_items[1].unit_price_cents": [
+              1064,
+              528,
+              1116,
+              541
+            ],
+            "line_items[1].amount_cents": [
+              1264,
+              528,
+              1327,
+              541
+            ],
+            "line_items[2].row": [
+              144,
+              556,
+              155,
+              569
+            ],
+            "line_items[2].sku": [
+              224,
+              556,
+              299,
+              569
+            ],
+            "line_items[2].description": [
+              404,
+              555,
+              645,
+              569
+            ],
+            "line_items[2].quantity": [
+              924,
+              556,
+              947,
+              569
+            ],
+            "line_items[2].unit_price_cents": [
+              1064,
+              556,
+              1116,
+              569
+            ],
+            "line_items[2].amount_cents": [
+              1264,
+              556,
+              1327,
+              569
+            ],
+            "line_items[3].row": [
+              144,
+              584,
+              155,
+              597
+            ],
+            "line_items[3].sku": [
+              224,
+              584,
+              301,
+              597
+            ],
+            "line_items[3].description": [
+              404,
+              583,
+              609,
+              599
+            ],
+            "line_items[3].quantity": [
+              924,
+              584,
+              947,
+              597
+            ],
+            "line_items[3].unit_price_cents": [
+              1064,
+              584,
+              1116,
+              597
+            ],
+            "line_items[3].amount_cents": [
+              1264,
+              584,
+              1344,
+              599
+            ],
+            "subtotal_cents": [
+              1264,
+              652,
+              1344,
+              667
+            ],
+            "tax_cents": [
+              1264,
+              680,
+              1327,
+              693
+            ],
+            "total_cents": [
+              1264,
+              708,
+              1353,
+              724
+            ]
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "PO00008",
+      "files": {
+        "150": {
+          "png": "PO00008_150.png",
+          "pdf": "PO00008_150.pdf",
+          "width": 1228,
+          "height": 400,
+          "regions": {
+            "po_number": [
+              72,
+              122,
+              117,
+              129
+            ],
+            "order_date": [
+              637,
+              122,
+              690,
+              129
+            ],
+            "vendor": [
+              72,
+              155,
+              164,
+              163
+            ],
+            "due_date": [
+              637,
+              156,
+              690,
+              163
+            ],
+            "terms": [
+              72,
+              190,
+              125,
+              197
+            ],
+            "currency": [
+              637,
+              190,
+              656,
+              197
+            ],
+            "line_items[0].row": [
+              72,
+              250,
+              78,
+              257
+            ],
+            "line_items[0].sku": [
+              112,
+              250,
+              151,
+              257
+            ],
+            "line_items[0].description": [
+              202,
+              249,
+              303,
+              259
+            ],
+            "line_items[0].quantity": [
+              462,
+              250,
+              473,
+              257
+            ],
+            "line_items[0].unit_price_cents": [
+              532,
+              250,
+              558,
+              257
+            ],
+            "line_items[0].amount_cents": [
+              632,
+              250,
+              672,
+              258
+            ],
+            "line_items[1].row": [
+              72,
+              264,
+              78,
+              271
+            ],
+            "line_items[1].sku": [
+              112,
+              264,
+              151,
+              271
+            ],
+            "line_items[1].description": [
+              202,
+              263,
+              304,
+              271
+            ],
+            "line_items[1].quantity": [
+              462,
+              264,
+              474,
+              271
+            ],
+            "line_items[1].unit_price_cents": [
+              532,
+              264,
+              558,
+              271
+            ],
+            "line_items[1].amount_cents": [
+              632,
+              264,
+              672,
+              272
+            ],
+            "line_items[2].row": [
+              72,
+              278,
+              78,
+              285
+            ],
+            "line_items[2].sku": [
+              112,
+              278,
+              152,
+              285
+            ],
+            "line_items[2].description": [
+              202,
+              277,
+              322,
+              286
+            ],
+            "line_items[2].quantity": [
+              462,
+              278,
+              468,
+              285
+            ],
+            "line_items[2].unit_price_cents": [
+              532,
+              278,
+              563,
+              285
+            ],
+            "line_items[2].amount_cents": [
+              632,
+              278,
+              672,
+              286
+            ],
+            "line_items[3].row": [
+              72,
+              292,
+              78,
+              299
+            ],
+            "line_items[3].sku": [
+              112,
+              292,
+              151,
+              299
+            ],
+            "line_items[3].description": [
+              202,
+              291,
+              289,
+              301
+            ],
+            "line_items[3].quantity": [
+              462,
+              292,
+              473,
+              299
+            ],
+            "line_items[3].unit_price_cents": [
+              532,
+              292,
+              558,
+              299
+            ],
+            "line_items[3].amount_cents": [
+              632,
+              292,
+              664,
+              299
+            ],
+            "line_items[4].row": [
+              72,
+              306,
+              78,
+              313
+            ],
+            "line_items[4].sku": [
+              111,
+              306,
+              148,
+              315
+            ],
+            "line_items[4].description": [
+              201,
+              305,
+              278,
+              315
+            ],
+            "line_items[4].quantity": [
+              462,
+              306,
+              473,
+              313
+            ],
+            "line_items[4].unit_price_cents": [
+              532,
+              306,
+              558,
+              313
+            ],
+            "line_items[4].amount_cents": [
+              632,
+              306,
+              672,
+              314
+            ],
+            "subtotal_cents": [
+              632,
+              340,
+              672,
+              348
+            ],
+            "tax_cents": [
+              632,
+              354,
+              663,
+              361
+            ],
+            "total_cents": [
+              632,
+              368,
+              676,
+              376
+            ]
+          }
+        },
+        "300": {
+          "png": "PO00008_300.png",
+          "pdf": "PO00008_300.pdf",
+          "width": 2455,
+          "height": 800,
+          "regions": {
+            "po_number": [
+              144,
+              244,
+              233,
+              257
+            ],
+            "order_date": [
+              1275,
+              244,
+              1380,
+              257
+            ],
+            "vendor": [
+              144,
+              311,
+              327,
+              325
+            ],
+            "due_date": [
+              1275,
+              312,
+              1380,
+              325
+            ],
+            "terms": [
+              144,
+              380,
+              250,
+              395
+            ],
+            "currency": [
+              1275,
+              380,
+              1313,
+              393
+            ],
+            "line_items[0].row": [
+              144,
+              500,
+              155,
+              513
+            ],
+            "line_items[0].sku": [
+              224,
+              500,
+              302,
+              513
+            ],
+            "line_items[0].description": [
+              404,
+              499,
+              607,
+              517
+            ],
+            "line_items[0].quantity": [
+              924,
+              500,
+              947,
+              513
+            ],
+            "line_items[0].unit_price_cents": [
+              1064,
+              500,
+              1116,
+              513
+            ],
+            "line_items[0].amount_cents": [
+              1264,
+              500,
+              1344,
+              515
+            ],
+            "line_items[1].row": [
+              144,
+              528,
+              155,
+              541
+            ],
+            "line_items[1].sku": [
+              224,
+              528,
+              301,
+              541
+            ],
+            "line_items[1].description": [
+              404,
+              527,
+              609,
+              543
+            ],
+            "line_items[1].quantity": [
+              924,
+              528,
+              947,
+              541
+            ],
+            "line_items[1].unit_price_cents": [
+              1064,
+              528,
+              1116,
+              541
+            ],
+            "line_items[1].amount_cents": [
+              1264,
+              528,
+              1344,
+              543
+            ],
+            "line_items[2].row": [
+              144,
+              556,
+              155,
+              569
+            ],
+            "line_items[2].sku": [
+              224,
+              556,
+              304,
+              569
+            ],
+            "line_items[2].description": [
+              404,
+              555,
+              642,
+              571
+            ],
+            "line_items[2].quantity": [
+              924,
+              556,
+              935,
+              569
+            ],
+            "line_items[2].unit_price_cents": [
+              1064,
+              556,
+              1127,
+              569
+            ],
+            "line_items[2].amount_cents": [
+              1264,
+              556,
+              1344,
+              571
+            ],
+            "line_items[3].row": [
+              144,
+              584,
+              155,
+              597
+            ],
+            "line_items[3].sku": [
+              224,
+              584,
+              302,
+              597
+            ],
+            "line_items[3].description": [
+              404,
+              583,
+              577,
+              601
+            ],
+            "line_items[3].quantity": [
+              924,
+              584,
+              947,
+              597
+            ],
+            "line_items[3].unit_price_cents": [
+              1064,
+              584,
+              1116,
+              597
+            ],
+            "line_items[3].amount_cents": [
+              1264,
+              584,
+              1327,
+              597
+            ],
+            "line_items[4].row": [
+              144,
+              612,
+              155,
+              625
+            ],
+            "line_items[4].sku": [
+              223,
+              612,
+              295,
+              629
+            ],
+            "line_items[4].description": [
+              403,
+              611,
+              556,
+              629
+            ],
+            "line_items[4].quantity": [
+              924,
+              612,
+              947,
+              625
+            ],
+            "line_items[4].unit_price_cents": [
+              1064,
+              612,
+              1116,
+              625
+            ],
+            "line_items[4].amount_cents": [
+              1264,
+              612,
+              1344,
+              627
+            ],
+            "subtotal_cents": [
+              1264,
+              680,
+              1344,
+              695
+            ],
+            "tax_cents": [
+              1264,
+              708,
+              1327,
+              721
+            ],
+            "total_cents": [
+              1264,
+              736,
+              1353,
+              752
+            ]
+          }
+        }
+      }
+    },
+    {
+      "doc_id": "PO00009",
+      "files": {
+        "150": {
+          "png": "PO00009_150.png",
+          "pdf": "PO00009_150.pdf",
+          "width": 1228,
+          "height": 400,
+          "regions": {
+            "po_number": [
+              72,
+              122,
+              117,
+              129
+            ],
+            "order_date": [
+              637,
+              122,
+              689,
+              129
+            ],
+            "vendor": [
+              72,
+              155,
+              156,
+              163
+            ],
+            "due_date": [
+              637,
+              156,
+              689,
+              163
+            ],
+            "terms": [
+              72,
+              190,
+              125,
+              197
+            ],
+            "currency": [
+              637,
+              190,
+              656,
+              197
+            ],
+            "line_items[0].row": [
+              72,
+              250,
+              78,
+              257
+            ],
+            "line_items[0].sku": [
+              111,
+              250,
+              150,
+              257
+            ],
+            "line_items[0].description": [
+              201,
+              249,
+              306,
+              258
+            ],
+            "line_items[0].quantity": [
+              462,
+              250,
+              473,
+              257
+            ],
+            "line_items[0].unit_price_cents": [
+              532,
+              250,
+              558,
+              257
+            ],
+            "line_items[0].amount_cents": [
+              632,
+              250,
+              664,
+              257
+            ],
+            "line_items[1].row": [
+              72,
+              264,
+              78,
+              271
+            ],
+            "line_items[1].sku": [
+              112,
+              264,
+              150,
+              271
+            ],
+            "line_items[1].description": [
+              202,
+              263,
+              326,
+              271
+            ],
+            "line_items[1].quantity": [
+              462,
+              264,
+              473,
+              271
+            ],
+            "line_items[1].unit_price_cents": [
+              532,
+              264,
+              552,
+              271
+            ],
+            "line_items[1].amount_cents": [
+              632,
+              264,
+              658,
+              271
+            ],
+            "line_items[2].row": [
+              72,
+              278,
+              78,
+              285
+            ],
+            "line_items[2].sku": [
+              112,
+              278,
+              150,
+              285
+            ],
+            "line_items[2].description": [
+              202,
+              277,
+              318,
+              287
+            ],
+            "line_items[2].quantity": [
+              462,
+              278,
+              468,
+              285
+            ],
+            "line_items[2].unit_price_cents": [
+              532,
+              278,
+              552,
+              285
+            ],
+            "line_items[2].amount_cents": [
+              632,
+              278,
+              658,
+              285
+            ],
+            "line_items[3].row": [
+              72,
+              292,
+              78,
+              299
+            ],
+            "line_items[3].sku": [
+              112,
+              292,
+              151,
+              299
+            ],
+            "line_items[3].description": [
+              202,
+              291,
+              304,
+              299
+            ],
+            "line_items[3].quantity": [
+              462,
+              292,
+              473,
+              299
+            ],
+            "line_items[3].unit_price_cents": [
+              532,
+              292,
+              558,
+              299
+            ],
+            "line_items[3].amount_cents": [
+              632,
+              292,
+              672,
+              300
+            ],
+            "line_items[4].row": [
+              72,
+              306,
+              78,
+              313
+            ],
+            "line_items[4].sku": [
+              112,
+              306,
+              150,
+              313
+            ],
+            "line_items[4].description": [
+              202,
+              305,
+              322,
+              313
+            ],
+            "line_items[4].quantity": [
+              462,
+              306,
+              474,
+              313
+            ],
+            "line_items[4].unit_price_cents": [
+              532,
+              306,
+              558,
+              313
+            ],
+            "line_items[4].amount_cents": [
+              632,
+              306,
+              664,
+              313
+            ],
+            "subtotal_cents": [
+              632,
+              340,
+              672,
+              348
+            ],
+            "tax_cents": [
+              632,
+              354,
+              664,
+              361
+            ],
+            "total_cents": [
+              632,
+              368,
+              676,
+              376
+            ]
+          }
+        },
+        "300": {
+          "png": "PO00009_300.png",
+          "pdf": "PO00009_300.pdf",
+          "width": 2455,
+          "height": 800,
+          "regions": {
+            "po_number": [
+              144,
+              244,
+              233,
+              257
+            ],
+            "order_date": [
+              1275,
+              244,
+              1380,
+              257
+            ],
+            "vendor": [
+              144,
+              311,
+              311,
+              325
+            ],
+            "due_date": [
+              1275,
+              312,
+              1380,
+              325
+            ],
+            "terms": [
+              144,
+              380,
+              250,
+              395
+            ],
+            "currency": [
+              1275,
+              380,
+              1313,
+              393
+            ],
+            "line_items[0].row": [
+              144,
+              500,
+              155,
+              513
+            ],
+            "line_items[0].sku": [
+              223,
+              500,
+              299,
+              513
+            ],
+            "line_items[0].description": [
+              403,
+              499,
+              612,
+              515
+            ],
+            "line_items[0].quantity": [
+              924,
+              500,
+              947,
+              513
+            ],
+            "line_items[0].unit_price_cents": [
+              1064,
+              500,
+              1116,
+              513
+            ],
+            "line_items[0].amount_cents": [
+              1264,
+              500,
+              1327,
+              513
+            ],
+            "line_items[1].row": [
+              144,
+              528,
+              155,
+              541
+            ],
+            "line_items[1].sku": [
+              224,
+              528,
+              300,
+              541
+            ],
+            "line_items[1].description": [
+              404,
+              527,
+              652,
+              543
+            ],
+            "line_items[1].quantity": [
+              924,
+              528,
+              947,
+              541
+            ],
+            "line_items[1].unit_price_cents": [
+              1064,
+              528,
+              1104,
+              541
+            ],
+            "line_items[1].amount_cents": [
+              1264,
+              528,
+              1316,
+              541
+            ],
+            "line_items[2].row": [
+              144,
+              556,
+              155,
+              569
+            ],
+            "line_items[2].sku": [
+              224,
+              556,
+              300,
+              569
+            ],
+            "line_items[2].description": [
+              404,
+              555,
+              635,
+              573
+            ],
+            "line_items[2].quantity": [
+              924,
+              556,
+              935,
+              569
+            ],
+            "line_items[2].unit_price_cents": [
+              1064,
+              556,
+              1104,
+              569
+            ],
+            "line_items[2].amount_cents": [
+              1264,
+              556,
+              1316,
+              569
+            ],
+            "line_items[3].row": [
+              144,
+              584,
+              155,
+              597
+            ],
+            "line_items[3].sku": [
+              224,
+              584,
+              301,
+              597
+            ],
+            "line_items[3].description": [
+              404,
+              583,
+              609,
+              599
+            ],
+            "line_items[3].quantity": [
+              924,
+              584,
+              947,
+              597
+            ],
+            "line_items[3].unit_price_cents": [
+              1064,
+              584,
+              1116,
+              597
+            ],
+            "line_items[3].amount_cents": [
+              1264,
+              584,
+              1344,
+              599
+            ],
+            "line_items[4].row": [
+              144,
+              612,
+              155,
+              625
+            ],
+            "line_items[4].sku": [
+              224,
+              612,
+              299,
+              625
+            ],
+            "line_items[4].description": [
+              404,
+              611,
+              645,
+              625
+            ],
+            "line_items[4].quantity": [
+              924,
+              612,
+              947,
+              625
+            ],
+            "line_items[4].unit_price_cents": [
+              1064,
+              612,
+              1116,
+              625
+            ],
+            "line_items[4].amount_cents": [
+              1264,
+              612,
+              1327,
+              625
+            ],
+            "subtotal_cents": [
+              1264,
+              680,
+              1344,
+              695
+            ],
+            "tax_cents": [
+              1264,
+              708,
+              1327,
+              721
+            ],
+            "total_cents": [
+              1264,
+              736,
+              1353,
+              752
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

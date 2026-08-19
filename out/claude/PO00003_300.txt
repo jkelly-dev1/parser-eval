@@ -1,0 +1,31 @@
+# PURCHASE ORDER
+
+PO Number
+PO-14313
+
+Vendor
+Cascade Industrial
+
+Terms
+Net 30
+
+Order Date
+2026-12-04
+
+Due Date
+2027-02-04
+
+Currency
+USD
+
+| # | SKU | Description | Qty | Unit | Amount |
+|---|-----|-------------|-----|------|--------|
+| 1 | CS-0375 | Concrete sleeve anchor 3/8 | 28 | 24.95 | 698.60 |
+| 2 | LN-10NY | Nylon lock nut M10 | 17 | 76.49 | 1,300.33 |
+| 3 | SS-1403 | Structural screw #14 x 3in | 35 | 37.15 | 1,300.25 |
+
+| | | |
+|---|---|---|
+| Subtotal | 3,299.18 |
+| Tax 8.25% | 272.18 |
+| **TOTAL** | **3,571.36** |

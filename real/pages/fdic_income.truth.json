@@ -1,0 +1,131 @@
+{
+  "doc_id": "fdic_income",
+  "source": "Sample_Documents/fdic-ar-1956.pdf page 37 (FDIC Annual Report 1956, Exhibit 2, statement of income and deposit insurance fund for FY1956)",
+  "kind": "scanned",
+  "text_layer": "ocr",
+  "labeling": "Hand-labeled by reading the 300 DPI render. NINE SUMS, ALL EXACT TO THE DOLLAR, so the labels are verified rather than merely careful. Subtraction on the page is written here as addition, because the checker sums its terms: where the statement deducts 87,741,613 from 155,141,790 to reach 67,400,177, the rule adds the remainder back to the deduction. Money is labeled without the dollar sign, as on the balance sheet.",
+  "printed": {
+    "page_number": "21",
+    "running_head": "AUDIT OF THE CORPORATION",
+    "exhibit": "Exhibit 2",
+    "statement_period": "FISCAL YEAR ENDED JUNE 30, 1956",
+    "notes_heading": "NOTES TO THE FINANCIAL STATEMENTS",
+    "footnote": "The notes on the following pages are an integral part of this statement.",
+    "assessments": "155,141,790",
+    "assessment_credits_deducted": "87,741,613",
+    "assessments_net": "67,400,177",
+    "income_securities": "41,517,468",
+    "other_income": "33,578",
+    "gross_income": "108,951,223",
+    "salaries": "6,273,334",
+    "travel": "1,607,925",
+    "rents_and_utilities": "421,416",
+    "other_expenses": "570,691",
+    "admin_expenses_subtotal": "8,873,366",
+    "nonrecoverable_expenses": "103,593",
+    "total_expenses": "8,976,959",
+    "income_after_expenses": "99,974,264",
+    "loss_estimate_reduction_prior": "448,232",
+    "loss_estimate_current_case": "144,769",
+    "loss_estimate_net": "303,463",
+    "net_income_for_year": "100,277,727",
+    "fund_opening_1955": "1,590,540,667",
+    "fund_closing_1956": "1,690,818,394",
+    "note1_credit_prior_years": "85,409,716",
+    "note1_credit_estimated_1956": "44,387,963",
+    "note2_insured_deposits": "114.6",
+    "note2_percent_of_deposits": "1.48",
+    "note2_disbursed": "338,000,000",
+    "note2_banks_protected": "429",
+    "note2_incurred_losses": "28,083,613",
+    "note2_estimated_losses": "8,346,249",
+    "note3_benefit_costs": "285,000",
+    "note4_face_value": "1,815,200,000",
+    "note4_held_by_treasurer": "1,157,700,000",
+    "note4_held_by_frbny": "657,500,000",
+    "note4_cash_balance": "2,562,146",
+    "note4_deposited_with_treasurer": "2,353,439"
+  },
+  "rows": [],
+  "reconciliation": {
+    "note": "Nine sums the page asserts about itself. Eight run down the statement; the ninth is inside NOTE 4, in running prose rather than in a column -- the securities held by the Treasurer plus those held by the Federal Reserve Bank of New York equal the face value quoted in the same sentence. That one is worth having because it tests figures embedded in a paragraph, which is a different extraction problem from figures in a ruled column, and it is checkable in exactly the same way.",
+    "sums": [
+      {
+        "name": "assessments_net",
+        "of": [
+          "assessments_net",
+          "assessment_credits_deducted"
+        ],
+        "equals": "assessments"
+      },
+      {
+        "name": "gross_income",
+        "of": [
+          "assessments_net",
+          "income_securities",
+          "other_income"
+        ],
+        "equals": "gross_income"
+      },
+      {
+        "name": "admin_expenses",
+        "of": [
+          "salaries",
+          "travel",
+          "rents_and_utilities",
+          "other_expenses"
+        ],
+        "equals": "admin_expenses_subtotal"
+      },
+      {
+        "name": "total_expenses",
+        "of": [
+          "admin_expenses_subtotal",
+          "nonrecoverable_expenses"
+        ],
+        "equals": "total_expenses"
+      },
+      {
+        "name": "income_after_expenses",
+        "of": [
+          "income_after_expenses",
+          "total_expenses"
+        ],
+        "equals": "gross_income"
+      },
+      {
+        "name": "loss_estimate_net",
+        "of": [
+          "loss_estimate_net",
+          "loss_estimate_current_case"
+        ],
+        "equals": "loss_estimate_reduction_prior"
+      },
+      {
+        "name": "net_income_for_year",
+        "of": [
+          "income_after_expenses",
+          "loss_estimate_net"
+        ],
+        "equals": "net_income_for_year"
+      },
+      {
+        "name": "fund_rollforward",
+        "of": [
+          "fund_opening_1955",
+          "net_income_for_year"
+        ],
+        "equals": "fund_closing_1956"
+      },
+      {
+        "name": "note4_securities_split",
+        "of": [
+          "note4_held_by_treasurer",
+          "note4_held_by_frbny"
+        ],
+        "equals": "note4_face_value"
+      }
+    ]
+  },
+  "not_labeled": "The four numbered notes run to several hundred words of prose and are labeled only for the FIGURES inside them, not sentence by sentence. Labeling the prose would swamp the statement's forty-odd values with body text that every parser reads, and the page exists to test the statement. Two ties to the facing page are real but not expressible here, because reconcile.py checks one document at a time: this page's closing fund of 1,690,818,394 is the balance sheet's deposit insurance fund, and note 1's two credit figures are the balance sheet's assessment-credit lines. A cross-document check would catch a parser that read one page correctly and the other wrongly, and there is no rule form for it yet."
+}

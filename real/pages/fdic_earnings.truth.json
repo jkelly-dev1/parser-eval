@@ -1,0 +1,882 @@
+{
+  "doc_id": "fdic_earnings",
+  "source": "Sample_Documents/fdic-ar-1956.pdf page 144 (FDIC Annual Report 1956, Table 114, earnings and expenses of insured commercial banks by state, 1956)",
+  "kind": "scanned",
+  "text_layer": "ocr",
+  "labeling": "Hand-labeled by reading the 300 DPI render. SIX OF ELEVEN COLUMNS ARE LABELED: the five that carry the page's row arithmetic -- U.S., Alaska, Puerto Rico, Other, Continental United States -- plus Connecticut, the RIGHTMOST column on the page. The six state columns in between (Alabama, Arizona, Arkansas, California, Colorado) are deliberately not labeled; they repeat an extraction problem the labeled columns already pose and would have made this one page most of the corpus by value count. Connecticut is labeled because a parser that truncates the right edge of a landscape table, or slips by one column, is otherwise not penalized at all -- it reports Colorado's figures under Connecticut and every check still passes.\n\nTWO DIRECTIONS OF ARITHMETIC, AND THEY ARE NOT EQUALLY STRONG. Across each row, U.S. = Alaska + Puerto Rico + Other + Continental U.S. All 33 of those close TO THE UNIT, so every value in the five leading columns is verified rather than merely careful. Down each column, the components do NOT add exactly to the printed total: amounts are printed in THOUSANDS of dollars and each is rounded on its own, so 19 of the 36 column sums miss by 1 to 4. Those carry tolerance 5 and are a weaker check -- they cannot see an error smaller than 5 -- which is stated here so no write-up claims otherwise. Connecticut takes part in no exact identity; its 33 values are checked only by its 6 tolerance sums.\n\nTHE ARITHMETIC RESOLVED FOUR AMBIGUOUS GLYPHS. This scan confuses 3 and 8 at the top of the digit: Alaska's losses 'All other' (35, not 85), the Other column's salaries and wages (553, not 558), Puerto Rico's losses and charge-offs on loans (23, not 28) and the Other column's transfers to reserve accounts on securities (37, not 87) were each read wrong first and each caught by the row identity failing. The embedded OCR layer lost the 35 entirely. Amounts are labeled as printed, in thousands, without a dollar sign.\n\nEVERY ROW CARRIES AN EXPLICIT key BECAUSE THE PAGE REPEATS ITS LABELS. 'Recoveries', 'Transfers from reserve accounts', 'Transfers to reserve accounts', 'Losses and charge-offs' and 'All other' each appear twice, once under 'On securities:' and once under 'On loans:'. The anchor stays the printed text, which is what score.py matches against parser output; the key is what the 36 sums name. Several anchors are FRAGMENTS of a label that the page wraps across two lines, chosen to be the part that sits on one printed line.",
+  "printed": {
+    "page_number": "128",
+    "running_head": "FEDERAL DEPOSIT INSURANCE CORPORATION",
+    "table_number": "Table 114.",
+    "title": "EARNINGS, EXPENSES, AND DIVIDENDS OF INSURED COMMERCIAL BANKS IN THE UNITED STATES (CONTINENTAL U. S. AND OTHER AREAS), BY STATE, 1956",
+    "units_note": "(Amounts in thousands of dollars)",
+    "stub_head": "Earnings or expense item",
+    "col_us": "U. S. (continental U. S. and other areas)",
+    "col_other_areas": "Other areas",
+    "col_alaska": "Alaska",
+    "col_puerto_rico": "Puerto Rico",
+    "col_other": "Other",
+    "col_continental_us": "Continental United States",
+    "col_alabama": "Alabama",
+    "col_arizona": "Arizona",
+    "col_arkansas": "Arkansas",
+    "col_california": "California",
+    "col_colorado": "Colorado",
+    "col_connecticut": "Connecticut"
+  },
+  "rows": [
+    {
+      "key": "oe_total",
+      "anchor": "Current operating earnings-total",
+      "cells": {
+        "us": "7,231,921",
+        "alaska": "6,658",
+        "puerto_rico": "11,759",
+        "other": "2,424",
+        "continental_us": "7,211,080",
+        "connecticut": "88,758"
+      }
+    },
+    {
+      "key": "oe_gov",
+      "anchor": "Interest on U. S. Government obligations",
+      "cells": {
+        "us": "1,342,842",
+        "alaska": "1,316",
+        "puerto_rico": "738",
+        "other": "479",
+        "continental_us": "1,340,309",
+        "connecticut": "15,110"
+      }
+    },
+    {
+      "key": "oe_secdiv",
+      "anchor": "Interest and dividends on other securities",
+      "cells": {
+        "us": "370,045",
+        "alaska": "272",
+        "puerto_rico": "788",
+        "other": "125",
+        "continental_us": "368,860",
+        "connecticut": "4,267"
+      }
+    },
+    {
+      "key": "oe_loans",
+      "anchor": "Interest and discount on loans",
+      "cells": {
+        "us": "4,339,866",
+        "alaska": "3,361",
+        "puerto_rico": "8,027",
+        "other": "1,374",
+        "continental_us": "4,327,104",
+        "connecticut": "49,991"
+      }
+    },
+    {
+      "key": "oe_loanfees",
+      "anchor": "Service charges and fees on bank's loans",
+      "cells": {
+        "us": "73,562",
+        "alaska": "310",
+        "puerto_rico": "282",
+        "other": "37",
+        "continental_us": "72,933",
+        "connecticut": "472"
+      }
+    },
+    {
+      "key": "oe_deposit",
+      "anchor": "Service charges on deposit accounts",
+      "cells": {
+        "us": "385,927",
+        "alaska": "463",
+        "puerto_rico": "312",
+        "other": "162",
+        "continental_us": "384,990",
+        "connecticut": "5,605"
+      }
+    },
+    {
+      "key": "oe_othersvc",
+      "anchor": "and collection and exchange charges",
+      "cells": {
+        "us": "168,497",
+        "alaska": "745",
+        "puerto_rico": "1,417",
+        "other": "176",
+        "continental_us": "166,159",
+        "connecticut": "1,756"
+      }
+    },
+    {
+      "key": "oe_trust",
+      "anchor": "Trust department",
+      "cells": {
+        "us": "322,117",
+        "alaska": "51",
+        "puerto_rico": "8",
+        "continental_us": "322,058",
+        "connecticut": "8,422"
+      }
+    },
+    {
+      "key": "oe_other",
+      "anchor": "Other current operating earnings",
+      "cells": {
+        "us": "229,068",
+        "alaska": "140",
+        "puerto_rico": "189",
+        "other": "70",
+        "continental_us": "228,669",
+        "connecticut": "3,136"
+      }
+    },
+    {
+      "key": "ex_total",
+      "anchor": "Current operating expenses-total",
+      "cells": {
+        "us": "4,457,198",
+        "alaska": "4,508",
+        "puerto_rico": "9,331",
+        "other": "1,900",
+        "continental_us": "4,441,459",
+        "connecticut": "59,431"
+      }
+    },
+    {
+      "key": "ex_off",
+      "anchor": "Salaries-officers",
+      "cells": {
+        "us": "720,866",
+        "alaska": "893",
+        "puerto_rico": "1,325",
+        "other": "276",
+        "continental_us": "718,372",
+        "connecticut": "10,008"
+      }
+    },
+    {
+      "key": "ex_emp",
+      "anchor": "Salaries and wages-employees",
+      "cells": {
+        "us": "1,372,262",
+        "alaska": "1,569",
+        "puerto_rico": "2,739",
+        "other": "553",
+        "continental_us": "1,367,401",
+        "connecticut": "19,354"
+      }
+    },
+    {
+      "key": "ex_dir",
+      "anchor": "discount, and other committees",
+      "cells": {
+        "us": "42,614",
+        "alaska": "26",
+        "puerto_rico": "113",
+        "other": "42",
+        "continental_us": "42,433",
+        "connecticut": "561"
+      }
+    },
+    {
+      "key": "ex_int",
+      "anchor": "Interest on time and savings deposits",
+      "cells": {
+        "us": "805,857",
+        "alaska": "501",
+        "puerto_rico": "1,813",
+        "other": "431",
+        "continental_us": "803,112",
+        "connecticut": "8,457"
+      }
+    },
+    {
+      "key": "ex_borrow",
+      "anchor": "Interest and discount on borrowed money",
+      "cells": {
+        "us": "45,392",
+        "puerto_rico": "171",
+        "other": "3",
+        "continental_us": "45,218",
+        "connecticut": "467"
+      }
+    },
+    {
+      "key": "ex_tax",
+      "anchor": "Taxes other than on net income",
+      "cells": {
+        "us": "187,526",
+        "alaska": "122",
+        "puerto_rico": "557",
+        "other": "44",
+        "continental_us": "186,803",
+        "connecticut": "1,851"
+      }
+    },
+    {
+      "key": "ex_dep",
+      "anchor": "furniture and fixtures",
+      "cells": {
+        "us": "128,085",
+        "alaska": "224",
+        "puerto_rico": "319",
+        "other": "62",
+        "continental_us": "127,480",
+        "connecticut": "1,656"
+      }
+    },
+    {
+      "key": "ex_other",
+      "anchor": "Other current operating expenses",
+      "cells": {
+        "us": "1,154,600",
+        "alaska": "1,174",
+        "puerto_rico": "2,295",
+        "other": "489",
+        "continental_us": "1,150,642",
+        "connecticut": "17,078"
+      }
+    },
+    {
+      "key": "net_current",
+      "anchor": "Net current operating earnings",
+      "cells": {
+        "us": "2,774,724",
+        "alaska": "2,151",
+        "puerto_rico": "2,428",
+        "other": "524",
+        "continental_us": "2,769,621",
+        "connecticut": "29,326"
+      }
+    },
+    {
+      "key": "rec_total",
+      "anchor": "counts, and profits-total",
+      "cells": {
+        "us": "250,171",
+        "alaska": "137",
+        "puerto_rico": "60",
+        "other": "58",
+        "continental_us": "249,916",
+        "connecticut": "1,215"
+      }
+    },
+    {
+      "key": "rec_s_rec",
+      "anchor": "Recoveries",
+      "cells": {
+        "us": "14,090",
+        "continental_us": "14,090",
+        "connecticut": "106"
+      }
+    },
+    {
+      "key": "rec_s_xfer",
+      "anchor": "Transfers from reserve accounts",
+      "cells": {
+        "us": "41,001",
+        "alaska": "14",
+        "other": "1",
+        "continental_us": "40,986",
+        "connecticut": "69"
+      }
+    },
+    {
+      "key": "rec_s_profit",
+      "anchor": "Profits on securities sold or redeemed",
+      "cells": {
+        "us": "31,151",
+        "alaska": "4",
+        "puerto_rico": "20",
+        "continental_us": "31,127",
+        "connecticut": "139"
+      }
+    },
+    {
+      "key": "rec_l_rec",
+      "anchor": "Recoveries",
+      "cells": {
+        "us": "20,762",
+        "alaska": "48",
+        "other": "32",
+        "continental_us": "20,682",
+        "connecticut": "123"
+      }
+    },
+    {
+      "key": "rec_l_xfer",
+      "anchor": "Transfers from reserve accounts",
+      "cells": {
+        "us": "77,606",
+        "alaska": "23",
+        "puerto_rico": "13",
+        "other": "24",
+        "continental_us": "77,546",
+        "connecticut": "326"
+      }
+    },
+    {
+      "key": "rec_allother",
+      "anchor": "All other",
+      "cells": {
+        "us": "65,563",
+        "alaska": "49",
+        "puerto_rico": "27",
+        "other": "1",
+        "continental_us": "65,486",
+        "connecticut": "452"
+      }
+    },
+    {
+      "key": "loss_total",
+      "anchor": "serve accounts-total",
+      "cells": {
+        "us": "993,534",
+        "alaska": "935",
+        "puerto_rico": "295",
+        "other": "91",
+        "continental_us": "992,213",
+        "connecticut": "11,375"
+      }
+    },
+    {
+      "key": "loss_s_lc",
+      "anchor": "Losses and charge-offs",
+      "cells": {
+        "us": "317,381",
+        "alaska": "313",
+        "puerto_rico": "1",
+        "other": "1",
+        "continental_us": "317,066",
+        "connecticut": "2,549"
+      }
+    },
+    {
+      "key": "loss_s_xfer",
+      "anchor": "Transfers to reserve accounts",
+      "cells": {
+        "us": "101,830",
+        "puerto_rico": "26",
+        "other": "37",
+        "continental_us": "101,767",
+        "connecticut": "634"
+      }
+    },
+    {
+      "key": "loss_l_lc",
+      "anchor": "Losses and charge-offs",
+      "cells": {
+        "us": "32,018",
+        "alaska": "66",
+        "puerto_rico": "23",
+        "other": "15",
+        "continental_us": "31,914",
+        "connecticut": "265"
+      }
+    },
+    {
+      "key": "loss_l_xfer",
+      "anchor": "Transfers to reserve accounts",
+      "cells": {
+        "us": "452,940",
+        "alaska": "521",
+        "puerto_rico": "107",
+        "other": "30",
+        "continental_us": "452,282",
+        "connecticut": "5,748"
+      }
+    },
+    {
+      "key": "loss_allother",
+      "anchor": "All other",
+      "cells": {
+        "us": "89,369",
+        "alaska": "35",
+        "puerto_rico": "138",
+        "other": "9",
+        "continental_us": "89,187",
+        "connecticut": "2,179"
+      }
+    },
+    {
+      "key": "net_profits",
+      "anchor": "Net profits before income taxes",
+      "cells": {
+        "us": "2,031,360",
+        "alaska": "1,352",
+        "puerto_rico": "2,193",
+        "other": "491",
+        "continental_us": "2,027,324",
+        "connecticut": "19,167"
+      }
+    }
+  ],
+  "reconciliation": {
+    "note": "TWO KINDS OF RULE, ONE PER DIRECTION. The 36 `sums` run DOWN the columns and carry tolerance 5, because the page rounds to thousands. The single `row_rules` entry runs ACROSS the rows and is exact; the checker applies it to all 33 rows, and it is the reason the labels can be called verified. THE TWO DIRECTIONS CATCH DIFFERENT THINGS: a column sum catches a misread component, while the row identity catches a value landing in the wrong column -- which is the characteristic failure of a wide landscape table and is invisible to every column sum, since a figure moved from Alaska to Puerto Rico leaves both column totals wrong but a figure swapped between two rows of the same column does not disturb the row identities at all. Neither direction subsumes the other.",
+    "sums": [
+      {
+        "name": "current_operating_earnings.us",
+        "tolerance": 5,
+        "of": [
+          "oe_gov.us",
+          "oe_secdiv.us",
+          "oe_loans.us",
+          "oe_loanfees.us",
+          "oe_deposit.us",
+          "oe_othersvc.us",
+          "oe_trust.us",
+          "oe_other.us"
+        ],
+        "equals": "oe_total.us"
+      },
+      {
+        "name": "current_operating_expenses.us",
+        "tolerance": 5,
+        "of": [
+          "ex_off.us",
+          "ex_emp.us",
+          "ex_dir.us",
+          "ex_int.us",
+          "ex_borrow.us",
+          "ex_tax.us",
+          "ex_dep.us",
+          "ex_other.us"
+        ],
+        "equals": "ex_total.us"
+      },
+      {
+        "name": "net_current_operating_earnings.us",
+        "tolerance": 5,
+        "of": [
+          "net_current.us",
+          "ex_total.us"
+        ],
+        "equals": "oe_total.us"
+      },
+      {
+        "name": "recoveries_total.us",
+        "tolerance": 5,
+        "of": [
+          "rec_s_rec.us",
+          "rec_s_xfer.us",
+          "rec_s_profit.us",
+          "rec_l_rec.us",
+          "rec_l_xfer.us",
+          "rec_allother.us"
+        ],
+        "equals": "rec_total.us"
+      },
+      {
+        "name": "losses_total.us",
+        "tolerance": 5,
+        "of": [
+          "loss_s_lc.us",
+          "loss_s_xfer.us",
+          "loss_l_lc.us",
+          "loss_l_xfer.us",
+          "loss_allother.us"
+        ],
+        "equals": "loss_total.us"
+      },
+      {
+        "name": "net_profits_before_income_taxes.us",
+        "tolerance": 5,
+        "of": [
+          "net_current.us",
+          "rec_total.us"
+        ],
+        "minus": [
+          "loss_total.us"
+        ],
+        "equals": "net_profits.us"
+      },
+      {
+        "name": "current_operating_earnings.alaska",
+        "tolerance": 5,
+        "of": [
+          "oe_gov.alaska",
+          "oe_secdiv.alaska",
+          "oe_loans.alaska",
+          "oe_loanfees.alaska",
+          "oe_deposit.alaska",
+          "oe_othersvc.alaska",
+          "oe_trust.alaska",
+          "oe_other.alaska"
+        ],
+        "equals": "oe_total.alaska"
+      },
+      {
+        "name": "current_operating_expenses.alaska",
+        "tolerance": 5,
+        "of": [
+          "ex_off.alaska",
+          "ex_emp.alaska",
+          "ex_dir.alaska",
+          "ex_int.alaska",
+          "ex_tax.alaska",
+          "ex_dep.alaska",
+          "ex_other.alaska"
+        ],
+        "equals": "ex_total.alaska"
+      },
+      {
+        "name": "net_current_operating_earnings.alaska",
+        "tolerance": 5,
+        "of": [
+          "net_current.alaska",
+          "ex_total.alaska"
+        ],
+        "equals": "oe_total.alaska"
+      },
+      {
+        "name": "recoveries_total.alaska",
+        "tolerance": 5,
+        "of": [
+          "rec_s_xfer.alaska",
+          "rec_s_profit.alaska",
+          "rec_l_rec.alaska",
+          "rec_l_xfer.alaska",
+          "rec_allother.alaska"
+        ],
+        "equals": "rec_total.alaska"
+      },
+      {
+        "name": "losses_total.alaska",
+        "tolerance": 5,
+        "of": [
+          "loss_s_lc.alaska",
+          "loss_l_lc.alaska",
+          "loss_l_xfer.alaska",
+          "loss_allother.alaska"
+        ],
+        "equals": "loss_total.alaska"
+      },
+      {
+        "name": "net_profits_before_income_taxes.alaska",
+        "tolerance": 5,
+        "of": [
+          "net_current.alaska",
+          "rec_total.alaska"
+        ],
+        "minus": [
+          "loss_total.alaska"
+        ],
+        "equals": "net_profits.alaska"
+      },
+      {
+        "name": "current_operating_earnings.puerto_rico",
+        "tolerance": 5,
+        "of": [
+          "oe_gov.puerto_rico",
+          "oe_secdiv.puerto_rico",
+          "oe_loans.puerto_rico",
+          "oe_loanfees.puerto_rico",
+          "oe_deposit.puerto_rico",
+          "oe_othersvc.puerto_rico",
+          "oe_trust.puerto_rico",
+          "oe_other.puerto_rico"
+        ],
+        "equals": "oe_total.puerto_rico"
+      },
+      {
+        "name": "current_operating_expenses.puerto_rico",
+        "tolerance": 5,
+        "of": [
+          "ex_off.puerto_rico",
+          "ex_emp.puerto_rico",
+          "ex_dir.puerto_rico",
+          "ex_int.puerto_rico",
+          "ex_borrow.puerto_rico",
+          "ex_tax.puerto_rico",
+          "ex_dep.puerto_rico",
+          "ex_other.puerto_rico"
+        ],
+        "equals": "ex_total.puerto_rico"
+      },
+      {
+        "name": "net_current_operating_earnings.puerto_rico",
+        "tolerance": 5,
+        "of": [
+          "net_current.puerto_rico",
+          "ex_total.puerto_rico"
+        ],
+        "equals": "oe_total.puerto_rico"
+      },
+      {
+        "name": "recoveries_total.puerto_rico",
+        "tolerance": 5,
+        "of": [
+          "rec_s_profit.puerto_rico",
+          "rec_l_xfer.puerto_rico",
+          "rec_allother.puerto_rico"
+        ],
+        "equals": "rec_total.puerto_rico"
+      },
+      {
+        "name": "losses_total.puerto_rico",
+        "tolerance": 5,
+        "of": [
+          "loss_s_lc.puerto_rico",
+          "loss_s_xfer.puerto_rico",
+          "loss_l_lc.puerto_rico",
+          "loss_l_xfer.puerto_rico",
+          "loss_allother.puerto_rico"
+        ],
+        "equals": "loss_total.puerto_rico"
+      },
+      {
+        "name": "net_profits_before_income_taxes.puerto_rico",
+        "tolerance": 5,
+        "of": [
+          "net_current.puerto_rico",
+          "rec_total.puerto_rico"
+        ],
+        "minus": [
+          "loss_total.puerto_rico"
+        ],
+        "equals": "net_profits.puerto_rico"
+      },
+      {
+        "name": "current_operating_earnings.other",
+        "tolerance": 5,
+        "of": [
+          "oe_gov.other",
+          "oe_secdiv.other",
+          "oe_loans.other",
+          "oe_loanfees.other",
+          "oe_deposit.other",
+          "oe_othersvc.other",
+          "oe_other.other"
+        ],
+        "equals": "oe_total.other"
+      },
+      {
+        "name": "current_operating_expenses.other",
+        "tolerance": 5,
+        "of": [
+          "ex_off.other",
+          "ex_emp.other",
+          "ex_dir.other",
+          "ex_int.other",
+          "ex_borrow.other",
+          "ex_tax.other",
+          "ex_dep.other",
+          "ex_other.other"
+        ],
+        "equals": "ex_total.other"
+      },
+      {
+        "name": "net_current_operating_earnings.other",
+        "tolerance": 5,
+        "of": [
+          "net_current.other",
+          "ex_total.other"
+        ],
+        "equals": "oe_total.other"
+      },
+      {
+        "name": "recoveries_total.other",
+        "tolerance": 5,
+        "of": [
+          "rec_s_xfer.other",
+          "rec_l_rec.other",
+          "rec_l_xfer.other",
+          "rec_allother.other"
+        ],
+        "equals": "rec_total.other"
+      },
+      {
+        "name": "losses_total.other",
+        "tolerance": 5,
+        "of": [
+          "loss_s_lc.other",
+          "loss_s_xfer.other",
+          "loss_l_lc.other",
+          "loss_l_xfer.other",
+          "loss_allother.other"
+        ],
+        "equals": "loss_total.other"
+      },
+      {
+        "name": "net_profits_before_income_taxes.other",
+        "tolerance": 5,
+        "of": [
+          "net_current.other",
+          "rec_total.other"
+        ],
+        "minus": [
+          "loss_total.other"
+        ],
+        "equals": "net_profits.other"
+      },
+      {
+        "name": "current_operating_earnings.continental_us",
+        "tolerance": 5,
+        "of": [
+          "oe_gov.continental_us",
+          "oe_secdiv.continental_us",
+          "oe_loans.continental_us",
+          "oe_loanfees.continental_us",
+          "oe_deposit.continental_us",
+          "oe_othersvc.continental_us",
+          "oe_trust.continental_us",
+          "oe_other.continental_us"
+        ],
+        "equals": "oe_total.continental_us"
+      },
+      {
+        "name": "current_operating_expenses.continental_us",
+        "tolerance": 5,
+        "of": [
+          "ex_off.continental_us",
+          "ex_emp.continental_us",
+          "ex_dir.continental_us",
+          "ex_int.continental_us",
+          "ex_borrow.continental_us",
+          "ex_tax.continental_us",
+          "ex_dep.continental_us",
+          "ex_other.continental_us"
+        ],
+        "equals": "ex_total.continental_us"
+      },
+      {
+        "name": "net_current_operating_earnings.continental_us",
+        "tolerance": 5,
+        "of": [
+          "net_current.continental_us",
+          "ex_total.continental_us"
+        ],
+        "equals": "oe_total.continental_us"
+      },
+      {
+        "name": "recoveries_total.continental_us",
+        "tolerance": 5,
+        "of": [
+          "rec_s_rec.continental_us",
+          "rec_s_xfer.continental_us",
+          "rec_s_profit.continental_us",
+          "rec_l_rec.continental_us",
+          "rec_l_xfer.continental_us",
+          "rec_allother.continental_us"
+        ],
+        "equals": "rec_total.continental_us"
+      },
+      {
+        "name": "losses_total.continental_us",
+        "tolerance": 5,
+        "of": [
+          "loss_s_lc.continental_us",
+          "loss_s_xfer.continental_us",
+          "loss_l_lc.continental_us",
+          "loss_l_xfer.continental_us",
+          "loss_allother.continental_us"
+        ],
+        "equals": "loss_total.continental_us"
+      },
+      {
+        "name": "net_profits_before_income_taxes.continental_us",
+        "tolerance": 5,
+        "of": [
+          "net_current.continental_us",
+          "rec_total.continental_us"
+        ],
+        "minus": [
+          "loss_total.continental_us"
+        ],
+        "equals": "net_profits.continental_us"
+      },
+      {
+        "name": "current_operating_earnings.connecticut",
+        "tolerance": 5,
+        "of": [
+          "oe_gov.connecticut",
+          "oe_secdiv.connecticut",
+          "oe_loans.connecticut",
+          "oe_loanfees.connecticut",
+          "oe_deposit.connecticut",
+          "oe_othersvc.connecticut",
+          "oe_trust.connecticut",
+          "oe_other.connecticut"
+        ],
+        "equals": "oe_total.connecticut"
+      },
+      {
+        "name": "current_operating_expenses.connecticut",
+        "tolerance": 5,
+        "of": [
+          "ex_off.connecticut",
+          "ex_emp.connecticut",
+          "ex_dir.connecticut",
+          "ex_int.connecticut",
+          "ex_borrow.connecticut",
+          "ex_tax.connecticut",
+          "ex_dep.connecticut",
+          "ex_other.connecticut"
+        ],
+        "equals": "ex_total.connecticut"
+      },
+      {
+        "name": "net_current_operating_earnings.connecticut",
+        "tolerance": 5,
+        "of": [
+          "net_current.connecticut",
+          "ex_total.connecticut"
+        ],
+        "equals": "oe_total.connecticut"
+      },
+      {
+        "name": "recoveries_total.connecticut",
+        "tolerance": 5,
+        "of": [
+          "rec_s_rec.connecticut",
+          "rec_s_xfer.connecticut",
+          "rec_s_profit.connecticut",
+          "rec_l_rec.connecticut",
+          "rec_l_xfer.connecticut",
+          "rec_allother.connecticut"
+        ],
+        "equals": "rec_total.connecticut"
+      },
+      {
+        "name": "losses_total.connecticut",
+        "tolerance": 5,
+        "of": [
+          "loss_s_lc.connecticut",
+          "loss_s_xfer.connecticut",
+          "loss_l_lc.connecticut",
+          "loss_l_xfer.connecticut",
+          "loss_allother.connecticut"
+        ],
+        "equals": "loss_total.connecticut"
+      },
+      {
+        "name": "net_profits_before_income_taxes.connecticut",
+        "tolerance": 5,
+        "of": [
+          "net_current.connecticut",
+          "rec_total.connecticut"
+        ],
+        "minus": [
+          "loss_total.connecticut"
+        ],
+        "equals": "net_profits.connecticut"
+      }
+    ],
+    "row_rules": [
+      {
+        "name": "us_equals_areas_plus_continental",
+        "why": "The U. S. column is the sum of the four area columns beside it, on every row of the table. It is exact to the unit on all 33 rows even though the column sums are not, which says the U. S. figure was computed by adding the four ROUNDED area figures rather than rounded independently from dollars.",
+        "of": [
+          "alaska",
+          "puerto_rico",
+          "other",
+          "continental_us"
+        ],
+        "equals": "us"
+      }
+    ]
+  },
+  "not_labeled": "THE SIX STATE COLUMNS BETWEEN Continental United States AND Connecticut -- Alabama, Arizona, Arkansas, California, Colorado -- are read but not labeled, for the reason given under labeling. A parser is not credited or penalized for them.\n\nTHE NINE BLANK CELLS ARE NOT LABELED, and the omission is deliberate. The page prints a row of leader dots where a state reported nothing, and there is no single correct rendering of that: empty, 0 and a dash are all defensible, so grading it would score a formatting choice rather than a read. They are omitted from the sums that would otherwise name them, which is arithmetically the same thing -- nothing was reported, so nothing is added.\n\nTHE FOOTNOTE MARKER on the 'Other' column header is labeled as part of no field; the footnote text it points to is not printed on this page. The running head is printed SIDEWAYS up the right margin, rotated 90 degrees, which no other page in this corpus offers; it is labeled as ordinary text because that is what a parser should return, and a parser that drops it is making an ordinary miss."
+}

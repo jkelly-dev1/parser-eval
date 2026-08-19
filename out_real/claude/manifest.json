@@ -1,0 +1,57 @@
+{
+  "parser": "claude",
+  "version": "claude-opus-5 (anthropic 0.122.0), effort=medium",
+  "source": "png",
+  "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
+  "total_seconds": 344.3,
+  "records": [
+    {
+      "doc_id": "census29_sales",
+      "dpi": 300,
+      "seconds": 71.54,
+      "chars": 4436,
+      "error": null,
+      "text_file": "census29_sales_300.txt"
+    },
+    {
+      "doc_id": "census29_wages",
+      "dpi": 300,
+      "seconds": 119.58,
+      "chars": 5947,
+      "error": null,
+      "text_file": "census29_wages_300.txt"
+    },
+    {
+      "doc_id": "fdic2023_balance",
+      "dpi": 300,
+      "seconds": 22.5,
+      "chars": 2321,
+      "error": null,
+      "text_file": "fdic2023_balance_300.txt"
+    },
+    {
+      "doc_id": "fdic_balance",
+      "dpi": 300,
+      "seconds": 32.05,
+      "chars": 3224,
+      "error": null,
+      "text_file": "fdic_balance_300.txt"
+    },
+    {
+      "doc_id": "fdic_earnings",
+      "dpi": 300,
+      "seconds": 58.5,
+      "chars": 5570,
+      "error": null,
+      "text_file": "fdic_earnings_300.txt"
+    },
+    {
+      "doc_id": "fdic_income",
+      "dpi": 300,
+      "seconds": 40.16,
+      "chars": 4556,
+      "error": null,
+      "text_file": "fdic_income_300.txt"
+    }
+  ]
+}

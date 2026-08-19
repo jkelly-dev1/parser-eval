@@ -1,0 +1,49 @@
+{
+  "note": "Relationships the DOCUMENT SET asserts across pages, which no single page can check. A parser can read two pages each perfectly self-consistently and still contradict itself between them -- read the fund as 1,690,818,394 on one page and 1,690,818,894 on the other and both pages still balance internally. Only an identity between them fails. Every term must come from the same parser, so this grades one tool's coherence over a document set rather than agreement between tools.",
+
+  "identities": [
+    {
+      "name": "fund_ties_to_balance_sheet",
+      "why": "Exhibit 2 closes at the deposit insurance fund; Exhibit 1 carries the same figure as the balancing item. The two exhibits reference each other by name on the page -- 'note 2 and exhibit 1', 'note 2 and exhibit 2'.",
+      "of": ["fdic_income.fund_closing_1956"],
+      "equals": "fdic_balance.insurance losses and related expenses.total"
+    },
+    {
+      "name": "assessment_credit_prior_years",
+      "why": "Note 1 of the income statement states the credit due the banks for prior years; the balance sheet carries it as a liability line.",
+      "of": ["fdic_income.note1_credit_prior_years"],
+      "equals": "fdic_balance.Available July 1, 1956.detail"
+    },
+    {
+      "name": "assessment_credit_estimated",
+      "why": "Note 1's estimated credit for the first six months of 1956 is the balance sheet's second assessment-credit line.",
+      "of": ["fdic_income.note1_credit_estimated_1956"],
+      "equals": "fdic_balance.ment income for 6 months ended June 30, 1956.detail"
+    },
+    {
+      "name": "assessment_credits_total_across_pages",
+      "why": "A cross-page SUM rather than an identity: the income statement's two note-1 figures add to the balance sheet's combined assessment-credit total. One term is in prose on one page, the other two in a column on the other.",
+      "of": ["fdic_income.note1_credit_prior_years",
+             "fdic_income.note1_credit_estimated_1956"],
+      "equals": "fdic_balance.ment income for 6 months ended June 30, 1956.total"
+    },
+    {
+      "name": "securities_face_value",
+      "why": "Note 4 quotes the face value of securities held; the balance sheet prints the same figure inside the label prose of the securities line. Both are figures embedded in sentences rather than in columns, on different pages.",
+      "of": ["fdic_income.note4_face_value"],
+      "equals": "fdic_balance.face_value"
+    },
+    {
+      "name": "cash_balance",
+      "why": "Note 4's cash balance is the balance sheet's first asset line.",
+      "of": ["fdic_income.note4_cash_balance"],
+      "equals": "fdic_balance.Cash.total"
+    },
+    {
+      "name": "estimated_losses_on_open_cases",
+      "why": "Note 2's estimated losses on cases not terminated is the balance sheet's deduction from receivership assets.",
+      "of": ["fdic_income.note2_estimated_losses"],
+      "equals": "fdic_balance.Less estimate for losses.detail"
+    }
+  ]
+}

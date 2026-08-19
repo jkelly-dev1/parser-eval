@@ -1,0 +1,6363 @@
+{
+  "claude": {
+    "census29_sales": {
+      "counts": {
+        "HOLDS": 2,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "fuel_total_cost",
+          "status": "HOLDS",
+          "notes": [
+            "sum 66.00 vs printed 66.00"
+          ]
+        },
+        {
+          "name": "sales_total",
+          "status": "HOLDS",
+          "notes": [
+            "sum 37,000.00 vs printed 37,000.00"
+          ]
+        }
+      ]
+    },
+    "census29_wages": {
+      "counts": {
+        "HOLDS": 4,
+        "SURVIVES": 0,
+        "BROKEN": 1,
+        "INCOMPLETE": 1
+      },
+      "detail": [
+        {
+          "name": "salaried_male",
+          "status": "HOLDS",
+          "notes": [
+            "sum 3.00 vs printed 3.00"
+          ]
+        },
+        {
+          "name": "persons_engaged",
+          "status": "HOLDS",
+          "notes": [
+            "sum 15.00 vs printed 15.00"
+          ]
+        },
+        {
+          "name": "wage_earners_by_month",
+          "status": "HOLDS",
+          "notes": [
+            "sum 132.00 vs printed 132.00"
+          ]
+        },
+        {
+          "name": "salaried_pay_annotation",
+          "status": "BROKEN",
+          "notes": [
+            "hw_salaried_pay_annotation read as '19750' (printed '9750')",
+            "sum 9,750.00 vs printed 19,750.00"
+          ]
+        },
+        {
+          "name": "salaries_aggregate",
+          "status": "HOLDS",
+          "notes": [
+            "sum 24,250.00 vs printed 24,250.00"
+          ]
+        },
+        {
+          "name": "materials_total",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_materials_total unparseable '11311-'"
+          ]
+        }
+      ]
+    },
+    "fdic2023_balance": {
+      "counts": {
+        "HOLDS": 12,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "total_assets.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 24,007,118.00 vs printed 24,007,118.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum -19,228.00 vs printed -19,228.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 121,777,980.00 vs printed 121,777,980.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_assets.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 644,081.00 vs printed 644,081.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum -2,958,199.00 vs printed -2,958,199.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,217,894.00 vs printed 128,217,894.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        }
+      ]
+    },
+    "fdic_balance": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "us_government_obligations",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,816,847,213.00 vs printed 1,816,847,213.00"
+          ]
+        },
+        {
+          "name": "receivership_gross",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "receivership_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "total_assets",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,822,462,212.00 vs printed 1,822,462,212.00"
+          ]
+        },
+        {
+          "name": "assessment_credits",
+          "status": "HOLDS",
+          "notes": [
+            "sum 129,797,679.00 vs printed 129,797,679.00"
+          ]
+        },
+        {
+          "name": "total_liabilities",
+          "status": "HOLDS",
+          "notes": [
+            "sum 131,643,818.00 vs printed 131,643,818.00"
+          ]
+        },
+        {
+          "name": "sheet_balances",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,822,462,212.00 vs printed 1,822,462,212.00"
+          ]
+        }
+      ]
+    },
+    "fdic_earnings": {
+      "counts": {
+        "HOLDS": 69,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,924.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,457,202.00 vs printed 4,457,198.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,922.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 250,173.00 vs printed 250,171.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,538.00 vs printed 993,534.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,031,361.00 vs printed 2,031,360.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,658.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,509.00 vs printed 4,508.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,659.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 138.00 vs printed 137.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 935.00 vs printed 935.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,353.00 vs printed 1,352.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,761.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 9,332.00 vs printed 9,331.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,759.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 60.00 vs printed 60.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "loss_l_lc.puerto_rico landed in another row",
+            "sum 295.00 vs printed 295.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,193.00 vs printed 2,193.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,423.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,900.00 vs printed 1,900.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,424.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 58.00 vs printed 58.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 92.00 vs printed 91.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 491.00 vs printed 491.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,211,082.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,441,461.00 vs printed 4,441,459.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,211,080.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 249,917.00 vs printed 249,916.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 992,216.00 vs printed 992,213.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,027,324.00 vs printed 2,027,324.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,759.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 59,432.00 vs printed 59,431.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,757.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,215.00 vs printed 1,215.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,375.00 vs printed 11,375.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 19,166.00 vs printed 19,167.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating earnings-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,921.00 vs printed 7,231,921.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on U. S. Government obligations]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,342,842.00 vs printed 1,342,842.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and dividends on other securities]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 370,045.00 vs printed 370,045.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,339,866.00 vs printed 4,339,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges and fees on bank's loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 73,562.00 vs printed 73,562.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges on deposit accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 385,927.00 vs printed 385,927.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[and collection and exchange charges]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 168,497.00 vs printed 168,497.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Trust department]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 322,117.00 vs printed 322,117.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 229,068.00 vs printed 229,068.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating expenses-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,457,198.00 vs printed 4,457,198.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries-officers]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 720,866.00 vs printed 720,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries and wages-employees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,372,262.00 vs printed 1,372,262.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[discount, and other committees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 42,614.00 vs printed 42,614.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on time and savings deposits]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 805,857.00 vs printed 805,857.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on borrowed money]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 45,392.00 vs printed 45,392.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Taxes other than on net income]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 187,526.00 vs printed 187,526.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[furniture and fixtures]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,085.00 vs printed 128,085.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating expenses]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,154,600.00 vs printed 1,154,600.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,774,724.00 vs printed 2,774,724.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[counts, and profits-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 250,171.00 vs printed 250,171.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 14,090.00 vs printed 14,090.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 41,001.00 vs printed 41,001.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Profits on securities sold or redeemed]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 31,151.00 vs printed 31,151.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 20,762.00 vs printed 20,762.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 77,606.00 vs printed 77,606.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 65,563.00 vs printed 65,563.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[serve accounts-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,534.00 vs printed 993,534.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 317,381.00 vs printed 317,381.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 101,830.00 vs printed 101,830.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "puerto_rico landed in another row",
+            "sum 32,018.00 vs printed 32,018.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 452,940.00 vs printed 452,940.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 89,369.00 vs printed 89,369.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net profits before income taxes]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,031,360.00 vs printed 2,031,360.00"
+          ]
+        }
+      ]
+    },
+    "fdic_income": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 2,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "assessments_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 155,141,790.00 vs printed 155,141,790.00"
+          ]
+        },
+        {
+          "name": "gross_income",
+          "status": "BROKEN",
+          "notes": [
+            "gross_income read as '108,951,228' (printed '108,951,223')",
+            "sum 108,951,223.00 vs printed 108,951,228.00"
+          ]
+        },
+        {
+          "name": "admin_expenses",
+          "status": "HOLDS",
+          "notes": [
+            "sum 8,873,366.00 vs printed 8,873,366.00"
+          ]
+        },
+        {
+          "name": "total_expenses",
+          "status": "HOLDS",
+          "notes": [
+            "sum 8,976,959.00 vs printed 8,976,959.00"
+          ]
+        },
+        {
+          "name": "income_after_expenses",
+          "status": "BROKEN",
+          "notes": [
+            "gross_income read as '108,951,228' (printed '108,951,223')",
+            "sum 108,951,223.00 vs printed 108,951,228.00"
+          ]
+        },
+        {
+          "name": "loss_estimate_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 448,232.00 vs printed 448,232.00"
+          ]
+        },
+        {
+          "name": "net_income_for_year",
+          "status": "HOLDS",
+          "notes": [
+            "sum 100,277,727.00 vs printed 100,277,727.00"
+          ]
+        },
+        {
+          "name": "fund_rollforward",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,690,818,394.00 vs printed 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "note4_securities_split",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,815,200,000.00 vs printed 1,815,200,000.00"
+          ]
+        }
+      ]
+    },
+    "cross_page": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "fund_ties_to_balance_sheet",
+          "status": "HOLDS",
+          "notes": [
+            "1,690,818,394.00 vs 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_prior_years",
+          "status": "HOLDS",
+          "notes": [
+            "85,409,716.00 vs 85,409,716.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_estimated",
+          "status": "HOLDS",
+          "notes": [
+            "44,387,963.00 vs 44,387,963.00"
+          ]
+        },
+        {
+          "name": "assessment_credits_total_across_pages",
+          "status": "HOLDS",
+          "notes": [
+            "129,797,679.00 vs 129,797,679.00"
+          ]
+        },
+        {
+          "name": "securities_face_value",
+          "status": "HOLDS",
+          "notes": [
+            "1,815,200,000.00 vs 1,815,200,000.00"
+          ]
+        },
+        {
+          "name": "cash_balance",
+          "status": "HOLDS",
+          "notes": [
+            "2,562,146.00 vs 2,562,146.00"
+          ]
+        },
+        {
+          "name": "estimated_losses_on_open_cases",
+          "status": "HOLDS",
+          "notes": [
+            "8,346,249.00 vs 8,346,249.00"
+          ]
+        }
+      ]
+    }
+  },
+  "docling": {
+    "census29_sales": {
+      "counts": {
+        "HOLDS": 0,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 2
+      },
+      "detail": [
+        {
+          "name": "fuel_total_cost",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_natural_gas_cost ABSENT",
+            "hw_fuel_total_cost ABSENT"
+          ]
+        },
+        {
+          "name": "sales_total",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_sales_home_consumers ABSENT"
+          ]
+        }
+      ]
+    },
+    "census29_wages": {
+      "counts": {
+        "HOLDS": 1,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 5
+      },
+      "detail": [
+        {
+          "name": "salaried_male",
+          "status": "HOLDS",
+          "notes": [
+            "sum 3.00 vs printed 3.00"
+          ]
+        },
+        {
+          "name": "persons_engaged",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_persons_total ABSENT"
+          ]
+        },
+        {
+          "name": "wage_earners_by_month",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_month_jan ABSENT",
+            "hw_month_feb ABSENT",
+            "hw_month_mar ABSENT",
+            "hw_month_apr ABSENT",
+            "hw_month_may ABSENT",
+            "hw_month_jun ABSENT",
+            "hw_month_jul ABSENT",
+            "hw_month_aug ABSENT",
+            "hw_month_sep ABSENT",
+            "hw_month_oct ABSENT",
+            "hw_month_nov ABSENT",
+            "hw_month_dec ABSENT",
+            "hw_months_annotation read as '13' (printed '132')"
+          ]
+        },
+        {
+          "name": "salaried_pay_annotation",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_salaries ABSENT",
+            "hw_managers_salaries read as '.6630' (printed '6630')",
+            "hw_salaried_pay_annotation ABSENT"
+          ]
+        },
+        {
+          "name": "salaries_aggregate",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_salaries ABSENT",
+            "hw_managers_salaries read as '.6630' (printed '6630')",
+            "hw_salaries_aggregate ABSENT"
+          ]
+        },
+        {
+          "name": "materials_total",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_materials_cost unparseable '.10951.'",
+            "hw_fuel_cost ABSENT",
+            "hw_materials_total unparseable '$11311-'"
+          ]
+        }
+      ]
+    },
+    "fdic2023_balance": {
+      "counts": {
+        "HOLDS": 12,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "total_assets.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 24,007,118.00 vs printed 24,007,118.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum -19,228.00 vs printed -19,228.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 121,777,980.00 vs printed 121,777,980.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_assets.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 644,081.00 vs printed 644,081.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum -2,958,199.00 vs printed -2,958,199.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,217,894.00 vs printed 128,217,894.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        }
+      ]
+    },
+    "fdic_balance": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "us_government_obligations",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,816,847,213.00 vs printed 1,816,847,213.00"
+          ]
+        },
+        {
+          "name": "receivership_gross",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "receivership_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "total_assets",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,822,462,212.00 vs printed 1,822,462,212.00"
+          ]
+        },
+        {
+          "name": "assessment_credits",
+          "status": "HOLDS",
+          "notes": [
+            "sum 129,797,679.00 vs printed 129,797,679.00"
+          ]
+        },
+        {
+          "name": "total_liabilities",
+          "status": "HOLDS",
+          "notes": [
+            "sum 131,643,818.00 vs printed 131,643,818.00"
+          ]
+        },
+        {
+          "name": "sheet_balances",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,822,462,212.00 vs printed 1,822,462,212.00"
+          ]
+        }
+      ]
+    },
+    "fdic_earnings": {
+      "counts": {
+        "HOLDS": 60,
+        "SURVIVES": 2,
+        "BROKEN": 0,
+        "INCOMPLETE": 7
+      },
+      "detail": [
+        {
+          "name": "current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "oe_loanfees.us landed in another row",
+            "oe_othersvc.us landed in another row",
+            "oe_other.us landed in another row",
+            "sum 7,231,924.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.us",
+          "status": "HOLDS",
+          "notes": [
+            "ex_emp.us landed in another row",
+            "ex_int.us landed in another row",
+            "ex_other.us landed in another row",
+            "sum 4,457,202.00 vs printed 4,457,198.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,922.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_xfer.us landed in another row",
+            "rec_s_profit.us landed in another row",
+            "rec_l_rec.us landed in another row",
+            "rec_l_xfer.us landed in another row",
+            "rec_allother.us landed in another row",
+            "sum 250,173.00 vs printed 250,171.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,538.00 vs printed 993,534.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.us",
+          "status": "INCOMPLETE",
+          "notes": [
+            "net_profits.us ABSENT"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "oe_loanfees.alaska landed in another row",
+            "oe_othersvc.alaska landed in another row",
+            "oe_other.alaska landed in another row",
+            "sum 6,658.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "ex_emp.alaska landed in another row",
+            "ex_int.alaska landed in another row",
+            "ex_other.alaska landed in another row",
+            "sum 4,509.00 vs printed 4,508.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,659.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_xfer.alaska landed in another row",
+            "rec_s_profit.alaska landed in another row",
+            "rec_l_xfer.alaska landed in another row",
+            "rec_allother.alaska landed in another row",
+            "sum 138.00 vs printed 137.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.alaska",
+          "status": "INCOMPLETE",
+          "notes": [
+            "loss_allother.alaska ABSENT"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.alaska",
+          "status": "SURVIVES",
+          "notes": [
+            "net_profits.alaska read as '1,355' (printed '1,352')",
+            "sum 1,353.00 vs printed 1,355.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "oe_othersvc.puerto_rico landed in another row",
+            "sum 11,761.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "ex_emp.puerto_rico landed in another row",
+            "ex_int.puerto_rico landed in another row",
+            "ex_dep.puerto_rico landed in another row",
+            "ex_other.puerto_rico landed in another row",
+            "sum 9,332.00 vs printed 9,331.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "net_current.puerto_rico landed in another row",
+            "sum 11,759.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_profit.puerto_rico landed in another row",
+            "rec_l_xfer.puerto_rico landed in another row",
+            "rec_allother.puerto_rico landed in another row",
+            "sum 60.00 vs printed 60.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 295.00 vs printed 295.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.puerto_rico",
+          "status": "INCOMPLETE",
+          "notes": [
+            "net_current.puerto_rico landed in another row",
+            "net_profits.puerto_rico ABSENT"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "oe_othersvc.other landed in another row",
+            "sum 2,423.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.other",
+          "status": "HOLDS",
+          "notes": [
+            "ex_emp.other landed in another row",
+            "ex_int.other landed in another row",
+            "sum 1,900.00 vs printed 1,900.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,424.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_xfer.other landed in another row",
+            "rec_l_xfer.other landed in another row",
+            "sum 58.00 vs printed 58.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 92.00 vs printed 91.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.other",
+          "status": "SURVIVES",
+          "notes": [
+            "net_profits.other read as '490' (printed '491')",
+            "sum 491.00 vs printed 490.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "oe_loanfees.continental_us landed in another row",
+            "oe_othersvc.continental_us landed in another row",
+            "oe_other.continental_us landed in another row",
+            "sum 7,211,082.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "ex_emp.continental_us landed in another row",
+            "ex_int.continental_us landed in another row",
+            "ex_dep.continental_us landed in another row",
+            "ex_other.continental_us landed in another row",
+            "sum 4,441,461.00 vs printed 4,441,459.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "net_current.continental_us landed in another row",
+            "sum 7,211,080.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_xfer.continental_us landed in another row",
+            "rec_s_profit.continental_us landed in another row",
+            "rec_allother.continental_us landed in another row",
+            "sum 249,917.00 vs printed 249,916.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 992,216.00 vs printed 992,213.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.continental_us",
+          "status": "INCOMPLETE",
+          "notes": [
+            "net_current.continental_us landed in another row",
+            "net_profits.continental_us ABSENT"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "oe_loanfees.connecticut landed in another row",
+            "oe_othersvc.connecticut landed in another row",
+            "oe_other.connecticut landed in another row",
+            "sum 88,759.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "ex_emp.connecticut landed in another row",
+            "ex_int.connecticut landed in another row",
+            "ex_dep.connecticut landed in another row",
+            "ex_other.connecticut landed in another row",
+            "sum 59,432.00 vs printed 59,431.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,757.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_xfer.connecticut landed in another row",
+            "rec_s_profit.connecticut landed in another row",
+            "rec_allother.connecticut landed in another row",
+            "sum 1,215.00 vs printed 1,215.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,375.00 vs printed 11,375.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.connecticut",
+          "status": "INCOMPLETE",
+          "notes": [
+            "net_profits.connecticut ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating earnings-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,921.00 vs printed 7,231,921.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on U. S. Government obligations]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,342,842.00 vs printed 1,342,842.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and dividends on other securities]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 370,045.00 vs printed 370,045.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,339,866.00 vs printed 4,339,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges and fees on bank's loans]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 73,562.00 vs printed 73,562.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges on deposit accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 385,927.00 vs printed 385,927.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[and collection and exchange charges]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "puerto_rico landed in another row",
+            "other landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 168,497.00 vs printed 168,497.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Trust department]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 322,117.00 vs printed 322,117.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 229,068.00 vs printed 229,068.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating expenses-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,457,198.00 vs printed 4,457,198.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries-officers]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 720,866.00 vs printed 720,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries and wages-employees]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "puerto_rico landed in another row",
+            "other landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 1,372,262.00 vs printed 1,372,262.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[discount, and other committees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 42,614.00 vs printed 42,614.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on time and savings deposits]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "puerto_rico landed in another row",
+            "other landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 805,857.00 vs printed 805,857.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on borrowed money]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 45,392.00 vs printed 45,392.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Taxes other than on net income]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 187,526.00 vs printed 187,526.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[furniture and fixtures]",
+          "status": "HOLDS",
+          "notes": [
+            "puerto_rico landed in another row",
+            "continental_us landed in another row",
+            "sum 128,085.00 vs printed 128,085.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating expenses]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "puerto_rico landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 1,154,600.00 vs printed 1,154,600.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "puerto_rico landed in another row",
+            "continental_us landed in another row",
+            "sum 2,774,724.00 vs printed 2,774,724.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[counts, and profits-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 250,171.00 vs printed 250,171.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 14,090.00 vs printed 14,090.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "other landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 41,001.00 vs printed 41,001.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Profits on securities sold or redeemed]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "puerto_rico landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 31,151.00 vs printed 31,151.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "us landed in another row",
+            "sum 20,762.00 vs printed 20,762.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "puerto_rico landed in another row",
+            "other landed in another row",
+            "us landed in another row",
+            "sum 77,606.00 vs printed 77,606.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "puerto_rico landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 65,563.00 vs printed 65,563.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[serve accounts-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,534.00 vs printed 993,534.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 317,381.00 vs printed 317,381.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 101,830.00 vs printed 101,830.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 32,018.00 vs printed 32,018.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 452,940.00 vs printed 452,940.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "alaska ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net profits before income taxes]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "alaska read as '1,355' (printed '1,352')",
+            "puerto_rico ABSENT",
+            "other read as '490' (printed '491')",
+            "continental_us ABSENT",
+            "us ABSENT"
+          ]
+        }
+      ]
+    },
+    "fdic_income": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 2
+      },
+      "detail": [
+        {
+          "name": "assessments_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 155,141,790.00 vs printed 155,141,790.00"
+          ]
+        },
+        {
+          "name": "gross_income",
+          "status": "INCOMPLETE",
+          "notes": [
+            "gross_income ABSENT"
+          ]
+        },
+        {
+          "name": "admin_expenses",
+          "status": "HOLDS",
+          "notes": [
+            "sum 8,873,366.00 vs printed 8,873,366.00"
+          ]
+        },
+        {
+          "name": "total_expenses",
+          "status": "HOLDS",
+          "notes": [
+            "sum 8,976,959.00 vs printed 8,976,959.00"
+          ]
+        },
+        {
+          "name": "income_after_expenses",
+          "status": "INCOMPLETE",
+          "notes": [
+            "gross_income ABSENT"
+          ]
+        },
+        {
+          "name": "loss_estimate_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 448,232.00 vs printed 448,232.00"
+          ]
+        },
+        {
+          "name": "net_income_for_year",
+          "status": "HOLDS",
+          "notes": [
+            "sum 100,277,727.00 vs printed 100,277,727.00"
+          ]
+        },
+        {
+          "name": "fund_rollforward",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,690,818,394.00 vs printed 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "note4_securities_split",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,815,200,000.00 vs printed 1,815,200,000.00"
+          ]
+        }
+      ]
+    },
+    "cross_page": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "fund_ties_to_balance_sheet",
+          "status": "HOLDS",
+          "notes": [
+            "1,690,818,394.00 vs 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_prior_years",
+          "status": "HOLDS",
+          "notes": [
+            "85,409,716.00 vs 85,409,716.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_estimated",
+          "status": "HOLDS",
+          "notes": [
+            "44,387,963.00 vs 44,387,963.00"
+          ]
+        },
+        {
+          "name": "assessment_credits_total_across_pages",
+          "status": "HOLDS",
+          "notes": [
+            "129,797,679.00 vs 129,797,679.00"
+          ]
+        },
+        {
+          "name": "securities_face_value",
+          "status": "HOLDS",
+          "notes": [
+            "1,815,200,000.00 vs 1,815,200,000.00"
+          ]
+        },
+        {
+          "name": "cash_balance",
+          "status": "HOLDS",
+          "notes": [
+            "2,562,146.00 vs 2,562,146.00"
+          ]
+        },
+        {
+          "name": "estimated_losses_on_open_cases",
+          "status": "HOLDS",
+          "notes": [
+            "8,346,249.00 vs 8,346,249.00"
+          ]
+        }
+      ]
+    }
+  },
+  "gpt": {
+    "census29_sales": {
+      "counts": {
+        "HOLDS": 2,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "fuel_total_cost",
+          "status": "HOLDS",
+          "notes": [
+            "sum 66.00 vs printed 66.00"
+          ]
+        },
+        {
+          "name": "sales_total",
+          "status": "HOLDS",
+          "notes": [
+            "sum 37,000.00 vs printed 37,000.00"
+          ]
+        }
+      ]
+    },
+    "census29_wages": {
+      "counts": {
+        "HOLDS": 5,
+        "SURVIVES": 0,
+        "BROKEN": 1,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "salaried_male",
+          "status": "HOLDS",
+          "notes": [
+            "sum 3.00 vs printed 3.00"
+          ]
+        },
+        {
+          "name": "persons_engaged",
+          "status": "HOLDS",
+          "notes": [
+            "sum 15.00 vs printed 15.00"
+          ]
+        },
+        {
+          "name": "wage_earners_by_month",
+          "status": "HOLDS",
+          "notes": [
+            "sum 132.00 vs printed 132.00"
+          ]
+        },
+        {
+          "name": "salaried_pay_annotation",
+          "status": "HOLDS",
+          "notes": [
+            "sum 9,750.00 vs printed 9,750.00"
+          ]
+        },
+        {
+          "name": "salaries_aggregate",
+          "status": "BROKEN",
+          "notes": [
+            "hw_salaries_aggregate read as '$24210' (printed '24250')",
+            "sum 24,250.00 vs printed 24,210.00"
+          ]
+        },
+        {
+          "name": "materials_total",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,311.00 vs printed 11,311.00"
+          ]
+        }
+      ]
+    },
+    "fdic2023_balance": {
+      "counts": {
+        "HOLDS": 12,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "total_assets.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 24,007,118.00 vs printed 24,007,118.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum -19,228.00 vs printed -19,228.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 121,777,980.00 vs printed 121,777,980.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_assets.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 644,081.00 vs printed 644,081.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum -2,958,199.00 vs printed -2,958,199.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,217,894.00 vs printed 128,217,894.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        }
+      ]
+    },
+    "fdic_balance": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "us_government_obligations",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,816,847,213.00 vs printed 1,816,847,213.00"
+          ]
+        },
+        {
+          "name": "receivership_gross",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "receivership_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "total_assets",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,822,462,212.00 vs printed 1,822,462,212.00"
+          ]
+        },
+        {
+          "name": "assessment_credits",
+          "status": "HOLDS",
+          "notes": [
+            "sum 129,797,679.00 vs printed 129,797,679.00"
+          ]
+        },
+        {
+          "name": "total_liabilities",
+          "status": "HOLDS",
+          "notes": [
+            "sum 131,643,818.00 vs printed 131,643,818.00"
+          ]
+        },
+        {
+          "name": "sheet_balances",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,822,462,212.00 vs printed 1,822,462,212.00"
+          ]
+        }
+      ]
+    },
+    "fdic_earnings": {
+      "counts": {
+        "HOLDS": 69,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,924.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,457,202.00 vs printed 4,457,198.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,922.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 250,173.00 vs printed 250,171.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,538.00 vs printed 993,534.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,031,361.00 vs printed 2,031,360.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,658.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,509.00 vs printed 4,508.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,659.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 138.00 vs printed 137.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 935.00 vs printed 935.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,353.00 vs printed 1,352.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,761.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 9,332.00 vs printed 9,331.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,759.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 60.00 vs printed 60.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 295.00 vs printed 295.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,193.00 vs printed 2,193.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,423.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,900.00 vs printed 1,900.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,424.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 58.00 vs printed 58.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 92.00 vs printed 91.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 491.00 vs printed 491.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,211,082.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,441,461.00 vs printed 4,441,459.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,211,080.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 249,917.00 vs printed 249,916.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 992,216.00 vs printed 992,213.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,027,324.00 vs printed 2,027,324.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,759.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 59,432.00 vs printed 59,431.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,757.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,215.00 vs printed 1,215.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,375.00 vs printed 11,375.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 19,166.00 vs printed 19,167.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating earnings-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,921.00 vs printed 7,231,921.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on U. S. Government obligations]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,342,842.00 vs printed 1,342,842.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and dividends on other securities]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 370,045.00 vs printed 370,045.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,339,866.00 vs printed 4,339,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges and fees on bank's loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 73,562.00 vs printed 73,562.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges on deposit accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 385,927.00 vs printed 385,927.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[and collection and exchange charges]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 168,497.00 vs printed 168,497.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Trust department]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 322,117.00 vs printed 322,117.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 229,068.00 vs printed 229,068.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating expenses-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,457,198.00 vs printed 4,457,198.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries-officers]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 720,866.00 vs printed 720,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries and wages-employees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,372,262.00 vs printed 1,372,262.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[discount, and other committees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 42,614.00 vs printed 42,614.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on time and savings deposits]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 805,857.00 vs printed 805,857.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on borrowed money]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 45,392.00 vs printed 45,392.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Taxes other than on net income]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 187,526.00 vs printed 187,526.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[furniture and fixtures]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,085.00 vs printed 128,085.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating expenses]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,154,600.00 vs printed 1,154,600.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,774,724.00 vs printed 2,774,724.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[counts, and profits-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 250,171.00 vs printed 250,171.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 14,090.00 vs printed 14,090.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 41,001.00 vs printed 41,001.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Profits on securities sold or redeemed]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 31,151.00 vs printed 31,151.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 20,762.00 vs printed 20,762.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 77,606.00 vs printed 77,606.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 65,563.00 vs printed 65,563.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[serve accounts-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,534.00 vs printed 993,534.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 317,381.00 vs printed 317,381.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 101,830.00 vs printed 101,830.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 32,018.00 vs printed 32,018.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 452,940.00 vs printed 452,940.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 89,369.00 vs printed 89,369.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net profits before income taxes]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,031,360.00 vs printed 2,031,360.00"
+          ]
+        }
+      ]
+    },
+    "fdic_income": {
+      "counts": {
+        "HOLDS": 9,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "assessments_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 155,141,790.00 vs printed 155,141,790.00"
+          ]
+        },
+        {
+          "name": "gross_income",
+          "status": "HOLDS",
+          "notes": [
+            "sum 108,951,223.00 vs printed 108,951,223.00"
+          ]
+        },
+        {
+          "name": "admin_expenses",
+          "status": "HOLDS",
+          "notes": [
+            "sum 8,873,366.00 vs printed 8,873,366.00"
+          ]
+        },
+        {
+          "name": "total_expenses",
+          "status": "HOLDS",
+          "notes": [
+            "sum 8,976,959.00 vs printed 8,976,959.00"
+          ]
+        },
+        {
+          "name": "income_after_expenses",
+          "status": "HOLDS",
+          "notes": [
+            "sum 108,951,223.00 vs printed 108,951,223.00"
+          ]
+        },
+        {
+          "name": "loss_estimate_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 448,232.00 vs printed 448,232.00"
+          ]
+        },
+        {
+          "name": "net_income_for_year",
+          "status": "HOLDS",
+          "notes": [
+            "sum 100,277,727.00 vs printed 100,277,727.00"
+          ]
+        },
+        {
+          "name": "fund_rollforward",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,690,818,394.00 vs printed 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "note4_securities_split",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,815,200,000.00 vs printed 1,815,200,000.00"
+          ]
+        }
+      ]
+    },
+    "cross_page": {
+      "counts": {
+        "HOLDS": 6,
+        "SURVIVES": 0,
+        "BROKEN": 1,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "fund_ties_to_balance_sheet",
+          "status": "HOLDS",
+          "notes": [
+            "1,690,818,394.00 vs 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_prior_years",
+          "status": "HOLDS",
+          "notes": [
+            "85,409,716.00 vs 85,409,716.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_estimated",
+          "status": "HOLDS",
+          "notes": [
+            "44,387,963.00 vs 44,387,963.00"
+          ]
+        },
+        {
+          "name": "assessment_credits_total_across_pages",
+          "status": "HOLDS",
+          "notes": [
+            "129,797,679.00 vs 129,797,679.00"
+          ]
+        },
+        {
+          "name": "securities_face_value",
+          "status": "HOLDS",
+          "notes": [
+            "1,815,200,000.00 vs 1,815,200,000.00"
+          ]
+        },
+        {
+          "name": "cash_balance",
+          "status": "HOLDS",
+          "notes": [
+            "2,562,146.00 vs 2,562,146.00"
+          ]
+        },
+        {
+          "name": "estimated_losses_on_open_cases",
+          "status": "BROKEN",
+          "notes": [
+            "fdic_income.note2_estimated_losses read as '$8,846,249' (printed '8,346,249')",
+            "8,846,249.00 vs 8,346,249.00"
+          ]
+        }
+      ]
+    }
+  },
+  "marker": {
+    "census29_sales": {
+      "counts": {
+        "HOLDS": 1,
+        "SURVIVES": 0,
+        "BROKEN": 1,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "fuel_total_cost",
+          "status": "HOLDS",
+          "notes": [
+            "sum 66.00 vs printed 66.00"
+          ]
+        },
+        {
+          "name": "sales_total",
+          "status": "BROKEN",
+          "notes": [
+            "hw_sales_retailers read as '25,000' (printed '35000')",
+            "sum 27,000.00 vs printed 37,000.00"
+          ]
+        }
+      ]
+    },
+    "census29_wages": {
+      "counts": {
+        "HOLDS": 1,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 5
+      },
+      "detail": [
+        {
+          "name": "salaried_male",
+          "status": "HOLDS",
+          "notes": [
+            "sum 3.00 vs printed 3.00"
+          ]
+        },
+        {
+          "name": "persons_engaged",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_persons_total ABSENT"
+          ]
+        },
+        {
+          "name": "wage_earners_by_month",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_month_jan ABSENT",
+            "hw_month_feb ABSENT",
+            "hw_month_mar ABSENT",
+            "hw_month_apr ABSENT",
+            "hw_month_may ABSENT",
+            "hw_month_jun ABSENT",
+            "hw_month_jul ABSENT",
+            "hw_month_aug ABSENT",
+            "hw_month_sep ABSENT",
+            "hw_month_oct ABSENT",
+            "hw_month_nov ABSENT",
+            "hw_month_dec ABSENT",
+            "hw_months_annotation ABSENT"
+          ]
+        },
+        {
+          "name": "salaried_pay_annotation",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_salaries ABSENT",
+            "hw_managers_salaries ABSENT",
+            "hw_salaried_pay_annotation ABSENT"
+          ]
+        },
+        {
+          "name": "salaries_aggregate",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_salaries ABSENT",
+            "hw_managers_salaries ABSENT",
+            "hw_wage_earners_paid ABSENT",
+            "hw_salaries_aggregate ABSENT"
+          ]
+        },
+        {
+          "name": "materials_total",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_materials_cost ABSENT",
+            "hw_fuel_cost ABSENT",
+            "hw_electric_cost ABSENT",
+            "hw_materials_total ABSENT"
+          ]
+        }
+      ]
+    },
+    "fdic2023_balance": {
+      "counts": {
+        "HOLDS": 12,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "total_assets.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "resolutions.y2023 landed in another row",
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 24,007,118.00 vs printed 24,007,118.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum -19,228.00 vs printed -19,228.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 121,777,980.00 vs printed 121,777,980.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_assets.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "resolutions.y2022 landed in another row",
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 644,081.00 vs printed 644,081.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum -2,958,199.00 vs printed -2,958,199.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,217,894.00 vs printed 128,217,894.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        }
+      ]
+    },
+    "fdic_balance": {
+      "counts": {
+        "HOLDS": 3,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 4
+      },
+      "detail": [
+        {
+          "name": "us_government_obligations",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,816,847,213.00 vs printed 1,816,847,213.00"
+          ]
+        },
+        {
+          "name": "receivership_gross",
+          "status": "INCOMPLETE",
+          "notes": [
+            "Subrogated claims of depositors against closed insured banks.detail ABSENT",
+            "subrogated when paid.detail landed in another row",
+            "Loans to insured banks.detail ABSENT",
+            "Equity in assets acquired under purchase agreements.detail ABSENT",
+            "Assets purchased outright.detail ABSENT",
+            "receivership_gross ABSENT"
+          ]
+        },
+        {
+          "name": "receivership_net",
+          "status": "INCOMPLETE",
+          "notes": [
+            "receivership_gross ABSENT"
+          ]
+        },
+        {
+          "name": "total_assets",
+          "status": "INCOMPLETE",
+          "notes": [
+            "total_assets ABSENT"
+          ]
+        },
+        {
+          "name": "assessment_credits",
+          "status": "HOLDS",
+          "notes": [
+            "sum 129,797,679.00 vs printed 129,797,679.00"
+          ]
+        },
+        {
+          "name": "total_liabilities",
+          "status": "HOLDS",
+          "notes": [
+            "sum 131,643,818.00 vs printed 131,643,818.00"
+          ]
+        },
+        {
+          "name": "sheet_balances",
+          "status": "INCOMPLETE",
+          "notes": [
+            "total_assets ABSENT"
+          ]
+        }
+      ]
+    },
+    "fdic_earnings": {
+      "counts": {
+        "HOLDS": 65,
+        "SURVIVES": 2,
+        "BROKEN": 0,
+        "INCOMPLETE": 2
+      },
+      "detail": [
+        {
+          "name": "current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,924.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,457,202.00 vs printed 4,457,198.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,922.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "rec_allother.us landed in another row",
+            "sum 250,173.00 vs printed 250,171.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,538.00 vs printed 993,534.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,031,361.00 vs printed 2,031,360.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,658.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,509.00 vs printed 4,508.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,659.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "rec_allother.alaska landed in another row",
+            "sum 138.00 vs printed 137.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.alaska",
+          "status": "INCOMPLETE",
+          "notes": [
+            "loss_allother.alaska ABSENT"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,353.00 vs printed 1,352.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,761.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 9,332.00 vs printed 9,331.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,759.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "rec_allother.puerto_rico landed in another row",
+            "sum 60.00 vs printed 60.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 295.00 vs printed 295.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,193.00 vs printed 2,193.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,423.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,900.00 vs printed 1,900.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,424.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 58.00 vs printed 58.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 92.00 vs printed 91.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 491.00 vs printed 491.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,211,082.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,441,461.00 vs printed 4,441,459.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,211,080.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "rec_allother.continental_us landed in another row",
+            "sum 249,917.00 vs printed 249,916.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 992,216.00 vs printed 992,213.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.continental_us",
+          "status": "SURVIVES",
+          "notes": [
+            "net_profits.continental_us read as '2,027,324!' (printed '2,027,324')",
+            "sum 2,027,324.00 vs printed 2,027,324.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,759.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 59,432.00 vs printed 59,431.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,757.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "rec_allother.connecticut landed in another row",
+            "sum 1,215.00 vs printed 1,215.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,375.00 vs printed 11,375.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 19,166.00 vs printed 19,167.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating earnings-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,921.00 vs printed 7,231,921.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on U. S. Government obligations]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,342,842.00 vs printed 1,342,842.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and dividends on other securities]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 370,045.00 vs printed 370,045.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,339,866.00 vs printed 4,339,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges and fees on bank's loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 73,562.00 vs printed 73,562.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges on deposit accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 385,927.00 vs printed 385,927.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[and collection and exchange charges]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 168,497.00 vs printed 168,497.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Trust department]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 322,117.00 vs printed 322,117.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 229,068.00 vs printed 229,068.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating expenses-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,457,198.00 vs printed 4,457,198.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries-officers]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 720,866.00 vs printed 720,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries and wages-employees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,372,262.00 vs printed 1,372,262.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[discount, and other committees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 42,614.00 vs printed 42,614.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on time and savings deposits]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 805,857.00 vs printed 805,857.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on borrowed money]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 45,392.00 vs printed 45,392.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Taxes other than on net income]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 187,526.00 vs printed 187,526.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[furniture and fixtures]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,085.00 vs printed 128,085.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating expenses]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,154,600.00 vs printed 1,154,600.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,774,724.00 vs printed 2,774,724.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[counts, and profits-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 250,171.00 vs printed 250,171.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 14,090.00 vs printed 14,090.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 41,001.00 vs printed 41,001.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Profits on securities sold or redeemed]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 31,151.00 vs printed 31,151.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 20,762.00 vs printed 20,762.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 77,606.00 vs printed 77,606.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "puerto_rico landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 65,563.00 vs printed 65,563.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[serve accounts-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,534.00 vs printed 993,534.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 317,381.00 vs printed 317,381.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 101,830.00 vs printed 101,830.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 32,018.00 vs printed 32,018.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 452,940.00 vs printed 452,940.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "alaska ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net profits before income taxes]",
+          "status": "SURVIVES",
+          "notes": [
+            "continental_us read as '2,027,324!' (printed '2,027,324')",
+            "sum 2,031,360.00 vs printed 2,031,360.00"
+          ]
+        }
+      ]
+    },
+    "fdic_income": {
+      "counts": {
+        "HOLDS": 1,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 8
+      },
+      "detail": [
+        {
+          "name": "assessments_net",
+          "status": "INCOMPLETE",
+          "notes": [
+            "assessments_net ABSENT",
+            "assessment_credits_deducted ABSENT"
+          ]
+        },
+        {
+          "name": "gross_income",
+          "status": "INCOMPLETE",
+          "notes": [
+            "assessments_net ABSENT",
+            "income_securities ABSENT",
+            "other_income ABSENT",
+            "gross_income ABSENT"
+          ]
+        },
+        {
+          "name": "admin_expenses",
+          "status": "INCOMPLETE",
+          "notes": [
+            "travel ABSENT",
+            "rents_and_utilities ABSENT",
+            "other_expenses ABSENT",
+            "admin_expenses_subtotal ABSENT"
+          ]
+        },
+        {
+          "name": "total_expenses",
+          "status": "INCOMPLETE",
+          "notes": [
+            "admin_expenses_subtotal ABSENT",
+            "nonrecoverable_expenses ABSENT"
+          ]
+        },
+        {
+          "name": "income_after_expenses",
+          "status": "INCOMPLETE",
+          "notes": [
+            "income_after_expenses ABSENT",
+            "gross_income ABSENT"
+          ]
+        },
+        {
+          "name": "loss_estimate_net",
+          "status": "INCOMPLETE",
+          "notes": [
+            "loss_estimate_net ABSENT",
+            "loss_estimate_current_case ABSENT",
+            "loss_estimate_reduction_prior ABSENT"
+          ]
+        },
+        {
+          "name": "net_income_for_year",
+          "status": "INCOMPLETE",
+          "notes": [
+            "income_after_expenses ABSENT",
+            "loss_estimate_net ABSENT",
+            "net_income_for_year ABSENT"
+          ]
+        },
+        {
+          "name": "fund_rollforward",
+          "status": "INCOMPLETE",
+          "notes": [
+            "fund_opening_1955 ABSENT",
+            "net_income_for_year ABSENT"
+          ]
+        },
+        {
+          "name": "note4_securities_split",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,815,200,000.00 vs printed 1,815,200,000.00"
+          ]
+        }
+      ]
+    },
+    "cross_page": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "fund_ties_to_balance_sheet",
+          "status": "HOLDS",
+          "notes": [
+            "1,690,818,394.00 vs 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_prior_years",
+          "status": "HOLDS",
+          "notes": [
+            "85,409,716.00 vs 85,409,716.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_estimated",
+          "status": "HOLDS",
+          "notes": [
+            "44,387,963.00 vs 44,387,963.00"
+          ]
+        },
+        {
+          "name": "assessment_credits_total_across_pages",
+          "status": "HOLDS",
+          "notes": [
+            "129,797,679.00 vs 129,797,679.00"
+          ]
+        },
+        {
+          "name": "securities_face_value",
+          "status": "HOLDS",
+          "notes": [
+            "1,815,200,000.00 vs 1,815,200,000.00"
+          ]
+        },
+        {
+          "name": "cash_balance",
+          "status": "HOLDS",
+          "notes": [
+            "2,562,146.00 vs 2,562,146.00"
+          ]
+        },
+        {
+          "name": "estimated_losses_on_open_cases",
+          "status": "HOLDS",
+          "notes": [
+            "8,346,249.00 vs 8,346,249.00"
+          ]
+        }
+      ]
+    }
+  },
+  "tesseract": {
+    "census29_sales": {
+      "counts": {
+        "HOLDS": 0,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 2
+      },
+      "detail": [
+        {
+          "name": "fuel_total_cost",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_natural_gas_cost ABSENT",
+            "hw_fuel_total_cost ABSENT"
+          ]
+        },
+        {
+          "name": "sales_total",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_sales_retailers ABSENT",
+            "hw_sales_home_consumers ABSENT",
+            "hw_sales_total ABSENT"
+          ]
+        }
+      ]
+    },
+    "census29_wages": {
+      "counts": {
+        "HOLDS": 0,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 6
+      },
+      "detail": [
+        {
+          "name": "salaried_male",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_male ABSENT",
+            "hw_managers_male ABSENT",
+            "hw_salaried_male ABSENT"
+          ]
+        },
+        {
+          "name": "persons_engaged",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_salaried_male ABSENT",
+            "hw_salaried_female ABSENT",
+            "hw_wage_earners_male ABSENT",
+            "hw_wage_earners_female ABSENT",
+            "hw_persons_total ABSENT"
+          ]
+        },
+        {
+          "name": "wage_earners_by_month",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_month_jan ABSENT",
+            "hw_month_feb ABSENT",
+            "hw_month_mar ABSENT",
+            "hw_month_apr ABSENT",
+            "hw_month_may ABSENT",
+            "hw_month_jun ABSENT",
+            "hw_month_jul ABSENT",
+            "hw_month_aug ABSENT",
+            "hw_month_sep ABSENT",
+            "hw_month_oct ABSENT",
+            "hw_month_nov ABSENT",
+            "hw_month_dec ABSENT",
+            "hw_months_annotation ABSENT"
+          ]
+        },
+        {
+          "name": "salaried_pay_annotation",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_salaries ABSENT",
+            "hw_managers_salaries ABSENT",
+            "hw_salaried_pay_annotation ABSENT"
+          ]
+        },
+        {
+          "name": "salaries_aggregate",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_salaries ABSENT",
+            "hw_managers_salaries ABSENT",
+            "hw_wage_earners_paid ABSENT",
+            "hw_salaries_aggregate ABSENT"
+          ]
+        },
+        {
+          "name": "materials_total",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_materials_cost ABSENT",
+            "hw_fuel_cost ABSENT",
+            "hw_electric_cost ABSENT",
+            "hw_materials_total ABSENT"
+          ]
+        }
+      ]
+    },
+    "fdic2023_balance": {
+      "counts": {
+        "HOLDS": 12,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "total_assets.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 24,007,118.00 vs printed 24,007,118.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum -19,228.00 vs printed -19,228.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 121,777,980.00 vs printed 121,777,980.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_assets.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 644,081.00 vs printed 644,081.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum -2,958,199.00 vs printed -2,958,199.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,217,894.00 vs printed 128,217,894.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        }
+      ]
+    },
+    "fdic_balance": {
+      "counts": {
+        "HOLDS": 1,
+        "SURVIVES": 0,
+        "BROKEN": 3,
+        "INCOMPLETE": 3
+      },
+      "detail": [
+        {
+          "name": "us_government_obligations",
+          "status": "INCOMPLETE",
+          "notes": [
+            "Accrued interest receivable.total ABSENT"
+          ]
+        },
+        {
+          "name": "receivership_gross",
+          "status": "BROKEN",
+          "notes": [
+            "Loans to insured banks.detail read as '2,238,479' (printed '2,233,479')",
+            "Equity in assets acquired under purchase agreements.detail read as '7,746,212' (printed '7,745,212')",
+            "Assets purchased outright.detail read as '18,415' (printed '13,415')",
+            "sum 11,288,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "receivership_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "total_assets",
+          "status": "INCOMPLETE",
+          "notes": [
+            "Accrued interest receivable.total ABSENT"
+          ]
+        },
+        {
+          "name": "assessment_credits",
+          "status": "BROKEN",
+          "notes": [
+            "Available July 1, 1956.detail read as '865,409,716' (printed '85,409,716')",
+            "sum 909,797,679.00 vs printed 129,797,679.00"
+          ]
+        },
+        {
+          "name": "total_liabilities",
+          "status": "BROKEN",
+          "notes": [
+            "Employees' accrued annual leave.total read as '1,101,784' (printed '1,101,734')",
+            "sum 131,643,868.00 vs printed 131,643,818.00"
+          ]
+        },
+        {
+          "name": "sheet_balances",
+          "status": "INCOMPLETE",
+          "notes": [
+            "insurance losses and related expenses.total ABSENT"
+          ]
+        }
+      ]
+    },
+    "fdic_earnings": {
+      "counts": {
+        "HOLDS": 46,
+        "SURVIVES": 0,
+        "BROKEN": 13,
+        "INCOMPLETE": 10
+      },
+      "detail": [
+        {
+          "name": "current_operating_earnings.us",
+          "status": "INCOMPLETE",
+          "notes": [
+            "oe_gov.us read as '1,842,842' (printed '1,342,842')",
+            "oe_loanfees.us ABSENT",
+            "oe_deposit.us ABSENT"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.us",
+          "status": "INCOMPLETE",
+          "notes": [
+            "ex_borrow.us ABSENT"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,922.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_rec.us landed in another row",
+            "sum 250,173.00 vs printed 250,171.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,538.00 vs printed 993,534.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,031,361.00 vs printed 2,031,360.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "oe_trust.alaska landed in another row",
+            "sum 6,658.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,509.00 vs printed 4,508.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,659.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 138.00 vs printed 137.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 935.00 vs printed 935.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,353.00 vs printed 1,352.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "oe_trust.puerto_rico landed in another row",
+            "sum 11,761.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.puerto_rico",
+          "status": "BROKEN",
+          "notes": [
+            "ex_emp.puerto_rico read as '2,789' (printed '2,739')",
+            "sum 9,382.00 vs printed 9,331.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,759.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.puerto_rico",
+          "status": "BROKEN",
+          "notes": [
+            "rec_s_profit.puerto_rico read as '0' (printed '20')",
+            "sum 40.00 vs printed 60.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.puerto_rico",
+          "status": "BROKEN",
+          "notes": [
+            "loss_l_lc.puerto_rico landed in another row",
+            "loss_allother.puerto_rico read as '188' (printed '138')",
+            "sum 345.00 vs printed 295.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,193.00 vs printed 2,193.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.other",
+          "status": "INCOMPLETE",
+          "notes": [
+            "oe_gov.other unparseable 'A79'",
+            "oe_loanfees.other landed in another row",
+            "oe_other.other read as '10' (printed '70')"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.other",
+          "status": "BROKEN",
+          "notes": [
+            "ex_emp.other read as '5,593' (printed '553')",
+            "sum 6,940.00 vs printed 1,900.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,424.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 58.00 vs printed 58.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 92.00 vs printed 91.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 491.00 vs printed 491.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.continental_us",
+          "status": "BROKEN",
+          "notes": [
+            "oe_gov.continental_us read as '1,840,309' (printed '1,340,309')",
+            "oe_secdiv.continental_us read as '868,860' (printed '368,860')",
+            "oe_loanfees.continental_us read as '12,933' (printed '72,933')",
+            "sum 8,151,082.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.continental_us",
+          "status": "INCOMPLETE",
+          "notes": [
+            "ex_borrow.continental_us ABSENT",
+            "ex_total.continental_us read as '4,444,459' (printed '4,441,459')"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.continental_us",
+          "status": "BROKEN",
+          "notes": [
+            "ex_total.continental_us read as '4,444,459' (printed '4,441,459')",
+            "sum 7,214,080.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.continental_us",
+          "status": "INCOMPLETE",
+          "notes": [
+            "rec_s_rec.continental_us landed in another row",
+            "rec_allother.continental_us ABSENT"
+          ]
+        },
+        {
+          "name": "losses_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 992,216.00 vs printed 992,213.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,027,324.00 vs printed 2,027,324.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.connecticut",
+          "status": "BROKEN",
+          "notes": [
+            "oe_loanfees.connecticut read as '47.' (printed '472')",
+            "oe_other.connecticut read as '3,186' (printed '3,136')",
+            "sum 88,384.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 59,432.00 vs printed 59,431.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,757.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_rec.connecticut landed in another row",
+            "sum 1,215.00 vs printed 1,215.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,375.00 vs printed 11,375.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 19,166.00 vs printed 19,167.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating earnings-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,921.00 vs printed 7,231,921.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on U. S. Government obligations]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "other unparseable 'A79'",
+            "continental_us read as '1,840,309' (printed '1,340,309')",
+            "us read as '1,842,842' (printed '1,342,842')"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and dividends on other securities]",
+          "status": "BROKEN",
+          "notes": [
+            "continental_us read as '868,860' (printed '368,860')",
+            "sum 870,045.00 vs printed 370,045.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,339,866.00 vs printed 4,339,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges and fees on bank's loans]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "other landed in another row",
+            "continental_us read as '12,933' (printed '72,933')",
+            "us ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges on deposit accounts]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "us ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[and collection and exchange charges]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 168,497.00 vs printed 168,497.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Trust department]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "puerto_rico landed in another row",
+            "sum 322,117.00 vs printed 322,117.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating earnings]",
+          "status": "BROKEN",
+          "notes": [
+            "other read as '10' (printed '70')",
+            "sum 229,008.00 vs printed 229,068.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating expenses-total]",
+          "status": "BROKEN",
+          "notes": [
+            "continental_us read as '4,444,459' (printed '4,441,459')",
+            "sum 4,460,198.00 vs printed 4,457,198.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries-officers]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 720,866.00 vs printed 720,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries and wages-employees]",
+          "status": "BROKEN",
+          "notes": [
+            "puerto_rico read as '2,789' (printed '2,739')",
+            "other read as '5,593' (printed '553')",
+            "sum 1,377,352.00 vs printed 1,372,262.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[discount, and other committees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 42,614.00 vs printed 42,614.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on time and savings deposits]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 805,857.00 vs printed 805,857.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on borrowed money]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "continental_us ABSENT",
+            "us ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Taxes other than on net income]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 187,526.00 vs printed 187,526.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[furniture and fixtures]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,085.00 vs printed 128,085.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating expenses]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,154,600.00 vs printed 1,154,600.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,774,724.00 vs printed 2,774,724.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[counts, and profits-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 250,171.00 vs printed 250,171.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 14,090.00 vs printed 14,090.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 41,001.00 vs printed 41,001.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Profits on securities sold or redeemed]",
+          "status": "BROKEN",
+          "notes": [
+            "puerto_rico read as '0' (printed '20')",
+            "sum 31,131.00 vs printed 31,151.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 20,762.00 vs printed 20,762.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 77,606.00 vs printed 77,606.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "continental_us ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[serve accounts-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,534.00 vs printed 993,534.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 317,381.00 vs printed 317,381.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 101,830.00 vs printed 101,830.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "puerto_rico landed in another row",
+            "sum 32,018.00 vs printed 32,018.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 452,940.00 vs printed 452,940.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "BROKEN",
+          "notes": [
+            "puerto_rico read as '188' (printed '138')",
+            "sum 89,419.00 vs printed 89,369.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net profits before income taxes]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,031,360.00 vs printed 2,031,360.00"
+          ]
+        }
+      ]
+    },
+    "fdic_income": {
+      "counts": {
+        "HOLDS": 3,
+        "SURVIVES": 0,
+        "BROKEN": 2,
+        "INCOMPLETE": 4
+      },
+      "detail": [
+        {
+          "name": "assessments_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 155,141,790.00 vs printed 155,141,790.00"
+          ]
+        },
+        {
+          "name": "gross_income",
+          "status": "BROKEN",
+          "notes": [
+            "gross_income read as '108,951,228' (printed '108,951,223')",
+            "sum 108,951,223.00 vs printed 108,951,228.00"
+          ]
+        },
+        {
+          "name": "admin_expenses",
+          "status": "INCOMPLETE",
+          "notes": [
+            "salaries ABSENT",
+            "admin_expenses_subtotal ABSENT"
+          ]
+        },
+        {
+          "name": "total_expenses",
+          "status": "INCOMPLETE",
+          "notes": [
+            "admin_expenses_subtotal ABSENT",
+            "nonrecoverable_expenses read as '108,593' (printed '103,593')"
+          ]
+        },
+        {
+          "name": "income_after_expenses",
+          "status": "BROKEN",
+          "notes": [
+            "gross_income read as '108,951,228' (printed '108,951,223')",
+            "sum 108,951,223.00 vs printed 108,951,228.00"
+          ]
+        },
+        {
+          "name": "loss_estimate_net",
+          "status": "INCOMPLETE",
+          "notes": [
+            "loss_estimate_net ABSENT"
+          ]
+        },
+        {
+          "name": "net_income_for_year",
+          "status": "INCOMPLETE",
+          "notes": [
+            "loss_estimate_net ABSENT"
+          ]
+        },
+        {
+          "name": "fund_rollforward",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,690,818,394.00 vs printed 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "note4_securities_split",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,815,200,000.00 vs printed 1,815,200,000.00"
+          ]
+        }
+      ]
+    },
+    "cross_page": {
+      "counts": {
+        "HOLDS": 5,
+        "SURVIVES": 0,
+        "BROKEN": 1,
+        "INCOMPLETE": 1
+      },
+      "detail": [
+        {
+          "name": "fund_ties_to_balance_sheet",
+          "status": "INCOMPLETE",
+          "notes": [
+            "fdic_balance.insurance losses and related expenses.total ABSENT"
+          ]
+        },
+        {
+          "name": "assessment_credit_prior_years",
+          "status": "BROKEN",
+          "notes": [
+            "fdic_balance.Available July 1, 1956.detail read as '865,409,716' (printed '85,409,716')",
+            "85,409,716.00 vs 865,409,716.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_estimated",
+          "status": "HOLDS",
+          "notes": [
+            "44,387,963.00 vs 44,387,963.00"
+          ]
+        },
+        {
+          "name": "assessment_credits_total_across_pages",
+          "status": "HOLDS",
+          "notes": [
+            "129,797,679.00 vs 129,797,679.00"
+          ]
+        },
+        {
+          "name": "securities_face_value",
+          "status": "HOLDS",
+          "notes": [
+            "1,815,200,000.00 vs 1,815,200,000.00"
+          ]
+        },
+        {
+          "name": "cash_balance",
+          "status": "HOLDS",
+          "notes": [
+            "2,562,146.00 vs 2,562,146.00"
+          ]
+        },
+        {
+          "name": "estimated_losses_on_open_cases",
+          "status": "HOLDS",
+          "notes": [
+            "8,346,249.00 vs 8,346,249.00"
+          ]
+        }
+      ]
+    }
+  },
+  "textlayer": {
+    "census29_sales": {
+      "counts": {
+        "HOLDS": 0,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 2
+      },
+      "detail": [
+        {
+          "name": "fuel_total_cost",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_natural_gas_cost ABSENT",
+            "hw_fuel_total_cost ABSENT"
+          ]
+        },
+        {
+          "name": "sales_total",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_sales_retailers ABSENT",
+            "hw_sales_home_consumers ABSENT",
+            "hw_sales_total ABSENT"
+          ]
+        }
+      ]
+    },
+    "census29_wages": {
+      "counts": {
+        "HOLDS": 0,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 6
+      },
+      "detail": [
+        {
+          "name": "salaried_male",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_male ABSENT",
+            "hw_managers_male ABSENT",
+            "hw_salaried_male ABSENT"
+          ]
+        },
+        {
+          "name": "persons_engaged",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_salaried_male ABSENT",
+            "hw_salaried_female ABSENT",
+            "hw_wage_earners_male ABSENT",
+            "hw_wage_earners_female ABSENT",
+            "hw_persons_total ABSENT"
+          ]
+        },
+        {
+          "name": "wage_earners_by_month",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_month_jan ABSENT",
+            "hw_month_feb ABSENT",
+            "hw_month_mar ABSENT",
+            "hw_month_apr ABSENT",
+            "hw_month_may ABSENT",
+            "hw_month_jun ABSENT",
+            "hw_month_jul ABSENT",
+            "hw_month_aug ABSENT",
+            "hw_month_sep ABSENT",
+            "hw_month_oct ABSENT",
+            "hw_month_nov ABSENT",
+            "hw_month_dec ABSENT",
+            "hw_months_annotation ABSENT"
+          ]
+        },
+        {
+          "name": "salaried_pay_annotation",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_salaries ABSENT",
+            "hw_managers_salaries ABSENT",
+            "hw_salaried_pay_annotation ABSENT"
+          ]
+        },
+        {
+          "name": "salaries_aggregate",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_salaries ABSENT",
+            "hw_managers_salaries ABSENT",
+            "hw_wage_earners_paid ABSENT",
+            "hw_salaries_aggregate ABSENT"
+          ]
+        },
+        {
+          "name": "materials_total",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_materials_cost ABSENT",
+            "hw_fuel_cost ABSENT",
+            "hw_electric_cost ABSENT",
+            "hw_materials_total ABSENT"
+          ]
+        }
+      ]
+    },
+    "fdic2023_balance": {
+      "counts": {
+        "HOLDS": 12,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "total_assets.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 24,007,118.00 vs printed 24,007,118.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum -19,228.00 vs printed -19,228.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 121,777,980.00 vs printed 121,777,980.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_assets.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 644,081.00 vs printed 644,081.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum -2,958,199.00 vs printed -2,958,199.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,217,894.00 vs printed 128,217,894.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        }
+      ]
+    },
+    "fdic_balance": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "us_government_obligations",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,816,847,213.00 vs printed 1,816,847,213.00"
+          ]
+        },
+        {
+          "name": "receivership_gross",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "receivership_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "total_assets",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,822,462,212.00 vs printed 1,822,462,212.00"
+          ]
+        },
+        {
+          "name": "assessment_credits",
+          "status": "HOLDS",
+          "notes": [
+            "sum 129,797,679.00 vs printed 129,797,679.00"
+          ]
+        },
+        {
+          "name": "total_liabilities",
+          "status": "HOLDS",
+          "notes": [
+            "sum 131,643,818.00 vs printed 131,643,818.00"
+          ]
+        },
+        {
+          "name": "sheet_balances",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,822,462,212.00 vs printed 1,822,462,212.00"
+          ]
+        }
+      ]
+    },
+    "fdic_earnings": {
+      "counts": {
+        "HOLDS": 65,
+        "SURVIVES": 2,
+        "BROKEN": 0,
+        "INCOMPLETE": 2
+      },
+      "detail": [
+        {
+          "name": "current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,924.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,457,202.00 vs printed 4,457,198.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,922.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 250,173.00 vs printed 250,171.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,538.00 vs printed 993,534.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,031,361.00 vs printed 2,031,360.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,658.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,509.00 vs printed 4,508.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,659.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 138.00 vs printed 137.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.alaska",
+          "status": "INCOMPLETE",
+          "notes": [
+            "loss_allother.alaska ABSENT"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,353.00 vs printed 1,352.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,761.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 9,332.00 vs printed 9,331.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,759.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 60.00 vs printed 60.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 295.00 vs printed 295.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,193.00 vs printed 2,193.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,423.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,900.00 vs printed 1,900.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,424.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 58.00 vs printed 58.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 92.00 vs printed 91.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 491.00 vs printed 491.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,211,082.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,441,461.00 vs printed 4,441,459.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,211,080.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 249,917.00 vs printed 249,916.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 992,216.00 vs printed 992,213.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.continental_us",
+          "status": "SURVIVES",
+          "notes": [
+            "net_profits.continental_us read as '2,027,324!' (printed '2,027,324')",
+            "sum 2,027,324.00 vs printed 2,027,324.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,759.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 59,432.00 vs printed 59,431.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,757.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,215.00 vs printed 1,215.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,375.00 vs printed 11,375.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 19,166.00 vs printed 19,167.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating earnings-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,921.00 vs printed 7,231,921.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on U. S. Government obligations]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,342,842.00 vs printed 1,342,842.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and dividends on other securities]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 370,045.00 vs printed 370,045.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,339,866.00 vs printed 4,339,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges and fees on bank's loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 73,562.00 vs printed 73,562.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges on deposit accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 385,927.00 vs printed 385,927.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[and collection and exchange charges]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 168,497.00 vs printed 168,497.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Trust department]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 322,117.00 vs printed 322,117.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 229,068.00 vs printed 229,068.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating expenses-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,457,198.00 vs printed 4,457,198.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries-officers]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 720,866.00 vs printed 720,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries and wages-employees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,372,262.00 vs printed 1,372,262.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[discount, and other committees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 42,614.00 vs printed 42,614.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on time and savings deposits]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 805,857.00 vs printed 805,857.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on borrowed money]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 45,392.00 vs printed 45,392.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Taxes other than on net income]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 187,526.00 vs printed 187,526.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[furniture and fixtures]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,085.00 vs printed 128,085.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating expenses]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,154,600.00 vs printed 1,154,600.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,774,724.00 vs printed 2,774,724.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[counts, and profits-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 250,171.00 vs printed 250,171.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 14,090.00 vs printed 14,090.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 41,001.00 vs printed 41,001.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Profits on securities sold or redeemed]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 31,151.00 vs printed 31,151.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 20,762.00 vs printed 20,762.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 77,606.00 vs printed 77,606.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 65,563.00 vs printed 65,563.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[serve accounts-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,534.00 vs printed 993,534.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 317,381.00 vs printed 317,381.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 101,830.00 vs printed 101,830.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 32,018.00 vs printed 32,018.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 452,940.00 vs printed 452,940.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "alaska ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net profits before income taxes]",
+          "status": "SURVIVES",
+          "notes": [
+            "continental_us read as '2,027,324!' (printed '2,027,324')",
+            "sum 2,031,360.00 vs printed 2,031,360.00"
+          ]
+        }
+      ]
+    },
+    "fdic_income": {
+      "counts": {
+        "HOLDS": 9,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "assessments_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 155,141,790.00 vs printed 155,141,790.00"
+          ]
+        },
+        {
+          "name": "gross_income",
+          "status": "HOLDS",
+          "notes": [
+            "sum 108,951,223.00 vs printed 108,951,223.00"
+          ]
+        },
+        {
+          "name": "admin_expenses",
+          "status": "HOLDS",
+          "notes": [
+            "sum 8,873,366.00 vs printed 8,873,366.00"
+          ]
+        },
+        {
+          "name": "total_expenses",
+          "status": "HOLDS",
+          "notes": [
+            "sum 8,976,959.00 vs printed 8,976,959.00"
+          ]
+        },
+        {
+          "name": "income_after_expenses",
+          "status": "HOLDS",
+          "notes": [
+            "sum 108,951,223.00 vs printed 108,951,223.00"
+          ]
+        },
+        {
+          "name": "loss_estimate_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 448,232.00 vs printed 448,232.00"
+          ]
+        },
+        {
+          "name": "net_income_for_year",
+          "status": "HOLDS",
+          "notes": [
+            "sum 100,277,727.00 vs printed 100,277,727.00"
+          ]
+        },
+        {
+          "name": "fund_rollforward",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,690,818,394.00 vs printed 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "note4_securities_split",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,815,200,000.00 vs printed 1,815,200,000.00"
+          ]
+        }
+      ]
+    },
+    "cross_page": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "fund_ties_to_balance_sheet",
+          "status": "HOLDS",
+          "notes": [
+            "1,690,818,394.00 vs 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_prior_years",
+          "status": "HOLDS",
+          "notes": [
+            "85,409,716.00 vs 85,409,716.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_estimated",
+          "status": "HOLDS",
+          "notes": [
+            "44,387,963.00 vs 44,387,963.00"
+          ]
+        },
+        {
+          "name": "assessment_credits_total_across_pages",
+          "status": "HOLDS",
+          "notes": [
+            "129,797,679.00 vs 129,797,679.00"
+          ]
+        },
+        {
+          "name": "securities_face_value",
+          "status": "HOLDS",
+          "notes": [
+            "1,815,200,000.00 vs 1,815,200,000.00"
+          ]
+        },
+        {
+          "name": "cash_balance",
+          "status": "HOLDS",
+          "notes": [
+            "2,562,146.00 vs 2,562,146.00"
+          ]
+        },
+        {
+          "name": "estimated_losses_on_open_cases",
+          "status": "HOLDS",
+          "notes": [
+            "8,346,249.00 vs 8,346,249.00"
+          ]
+        }
+      ]
+    }
+  },
+  "unstructured": {
+    "census29_sales": {
+      "counts": {
+        "HOLDS": 0,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 2
+      },
+      "detail": [
+        {
+          "name": "fuel_total_cost",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_natural_gas_cost ABSENT",
+            "hw_fuel_total_cost ABSENT"
+          ]
+        },
+        {
+          "name": "sales_total",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_sales_retailers ABSENT",
+            "hw_sales_home_consumers ABSENT",
+            "hw_sales_total ABSENT"
+          ]
+        }
+      ]
+    },
+    "census29_wages": {
+      "counts": {
+        "HOLDS": 0,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 6
+      },
+      "detail": [
+        {
+          "name": "salaried_male",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_male ABSENT"
+          ]
+        },
+        {
+          "name": "persons_engaged",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_salaried_female ABSENT",
+            "hw_wage_earners_male ABSENT",
+            "hw_persons_total ABSENT"
+          ]
+        },
+        {
+          "name": "wage_earners_by_month",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_month_jan ABSENT",
+            "hw_month_feb ABSENT",
+            "hw_month_mar ABSENT",
+            "hw_month_apr ABSENT",
+            "hw_month_may ABSENT",
+            "hw_month_jun ABSENT",
+            "hw_month_jul ABSENT",
+            "hw_month_aug ABSENT",
+            "hw_month_sep ABSENT",
+            "hw_month_oct ABSENT",
+            "hw_month_nov ABSENT",
+            "hw_month_dec ABSENT",
+            "hw_months_annotation ABSENT"
+          ]
+        },
+        {
+          "name": "salaried_pay_annotation",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_salaries ABSENT",
+            "hw_managers_salaries ABSENT",
+            "hw_salaried_pay_annotation ABSENT"
+          ]
+        },
+        {
+          "name": "salaries_aggregate",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_officers_salaries ABSENT",
+            "hw_managers_salaries ABSENT",
+            "hw_wage_earners_paid ABSENT",
+            "hw_salaries_aggregate ABSENT"
+          ]
+        },
+        {
+          "name": "materials_total",
+          "status": "INCOMPLETE",
+          "notes": [
+            "hw_materials_cost ABSENT",
+            "hw_fuel_cost ABSENT",
+            "hw_electric_cost ABSENT",
+            "hw_materials_total ABSENT"
+          ]
+        }
+      ]
+    },
+    "fdic2023_balance": {
+      "counts": {
+        "HOLDS": 12,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "total_assets.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 24,007,118.00 vs printed 24,007,118.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum -19,228.00 vs printed -19,228.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 121,777,980.00 vs printed 121,777,980.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2023",
+          "status": "HOLDS",
+          "notes": [
+            "sum 145,785,098.00 vs printed 145,785,098.00"
+          ]
+        },
+        {
+          "name": "total_assets.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "total_liabilities.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 644,081.00 vs printed 644,081.00"
+          ]
+        },
+        {
+          "name": "total_aoci.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum -2,958,199.00 vs printed -2,958,199.00"
+          ]
+        },
+        {
+          "name": "total_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,217,894.00 vs printed 128,217,894.00"
+          ]
+        },
+        {
+          "name": "liabilities_plus_fund_balance.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        },
+        {
+          "name": "sheet_balances.y2022",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,861,975.00 vs printed 128,861,975.00"
+          ]
+        }
+      ]
+    },
+    "fdic_balance": {
+      "counts": {
+        "HOLDS": 6,
+        "SURVIVES": 0,
+        "BROKEN": 1,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "us_government_obligations",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,816,847,213.00 vs printed 1,816,847,213.00"
+          ]
+        },
+        {
+          "name": "receivership_gross",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "receivership_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,277,003.00 vs printed 11,277,003.00"
+          ]
+        },
+        {
+          "name": "total_assets",
+          "status": "HOLDS",
+          "notes": [
+            "Furniture, fixtures, and equipment.total landed in another row",
+            "sum 1,822,462,212.00 vs printed 1,822,462,212.00"
+          ]
+        },
+        {
+          "name": "assessment_credits",
+          "status": "HOLDS",
+          "notes": [
+            "sum 129,797,679.00 vs printed 129,797,679.00"
+          ]
+        },
+        {
+          "name": "total_liabilities",
+          "status": "BROKEN",
+          "notes": [
+            "Employees' accrued annual leave.total read as '1,101,784' (printed '1,101,734')",
+            "sum 131,643,868.00 vs printed 131,643,818.00"
+          ]
+        },
+        {
+          "name": "sheet_balances",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,822,462,212.00 vs printed 1,822,462,212.00"
+          ]
+        }
+      ]
+    },
+    "fdic_earnings": {
+      "counts": {
+        "HOLDS": 37,
+        "SURVIVES": 5,
+        "BROKEN": 13,
+        "INCOMPLETE": 14
+      },
+      "detail": [
+        {
+          "name": "current_operating_earnings.us",
+          "status": "BROKEN",
+          "notes": [
+            "oe_loanfees.us read as '78,562' (printed '73,562')",
+            "sum 7,236,924.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,457,202.00 vs printed 4,457,198.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 7,231,922.00 vs printed 7,231,921.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.us",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_xfer.us landed in another row",
+            "rec_allother.us landed in another row",
+            "sum 250,173.00 vs printed 250,171.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.us",
+          "status": "BROKEN",
+          "notes": [
+            "loss_l_xfer.us read as '462,940' (printed '452,940')",
+            "sum 1,003,538.00 vs printed 993,534.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.us",
+          "status": "INCOMPLETE",
+          "notes": [
+            "net_profits.us ABSENT"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,658.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,509.00 vs printed 4,508.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.alaska",
+          "status": "HOLDS",
+          "notes": [
+            "sum 6,659.00 vs printed 6,658.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.alaska",
+          "status": "INCOMPLETE",
+          "notes": [
+            "rec_s_xfer.alaska landed in another row",
+            "rec_l_rec.alaska ABSENT",
+            "rec_allother.alaska landed in another row"
+          ]
+        },
+        {
+          "name": "losses_total.alaska",
+          "status": "INCOMPLETE",
+          "notes": [
+            "loss_allother.alaska ABSENT"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.alaska",
+          "status": "SURVIVES",
+          "notes": [
+            "net_profits.alaska read as '1,355' (printed '1,352')",
+            "sum 1,353.00 vs printed 1,355.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.puerto_rico",
+          "status": "INCOMPLETE",
+          "notes": [
+            "oe_trust.puerto_rico ABSENT"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.puerto_rico",
+          "status": "BROKEN",
+          "notes": [
+            "ex_emp.puerto_rico read as '2,789' (printed '2,739')",
+            "sum 9,382.00 vs printed 9,331.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.puerto_rico",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,759.00 vs printed 11,759.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.puerto_rico",
+          "status": "INCOMPLETE",
+          "notes": [
+            "rec_s_profit.puerto_rico ABSENT",
+            "rec_allother.puerto_rico landed in another row"
+          ]
+        },
+        {
+          "name": "losses_total.puerto_rico",
+          "status": "BROKEN",
+          "notes": [
+            "loss_allother.puerto_rico read as '188' (printed '138')",
+            "sum 345.00 vs printed 295.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.puerto_rico",
+          "status": "INCOMPLETE",
+          "notes": [
+            "net_profits.puerto_rico ABSENT"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.other",
+          "status": "SURVIVES",
+          "notes": [
+            "oe_total.other read as '2,424}' (printed '2,424')",
+            "sum 2,423.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.other",
+          "status": "BROKEN",
+          "notes": [
+            "ex_emp.other read as '353' (printed '553')",
+            "sum 1,700.00 vs printed 1,900.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.other",
+          "status": "SURVIVES",
+          "notes": [
+            "oe_total.other read as '2,424}' (printed '2,424')",
+            "sum 2,424.00 vs printed 2,424.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.other",
+          "status": "INCOMPLETE",
+          "notes": [
+            "rec_l_rec.other ABSENT",
+            "rec_allother.other landed in another row"
+          ]
+        },
+        {
+          "name": "losses_total.other",
+          "status": "HOLDS",
+          "notes": [
+            "sum 92.00 vs printed 91.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.other",
+          "status": "SURVIVES",
+          "notes": [
+            "net_profits.other read as '490' (printed '491')",
+            "sum 491.00 vs printed 490.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.continental_us",
+          "status": "BROKEN",
+          "notes": [
+            "oe_gov.continental_us read as '1,840,309' (printed '1,340,309')",
+            "sum 7,711,082.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.continental_us",
+          "status": "BROKEN",
+          "notes": [
+            "ex_total.continental_us read as '4,444,459' (printed '4,441,459')",
+            "sum 4,441,461.00 vs printed 4,444,459.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.continental_us",
+          "status": "BROKEN",
+          "notes": [
+            "ex_total.continental_us read as '4,444,459' (printed '4,441,459')",
+            "sum 7,214,080.00 vs printed 7,211,080.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_xfer.continental_us landed in another row",
+            "rec_allother.continental_us landed in another row",
+            "sum 249,917.00 vs printed 249,916.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.continental_us",
+          "status": "HOLDS",
+          "notes": [
+            "sum 992,216.00 vs printed 992,213.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.continental_us",
+          "status": "INCOMPLETE",
+          "notes": [
+            "net_profits.continental_us ABSENT"
+          ]
+        },
+        {
+          "name": "current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,759.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "current_operating_expenses.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 59,432.00 vs printed 59,431.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_current_operating_earnings.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 88,757.00 vs printed 88,758.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "recoveries_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "rec_s_xfer.connecticut landed in another row",
+            "sum 1,215.00 vs printed 1,215.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "losses_total.connecticut",
+          "status": "HOLDS",
+          "notes": [
+            "sum 11,375.00 vs printed 11,375.00 (tolerance 5)"
+          ]
+        },
+        {
+          "name": "net_profits_before_income_taxes.connecticut",
+          "status": "INCOMPLETE",
+          "notes": [
+            "net_profits.connecticut ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating earnings-total]",
+          "status": "SURVIVES",
+          "notes": [
+            "other read as '2,424}' (printed '2,424')",
+            "sum 7,231,921.00 vs printed 7,231,921.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on U. S. Government obligations]",
+          "status": "BROKEN",
+          "notes": [
+            "continental_us read as '1,840,309' (printed '1,340,309')",
+            "sum 1,842,842.00 vs printed 1,342,842.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and dividends on other securities]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 370,045.00 vs printed 370,045.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on loans]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 4,339,866.00 vs printed 4,339,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges and fees on bank's loans]",
+          "status": "BROKEN",
+          "notes": [
+            "us read as '78,562' (printed '73,562')",
+            "sum 73,562.00 vs printed 78,562.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Service charges on deposit accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 385,927.00 vs printed 385,927.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[and collection and exchange charges]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 168,497.00 vs printed 168,497.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Trust department]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "puerto_rico ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 229,068.00 vs printed 229,068.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Current operating expenses-total]",
+          "status": "BROKEN",
+          "notes": [
+            "continental_us read as '4,444,459' (printed '4,441,459')",
+            "sum 4,460,198.00 vs printed 4,457,198.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries-officers]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 720,866.00 vs printed 720,866.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Salaries and wages-employees]",
+          "status": "BROKEN",
+          "notes": [
+            "puerto_rico read as '2,789' (printed '2,739')",
+            "other read as '353' (printed '553')",
+            "sum 1,372,112.00 vs printed 1,372,262.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[discount, and other committees]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 42,614.00 vs printed 42,614.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest on time and savings deposits]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 805,857.00 vs printed 805,857.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Interest and discount on borrowed money]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 45,392.00 vs printed 45,392.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Taxes other than on net income]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 187,526.00 vs printed 187,526.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[furniture and fixtures]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 128,085.00 vs printed 128,085.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Other current operating expenses]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,154,600.00 vs printed 1,154,600.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net current operating earnings]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 2,774,724.00 vs printed 2,774,724.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[counts, and profits-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 250,171.00 vs printed 250,171.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 14,090.00 vs printed 14,090.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 41,001.00 vs printed 41,001.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Profits on securities sold or redeemed]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "puerto_rico ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Recoveries]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "alaska ABSENT",
+            "other ABSENT"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers from reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 77,606.00 vs printed 77,606.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "HOLDS",
+          "notes": [
+            "alaska landed in another row",
+            "puerto_rico landed in another row",
+            "other landed in another row",
+            "continental_us landed in another row",
+            "us landed in another row",
+            "sum 65,563.00 vs printed 65,563.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[serve accounts-total]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 993,534.00 vs printed 993,534.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 317,381.00 vs printed 317,381.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 101,830.00 vs printed 101,830.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
+          "status": "HOLDS",
+          "notes": [
+            "sum 32,018.00 vs printed 32,018.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
+          "status": "BROKEN",
+          "notes": [
+            "us read as '462,940' (printed '452,940')",
+            "sum 452,940.00 vs printed 462,940.00"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[All other]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "alaska ABSENT",
+            "puerto_rico read as '188' (printed '138')"
+          ]
+        },
+        {
+          "name": "us_equals_areas_plus_continental[Net profits before income taxes]",
+          "status": "INCOMPLETE",
+          "notes": [
+            "alaska read as '1,355' (printed '1,352')",
+            "puerto_rico ABSENT",
+            "other read as '490' (printed '491')",
+            "continental_us ABSENT",
+            "us ABSENT"
+          ]
+        }
+      ]
+    },
+    "fdic_income": {
+      "counts": {
+        "HOLDS": 5,
+        "SURVIVES": 0,
+        "BROKEN": 2,
+        "INCOMPLETE": 2
+      },
+      "detail": [
+        {
+          "name": "assessments_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 155,141,790.00 vs printed 155,141,790.00"
+          ]
+        },
+        {
+          "name": "gross_income",
+          "status": "BROKEN",
+          "notes": [
+            "gross_income read as '108,951,228' (printed '108,951,223')",
+            "sum 108,951,223.00 vs printed 108,951,228.00"
+          ]
+        },
+        {
+          "name": "admin_expenses",
+          "status": "INCOMPLETE",
+          "notes": [
+            "salaries read as '$6,273,384' (printed '6,273,334')",
+            "admin_expenses_subtotal ABSENT"
+          ]
+        },
+        {
+          "name": "total_expenses",
+          "status": "INCOMPLETE",
+          "notes": [
+            "admin_expenses_subtotal ABSENT"
+          ]
+        },
+        {
+          "name": "income_after_expenses",
+          "status": "BROKEN",
+          "notes": [
+            "gross_income read as '108,951,228' (printed '108,951,223')",
+            "sum 108,951,223.00 vs printed 108,951,228.00"
+          ]
+        },
+        {
+          "name": "loss_estimate_net",
+          "status": "HOLDS",
+          "notes": [
+            "sum 448,232.00 vs printed 448,232.00"
+          ]
+        },
+        {
+          "name": "net_income_for_year",
+          "status": "HOLDS",
+          "notes": [
+            "sum 100,277,727.00 vs printed 100,277,727.00"
+          ]
+        },
+        {
+          "name": "fund_rollforward",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,690,818,394.00 vs printed 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "note4_securities_split",
+          "status": "HOLDS",
+          "notes": [
+            "sum 1,815,200,000.00 vs printed 1,815,200,000.00"
+          ]
+        }
+      ]
+    },
+    "cross_page": {
+      "counts": {
+        "HOLDS": 7,
+        "SURVIVES": 0,
+        "BROKEN": 0,
+        "INCOMPLETE": 0
+      },
+      "detail": [
+        {
+          "name": "fund_ties_to_balance_sheet",
+          "status": "HOLDS",
+          "notes": [
+            "1,690,818,394.00 vs 1,690,818,394.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_prior_years",
+          "status": "HOLDS",
+          "notes": [
+            "85,409,716.00 vs 85,409,716.00"
+          ]
+        },
+        {
+          "name": "assessment_credit_estimated",
+          "status": "HOLDS",
+          "notes": [
+            "44,387,963.00 vs 44,387,963.00"
+          ]
+        },
+        {
+          "name": "assessment_credits_total_across_pages",
+          "status": "HOLDS",
+          "notes": [
+            "129,797,679.00 vs 129,797,679.00"
+          ]
+        },
+        {
+          "name": "securities_face_value",
+          "status": "HOLDS",
+          "notes": [
+            "1,815,200,000.00 vs 1,815,200,000.00"
+          ]
+        },
+        {
+          "name": "cash_balance",
+          "status": "HOLDS",
+          "notes": [
+            "2,562,146.00 vs 2,562,146.00"
+          ]
+        },
+        {
+          "name": "estimated_losses_on_open_cases",
+          "status": "HOLDS",
+          "notes": [
+            "8,346,249.00 vs 8,346,249.00"
+          ]
+        }
+      ]
+    }
+  }
+}

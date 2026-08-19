@@ -1,0 +1,32 @@
+# PURCHASE ORDER
+
+PO Number
+PO-80586
+
+Order Date
+2026-05-10
+
+Vendor
+Kingsford Metals
+
+Due Date
+2026-07-10
+
+Terms
+2/10 Net 30
+
+Currency
+USD
+
+| # | SKU | Description | Qty | Unit | Amount |
+|---|-----|-------------|-----|------|--------|
+| 1 | PB-0404 | Post base, 4x4 adjustable | 40 | 60.05 | 2,402.00 |
+| 2 | SS-1403 | Structural screw #14 x 3in | 5 | 20.30 | 101.50 |
+| 3 | LN-10NY | Nylon lock nut M10 | 15 | 6.77 | 101.55 |
+| 4 | HB-1040Z | Hex bolt M10x40, zinc | 17 | 43.00 | 731.00 |
+| 5 | AB-0506 | Anchor bolt 1/2in x 6in | 28 | 17.33 | 485.24 |
+| 6 | CS-0375 | Concrete sleeve anchor 3/8 | 28 | 61.66 | 1,726.48 |
+
+Subtotal 5,547.77
+Tax 8.25% 457.69
+**TOTAL** **6,005.46**

@@ -1,0 +1,65 @@
+{
+  "parser": "marker",
+  "version": "marker-pdf 2.0.0 (surya-ocr 0.22.1), CPU",
+  "source": "pdf",
+  "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
+  "total_seconds": 39.1,
+  "records": [
+    {
+      "doc_id": "PO00000",
+      "dpi": 150,
+      "seconds": 59.98,
+      "chars": 1360,
+      "error": null,
+      "text_file": "PO00000_150.txt"
+    },
+    {
+      "doc_id": "PO00000",
+      "dpi": 300,
+      "seconds": 40.89,
+      "chars": 1348,
+      "error": null,
+      "text_file": "PO00000_300.txt"
+    },
+    {
+      "doc_id": "PO00001",
+      "dpi": 150,
+      "seconds": 64.14,
+      "chars": 1343,
+      "error": null,
+      "text_file": "PO00001_150.txt"
+    },
+    {
+      "doc_id": "PO00001",
+      "dpi": 300,
+      "seconds": 43.35,
+      "chars": 1343,
+      "error": null,
+      "text_file": "PO00001_300.txt"
+    },
+    {
+      "doc_id": "PO00002",
+      "dpi": 150,
+      "seconds": 34.74,
+      "chars": 1130,
+      "error": null,
+      "text_file": "PO00002_150.txt"
+    },
+    {
+      "doc_id": "PO00002",
+      "dpi": 300,
+      "seconds": 32.83,
+      "chars": 1130,
+      "error": null,
+      "text_file": "PO00002_300.txt"
+    },
+    {
+      "doc_id": "PO00007",
+      "dpi": 150,
+      "seconds": 39.07,
+      "chars": 1263,
+      "error": null,
+      "text_file": "PO00007_150.txt"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+PURCHASE ORDER
+
+FO Number onder Date
+
+70-9790 2026-10-07
+
+Fairmont Materials 2026-12-07
+
+2/20 Net 30 uso
+
+* sku Description ay Unie Amount
+
+1 TR0s72 ‘Threaded rod 2/8in, of 22 267 502.34
+
+2 cs0375 Concrete sleave anchor 3/8 v 1s 2533
+
+3 PRos0d Post base, xt adjustable 7 3a 2534
+
+4 AB-0506 Anchor bok U2in x 6in as 6820 1,023.00
+
+5 ss1403 Structural screw #14 in 20 1568 313.60
+Subsatl 1,969.61
+To 025% 162.49
+ToTAL 2,132.10

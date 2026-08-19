@@ -1,0 +1,53 @@
+20
+
+FEDERAL DEPOSIT INSURANCE CORPORATION
+
+**Table 13.  AUDIT REPORT OF THE FEDERAL DEPOSIT INSURANCE  
+CORPORATION FOR THE FISCAL YEAR ENDED JUNE 30, 1956—Continued**
+
+In the opinion of the General Accounting Office, the accompanying balance sheet (exhibit 1) and statement of income and deposit insurance fund (exhibit 2) present fairly the financial position of Federal Deposit Insurance Corporation at June 30, 1956, and the results of its operations for the year then ended, in conformity with generally accepted accounting principles applied on a basis consistent with that of the preceding year and with applicable Federal laws.
+
+Sincerely yours,
+
+/s/ JOSEPH CAMPBELL  
+Comptroller General of the United States
+
+**Exhibit 1.  FEDERAL DEPOSIT INSURANCE CORPORATION,  
+BALANCE SHEET, JUNE 30, 1956**
+
+|  |  |  |
+|---|---:|---:|
+| **ASSETS** |  |  |
+| Cash |  | $ 2,562,146 |
+| U. S. Government obligations: |  |  |
+|   Securities, at amortized cost (face value, $1,815,200,000; market or redemption value, $1,778,666,328) | $1,810,140,116 |  |
+|   Accrued interest receivable | 6,707,097 | 1,816,847,213 |
+| Assets acquired in deposit assumption and receivership transactions: |  |  |
+|   Subrogated claims of depositors against closed insured banks | 1,265,926 |  |
+|   Net balances of depositors in closed insured banks, to be subrogated when paid—contra | 18,971 |  |
+|   Loans to insured banks | 2,233,479 |  |
+|   Equity in assets acquired under purchase agreements | 7,745,212 |  |
+|   Assets purchased outright | 13,415 |  |
+|  | 11,277,003 |  |
+|   Less estimate for losses | 8,346,249 | 2,930,754 |
+| Accounts receivable, deferred charges, and sundry assets |  | 122,098 |
+| Furniture, fixtures, and equipment, less accumulated depreciation of $602,460 |  | 1 |
+|  |  | **$1,822,462,212** |
+| **LIABILITIES AND DEPOSIT INSURANCE FUND** |  |  |
+| Accounts payable and accrued liabilities |  | $ 552,758 |
+| Earnest money, escrow funds, and collections held for others |  | 164,230 |
+| Employees’ accrued annual leave |  | 1,101,734 |
+| Deferred credits |  | 8,446 |
+| Net balances of depositors in closed insured banks—contra |  | 18,971 |
+| Net assessment income credits due insured banks (note 1): |  |  |
+|   Available July 1, 1956 | $ 85,409,716 |  |
+|   Estimated amount available July 1, 1957, from net assessment income for 6 months ended June 30, 1956 | 44,387,963 | 129,797,679 |
+|   Total liabilities |  | 131,643,818 |
+| Deposit insurance fund, representing accumulated income from inception to June 30, 1956, available for future deposit insurance losses and related expenses (note 2 and exhibit 2) |  | 1,690,818,394 |
+|  |  | **$1,822,462,212** |
+
+**The notes following exhibit 2 are an integral part of this statement.**
+
+Digitized for FRASER  
+http://fraser.stlouisfed.org/  
+Federal Reserve Bank of St. Louis

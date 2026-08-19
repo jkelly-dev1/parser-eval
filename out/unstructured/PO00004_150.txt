@@ -1,0 +1,11 @@
+PURCHASE ORDER
+PO Number
+Order Date
+PO-17733
+2025-11-21
+Vendor Ashcroft Components Terms 60 SKU | Description | Qty |  | Due Date 2025-12-21 Currency usD Amount
+LN-1LONY | Nylon lock nut M10 |  | 80.27 | 642.16
+HB-1040Z | Hex bolt M10x40, zinc | ll | 68.63 | 754.93
+SD-1200 AB-0506 | Self-drilling screw #12 Anchor bok U/2in x 6in | 40 34 | 18.87 48.94 | 754.80 1,663.96
+ |  | Tex 825% | 3,815.85
+ |  | TOTAL | 314.81 4,130.66
