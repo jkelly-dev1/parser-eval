@@ -1,0 +1,431 @@
+{
+  "doc_id": "PO00006",
+  "render_revision": "2026-08-12-terms-wrap",
+  "source": "synthetic purchase order, drawn by an external document generator and frozen here; the pages, renderings and ground truth in this folder are the whole artifact",
+  "n_rows": 3,
+  "printed": {
+    "po_number": "PO-58178",
+    "order_date": "2025-01-07",
+    "due_date": "2025-04-07",
+    "vendor": "Fairmont Materials",
+    "terms": "Net 60",
+    "currency": "USD",
+    "subtotal_cents": "2,367.06",
+    "tax_cents": "195.28",
+    "total_cents": "2,562.34"
+  },
+  "rows": [
+    {
+      "anchor": "LN-10NY",
+      "cells": {
+        "row": "1",
+        "sku": "LN-10NY",
+        "description": "Nylon lock nut M10",
+        "quantity": "24",
+        "unit_price_cents": "73.82",
+        "amount_cents": "1,771.68"
+      }
+    },
+    {
+      "anchor": "FW-10SS",
+      "cells": {
+        "row": "2",
+        "sku": "FW-10SS",
+        "description": "Flat washer M10, stainless",
+        "quantity": "22",
+        "unit_price_cents": "13.53",
+        "amount_cents": "297.66"
+      }
+    },
+    {
+      "anchor": "CS-0375",
+      "cells": {
+        "row": "3",
+        "sku": "CS-0375",
+        "description": "Concrete sleeve anchor 3/8",
+        "quantity": "36",
+        "unit_price_cents": "8.27",
+        "amount_cents": "297.72"
+      }
+    }
+  ],
+  "values": {
+    "po_number": "PO-58178",
+    "order_date": "2025-01-07",
+    "due_date": "2025-04-07",
+    "vendor": "Fairmont Materials",
+    "terms": "Net 60",
+    "currency": "USD",
+    "subtotal_cents": 236706,
+    "tax_cents": 19528,
+    "total_cents": 256234,
+    "line_items": [
+      {
+        "row": 1,
+        "sku": "LN-10NY",
+        "description": "Nylon lock nut M10",
+        "quantity": 24,
+        "unit_price_cents": 7382,
+        "amount_cents": 177168
+      },
+      {
+        "row": 2,
+        "sku": "FW-10SS",
+        "description": "Flat washer M10, stainless",
+        "quantity": 22,
+        "unit_price_cents": 1353,
+        "amount_cents": 29766
+      },
+      {
+        "row": 3,
+        "sku": "CS-0375",
+        "description": "Concrete sleeve anchor 3/8",
+        "quantity": 36,
+        "unit_price_cents": 827,
+        "amount_cents": 29772
+      }
+    ]
+  },
+  "files": {
+    "150": {
+      "png": "PO00006_150.png",
+      "pdf": "PO00006_150.pdf",
+      "width": 1228,
+      "height": 372,
+      "regions": {
+        "po_number": [
+          72,
+          122,
+          117,
+          129
+        ],
+        "order_date": [
+          637,
+          122,
+          689,
+          129
+        ],
+        "vendor": [
+          72,
+          155,
+          156,
+          163
+        ],
+        "due_date": [
+          637,
+          156,
+          689,
+          163
+        ],
+        "terms": [
+          72,
+          190,
+          102,
+          197
+        ],
+        "currency": [
+          637,
+          190,
+          656,
+          197
+        ],
+        "line_items[0].row": [
+          72,
+          250,
+          78,
+          257
+        ],
+        "line_items[0].sku": [
+          112,
+          250,
+          151,
+          257
+        ],
+        "line_items[0].description": [
+          202,
+          249,
+          289,
+          259
+        ],
+        "line_items[0].quantity": [
+          462,
+          250,
+          474,
+          257
+        ],
+        "line_items[0].unit_price_cents": [
+          532,
+          250,
+          558,
+          257
+        ],
+        "line_items[0].amount_cents": [
+          632,
+          250,
+          672,
+          258
+        ],
+        "line_items[1].row": [
+          72,
+          264,
+          78,
+          271
+        ],
+        "line_items[1].sku": [
+          112,
+          264,
+          152,
+          271
+        ],
+        "line_items[1].description": [
+          202,
+          263,
+          322,
+          272
+        ],
+        "line_items[1].quantity": [
+          462,
+          264,
+          473,
+          271
+        ],
+        "line_items[1].unit_price_cents": [
+          532,
+          264,
+          558,
+          271
+        ],
+        "line_items[1].amount_cents": [
+          632,
+          264,
+          664,
+          271
+        ],
+        "line_items[2].row": [
+          72,
+          278,
+          78,
+          285
+        ],
+        "line_items[2].sku": [
+          112,
+          278,
+          150,
+          285
+        ],
+        "line_items[2].description": [
+          202,
+          277,
+          326,
+          285
+        ],
+        "line_items[2].quantity": [
+          462,
+          278,
+          474,
+          285
+        ],
+        "line_items[2].unit_price_cents": [
+          532,
+          278,
+          552,
+          285
+        ],
+        "line_items[2].amount_cents": [
+          632,
+          278,
+          663,
+          285
+        ],
+        "subtotal_cents": [
+          632,
+          312,
+          672,
+          320
+        ],
+        "tax_cents": [
+          632,
+          326,
+          664,
+          333
+        ],
+        "total_cents": [
+          632,
+          340,
+          676,
+          348
+        ]
+      }
+    },
+    "300": {
+      "png": "PO00006_300.png",
+      "pdf": "PO00006_300.pdf",
+      "width": 2455,
+      "height": 744,
+      "regions": {
+        "po_number": [
+          144,
+          244,
+          233,
+          257
+        ],
+        "order_date": [
+          1275,
+          244,
+          1380,
+          257
+        ],
+        "vendor": [
+          144,
+          311,
+          311,
+          325
+        ],
+        "due_date": [
+          1275,
+          312,
+          1380,
+          325
+        ],
+        "terms": [
+          144,
+          380,
+          204,
+          393
+        ],
+        "currency": [
+          1275,
+          380,
+          1313,
+          393
+        ],
+        "line_items[0].row": [
+          144,
+          500,
+          155,
+          513
+        ],
+        "line_items[0].sku": [
+          224,
+          500,
+          302,
+          513
+        ],
+        "line_items[0].description": [
+          404,
+          499,
+          577,
+          517
+        ],
+        "line_items[0].quantity": [
+          924,
+          500,
+          947,
+          513
+        ],
+        "line_items[0].unit_price_cents": [
+          1064,
+          500,
+          1116,
+          513
+        ],
+        "line_items[0].amount_cents": [
+          1264,
+          500,
+          1344,
+          515
+        ],
+        "line_items[1].row": [
+          144,
+          528,
+          155,
+          541
+        ],
+        "line_items[1].sku": [
+          224,
+          528,
+          304,
+          541
+        ],
+        "line_items[1].description": [
+          404,
+          527,
+          642,
+          543
+        ],
+        "line_items[1].quantity": [
+          924,
+          528,
+          947,
+          541
+        ],
+        "line_items[1].unit_price_cents": [
+          1064,
+          528,
+          1116,
+          541
+        ],
+        "line_items[1].amount_cents": [
+          1264,
+          528,
+          1327,
+          541
+        ],
+        "line_items[2].row": [
+          144,
+          556,
+          155,
+          569
+        ],
+        "line_items[2].sku": [
+          224,
+          556,
+          300,
+          569
+        ],
+        "line_items[2].description": [
+          404,
+          555,
+          652,
+          571
+        ],
+        "line_items[2].quantity": [
+          924,
+          556,
+          947,
+          569
+        ],
+        "line_items[2].unit_price_cents": [
+          1064,
+          556,
+          1104,
+          569
+        ],
+        "line_items[2].amount_cents": [
+          1264,
+          556,
+          1327,
+          569
+        ],
+        "subtotal_cents": [
+          1264,
+          624,
+          1344,
+          639
+        ],
+        "tax_cents": [
+          1264,
+          652,
+          1327,
+          665
+        ],
+        "total_cents": [
+          1264,
+          680,
+          1353,
+          696
+        ]
+      }
+    }
+  }
+}

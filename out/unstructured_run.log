@@ -1,0 +1,44 @@
+No languages specified, defaulting to English.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/367 [00:00<?, ?it/s]Loading weights: 100%|██████████| 367/367 [00:00<00:00, 14008.11it/s]
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+No languages specified, defaulting to English.
+  PO00000_150           4.8s     502 chars
+  PO00000_300           1.1s     549 chars
+  PO00001_150           1.1s     509 chars
+  PO00001_300           1.1s     572 chars
+  PO00002_150           0.9s     353 chars
+  PO00002_300           0.9s     331 chars
+  PO00003_150           0.9s     296 chars
+  PO00003_300           0.7s     364 chars
+  PO00004_150           1.0s     426 chars
+  PO00004_300           0.9s     371 chars
+  PO00005_150           0.9s     282 chars
+  PO00005_300           0.9s     285 chars
+  PO00006_150           0.9s     276 chars
+  PO00006_300           0.8s     303 chars
+  PO00007_150           0.9s     409 chars
+  PO00007_300           1.0s     363 chars
+  PO00008_150           1.0s     462 chars
+  PO00008_300           1.1s     470 chars
+  PO00009_150           1.1s     490 chars
+  PO00009_300           1.1s     564 chars
+
+unstructured: 20 pages in 23.1s -> <repo>/out/unstructured

@@ -1,0 +1,117 @@
+{
+  "n": 6,
+  "dpis": [
+    300
+  ],
+  "note": "Real documents. Ground truth is hand-labeled; see the *.truth.json files beside this one. source_file and source_page name the original PDF this page was cut from, relative to the parser-eval folder; extracted_pdf and rasterized_png are what was actually parsed.",
+  "documents": [
+    {
+      "doc_id": "fdic_balance",
+      "note": "FDIC balance sheet, 30 June 1956. Scanned with an OCR layer. Every subtotal exact and the sheet balances: assets = liabilities + fund = 1,822,462,212.",
+      "source": "Sample_Documents/fdic-ar-1956.pdf page 36",
+      "source_file": "Sample_Documents/fdic-ar-1956.pdf",
+      "source_page": 36,
+      "extracted_pdf": "fdic_balance.pdf",
+      "rasterized_png": "fdic_balance_300.png",
+      "text_layer_chars": 3699,
+      "text_layer_source": "ocr",
+      "scanned": true,
+      "files": {
+        "300": {
+          "png": "fdic_balance_300.png",
+          "pdf": "fdic_balance.pdf"
+        }
+      }
+    },
+    {
+      "doc_id": "fdic_income",
+      "note": "FDIC statement of income and deposit insurance fund, FY1956. Its closing fund figure 1,690,818,394 also appears on fdic_balance -- a cross-page invariant.",
+      "source": "Sample_Documents/fdic-ar-1956.pdf page 37",
+      "source_file": "Sample_Documents/fdic-ar-1956.pdf",
+      "source_page": 37,
+      "extracted_pdf": "fdic_income.pdf",
+      "rasterized_png": "fdic_income_300.png",
+      "text_layer_chars": 4973,
+      "text_layer_source": "ocr",
+      "scanned": true,
+      "files": {
+        "300": {
+          "png": "fdic_income_300.png",
+          "pdf": "fdic_income.pdf"
+        }
+      }
+    },
+    {
+      "doc_id": "fdic_earnings",
+      "note": "Table 114, earnings and expenses of insured commercial banks by state. Landscape on a portrait page, 33 rows and 11 numeric columns. TWO-DIMENSIONAL ARITHMETIC, and the two directions are not equally strong: ACROSS each row the US column equals Alaska plus Puerto Rico plus Other plus Continental US, exact to the unit on all 33 rows; DOWN each column the components miss the printed total by 1 to 4, because amounts are printed in thousands and each is rounded on its own, so those sums carry tolerance 5. Six of the eleven columns are labeled: the five that carry the row identity, plus Connecticut, the rightmost column on the page.",
+      "source": "Sample_Documents/fdic-ar-1956.pdf page 144",
+      "source_file": "Sample_Documents/fdic-ar-1956.pdf",
+      "source_page": 144,
+      "extracted_pdf": "fdic_earnings.pdf",
+      "rasterized_png": "fdic_earnings_300.png",
+      "text_layer_chars": 4905,
+      "text_layer_source": "ocr",
+      "scanned": true,
+      "files": {
+        "300": {
+          "png": "fdic_earnings_300.png",
+          "pdf": "fdic_earnings.pdf"
+        }
+      }
+    },
+    {
+      "doc_id": "census29_wages",
+      "note": "1929 Census of Manufactures schedule, sheet 2, FILLED IN BY HAND. Employees, salaries, materials and products. Three handwritten sums check: 10,951 + 60 + 300 = 11,311; 3,120 + 6,630 + 14,500 = 24,250; 1 + 2 = 3 salaried men. Struck-through corrections, marginal annotations in other hands, noisy skewed grayscale scan.",
+      "source": "Sample_Documents/RG29-2790961-2926-1929-504-00025.jpg page 1",
+      "source_file": "Sample_Documents/RG29-2790961-2926-1929-504-00025.jpg",
+      "source_page": 1,
+      "extracted_pdf": "census29_wages.pdf",
+      "rasterized_png": "census29_wages_300.png",
+      "text_layer_chars": 0,
+      "text_layer_source": "none",
+      "scanned": true,
+      "files": {
+        "300": {
+          "png": "census29_wages_300.png",
+          "pdf": "census29_wages.pdf"
+        }
+      }
+    },
+    {
+      "doc_id": "census29_sales",
+      "note": "Same schedule, sheet 3. Sparse hand-filled form: power equipment, fuel, distribution of sales. 35,000 + 2,000 = 37,000 checks against the handwritten total. Two signatures, and 'x x x x x' fill patterns in cells that do not apply.",
+      "source": "Sample_Documents/RG29-2790961-2926-1929-504-00034.jpg page 1",
+      "source_file": "Sample_Documents/RG29-2790961-2926-1929-504-00034.jpg",
+      "source_page": 1,
+      "extracted_pdf": "census29_sales.pdf",
+      "rasterized_png": "census29_sales_300.png",
+      "text_layer_chars": 0,
+      "text_layer_source": "none",
+      "scanned": true,
+      "files": {
+        "300": {
+          "png": "census29_sales_300.png",
+          "pdf": "census29_sales.pdf"
+        }
+      }
+    },
+    {
+      "doc_id": "fdic2023_balance",
+      "note": "FDIC Annual Report 2023, Deposit Insurance Fund balance sheet as of December 31, printed page 132. THE ONLY BORN-DIGITAL PAGE IN THE CORPUS: typeset by InDesign, with a real text layer rather than somebody else's OCR over a photograph of paper. It is the SAME PUBLICATION as fdic_balance, 67 years later, which makes the pair a direct measurement of what the text layer is worth -- the 1956 sheet is a scan carrying an ABBYY layer, this one was never scanned at all. TWO YEAR COLUMNS (2023 and 2022), so a parser must keep them apart; NEGATIVE FIGURES IN PARENTHESES; and four figures embedded in label prose, two per year. Ten sums, all exact to the dollar, and the sheet balances in both years.",
+      "source": "Sample_Documents/fdic-ar-2023.pdf page 134",
+      "source_file": "Sample_Documents/fdic-ar-2023.pdf",
+      "source_page": 134,
+      "extracted_pdf": "fdic2023_balance.pdf",
+      "rasterized_png": "fdic2023_balance_300.png",
+      "text_layer_chars": 1835,
+      "text_layer_source": "typeset",
+      "scanned": false,
+      "files": {
+        "300": {
+          "png": "fdic2023_balance_300.png",
+          "pdf": "fdic2023_balance.pdf"
+        }
+      }
+    }
+  ]
+}

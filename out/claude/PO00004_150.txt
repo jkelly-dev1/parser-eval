@@ -1,0 +1,30 @@
+# PURCHASE ORDER
+
+PO Number
+PO-17733
+
+Vendor
+Ashcroft Components
+
+Terms
+Net 60
+
+Order Date
+2025-11-21
+
+Due Date
+2025-12-21
+
+Currency
+USD
+
+| # | SKU | Description | Qty | Unit | Amount |
+|---|-----|-------------|-----|------|--------|
+| 1 | LN-10NY | Nylon lock nut M10 | 8 | 80.27 | 642.16 |
+| 2 | HB-1040Z | Hex bolt M10x40, zinc | 11 | 68.63 | 754.93 |
+| 3 | SD-1200 | Self-drilling screw #12 | 40 | 18.87 | 754.80 |
+| 4 | AB-0506 | Anchor bolt 1/2in x 6in | 34 | 48.94 | 1,663.96 |
+
+Subtotal 3,815.85
+Tax 8.25% 314.81
+**TOTAL 4,130.66**

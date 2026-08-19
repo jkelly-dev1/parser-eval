@@ -1,0 +1,26 @@
+PURCHASE ORDER
+PO Number
+Order Date
+PO-15255
+2026-03-15
+Vendor
+Due Date
+Lakeside Fabrication
+2026-04-15
+Terms
+Currency
+2/10 Net 30
+usD
+#
+1
+2
+3
+HB-1040Z | Hex bolt M10x40, zinc | 49.97 | 1,698.98
+SS-1403 | Structural screw #14 x 3in | 52.69 | 1,159.18
+AB-0506 | Anchor bolt V/2in x 6in | 115.92 | 1,159.20
+Subtotal
+4,017.36
+Tax 825%
+331.43
+TOTAL
+4,348.79

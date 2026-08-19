@@ -1,0 +1,19 @@
+# PURCHASE ORDER
+
+|  |  |  |  |
+|---|---|---|---|
+| PO Number | PO-58178 | Order Date | 2025-01-07 |
+| Vendor | Fairmont Materials | Due Date | 2025-04-07 |
+| Terms | Net 60 | Currency | USD |
+
+| # | SKU | Description | Qty | Unit | Amount |
+|---|---|---|---:|---:|---:|
+| 1 | LN-10NY | Nylon lock nut M10 | 24 | 73.82 | 1,771.68 |
+| 2 | FW-10SS | Flat washer M10, stainless | 22 | 13.53 | 297.66 |
+| 3 | CS-0375 | Concrete sleeve anchor 3/8 | 36 | 8.27 | 297.72 |
+
+|  |  |
+|---|---:|
+| Subtotal | 2,367.06 |
+| Tax 8.25% | 195.28 |
+| **TOTAL** | **2,562.34** |

@@ -1,0 +1,31 @@
+# PURCHASE ORDER
+
+PO Number
+PO-33948
+
+Vendor
+Brightwater Tooling
+
+Terms
+Net 30
+
+Order Date
+2026-07-13
+
+Due Date
+2026-10-13
+
+Currency
+USD
+
+| # | SKU | Description | Qty | Unit | Amount |
+|---|-----|-------------|-----|------|--------|
+| 1 | CS-0375 | Concrete sleeve anchor 3/8 | 36 | 63.25 | 2,277.00 |
+| 2 | TR-0372 | Threaded rod 3/8in, 6ft | 13 | 74.95 | 974.35 |
+| 3 | SD-1200 | Self-drilling screw #12 | 22 | 44.29 | 974.38 |
+
+| | |
+|---|---|
+| Subtotal | 4,225.73 |
+| Tax 8.25% | 348.62 |
+| **TOTAL** | **4,574.35** |

@@ -1,0 +1,24 @@
+PURCHASE ORDER
+
+FO Number Onder Date
+
+Po-6a164 2026-06-14
+
+Lakeside Fabrication 2026-09-14
+
+2/20 Net 30 uso
+
+* sku Description ay Unie Amount
+
+2 sp.200 Selfdiling screw #12 33 7832 2,584.56
+
+2 AB-0506 Anchor bal Y2in x 6in 18 5597 1,007.46
+
+3 Fweoss Flat washer M10, stainless 3 335.82 1,007.46
+
+4 Naw Nylon lock nut M0 2 3612 193.44
+
+5 ji+o208 Joist hanger, 2x8 37 3463 1,281.21
+Subsatl 6,074.23
+To 025% 501.12
+ToTAL 6,575.35,

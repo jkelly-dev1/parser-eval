@@ -1,0 +1,22 @@
+PURCHASE ORDER
+
+FO Number onde Date
+
+Po-17733, 2025-11-21
+
+Ashcroft Components 2025-12-21
+
+Net 60 uso
+
+* sku Description ay Unie Amount
+
+2 oy Nylon lock nut M0 8 8027 622.16
+
+2 HB-20s0z Hex bok M0xt0, zine n 6863 754.93
+
+3 sp-2200 Selt-diling screw #12 40 1887 754.80
+
+4 AB-0506 Anchor bal Y2in x 6in 34 4894 1,663.96
+Subsatl 3,815.85
+To 025% ai4al
+ToTAL 4,130.6

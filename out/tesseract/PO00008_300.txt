@@ -1,0 +1,29 @@
+PURCHASE ORDER
+
+PO Number Order Date
+
+PO-69164 2026-06-14
+
+Vendor Due Date
+
+Lakeside Fabrication 2026-09-14
+
+Terms Currency
+
+2/10 Net 30 USD
+
+# SKU Description Qty Unit Amount
+
+1 SD-1200 Self-drilling screw #12 33 78.32 2,584.56
+
+2 AB-0506 Anchor bolt 1/2in x 6in 18 55.97 1,007.46
+
+3 FW-10SS Flat washer M10, stainless 3 335.82 1,007.46
+
+4 LN-1ONY Nylon lock nut M10 12 16.12 193.44
+
+5 JH-0208 Joist hanger, 2x8 37 34.63 1,281.31
+Subtotal 6,074.23
+Tax 8.25% 501.12
+
+TOTAL 6,575.35

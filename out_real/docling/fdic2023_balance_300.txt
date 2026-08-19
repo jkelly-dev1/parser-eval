@@ -1,0 +1,33 @@
+| Federal Deposit Insurance Corporation Deposit Insurance Fund Balance Sheet As of December 31 (Dollars in Thousands)   | 2023        | 2022          |
+|-----------------------------------------------------------------------------------------------------------------------|-------------|---------------|
+| ASSETS                                                                                                                |             |               |
+| Cash and cash equivalents                                                                                             | 4,872,657   | $ 2,599,206   |
+| Investment in U.S. Treasury securities (Amortized Cost of                                                             |             |               |
+| $18,958,454 and $125,427,772) (Note 3)                                                                                | 18,928,885  | 122,442,357   |
+| Assessments receivable (Note 12)                                                                                      | 3,235,766   | 2,159,249     |
+| Special assessments receivable (Note 5)                                                                               | 20,423,184  | 0             |
+| Interest receivable on investments and other assets, net                                                              | 145,780     | 688,061       |
+| Receivables from resolutions, net of allowances of $69,361,715 and $40,047,224 (Note 4)                               | 97,778,346  | 520,555       |
+| Property and equipment, net (Note 6)                                                                                  | 319,733     | 360,141       |
+| Operating lease right-of-use assets (Note 7)                                                                          | 80,747      | 92,406        |
+| Total Assets                                                                                                          | 145,785,098 | $ 128,861,975 |
+| LIABILITIES                                                                                                           |             |               |
+| Accounts payable and other liabilities (Note 8)                                                                       | 410,515     | $ 268,216     |
+| Operating lease liabilities (Note 7)                                                                                  | 101,617     | 111,205       |
+| Liabilities due to resolutions (Note 9)                                                                               | 22,513,085  | 846           |
+| Postretirement benefit liability (Note 16)                                                                            | 255,574     | 231,781       |
+| Contingent liabilities:                                                                                               |             |               |
+| Anticipated failure of insured institutions (Note 10)                                                                 | 725,877     | 31,233        |
+| Litigation losses (Note 10)                                                                                           | 450         | 800           |
+| Total Liabilities                                                                                                     | 24,007,118  | 644,081       |
+| Off-balance-sheet exposure (Note 17)                                                                                  |             |               |
+| FUND BALANCE                                                                                                          |             |               |
+| Accumulated Net Income                                                                                                | 121,797,208 | 131,176,093   |
+| ACCUMULATED OTHER COMPREHENSIVE INCOME                                                                                |             |               |
+| Unrealized (loss) on U.S. Treasury securities, net (Note 3)                                                           | (29,569)    | (2,985,415)   |
+| Unrealized postretirement benefit gain (Note 16)                                                                      | 10,341      | 27,216        |
+| Total Accumulated Other Comprehensive (Loss)                                                                          | (19,228)    | (2,958,199)   |
+| Total Fund Balance                                                                                                    | 121,777,980 | 128,217,894   |
+| Total Liabilities and Fund Balance                                                                                    | 145,785,098 | $ 128,861,975 |
+
+The accompanying notes are an integral part of these financial statements.

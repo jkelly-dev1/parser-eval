@@ -1,0 +1,63 @@
+{
+  "doc_id": "census29_sales",
+  "source": "Sample_Documents/RG29-2790961-2926-1929-504-00034.jpg (1929 Census of Manufactures schedule, sheet 3; NARA catalog 50607213, 'Texas: Industry No. 504 - Steel Engraving'; Use and Access both Unrestricted)",
+  "kind": "scanned",
+  "text_layer": "none",
+  "labeling": "Hand-labeled by reading the 300 DPI render at magnification. THIS SHEET IS A DIFFERENT ESTABLISHMENT FROM census29_wages -- its total sales of 37000 cannot be reconciled with that sheet's product values, and the two are separate schedules in the same file unit rather than two sides of one return. Nothing here should be tied to that page. Values are labeled without thousands separators, as written.",
+  "printed": {
+    "form_item_10": "POWER EQUIPMENT",
+    "form_item_11": "FUEL AND ELECTRIC CURRENT",
+    "form_item_12": "DISTRIBUTION OF SALES",
+    "col_number": "NUMBER",
+    "col_horsepower": "HORSEPOWER",
+    "col_kilowatt_hours": "KILOWATT HOURS",
+    "col_cost": "COST",
+    "col_quantity": "QUANTITY",
+    "row_coal_anthracite": "Coal, anthracite",
+    "row_coal_bituminous": "Coal, bituminous",
+    "row_coke": "Coke",
+    "row_gasoline": "Gasoline and kerosene",
+    "row_natural_gas": "Natural gas",
+    "row_manufactured_gas": "Manufactured gas",
+    "row_generated": "Generated in the plant",
+    "row_purchased": "Purchased",
+    "label_total_cost": "Total cost",
+    "label_total_sales": "Total sales (same as total for Inquiry 9)",
+    "label_sales_retailers": "SALES TO RETAILERS, INCLUDING RETAIL STORES OWNED BY MANUFACTURER",
+    "label_sales_home": "SALES TO HOME CONSUMERS (THROUGH FIELD AGENTS OR OTHERWISE)",
+    "label_special_agent": "Signature of special agent",
+    "hw_motors_purchased_number": "2",
+    "hw_motors_purchased_hp": "3",
+    "hw_natural_gas_quantity": "77",
+    "hw_natural_gas_cost": "66",
+    "hw_fuel_total_cost": "66",
+    "hw_electric_purchased_kwh": "2500",
+    "hw_electric_purchased_cost": "150",
+    "hw_sales_retailers": "35000",
+    "hw_sales_home_consumers": "2000",
+    "hw_sales_total": "37000",
+    "hw_special_agent": "Walter J. Walker"
+  },
+  "rows": [],
+  "reconciliation": {
+    "note": "Two sums, and the sparseness is the point. Most of this sheet is empty: seven fuel rows of which one is filled, nine sales channels of which two are. A parser that invents plausible values for blank cells scores WORSE against this page than one that returns nothing, which is the correct direction and the opposite of what a recall-only metric would reward.",
+    "sums": [
+      {
+        "name": "fuel_total_cost",
+        "of": [
+          "hw_natural_gas_cost"
+        ],
+        "equals": "hw_fuel_total_cost"
+      },
+      {
+        "name": "sales_total",
+        "of": [
+          "hw_sales_retailers",
+          "hw_sales_home_consumers"
+        ],
+        "equals": "hw_sales_total"
+      }
+    ]
+  },
+  "not_labeled": "THE SECOND SIGNATURE IS NOT LABELED. The special agent's hand is legible -- Walter J. Walker -- but the signature of the person furnishing the information is a rapid cursive that cannot be read with confidence, and a guessed name would be a fabricated label. The certification dates are also left out: the form prints '192' and '19' with the final digits added by hand, and reading a lone handwritten digit that is partly over the printed rule is not something to be sure of. THE EMPTY CELLS ARE DELIBERATELY NOT LABELED AS EMPTY, because the grader measures whether printed values came back, not whether blanks stayed blank; a parser that hallucinates into them is caught by the two sums instead. The 'x x x x x' strings printed in cells that do not apply are likewise unlabeled -- they are the form telling the clerk not to write there, not data."
+}

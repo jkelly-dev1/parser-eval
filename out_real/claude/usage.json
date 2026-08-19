@@ -1,0 +1,50 @@
+[
+  {
+    "doc_id": "fdic_balance",
+    "dpi": 300,
+    "model": "claude-opus-5",
+    "input_tokens": 4948,
+    "output_tokens": 1238,
+    "stop": "end_turn"
+  },
+  {
+    "doc_id": "fdic_income",
+    "dpi": 300,
+    "model": "claude-opus-5",
+    "input_tokens": 4948,
+    "output_tokens": 1691,
+    "stop": "end_turn"
+  },
+  {
+    "doc_id": "fdic_earnings",
+    "dpi": 300,
+    "model": "claude-opus-5",
+    "input_tokens": 4948,
+    "output_tokens": 2812,
+    "stop": "end_turn"
+  },
+  {
+    "doc_id": "census29_wages",
+    "dpi": 300,
+    "model": "claude-opus-5",
+    "input_tokens": 4984,
+    "output_tokens": 2631,
+    "stop": "end_turn"
+  },
+  {
+    "doc_id": "census29_sales",
+    "dpi": 300,
+    "model": "claude-opus-5",
+    "input_tokens": 4984,
+    "output_tokens": 1992,
+    "stop": "end_turn"
+  },
+  {
+    "doc_id": "fdic2023_balance",
+    "dpi": 300,
+    "model": "claude-opus-5",
+    "input_tokens": 5002,
+    "output_tokens": 1146,
+    "stop": "end_turn"
+  }
+]

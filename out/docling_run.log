@@ -1,0 +1,74 @@
+[32m[INFO] 2026-08-15 00:29:47,772 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-15 00:29:47,774 [RapidOCR] device_config.py:57: Using CPU device[0m
+[32m[INFO] 2026-08-15 00:29:47,777 [RapidOCR] download_file.py:60: File exists and is valid: <repo>/envs/docling/lib/python3.13/site-packages/rapidocr/models/PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-15 00:29:47,777 [RapidOCR] main.py:50: Using <repo>/envs/docling/lib/python3.13/site-packages/rapidocr/models/PP-OCRv6_det_small.pth[0m
+[32m[INFO] 2026-08-15 00:29:47,839 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-15 00:29:47,839 [RapidOCR] device_config.py:57: Using CPU device[0m
+[32m[INFO] 2026-08-15 00:29:47,839 [RapidOCR] download_file.py:60: File exists and is valid: <repo>/envs/docling/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-15 00:29:47,839 [RapidOCR] main.py:50: Using <repo>/envs/docling/lib/python3.13/site-packages/rapidocr/models/ch_ptocr_mobile_v2.0_cls_mobile.pth[0m
+[32m[INFO] 2026-08-15 00:29:47,874 [RapidOCR] base.py:23: Using engine_name: torch[0m
+[32m[INFO] 2026-08-15 00:29:47,874 [RapidOCR] device_config.py:57: Using CPU device[0m
+[32m[INFO] 2026-08-15 00:29:47,881 [RapidOCR] download_file.py:60: File exists and is valid: <repo>/envs/docling/lib/python3.13/site-packages/rapidocr/models/PP-OCRv6_rec_small.pth[0m
+[32m[INFO] 2026-08-15 00:29:47,881 [RapidOCR] main.py:50: Using <repo>/envs/docling/lib/python3.13/site-packages/rapidocr/models/PP-OCRv6_rec_small.pth[0m
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/770 [00:00<?, ?it/s]Loading weights: 100%|██████████| 770/770 [00:00<00:00, 18952.36it/s]
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0] Graph break from `Tensor.item()`, consider setting:
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     torch._dynamo.config.capture_scalar_outputs = True
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0] or:
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0] to include these operations in the captured graph.
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0] 
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0] Graph break: from user code at:
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]   File "<repo>/envs/docling/lib/python3.13/site-packages/transformers/utils/generic.py", line 939, in wrapper
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     output = func(self, *args, **kwargs)
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]   File "<repo>/envs/docling/lib/python3.13/site-packages/transformers/models/rt_detr_v2/modeling_rt_detr_v2.py", line 1864, in forward
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     outputs = self.model(
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]   File "<repo>/envs/docling/lib/python3.13/site-packages/transformers/utils/generic.py", line 939, in wrapper
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     output = func(self, *args, **kwargs)
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]   File "<repo>/envs/docling/lib/python3.13/site-packages/transformers/models/rt_detr_v2/modeling_rt_detr_v2.py", line 1626, in forward
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     decoder_outputs = self.decoder(
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]   File "<repo>/envs/docling/lib/python3.13/site-packages/transformers/utils/generic.py", line 1068, in wrapper
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     output = func(self, *args, **kwargs)
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]   File "<repo>/envs/docling/lib/python3.13/site-packages/transformers/utils/output_capturing.py", line 262, in wrapper
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     outputs = func(self, *args, **kwargs)
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]   File "<repo>/envs/docling/lib/python3.13/site-packages/transformers/models/rt_detr_v2/modeling_rt_detr_v2.py", line 623, in forward
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     hidden_states = decoder_layer(
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]   File "<repo>/envs/docling/lib/python3.13/site-packages/transformers/models/rt_detr_v2/modeling_rt_detr_v2.py", line 409, in forward
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     hidden_states, _ = self.encoder_attn(
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]   File "<repo>/envs/docling/lib/python3.13/site-packages/transformers/models/rt_detr_v2/modeling_rt_detr_v2.py", line 185, in forward
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     torch_compilable_check(
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     ^
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]   File "<repo>/envs/docling/lib/python3.13/site-packages/transformers/utils/import_utils.py", line 1832, in torch_compilable_check
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     torch._check_tensor_all(cond)
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0]     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0] 
+W0815 00:30:05.469000 79185 torch/_dynamo/variables/tensor.py:1759] [0/0] 
+<repo>/envs/docling/lib/python3.13/site-packages/torch/nn/modules/conv.py:560: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/Convolution.cpp:1101.)
+  return F.conv2d(
+  PO00000_150          32.0s     982 chars
+  PO00000_300           3.9s     982 chars
+  PO00001_150           4.0s    1024 chars
+  PO00001_300           3.8s     983 chars
+  PO00002_150           3.8s     782 chars
+  PO00002_300           3.9s     782 chars
+  PO00003_150           3.7s     783 chars
+  PO00003_300           3.7s     767 chars
+  PO00004_150           4.0s     831 chars
+  PO00004_300           4.1s     828 chars
+  PO00005_150           3.8s     768 chars
+  PO00005_300           3.9s     768 chars
+  PO00006_150           3.7s     767 chars
+  PO00006_300           3.9s     767 chars
+  PO00007_150           3.8s     855 chars
+  PO00007_300           4.2s     858 chars
+  PO00008_150           4.2s     927 chars
+  PO00008_300           3.8s    1100 chars
+  PO00009_150           3.6s     995 chars
+  PO00009_300           3.7s     998 chars
+
+docling: 20 pages in 105.4s -> <repo>/out/docling
+EXIT 0

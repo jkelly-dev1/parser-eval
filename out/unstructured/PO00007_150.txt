@@ -1,0 +1,24 @@
+PURCHASE ORDER
+PO Number
+Order Date
+PO-96824
+2026-01-14
+Vendor
+Due Date
+Northgate Trading
+2026-02-14
+Terms
+Currency
+2/10 Net 30
+usD
+a
+me wh
+HB-1040Z | Hex bolt M10x40, zinc |  | 47.65 | 238.25
+FwW-10SsS | Flat washer M10, stainless | 26 | 29.23 | 759.98
+SS-1403 | Structural #14 3in | 34 | 22.35 | 759.90
+AB-0506 | screw x Anchor bok U/2in x 6in | 36 | 56.88 | 2,047.68
+3,805.81
+Tex 825%
+313.98
+TOTAL
+4,119.79

@@ -1,0 +1,63 @@
+**10. POWER EQUIPMENT.**—Give figures for equipment as of the end of the period covered by this report.
+
+**Important Note.**—The form of this inquiry is different from that previously used, the purpose being to distinguish between active and inactive prime movers and generators. It is desired, at the same time, to obtain a total which shall be comparable with that reported at the 1927 census, when the inquiry called simply for a combined total of "all power equipment in the plant, active and emergency." By "emergency" equipment is meant that which is capable of being put into operation promptly, but which is used only in case of breakdown of the active equipment or at rather rare interrupts when an exceptional load occurs. Equipment which is regularly used, but not usually on full time, should be classed as active.
+
+|                                                                                                                                                          | NUMBER     | HORSEPOWER |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------|------------|------------|
+| <b>a. PRIME MOVERS—total, active and emergency:</b>                                                                                                      |            |            |
+| Steam engines                                                                                                                                            |            |            |
+| Steam turbines                                                                                                                                           |            |            |
+| Internal-combustion engines (oil, gas, gasoline, etc.)                                                                                                   |            |            |
+| Water wheels and turbines                                                                                                                                |            |            |
+| Total of above                                                                                                                                           |            |            |
+| Rated horsepower of above equipment which is not ordinarily active (included in "Total of above")                                                        | Horsepower | XXXXX      |
+| <b>b. ELECTRIC MOTORS DRIVEN BY PURCHASED CURRENT—total, active and emergency</b>                                                                        |            | 2          |
+| <b>c. ELECTRIC MOTORS DRIVEN BY CURRENT GENERATED IN PLANT—total, active and emergency</b>                                                               |            | 3          |
+| <b>d. ELECTRIC GENERATORS DRIVEN BY PRIME MOVERS IN THE PLANT (do not include rotary converters or motor-generator sets)—total, active and emergency</b> |            | KILOWATES  |
+| Rated capacity of generators which are not ordinarily active (included in "Total, active and emergency")                                                 | Kilowatts  | XXXXX      |
+
+**11. FUEL AND ELECTRIC CURRENT:**
+
+**a. FUEL USED (including that transferred from mines, wells, or plants under the same ownership) during the period covered by this report.** Include fuel used for all purposes—for power, heat, and light, or as material for making gas, coke, etc.—but do not include oil or gas if none is used except for lighting.
+
+|                                              | UNIT OF QUANTITY | QUANTITY | COST DELIVERED AT FACTORY |
+|----------------------------------------------|------------------|----------|---------------------------|
+| Coal, anthracite                             | Long ton         |          | \$ _____                  |
+| Coal, bituminous                             | Short ton        |          | \$ _____                  |
+| Coke                                         | Short ton        |          | \$ _____                  |
+| Fuel oils (including crude oil and gas oils) | Gallon           |          | \$ _____                  |
+| Gasoline and kerosene                        | Gallon           |          | \$ <u>X 66</u>            |
+| Natural gas                                  | M cu. ft.        | 77       | \$ _____                  |
+| Manufactured gas                             | M cu. ft.        |          | \$ _____                  |
+| Total cost                                   |                  |          | \$ <u>66</u>              |
+
+**b. ELECTRIC CURRENT.** (Report current generated or purchased during the year for all uses; but a plant which buys current for lighting only should not report it.)
+
+|                        | KILOWATT HOUSES | COST            |
+|------------------------|-----------------|-----------------|
+| Generated in the plant |                 | XXXXXX          |
+| Purchased              | 25,000          | \$ <u>11.00</u> |
+
+**12. DISTRIBUTION OF SALES.**—Report below, in the proper spaces, the values (at f. o. b. factory prices) of goods shipped or delivered to customers (or to warehouses on customers' accounts) during the period covered. The total should be the same as the total given for Inquiry 9, Products. If exact figures are not available, give the best possible approximations.
+
+- a. SALES TO MANUFACTURERS AND INTERPLANT TRANSFERS \$ \_\_\_\_\_
+- b. SALES TO RAILROADS, PUBLIC-UTILITY COMPANIES, AND CONTRACTORS \$ \_\_\_\_\_
+- c. SALES THROUGH BRANCH HOUSES WHICH ARE CONDUCTED AS DISTINCT WHOLESALE MERCHANT DISING ESTABLISHMENTS \$ \_\_\_\_\_
+- d. SALES THROUGH MANUFACTURERS' AGENTS, BROKERS, AND COMMISSION HOUSES \$ \_\_\_\_\_
+- e. SALES THROUGH WHOLESALERS AND JOBBERS (INCLUDING EXPORTING HOUSES) \$ \_\_\_\_\_
+- f. SALES TO RETAILERS, INCLUDING RETAIL STORES ONLY ED BY MANUFACTURER \$ 37,000
+- g. SALES TO HOTELS, RESTAURANTS, AND INSTITUTIONS \$ \_\_\_\_\_
+- h. SALES TO HOME CONSUMERS (THROUGH FIELD AGENTS OR OTHERWISE) \$ 2,000
+- i. SALES NOT DISTRIBUTED ABOVE (INDICATE CHANNELS THROUGH WHICH SOLD): \$ \_\_\_\_\_
+
+Total sales (same as total for Inquiry 9) \$ 37,000
+
+THIS IS TO CERTIFY that the information contained in this report is correct and complete to the best of my knowledge and belief, and covers the period from January 1, 1925 to January 1, 1926
+
+Walter J. Thalkin  
+(Signature of special agent)
+
+McCommissioner  
+(Signature and official title of person furnishing the information)
+
+(Address)

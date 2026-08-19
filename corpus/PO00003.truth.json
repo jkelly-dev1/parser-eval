@@ -1,0 +1,431 @@
+{
+  "doc_id": "PO00003",
+  "render_revision": "2026-08-12-terms-wrap",
+  "source": "synthetic purchase order, drawn by an external document generator and frozen here; the pages, renderings and ground truth in this folder are the whole artifact",
+  "n_rows": 3,
+  "printed": {
+    "po_number": "PO-14313",
+    "order_date": "2026-12-04",
+    "due_date": "2027-02-04",
+    "vendor": "Cascade Industrial",
+    "terms": "Net 30",
+    "currency": "USD",
+    "subtotal_cents": "3,299.18",
+    "tax_cents": "272.18",
+    "total_cents": "3,571.36"
+  },
+  "rows": [
+    {
+      "anchor": "CS-0375",
+      "cells": {
+        "row": "1",
+        "sku": "CS-0375",
+        "description": "Concrete sleeve anchor 3/8",
+        "quantity": "28",
+        "unit_price_cents": "24.95",
+        "amount_cents": "698.60"
+      }
+    },
+    {
+      "anchor": "LN-10NY",
+      "cells": {
+        "row": "2",
+        "sku": "LN-10NY",
+        "description": "Nylon lock nut M10",
+        "quantity": "17",
+        "unit_price_cents": "76.49",
+        "amount_cents": "1,300.33"
+      }
+    },
+    {
+      "anchor": "SS-1403",
+      "cells": {
+        "row": "3",
+        "sku": "SS-1403",
+        "description": "Structural screw #14 x 3in",
+        "quantity": "35",
+        "unit_price_cents": "37.15",
+        "amount_cents": "1,300.25"
+      }
+    }
+  ],
+  "values": {
+    "po_number": "PO-14313",
+    "order_date": "2026-12-04",
+    "due_date": "2027-02-04",
+    "vendor": "Cascade Industrial",
+    "terms": "Net 30",
+    "currency": "USD",
+    "subtotal_cents": 329918,
+    "tax_cents": 27218,
+    "total_cents": 357136,
+    "line_items": [
+      {
+        "row": 1,
+        "sku": "CS-0375",
+        "description": "Concrete sleeve anchor 3/8",
+        "quantity": 28,
+        "unit_price_cents": 2495,
+        "amount_cents": 69860
+      },
+      {
+        "row": 2,
+        "sku": "LN-10NY",
+        "description": "Nylon lock nut M10",
+        "quantity": 17,
+        "unit_price_cents": 7649,
+        "amount_cents": 130033
+      },
+      {
+        "row": 3,
+        "sku": "SS-1403",
+        "description": "Structural screw #14 x 3in",
+        "quantity": 35,
+        "unit_price_cents": 3715,
+        "amount_cents": 130025
+      }
+    ]
+  },
+  "files": {
+    "150": {
+      "png": "PO00003_150.png",
+      "pdf": "PO00003_150.pdf",
+      "width": 1228,
+      "height": 372,
+      "regions": {
+        "po_number": [
+          72,
+          122,
+          117,
+          129
+        ],
+        "order_date": [
+          637,
+          122,
+          690,
+          129
+        ],
+        "vendor": [
+          72,
+          155,
+          155,
+          163
+        ],
+        "due_date": [
+          637,
+          156,
+          690,
+          163
+        ],
+        "terms": [
+          72,
+          190,
+          102,
+          197
+        ],
+        "currency": [
+          637,
+          190,
+          656,
+          197
+        ],
+        "line_items[0].row": [
+          72,
+          250,
+          78,
+          257
+        ],
+        "line_items[0].sku": [
+          112,
+          250,
+          150,
+          257
+        ],
+        "line_items[0].description": [
+          202,
+          249,
+          326,
+          257
+        ],
+        "line_items[0].quantity": [
+          462,
+          250,
+          474,
+          257
+        ],
+        "line_items[0].unit_price_cents": [
+          532,
+          250,
+          558,
+          257
+        ],
+        "line_items[0].amount_cents": [
+          632,
+          250,
+          664,
+          257
+        ],
+        "line_items[1].row": [
+          72,
+          264,
+          78,
+          271
+        ],
+        "line_items[1].sku": [
+          112,
+          264,
+          151,
+          271
+        ],
+        "line_items[1].description": [
+          202,
+          263,
+          289,
+          273
+        ],
+        "line_items[1].quantity": [
+          462,
+          264,
+          473,
+          271
+        ],
+        "line_items[1].unit_price_cents": [
+          532,
+          264,
+          558,
+          271
+        ],
+        "line_items[1].amount_cents": [
+          632,
+          264,
+          672,
+          272
+        ],
+        "line_items[2].row": [
+          72,
+          278,
+          78,
+          285
+        ],
+        "line_items[2].sku": [
+          112,
+          278,
+          150,
+          285
+        ],
+        "line_items[2].description": [
+          202,
+          277,
+          322,
+          285
+        ],
+        "line_items[2].quantity": [
+          462,
+          278,
+          473,
+          285
+        ],
+        "line_items[2].unit_price_cents": [
+          532,
+          278,
+          558,
+          285
+        ],
+        "line_items[2].amount_cents": [
+          632,
+          278,
+          672,
+          286
+        ],
+        "subtotal_cents": [
+          632,
+          312,
+          672,
+          320
+        ],
+        "tax_cents": [
+          632,
+          326,
+          664,
+          333
+        ],
+        "total_cents": [
+          632,
+          340,
+          676,
+          348
+        ]
+      }
+    },
+    "300": {
+      "png": "PO00003_300.png",
+      "pdf": "PO00003_300.pdf",
+      "width": 2455,
+      "height": 744,
+      "regions": {
+        "po_number": [
+          144,
+          244,
+          233,
+          257
+        ],
+        "order_date": [
+          1275,
+          244,
+          1380,
+          257
+        ],
+        "vendor": [
+          144,
+          311,
+          311,
+          325
+        ],
+        "due_date": [
+          1275,
+          312,
+          1380,
+          325
+        ],
+        "terms": [
+          144,
+          380,
+          204,
+          393
+        ],
+        "currency": [
+          1275,
+          380,
+          1313,
+          393
+        ],
+        "line_items[0].row": [
+          144,
+          500,
+          155,
+          513
+        ],
+        "line_items[0].sku": [
+          224,
+          500,
+          300,
+          513
+        ],
+        "line_items[0].description": [
+          404,
+          499,
+          652,
+          515
+        ],
+        "line_items[0].quantity": [
+          924,
+          500,
+          947,
+          513
+        ],
+        "line_items[0].unit_price_cents": [
+          1064,
+          500,
+          1116,
+          513
+        ],
+        "line_items[0].amount_cents": [
+          1264,
+          500,
+          1327,
+          513
+        ],
+        "line_items[1].row": [
+          144,
+          528,
+          155,
+          541
+        ],
+        "line_items[1].sku": [
+          224,
+          528,
+          302,
+          541
+        ],
+        "line_items[1].description": [
+          404,
+          527,
+          577,
+          545
+        ],
+        "line_items[1].quantity": [
+          924,
+          528,
+          947,
+          541
+        ],
+        "line_items[1].unit_price_cents": [
+          1064,
+          528,
+          1116,
+          541
+        ],
+        "line_items[1].amount_cents": [
+          1264,
+          528,
+          1344,
+          543
+        ],
+        "line_items[2].row": [
+          144,
+          556,
+          155,
+          569
+        ],
+        "line_items[2].sku": [
+          224,
+          556,
+          299,
+          569
+        ],
+        "line_items[2].description": [
+          404,
+          555,
+          645,
+          569
+        ],
+        "line_items[2].quantity": [
+          924,
+          556,
+          947,
+          569
+        ],
+        "line_items[2].unit_price_cents": [
+          1064,
+          556,
+          1116,
+          569
+        ],
+        "line_items[2].amount_cents": [
+          1264,
+          556,
+          1344,
+          571
+        ],
+        "subtotal_cents": [
+          1264,
+          624,
+          1344,
+          639
+        ],
+        "tax_cents": [
+          1264,
+          652,
+          1327,
+          665
+        ],
+        "total_cents": [
+          1264,
+          680,
+          1353,
+          696
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,522 @@
+{
+  "doc_id": "PO00004",
+  "render_revision": "2026-08-12-terms-wrap",
+  "source": "synthetic purchase order, drawn by an external document generator and frozen here; the pages, renderings and ground truth in this folder are the whole artifact",
+  "n_rows": 4,
+  "printed": {
+    "po_number": "PO-17733",
+    "order_date": "2025-11-21",
+    "due_date": "2025-12-21",
+    "vendor": "Ashcroft Components",
+    "terms": "Net 60",
+    "currency": "USD",
+    "subtotal_cents": "3,815.85",
+    "tax_cents": "314.81",
+    "total_cents": "4,130.66"
+  },
+  "rows": [
+    {
+      "anchor": "LN-10NY",
+      "cells": {
+        "row": "1",
+        "sku": "LN-10NY",
+        "description": "Nylon lock nut M10",
+        "quantity": "8",
+        "unit_price_cents": "80.27",
+        "amount_cents": "642.16"
+      }
+    },
+    {
+      "anchor": "HB-1040Z",
+      "cells": {
+        "row": "2",
+        "sku": "HB-1040Z",
+        "description": "Hex bolt M10x40, zinc",
+        "quantity": "11",
+        "unit_price_cents": "68.63",
+        "amount_cents": "754.93"
+      }
+    },
+    {
+      "anchor": "SD-1200",
+      "cells": {
+        "row": "3",
+        "sku": "SD-1200",
+        "description": "Self-drilling screw #12",
+        "quantity": "40",
+        "unit_price_cents": "18.87",
+        "amount_cents": "754.80"
+      }
+    },
+    {
+      "anchor": "AB-0506",
+      "cells": {
+        "row": "4",
+        "sku": "AB-0506",
+        "description": "Anchor bolt 1/2in x 6in",
+        "quantity": "34",
+        "unit_price_cents": "48.94",
+        "amount_cents": "1,663.96"
+      }
+    }
+  ],
+  "values": {
+    "po_number": "PO-17733",
+    "order_date": "2025-11-21",
+    "due_date": "2025-12-21",
+    "vendor": "Ashcroft Components",
+    "terms": "Net 60",
+    "currency": "USD",
+    "subtotal_cents": 381585,
+    "tax_cents": 31481,
+    "total_cents": 413066,
+    "line_items": [
+      {
+        "row": 1,
+        "sku": "LN-10NY",
+        "description": "Nylon lock nut M10",
+        "quantity": 8,
+        "unit_price_cents": 8027,
+        "amount_cents": 64216
+      },
+      {
+        "row": 2,
+        "sku": "HB-1040Z",
+        "description": "Hex bolt M10x40, zinc",
+        "quantity": 11,
+        "unit_price_cents": 6863,
+        "amount_cents": 75493
+      },
+      {
+        "row": 3,
+        "sku": "SD-1200",
+        "description": "Self-drilling screw #12",
+        "quantity": 40,
+        "unit_price_cents": 1887,
+        "amount_cents": 75480
+      },
+      {
+        "row": 4,
+        "sku": "AB-0506",
+        "description": "Anchor bolt 1/2in x 6in",
+        "quantity": 34,
+        "unit_price_cents": 4894,
+        "amount_cents": 166396
+      }
+    ]
+  },
+  "files": {
+    "150": {
+      "png": "PO00004_150.png",
+      "pdf": "PO00004_150.pdf",
+      "width": 1228,
+      "height": 386,
+      "regions": {
+        "po_number": [
+          72,
+          122,
+          117,
+          129
+        ],
+        "order_date": [
+          637,
+          122,
+          689,
+          129
+        ],
+        "vendor": [
+          72,
+          155,
+          169,
+          165
+        ],
+        "due_date": [
+          637,
+          156,
+          689,
+          163
+        ],
+        "terms": [
+          72,
+          190,
+          102,
+          197
+        ],
+        "currency": [
+          637,
+          190,
+          656,
+          197
+        ],
+        "line_items[0].row": [
+          72,
+          250,
+          78,
+          257
+        ],
+        "line_items[0].sku": [
+          112,
+          250,
+          151,
+          257
+        ],
+        "line_items[0].description": [
+          202,
+          249,
+          289,
+          259
+        ],
+        "line_items[0].quantity": [
+          462,
+          250,
+          468,
+          257
+        ],
+        "line_items[0].unit_price_cents": [
+          532,
+          250,
+          558,
+          257
+        ],
+        "line_items[0].amount_cents": [
+          632,
+          250,
+          664,
+          257
+        ],
+        "line_items[1].row": [
+          72,
+          264,
+          78,
+          271
+        ],
+        "line_items[1].sku": [
+          112,
+          264,
+          157,
+          271
+        ],
+        "line_items[1].description": [
+          202,
+          263,
+          302,
+          272
+        ],
+        "line_items[1].quantity": [
+          462,
+          264,
+          473,
+          271
+        ],
+        "line_items[1].unit_price_cents": [
+          532,
+          264,
+          558,
+          271
+        ],
+        "line_items[1].amount_cents": [
+          632,
+          264,
+          663,
+          271
+        ],
+        "line_items[2].row": [
+          72,
+          278,
+          78,
+          285
+        ],
+        "line_items[2].sku": [
+          112,
+          278,
+          151,
+          285
+        ],
+        "line_items[2].description": [
+          202,
+          277,
+          303,
+          287
+        ],
+        "line_items[2].quantity": [
+          462,
+          278,
+          474,
+          285
+        ],
+        "line_items[2].unit_price_cents": [
+          532,
+          278,
+          558,
+          285
+        ],
+        "line_items[2].amount_cents": [
+          632,
+          278,
+          664,
+          285
+        ],
+        "line_items[3].row": [
+          72,
+          292,
+          78,
+          299
+        ],
+        "line_items[3].sku": [
+          112,
+          292,
+          151,
+          299
+        ],
+        "line_items[3].description": [
+          202,
+          291,
+          304,
+          299
+        ],
+        "line_items[3].quantity": [
+          462,
+          292,
+          474,
+          299
+        ],
+        "line_items[3].unit_price_cents": [
+          532,
+          292,
+          558,
+          299
+        ],
+        "line_items[3].amount_cents": [
+          632,
+          292,
+          672,
+          300
+        ],
+        "subtotal_cents": [
+          632,
+          326,
+          672,
+          334
+        ],
+        "tax_cents": [
+          632,
+          340,
+          663,
+          347
+        ],
+        "total_cents": [
+          632,
+          354,
+          676,
+          362
+        ]
+      }
+    },
+    "300": {
+      "png": "PO00004_300.png",
+      "pdf": "PO00004_300.pdf",
+      "width": 2455,
+      "height": 772,
+      "regions": {
+        "po_number": [
+          144,
+          244,
+          233,
+          257
+        ],
+        "order_date": [
+          1275,
+          244,
+          1380,
+          257
+        ],
+        "vendor": [
+          144,
+          311,
+          338,
+          329
+        ],
+        "due_date": [
+          1275,
+          312,
+          1380,
+          325
+        ],
+        "terms": [
+          144,
+          380,
+          204,
+          393
+        ],
+        "currency": [
+          1275,
+          380,
+          1313,
+          393
+        ],
+        "line_items[0].row": [
+          144,
+          500,
+          155,
+          513
+        ],
+        "line_items[0].sku": [
+          224,
+          500,
+          302,
+          513
+        ],
+        "line_items[0].description": [
+          404,
+          499,
+          577,
+          517
+        ],
+        "line_items[0].quantity": [
+          924,
+          500,
+          935,
+          513
+        ],
+        "line_items[0].unit_price_cents": [
+          1064,
+          500,
+          1116,
+          513
+        ],
+        "line_items[0].amount_cents": [
+          1264,
+          500,
+          1327,
+          513
+        ],
+        "line_items[1].row": [
+          144,
+          528,
+          155,
+          541
+        ],
+        "line_items[1].sku": [
+          224,
+          528,
+          315,
+          541
+        ],
+        "line_items[1].description": [
+          404,
+          527,
+          604,
+          543
+        ],
+        "line_items[1].quantity": [
+          924,
+          528,
+          947,
+          541
+        ],
+        "line_items[1].unit_price_cents": [
+          1064,
+          528,
+          1116,
+          541
+        ],
+        "line_items[1].amount_cents": [
+          1264,
+          528,
+          1327,
+          541
+        ],
+        "line_items[2].row": [
+          144,
+          556,
+          155,
+          569
+        ],
+        "line_items[2].sku": [
+          224,
+          556,
+          302,
+          569
+        ],
+        "line_items[2].description": [
+          404,
+          555,
+          607,
+          573
+        ],
+        "line_items[2].quantity": [
+          924,
+          556,
+          947,
+          569
+        ],
+        "line_items[2].unit_price_cents": [
+          1064,
+          556,
+          1116,
+          569
+        ],
+        "line_items[2].amount_cents": [
+          1264,
+          556,
+          1327,
+          569
+        ],
+        "line_items[3].row": [
+          144,
+          584,
+          155,
+          597
+        ],
+        "line_items[3].sku": [
+          224,
+          584,
+          301,
+          597
+        ],
+        "line_items[3].description": [
+          404,
+          583,
+          609,
+          599
+        ],
+        "line_items[3].quantity": [
+          924,
+          584,
+          947,
+          597
+        ],
+        "line_items[3].unit_price_cents": [
+          1064,
+          584,
+          1116,
+          597
+        ],
+        "line_items[3].amount_cents": [
+          1264,
+          584,
+          1344,
+          599
+        ],
+        "subtotal_cents": [
+          1264,
+          652,
+          1344,
+          667
+        ],
+        "tax_cents": [
+          1264,
+          680,
+          1327,
+          693
+        ],
+        "total_cents": [
+          1264,
+          708,
+          1353,
+          724
+        ]
+      }
+    }
+  }
+}

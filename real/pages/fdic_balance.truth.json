@@ -1,0 +1,220 @@
+{
+  "doc_id": "fdic_balance",
+  "source": "Sample_Documents/fdic-ar-1956.pdf page 36 (FDIC Annual Report 1956, Exhibit 1, balance sheet at June 30, 1956)",
+  "kind": "scanned",
+  "text_layer": "ocr",
+  "labeling": "Hand-labeled by reading the 300 DPI render. THE LABELS ARE CHECKED BY THE PAGE'S OWN ARITHMETIC: seven sums, all exact to the dollar, and the sheet balances -- total assets equal total liabilities plus the deposit insurance fund. A misread digit in any figure that appears in a sum breaks that sum, so this ground truth is verified rather than merely careful. Money is labeled WITHOUT the dollar sign: on this page the $ sits at the column edge as a marker rather than against the number, and score.py strips currency signs before comparing anyway.",
+  "printed": {
+    "page_number": "20",
+    "running_head": "FEDERAL DEPOSIT INSURANCE CORPORATION",
+    "exhibit": "Exhibit 1",
+    "statement_date": "JUNE 30, 1956",
+    "signatory": "JOSEPH CAMPBELL",
+    "signatory_title": "Comptroller General of the United States",
+    "assets_heading": "ASSETS",
+    "liabilities_heading": "LIABILITIES AND DEPOSIT INSURANCE FUND",
+    "face_value": "1,815,200,000",
+    "market_value": "1,778,666,328",
+    "accumulated_depreciation": "602,460",
+    "receivership_gross": "11,277,003",
+    "total_assets": "1,822,462,212",
+    "footnote": "The notes following exhibit 2 are an integral part of this statement."
+  },
+  "rows": [
+    {
+      "anchor": "Cash",
+      "cells": {
+        "total": "2,562,146"
+      }
+    },
+    {
+      "anchor": "Securities, at amortized cost",
+      "cells": {
+        "detail": "1,810,140,116"
+      }
+    },
+    {
+      "anchor": "Accrued interest receivable",
+      "cells": {
+        "detail": "6,707,097",
+        "total": "1,816,847,213"
+      }
+    },
+    {
+      "anchor": "Subrogated claims of depositors against closed insured banks",
+      "cells": {
+        "detail": "1,265,926"
+      }
+    },
+    {
+      "anchor": "subrogated when paid",
+      "cells": {
+        "detail": "18,971"
+      }
+    },
+    {
+      "anchor": "Loans to insured banks",
+      "cells": {
+        "detail": "2,233,479"
+      }
+    },
+    {
+      "anchor": "Equity in assets acquired under purchase agreements",
+      "cells": {
+        "detail": "7,745,212"
+      }
+    },
+    {
+      "anchor": "Assets purchased outright",
+      "cells": {
+        "detail": "13,415"
+      }
+    },
+    {
+      "anchor": "Less estimate for losses",
+      "cells": {
+        "detail": "8,346,249",
+        "total": "2,930,754"
+      }
+    },
+    {
+      "anchor": "Accounts receivable, deferred charges, and sundry assets",
+      "cells": {
+        "total": "122,098"
+      }
+    },
+    {
+      "anchor": "Furniture, fixtures, and equipment",
+      "cells": {
+        "total": "1"
+      }
+    },
+    {
+      "anchor": "Accounts payable and accrued liabilities",
+      "cells": {
+        "total": "552,758"
+      }
+    },
+    {
+      "anchor": "Earnest money, escrow funds, and collections held for",
+      "cells": {
+        "total": "164,230"
+      }
+    },
+    {
+      "anchor": "Employees' accrued annual leave",
+      "cells": {
+        "total": "1,101,734"
+      }
+    },
+    {
+      "anchor": "Deferred credits",
+      "cells": {
+        "total": "8,446"
+      }
+    },
+    {
+      "anchor": "Net balances of depositors in closed insured banks-contra",
+      "cells": {
+        "total": "18,971"
+      }
+    },
+    {
+      "anchor": "Available July 1, 1956",
+      "cells": {
+        "detail": "85,409,716"
+      }
+    },
+    {
+      "anchor": "ment income for 6 months ended June 30, 1956",
+      "cells": {
+        "detail": "44,387,963",
+        "total": "129,797,679"
+      }
+    },
+    {
+      "anchor": "Total liabilities",
+      "cells": {
+        "total": "131,643,818"
+      }
+    },
+    {
+      "anchor": "insurance losses and related expenses",
+      "cells": {
+        "total": "1,690,818,394"
+      }
+    }
+  ],
+  "reconciliation": {
+    "note": "Seven sums the page asserts about itself, every one exact to the dollar. reconcile.py evaluates them against the hand labels FIRST and refuses to grade a parser if one fails -- a mistyped label would otherwise show up as every parser breaking the same sum, which reads exactly like a finding. Subtraction is written as addition, because the checker sums its terms: the net receivership figure plus the loss estimate equals the gross.",
+    "sums": [
+      {
+        "name": "us_government_obligations",
+        "of": [
+          "Securities, at amortized cost.detail",
+          "Accrued interest receivable.detail"
+        ],
+        "equals": "Accrued interest receivable.total"
+      },
+      {
+        "name": "receivership_gross",
+        "of": [
+          "Subrogated claims of depositors against closed insured banks.detail",
+          "subrogated when paid.detail",
+          "Loans to insured banks.detail",
+          "Equity in assets acquired under purchase agreements.detail",
+          "Assets purchased outright.detail"
+        ],
+        "equals": "receivership_gross"
+      },
+      {
+        "name": "receivership_net",
+        "of": [
+          "Less estimate for losses.total",
+          "Less estimate for losses.detail"
+        ],
+        "equals": "receivership_gross"
+      },
+      {
+        "name": "total_assets",
+        "of": [
+          "Cash.total",
+          "Accrued interest receivable.total",
+          "Less estimate for losses.total",
+          "Accounts receivable, deferred charges, and sundry assets.total",
+          "Furniture, fixtures, and equipment.total"
+        ],
+        "equals": "total_assets"
+      },
+      {
+        "name": "assessment_credits",
+        "of": [
+          "Available July 1, 1956.detail",
+          "ment income for 6 months ended June 30, 1956.detail"
+        ],
+        "equals": "ment income for 6 months ended June 30, 1956.total"
+      },
+      {
+        "name": "total_liabilities",
+        "of": [
+          "Accounts payable and accrued liabilities.total",
+          "Earnest money, escrow funds, and collections held for.total",
+          "Employees' accrued annual leave.total",
+          "Deferred credits.total",
+          "Net balances of depositors in closed insured banks-contra.total",
+          "ment income for 6 months ended June 30, 1956.total"
+        ],
+        "equals": "Total liabilities.total"
+      },
+      {
+        "name": "sheet_balances",
+        "of": [
+          "Total liabilities.total",
+          "insurance losses and related expenses.total"
+        ],
+        "equals": "total_assets"
+      }
+    ]
+  },
+  "not_labeled": "The auditor's opinion paragraph and the table caption above the exhibit are prose, not tabular data, and are left out so the score is not diluted by ordinary body text that every parser reads. The two inline figures inside the securities label ARE labeled -- face_value and market_value -- because a parser that lifts them as if they were column values is making exactly the mistake this corpus exists to catch."
+}

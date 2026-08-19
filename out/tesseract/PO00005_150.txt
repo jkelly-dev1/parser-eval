@@ -1,0 +1,20 @@
+PURCHASE ORDER
+
+FO Number onder Date
+
+Po-33948, 2026-07-13
+
+Brightwater Tooling 2026-10-13
+
+Net 30 uso
+
+* sku Description ay Unie Amount
+
+1 cs0375 Concrete sleave anchor 3/8 36 6325 2,277.00
+
+2 TR0s72 Threaded rod 3/8in, B 7495 974.35
+
+3 sp200 Self-diling screw #12 22 4429 974.38
+Subsatl 4205.78
+To 025% 388.62
+ToTAL 4,574.35

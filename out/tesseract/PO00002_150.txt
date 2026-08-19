@@ -1,0 +1,20 @@
+PURCHASE ORDER
+
+FO Number onder Date
+
+70-1525, 2026-03-15
+
+Lakeside Fabrication 2026-04-15
+
+2/20 Net 30 uso
+
+* sku Description ay Unie Amount
+
+1 He-2080Z Hex bok M10xt0, ne 34 4997 1,698.98
+
+2 ss103 Structural screw #24 x in 22 52.69 1159.18
+
+3 AB-0506 Anchor bat U2in x 6in 10 1s.92 1,159.20
+Subsatl 4017.36
+To 025% 331.43
+ToTAL 4,348.79

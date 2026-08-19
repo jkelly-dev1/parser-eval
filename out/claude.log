@@ -1,0 +1,23 @@
+  PO00000_150          10.1s     682 chars
+  PO00000_300           8.2s     724 chars
+  PO00001_150          12.0s     725 chars
+  PO00001_300          15.0s     725 chars
+  PO00002_150           6.1s     533 chars
+  PO00002_300           5.6s     533 chars
+  PO00003_150           6.2s     522 chars
+  PO00003_300           6.8s     528 chars
+  PO00004_150           6.1s     539 chars
+  PO00004_300           7.0s     577 chars
+  PO00005_150           4.8s     523 chars
+  PO00005_300           5.4s     523 chars
+  PO00006_150           4.9s     519 chars
+  PO00006_300           6.0s     519 chars
+  PO00007_150           7.4s     599 chars
+  PO00007_300           7.4s     591 chars
+  PO00008_150           7.2s     618 chars
+  PO00008_300           7.7s     652 chars
+  PO00009_150           5.8s     667 chars
+  PO00009_300           8.0s     663 chars
+
+claude: 20 pages in 147.7s -> out/claude
+tokens: 36032 in, 7333 out over 20 page(s)  ->  out/claude/usage.json

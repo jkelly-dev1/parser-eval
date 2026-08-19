@@ -1,0 +1,169 @@
+{
+  "parser": "unstructured",
+  "version": "unstructured 0.25.2 (hi_res strategy)",
+  "source": "pdf",
+  "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
+  "total_seconds": 23.1,
+  "records": [
+    {
+      "doc_id": "PO00000",
+      "dpi": 150,
+      "seconds": 4.83,
+      "chars": 502,
+      "error": null,
+      "text_file": "PO00000_150.txt"
+    },
+    {
+      "doc_id": "PO00000",
+      "dpi": 300,
+      "seconds": 1.1,
+      "chars": 549,
+      "error": null,
+      "text_file": "PO00000_300.txt"
+    },
+    {
+      "doc_id": "PO00001",
+      "dpi": 150,
+      "seconds": 1.07,
+      "chars": 509,
+      "error": null,
+      "text_file": "PO00001_150.txt"
+    },
+    {
+      "doc_id": "PO00001",
+      "dpi": 300,
+      "seconds": 1.1,
+      "chars": 572,
+      "error": null,
+      "text_file": "PO00001_300.txt"
+    },
+    {
+      "doc_id": "PO00002",
+      "dpi": 150,
+      "seconds": 0.87,
+      "chars": 353,
+      "error": null,
+      "text_file": "PO00002_150.txt"
+    },
+    {
+      "doc_id": "PO00002",
+      "dpi": 300,
+      "seconds": 0.89,
+      "chars": 331,
+      "error": null,
+      "text_file": "PO00002_300.txt"
+    },
+    {
+      "doc_id": "PO00003",
+      "dpi": 150,
+      "seconds": 0.85,
+      "chars": 296,
+      "error": null,
+      "text_file": "PO00003_150.txt"
+    },
+    {
+      "doc_id": "PO00003",
+      "dpi": 300,
+      "seconds": 0.72,
+      "chars": 364,
+      "error": null,
+      "text_file": "PO00003_300.txt"
+    },
+    {
+      "doc_id": "PO00004",
+      "dpi": 150,
+      "seconds": 1.02,
+      "chars": 426,
+      "error": null,
+      "text_file": "PO00004_150.txt"
+    },
+    {
+      "doc_id": "PO00004",
+      "dpi": 300,
+      "seconds": 0.93,
+      "chars": 371,
+      "error": null,
+      "text_file": "PO00004_300.txt"
+    },
+    {
+      "doc_id": "PO00005",
+      "dpi": 150,
+      "seconds": 0.87,
+      "chars": 282,
+      "error": null,
+      "text_file": "PO00005_150.txt"
+    },
+    {
+      "doc_id": "PO00005",
+      "dpi": 300,
+      "seconds": 0.85,
+      "chars": 285,
+      "error": null,
+      "text_file": "PO00005_300.txt"
+    },
+    {
+      "doc_id": "PO00006",
+      "dpi": 150,
+      "seconds": 0.94,
+      "chars": 276,
+      "error": null,
+      "text_file": "PO00006_150.txt"
+    },
+    {
+      "doc_id": "PO00006",
+      "dpi": 300,
+      "seconds": 0.84,
+      "chars": 303,
+      "error": null,
+      "text_file": "PO00006_300.txt"
+    },
+    {
+      "doc_id": "PO00007",
+      "dpi": 150,
+      "seconds": 0.95,
+      "chars": 409,
+      "error": null,
+      "text_file": "PO00007_150.txt"
+    },
+    {
+      "doc_id": "PO00007",
+      "dpi": 300,
+      "seconds": 0.98,
+      "chars": 363,
+      "error": null,
+      "text_file": "PO00007_300.txt"
+    },
+    {
+      "doc_id": "PO00008",
+      "dpi": 150,
+      "seconds": 0.98,
+      "chars": 462,
+      "error": null,
+      "text_file": "PO00008_150.txt"
+    },
+    {
+      "doc_id": "PO00008",
+      "dpi": 300,
+      "seconds": 1.13,
+      "chars": 470,
+      "error": null,
+      "text_file": "PO00008_300.txt"
+    },
+    {
+      "doc_id": "PO00009",
+      "dpi": 150,
+      "seconds": 1.05,
+      "chars": 490,
+      "error": null,
+      "text_file": "PO00009_150.txt"
+    },
+    {
+      "doc_id": "PO00009",
+      "dpi": 300,
+      "seconds": 1.13,
+      "chars": 564,
+      "error": null,
+      "text_file": "PO00009_300.txt"
+    }
+  ]
+}

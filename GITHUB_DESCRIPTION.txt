@@ -1,0 +1,4 @@
+Which document parsers actually READ the page -- measured on six real scanned
+and born-digital pages, 425 hand-labeled values verified by the documents' own
+arithmetic, against a control that returns the embedded text layer and does no
+work at all. Three of seven tools lose to the control.

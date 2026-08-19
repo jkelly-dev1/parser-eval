@@ -1,0 +1,77 @@
+**10. POWER EQUIPMENT.**—Give figures for equipment as of the end of the period covered by this report.
+
+*Important Note.*—The form of this inquiry is different from that previously used, the purpose being to distinguish between active and inactive prime movers and generators. It is desired, at the same time, to obtain a total which shall be comparable with that reported at the 1927 census, when the inquiry called simply for a combined total of "all power equipment in the plant, active and emergency." By "emergency" equipment is meant that which is capable of being put into operation promptly, but which is used only in case of breakdown of the active equipment or at rather rare intervals when an exceptional load occurs. Equipment which is regularly used, but not usually on full time, should be classed as active.
+
+*[handwritten in margin: 4]*
+
+| | NUMBER | HORSEPOWER |
+|---|---|---|
+| *a.* PRIME MOVERS—total, active and emergency: | | |
+| Steam engines | | |
+| Steam turbines | | |
+| Internal-combustion engines (oil, gas, gasoline, etc.) | | |
+| Water wheels and turbines | | |
+| Total of above | | |
+| Rated horsepower of above equipment which is not ordinarily active (included in "Total of above")......... Horsepower | X X X X X | X X X X X X X |
+| *b.* ELECTRIC MOTORS DRIVEN BY PURCHASED CURRENT—total, active and emergency | 2 | 3 |
+| *c.* ELECTRIC MOTORS DRIVEN BY CURRENT GENERATED IN PLANT—total, active and emergency | | |
+| *d.* ELECTRIC GENERATORS DRIVEN BY PRIME MOVERS IN THE PLANT (do not include rotary converters or motor-generator sets)—total, active and emergency | | KILOWATTS |
+| Rated capacity of generators which are not ordinarily active (included in "Total, active and emergency")......... Kilowatts | X X X X X | X X X X X X X |
+
+*[handwritten in margin: 0]*  *[handwritten right margin: 3]*
+
+**11. FUEL AND ELECTRIC CURRENT:**
+
+*a.* FUEL USED (including that transferred from mines, wells, or plants under the same ownership) during the period covered by this report. Include fuel used for all purposes—for power, heat, and light, or as material for making gas, coke, etc.—but do not include oil or gas if none is used except for lighting.
+
+*[handwritten in margin: 2]*
+
+| | UNIT OF QUANTITY | QUANTITY | COST DELIVERED AT FACTORY |
+|---|---|---|---|
+| Coal, anthracite | Long ton | | $ |
+| Coal, bituminous | Short ton | | $ |
+| Coke | Short ton | | $ |
+| Fuel oils (including crude oil and gas oils) | Gallon | | $ |
+| Gasoline and kerosene | Gallon | | $ |
+| Natural gas | M cu. ft | 77 | $ *66 |
+| Manufactured gas | M cu. ft | | $ |
+| Total cost | | | $ 66 |
+
+*b.* ELECTRIC CURRENT. (Report current generated or purchased during the year for all uses; but a plant which buys current for lighting *only* should not report it.)
+
+| | KILOWATT HOURS | COST |
+|---|---|---|
+| Generated in the plant | | X X X X X X X |
+| Purchased | 2500 | $ 150 |
+
+**12. DISTRIBUTION OF SALES.**—Report below, in the proper spaces, the values (at f. o. b. factory prices) of goods shipped or delivered to customers (or to warehouses on customers' accounts) during the period covered. The total should be the same as the total given for Inquiry 9, Products. If exact figures are not available, give the best possible approximations.
+
+AMOUNT
+
+| | |
+|---|---|
+| *a.* SALES TO MANUFACTURERS AND INTERPLANT TRANSFERS | $ |
+| *b.* SALES TO RAILROADS, PUBLIC-UTILITY COMPANIES, AND CONTRACTORS | $ |
+| *c.* SALES THROUGH BRANCH HOUSES WHICH ARE CONDUCTED AS DISTINCT WHOLESALE MERCHANDISING ESTABLISHMENTS | $ |
+| *d.* SALES THROUGH MANUFACTURERS' AGENTS, BROKERS, AND COMMISSION HOUSES | $ |
+| *e.* SALES THROUGH WHOLESALERS AND JOBBERS (INCLUDING EXPORTING HOUSES) | $ |
+| *f.* SALES TO RETAILERS, INCLUDING RETAIL STORES OWNED BY MANUFACTURER | $ 35000 |
+| *g.* SALES TO HOTELS, RESTAURANTS, AND INSTITUTIONS | $ |
+| *h.* SALES TO HOME CONSUMERS (THROUGH FIELD AGENTS OR OTHERWISE) | $ 2000 |
+| *i.* SALES NOT DISTRIBUTED ABOVE (INDICATE CHANNELS THROUGH WHICH SOLD): | |
+| | $ |
+| Total sales (same as total for Inquiry 9) | $ 37000 |
+
+THIS IS TO CERTIFY that the information contained in this report is correct and complete to the best of my knowledge and belief, and covers the period from *January 1*, 192 *8* to *January 1*, 19 *30*
+
+*W. R. Schmidt, reporter*
+
+(Signature and official title of person furnishing the information)
+
+*Walter J. Walker*
+
+(Signature of special agent)
+
+(Address)
+
+8—5648 (3) 11—8815

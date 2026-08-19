@@ -1,0 +1,13 @@
+PURCHASE ORDER
+
+FO Number Onder Date
+po-14313, 2026-12-08
+cascade Industrial 2027-02-08
+Net 30 uso
+* sku Description ay Unie Amount
+1 cs0375 ‘Concrete sleave anchor 3/8 28 2495 698.60
+2 unaoNy Nylon lock nut M0 y 76.43 1,300.28
+3 ss1403 Structural screw #24 x 3in 35 3745 1,300.25
+Subsatl 3,299.8
+To 025% 272.18
+ToTAL 3,571.36

@@ -1,0 +1,58 @@
+5. **PERSONS ENGAGED.**—Number December 18, 1929, as per pay roll. If this was not a representative day, give data for the nearest representative or normal day, stating here what date is used. Do not count the same person twice under different headings.
+
+| MAIN | PRODUCT |
+|------|---------|
+| 1    |         |
+| 2    | 1       |
+| 3    | 1       |
+| 8    | 3       |
+
+6. **PROPRIETOR OR FIRM MEMBERS** (not applicable to incorporated companies).  
+*Salaried employees as follows:*
+
+- PRINCIPAL OFFICERS OF CORPORATIONS. (Do not include directors unless holding other offices on salary).
+- MANAGERS, SUPERINTENDENTS, AND OTHER RESPONSIBLE ADMINISTRATIVE EMPLOYEES; FOREMEN AND OVERSEERS WHO DEFORT ALL OR THE GREATER PART OF THEIR TIME TO SUPERVISORY DUTIES; CLERKS, STENOGRAPHERS, BOOKKEEPERS, AND OTHER CLERKAL EMPLOYEES ON SALARY. (Do not include foremen and overseers in minor positions; see 5-d.)
+
+Total salaried employees (sum of b and c).
+
+- WAGE EARNERS.—(Report skilled and unskilled workers of all classes, including ungenerals, firemen, watchmen, packers, etc.; also foremen and overseers in minor positions who perform work similar to that done by the employees under their supervision. Include pieceworkers employed in the plant covered by this report, but do not include persons working in other plants or at home on materials furnished by your establishment.)
+
+6. **WAGE EARNERS EMPLOYED, BY MONTHS.**—Give number on pay roll for week which included 15th day of month. If this was a normal week. If not, give number for a normal week. (Follow instructions under Inquiry 5-d as to who are to be included.) Figures given in this inquiry should relate to *calendar year 1929*. If remainder of report refers to some other period, give under "Remarks" (page 4) figures for those months in 1928 or 1930 which fall within that period. (See Inquiry 3.)
+
+| Jan. | Feb. | Mar.  | Apr. | May  | June |
+|------|------|-------|------|------|------|
+| July | Aug. | Sept. | Oct. | Nov. | Dec. |
+
+7. **SALARIES AND WAGES.**—Amounts paid during the period covered by this report. Include bonuses or percentages of profits when paid either to officers and salaried employees or to wage earners.
+
+- TOTAL AMOUNT OF SALARIES OF PRINCIPAL OFFICERS OF CORPORATIONS (see Inquiry 5-b).
+- TOTAL AMOUNT OF SALARIES OF MANAGERS, SUPERINTENDENTS, AND OTHER RESPONSIBLE ADMINISTRATIVE EMPLOYEES; FOREMEN AND OVERSEERS; CLERKS, STENOGRAPHERS, BOOKKEEPERS, AND OTHER CLERKAL EMPLOYEES ON SALARY (see Inquiry 5-c).
+- TOTAL AMOUNT PAID TO WAGE EARNERS, AS DEFINED UNDER INQUIRY 5-d.
+
+Aggregate of salaries and wages (sum of items a, b, and c).
+
+8. **MATERIALS, FUEL, AND ELECTRIC CURRENT.**—The items entered below should relate *proficiably* to the amounts of materials, fuel, and electric current actually used during the period covered; but if it is impracticable to report materials and fuel on this basis, enter the costs of the amounts purchased during the period. Include freight and haulage costs, but not the cost of haulage performed by the plant's own employees and equipment if practicable to segregate it. Place a check mark (✓) after the word "used" or "purchased," as the case may be, in the space below.
+
+The entries for materials and fuel, as given for this inquiry, refer to the costs of the amounts used.
+
+- COST OF ALL MATERIALS AND NAW STOCK ACTUALLY USED (including those transferred from other plants under the same ownership) during the period covered by this report, which entered into the products manufactured, together with the cost of containers for sale with products. *Do not include cost of mill or shop supplies.*
+- COST OF FUEL ACTUALLY USED (including that transferred from mines, wells, or plants under the same ownership) during the period covered by this report (total of items in Inquiry 11-a).
+- COST OF PURCHASED ELECTRIC CURRENT (see Inquiry 11-b).
+
+Total cost of materials, fuel, and electric current (sum of a, b, and c).
+
+9. **PRODUCTS.**—Report the net selling values at the plant of all products of your own manufacture shipped or delivered to customers (or to warehouses on customers' accounts) during the period covered; or, if transferred to other plants under the same ownership, the value at which the transfers were made. All products, including by-products, should be covered. The principal products should be reported separately. Values should include those of containers sold with products. Report value at the factory (not at some other point of delivery).
+
+| PRODUCTS (report chief products separately)                                           | QUANTITY | VALUE       |
+|---------------------------------------------------------------------------------------|----------|-------------|
+| a. <i>Engineering files &amp; plates</i>                                              |          | \$ 944.98   |
+| b. <i>Files &amp; plates</i>                                                          |          | \$ 215.08   |
+| c. _____                                                                              |          | \$ _____    |
+| d. All other (specify)                                                                |          | \$ _____    |
+| e. Contract work done in your plant on materials furnished by others (total receipts) |          | \$ _____    |
+| f. Custom work and repairing (total receipts)                                         |          | \$ _____    |
+| Total value of products                                                               |          | \$ 4,007.00 |
+
+If the value of the products actually manufactured during the period covered by this report differed by more than 10 per cent from that of the products shipped or delivered, give also, in the space indicated, the exact or estimated value, based on selling prices f. o. b. factory, of the products manufactured (including receipts for contract and custom work and repairing).
+
+Value of products manufactured, \$ \_\_\_\_\_

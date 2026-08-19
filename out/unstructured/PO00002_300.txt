@@ -1,0 +1,23 @@
+PURCHASE ORDER
+PO Number
+Order Date
+PO-15255
+2026-03-15
+Vendor
+Due Date
+Lakeside Fabrication
+2026-04-15
+Terms 2/10 Net 30
+Currency
+USD
+#
+2
+3
+41B-1040Z | Hex bolt M10x40, zinc | 34 | 49.97 | 1,698.98
+3S-1403 | Structural #14 3in | 22 | 52.69 | 
+ | screw x 1/2in 6in |  |  | 1,159.18
+Subtotal Tax 8.25%
+4,017.36
+331.43
+TOTAL
+4,348.79
