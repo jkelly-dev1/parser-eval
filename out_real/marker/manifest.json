@@ -3,7 +3,8 @@
   "version": "marker-pdf 2.0.0 (surya-ocr 0.22.1), CPU",
   "source": "pdf",
   "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
-  "total_seconds": 0.3,
+  "total_seconds": 735.22,
+  "this_run_seconds": 0.3,
   "records": [
     {
       "doc_id": "census29_sales",

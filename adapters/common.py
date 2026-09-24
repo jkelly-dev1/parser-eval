@@ -51,17 +51,14 @@ def parse_args(parser_name: str) -> argparse.Namespace:
 def pages(args) -> list[dict]:
     """Every (doc, dpi) job the adapter should run, in a stable order.
 
-    THE DEFAULT DPIs come from the corpus, not from a constant. They used to
-    default to [150, 300], which were the two the synthetic corpus happens to
-    render. The real corpus renders 300 only. The 150 DPI cliff is already
-    measured and re-measuring it on scans of a 1956 report answers nothing,
-    so every documented command in the status file died on `KeyError: '150'`
-    before parsing a single page. A corpus states which renderings it has in
-    index.json and that is the answer to the question.
+    The default DPIs come from the corpus, not from a constant. The synthetic
+    corpus renders 150 and 300; the real corpus renders 300 only, because the
+    150 DPI cliff is already measured and re-measuring it on scans of a 1956
+    report answers nothing. A corpus states which renderings it has in
+    index.json, and that is the answer to the question.
 
-    An explicitly requested DPI that is missing still fails, but it now says
-    what it wanted and what exists, rather than raising a bare KeyError from
-    inside a dict lookup two frames down.
+    An explicitly requested DPI that is missing fails, and says what it
+    wanted and what exists.
     """
     index = json.loads((args.corpus / "index.json").read_text())
     dpis = args.dpi or index.get("dpis") or [150, 300]
@@ -104,13 +101,18 @@ def run(parser_name: str, version: str, extract, *, source: str = "pdf"):
     for job in jobs:
         stem = f"{job['doc_id']}_{job['dpi']}"
         t0 = time.time()
+        tb = args.out / f"{stem}.traceback.txt"
         try:
             text = extract(job)
             err = None
+            # A re-run that succeeds removes the old traceback. Records are
+            # keyed by (doc_id, dpi) and a re-run replaces the record, so
+            # without this the manifest would say error: null while a
+            # traceback for the same page sat beside it.
+            tb.unlink(missing_ok=True)
         except Exception as e:                                   # noqa: BLE001
             text, err = "", f"{type(e).__name__}: {e}"
-            (args.out / f"{stem}.traceback.txt").write_text(
-                traceback.format_exc())
+            tb.write_text(traceback.format_exc())
         dt = time.time() - t0
         (args.out / f"{stem}.txt").write_text(text)
         records.append({"doc_id": job["doc_id"], "dpi": job["dpi"],
@@ -128,7 +130,7 @@ def run(parser_name: str, version: str, extract, *, source: str = "pdf"):
     manifest = _write_manifest(args, parser_name, version, source, records,
                                t_all)
     print(f"\n{parser_name}: {len(records)} pages in "
-          f"{manifest['total_seconds']}s -> {args.out}")
+          f"{manifest['this_run_seconds']}s -> {args.out}")
     return 0
 
 def _write_manifest(args, parser_name, version, source, records, t_all):
@@ -153,7 +155,13 @@ def _write_manifest(args, parser_name, version, source, records, t_all):
         "source": source,
         "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and "
                 "include model load on the first page of the run.",
-        "total_seconds": round(time.time() - t_all, 1),
+        # The sum of the records this manifest describes, not the wall clock
+        # of the invocation that wrote it. Those are different numbers here
+        # because a run merges (see the docstring above), so a manifest listing
+        # six pages would otherwise carry the duration of the one-page run
+        # that finished it.
+        "total_seconds": round(sum(r["seconds"] for r in kept + records), 2),
+        "this_run_seconds": round(time.time() - t_all, 1),
         "records": sorted(kept + records,
                           key=lambda r: (r["doc_id"], r["dpi"])),
     }

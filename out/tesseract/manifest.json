@@ -3,7 +3,8 @@
   "version": "tesseract 5.5.0",
   "source": "png",
   "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
-  "total_seconds": 3.2,
+  "total_seconds": 3.24,
+  "this_run_seconds": 3.2,
   "records": [
     {
       "doc_id": "PO00000",

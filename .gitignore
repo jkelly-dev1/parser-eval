@@ -46,8 +46,8 @@ __pycache__/
 #
 # corpus/               the synthetic purchase orders, at 150 and 300 DPI. The
 #                       README reports results measured on them, and the script
-#                       that generated them is no longer in this repository, so
-#                       these files are now the only copy. Citing results from a
+#                       that generated them is not in this repository, so these
+#                       files are the only copy. Citing results from a
 #                       corpus nobody can obtain is the exact failure this
 #                       project spends its length describing.
 #

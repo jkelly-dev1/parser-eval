@@ -3,17 +3,16 @@
 
     TORCH_DEVICE=cpu envs/marker/bin/python adapters/run_marker.py
 
-The license is not a footnote here, and it is not what it used to be. Marker
-was GPL-3.0 with a revenue condition on commercial use, which is what the plan
-for this evening assumed. The installed 2.0.0 wheel ships an Apache-2.0
-LICENSE and declares Apache-2.0 in its metadata; the restriction now sits on
-the WEIGHTS instead. Surya-2 is released under the AI Pubs OpenRAIL-M license,
-which carries use restrictions rather than copyleft. For a firm whose clients
-will not put regulated documents in a hosted API, the on-premises parser is
-the deliverable, so which artifact carries the restriction, code or weights,
-is a legal question before it is a technical one, and it belongs beside the
-accuracy number rather than under it. Checked against the installed package,
-not from memory: see FINDINGS.txt section 7.
+The license is not a footnote here. Earlier Marker releases were GPL-3.0 with
+a revenue condition on commercial use. The installed 2.0.0 wheel ships an
+Apache-2.0 LICENSE and declares Apache-2.0 in its metadata; the restriction
+sits on the WEIGHTS instead. Surya-2 is released under the AI Pubs OpenRAIL-M
+license, which carries use restrictions rather than copyleft. For a firm whose
+clients will not put regulated documents in a hosted API, the on-premises
+parser is the deliverable, so which artifact carries the restriction, code or
+weights, is a legal question before it is a technical one, and it belongs
+beside the accuracy number rather than under it. Checked against the installed
+package, not from memory: see FINDINGS.txt section 7.
 
 Marker wants a GPU and this machine has none. It is run here on CPU anyway,
 because "not run, and why" is a weaker answer than a measured one, and because

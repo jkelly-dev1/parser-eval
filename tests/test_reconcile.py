@@ -50,6 +50,51 @@ def test_an_amount_stated_in_prose_parentheses_is_positive():
         assert reconcile.num(loss) == want, f"{loss} is a loss and lost its sign"
 
 
+def unanimous_failures(data):
+    """Rules that EVERY parser failed, by any verdict other than HOLDS.
+
+    Not-holds, not only BROKEN. Six parsers breaking a rule and the seventh
+    returning INCOMPLETE on the same rule is the same signature as seven
+    BROKEN: seven independent tools do not fail one field together unless the
+    field is the problem. A checker fault that makes one parser's figure
+    unparseable rather than wrong is reported as INCOMPLETE, so counting only
+    BROKEN would read it as disagreement.
+
+    Lifted out of the test below so the predicate can be exercised on a case
+    the shipped artifact does not contain. It does not, and should not: a
+    test whose only input is a clean artifact passes for a clean artifact's
+    reasons and says nothing about what it would catch.
+    """
+    parsers = sorted(data)
+    failed = {}
+    for parser in parsers:
+        for page, res in data[parser].items():
+            for rule in res.get("detail", []):
+                if rule["status"] != "HOLDS":
+                    failed.setdefault((page, rule["name"]), set()).add(parser)
+    return {k: v for k, v in failed.items() if len(v) == len(parsers)}
+
+
+def test_the_unanimity_check_sees_a_mixed_broken_and_incomplete_signature():
+    """A mixed BROKEN and INCOMPLETE signature, asserted directly.
+
+    Six parsers BROKEN on a rule and the seventh INCOMPLETE on the SAME rule
+    is one signature, not two results. Mutation: narrow the predicate back to
+    `== "BROKEN"` and this goes red while the test below it stays green.
+    """
+    mixed = {f"p{i}": {"pg": {"detail": [
+        {"name": "r", "status": "INCOMPLETE" if i == 0 else "BROKEN"}]}}
+        for i in range(7)}
+    assert unanimous_failures(mixed) == {("pg", "r"): {f"p{i}" for i in range(7)}}
+
+    # It must not fire when one parser actually held the rule, or it would
+    # report a defect on every rule that merely fails often.
+    one_holds = {f"p{i}": {"pg": {"detail": [
+        {"name": "r", "status": "HOLDS" if i == 0 else "BROKEN"}]}}
+        for i in range(7)}
+    assert unanimous_failures(one_holds) == {}
+
+
 def test_no_rule_fails_identically_for_every_parser():
     """The signature of a checker defect, asserted rather than described.
 
@@ -61,16 +106,10 @@ def test_no_rule_fails_identically_for_every_parser():
     import json
     data = json.loads((ROOT / "out_real" / "reconcile.json").read_text())
     parsers = sorted(data)
-    broken = {}
-    for parser in parsers:
-        for page, res in data[parser].items():
-            for rule in res.get("detail", []):
-                if rule["status"] == "BROKEN":
-                    broken.setdefault((page, rule["name"]), set()).add(parser)
-    unanimous = {k: v for k, v in broken.items() if len(v) == len(parsers)}
+    unanimous = unanimous_failures(data)
     assert not unanimous, (
-        "every parser breaks these rules identically, which is the signature "
-        f"of a defect in the checker rather than in any parser: {sorted(unanimous)}")
+        "every parser fails these rules, which is the signature of a defect "
+        f"in the checker rather than in any parser: {sorted(unanimous)}")
 
 
 def test_an_unparseable_figure_raises_rather_than_crashing_the_whole_run():
@@ -135,3 +174,79 @@ def test_the_rules_that_ran_are_counted_not_just_the_ones_that_passed():
     results = reconcile.check_sums(truth, None)
     assert len(results) == 69, (
         f"the earnings table asserts 69 rule instances, {len(results)} ran")
+
+
+def test_a_sum_that_misses_by_half_a_unit_is_broken_unless_the_page_asks_otherwise():
+    """check_sums' parser-facing path.
+
+    Every test above this line checks the checker against the hand labels.
+    This one checks the other half of what reconcile.py does: the verdict for
+    a parser's version of the page, under the default tolerance of 0.005. That
+    default is the line between "verified by arithmetic" and "nearly right",
+    and FINDINGS quotes it by name.
+
+    Mutation: change tolerance_of's default to 5.0 and this goes red.
+    """
+    truth = {
+        "doc_id": "synthetic",
+        "printed": {"a": "100.00", "b": "50.00", "total": "150.00"},
+        "rows": [],
+        "reconciliation": {"sums": [
+            {"name": "t", "of": ["a", "b"], "equals": "total"}]},
+    }
+    # The labels themselves add up, so any verdict below is about the parser.
+    assert [r["status"] for r in reconcile.check_sums(truth, None)] == ["HOLDS"]
+
+    # A parser that read 100.00 as 100.50: half a unit, far under any declared
+    # tolerance on this corpus and far over the exact default.
+    off = {"a": {"status": "CORRUPT", "got": "100.50", "printed": "100.00"},
+           "b": {"status": "OK", "printed": "50.00"},
+           "total": {"status": "OK", "printed": "150.00"}}
+    assert [r["status"] for r in reconcile.check_sums(truth, off)] == ["BROKEN"]
+
+    # A page that DECLARES a tolerance gets it, and the same miss then
+    # survives, which is the cost the tolerance buys, asserted rather than
+    # described, so that the default and the opt-in cannot be confused.
+    truth["reconciliation"]["sums"][0]["tolerance"] = 5
+    assert [r["status"] for r in reconcile.check_sums(truth, off)] == ["SURVIVES"]
+
+
+def test_a_value_the_parser_never_returned_makes_the_rule_incomplete_not_broken():
+    """The distinction that keeps a hole from being reported as a wrong answer.
+
+    A missing figure means the check COULD NOT RUN. Reporting that as BROKEN
+    would credit the arithmetic with catching an error it never evaluated, and
+    would put a definite finding in the record about a target the checker
+    never examined.
+    """
+    truth = {
+        "doc_id": "synthetic",
+        "printed": {"a": "100.00", "b": "50.00", "total": "150.00"},
+        "rows": [],
+        "reconciliation": {"sums": [
+            {"name": "t", "of": ["a", "b"], "equals": "total"}]},
+    }
+    gone = {"a": {"status": "ABSENT", "printed": "100.00"},
+            "b": {"status": "OK", "printed": "50.00"},
+            "total": {"status": "OK", "printed": "150.00"}}
+    assert [r["status"]
+            for r in reconcile.check_sums(truth, gone)] == ["INCOMPLETE"]
+
+
+def test_a_broken_label_set_makes_the_label_check_exit_non_zero(
+        tmp_path, monkeypatch, capsys):
+    """The CI regeneration step runs this module with `set -e`, so the exit
+    code is what stops a broken label set from grading parsers. The shipped
+    labels are the control: they exit zero."""
+    monkeypatch.setattr(sys, "argv", [
+        "reconcile.py", "--corpus", str(ROOT / "real" / "pages"),
+        "--scores", str(tmp_path / "no_scores.json")])
+    assert reconcile.main() == 0
+    assert " 0 label errors found." in capsys.readouterr().out
+
+    def one_broken(truth, parsed):
+        return [{"name": "seeded", "status": "BROKEN", "notes": "seeded"}]
+
+    monkeypatch.setattr(reconcile, "check_sums", one_broken)
+    assert reconcile.main() == 2
+    assert "REFUSING TO GRADE" in capsys.readouterr().out

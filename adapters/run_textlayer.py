@@ -3,14 +3,21 @@
 
     python3 adapters/run_textlayer.py --corpus real/pages --out out_real/textlayer
 
-This is the control, and without it three of the five pages cannot be read. A
-scanned page may arrive with a text layer somebody else's OCR put there years
-ago. The three FDIC pages do: FRASER scanned the 1956 annual report and
-embedded its OCR output in the PDF. A parser handed that PDF can return the
-embedded text without looking at the pixels at all, and on this corpus two of
-them substantially do. Marker finishes those pages in 0.4 seconds using
-`tables_pdftext` and never starts its vision model, and Docling's figures are
-a 99-100% subset of the embedded layer.
+This is the control, and without it four of the six pages cannot be told apart
+from the tools that read them. A scanned page may arrive with a text layer
+somebody else's OCR put there years ago. ALL FOUR FDIC PAGES DO: FRASER
+scanned the 1956 annual report and embedded its OCR output in the PDF, and the
+2023 report is born-digital. A parser handed those PDFs can return the embedded
+text without looking at the pixels at all, and on this corpus two of them
+substantially do. Marker finishes three of the four in under a second using
+`tables_pdftext` without starting its vision model, and Marker's and Docling's
+figures are a 97-100% subset of the embedded layer.
+
+The fourth FDIC page is the exception. Marker spent 52.3 seconds on
+fdic_balance, which carries a 3,699-character OCR layer, and scored 64.9% on it
+against that layer's 91.9%. So "it relays when it can" is the shape of the
+behavior, not a rule, and the sub-second runtimes are evidence about the pages
+where they happen rather than about the tool in general.
 
 So what is being measured, on those pages, is fraser's 1956-scan OCR, not the
 parser. That is not a criticism of either tool: relaying an existing text

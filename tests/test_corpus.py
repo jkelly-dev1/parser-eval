@@ -20,8 +20,15 @@ DOCS = ["fdic_balance", "fdic_income", "fdic_earnings",
         "census29_wages", "census29_sales", "fdic2023_balance"]
 
 
-def truth(doc_id):
-    return json.loads((PAGES / f"{doc_id}.truth.json").read_text())
+#: The two corpora, and where each one's labels live. out_real/ is the real
+#: six-page corpus the headline table is measured on; out/ is the generated
+#: purchase-order corpus behind README's resolution table. Both ship a
+#: scores.json quoting figures in the README, so both are regenerated.
+CORPORA = {"out_real": ROOT / "real" / "pages", "out": ROOT / "corpus"}
+
+
+def truth(doc_id, labels=None):
+    return json.loads(((labels or PAGES) / f"{doc_id}.truth.json").read_text())
 
 
 @pytest.mark.parametrize("doc_id", DOCS)
@@ -68,8 +75,8 @@ def test_the_control_does_recover_text_where_there_is_a_layer():
 
 # Every count grade_page produces, not just the one the headline quotes.
 #
-# This list is the point of the test. Comparing `ok` alone leaves the entire
-# ABSENT / CORRUPT / MISPLACED / typed taxonomy free to move: the thresholds
+# This list is the point of the test. Comparing `ok` alone leaves the rest of
+# the taxonomy (absent, corrupt, misplaced, typed) free to move: the thresholds
 # that decide CORRUPT, the rule that detects MISPLACED, and the alphabet check
 # that decides which corruptions a downstream cast would ACCEPT can all be
 # changed with the suite green, and every one of them moves a published
@@ -80,15 +87,16 @@ GRADED_COUNTS = ("ok", "corrupt", "absent", "misplaced", "corrupt_typed",
 
 
 @lru_cache(maxsize=None)
-def _regraded(tool):
-    """(stored_page, regenerated) per page, graded ONCE per tool.
+def _regraded(tool, corpus="out_real"):
+    """(stored_page, regenerated) per page, graded ONCE per tool and corpus.
 
     Two tests read this. Grading every page twice doubled the suite's runtime
     for no extra coverage, and the runtime is a documented figure.
     """
-    stored = json.loads((ROOT / "out_real" / "scores.json").read_text())[tool]
+    stored = json.loads((ROOT / corpus / "scores.json").read_text())[tool]
     manifest = json.loads(
-        (ROOT / "out_real" / tool / "manifest.json").read_text())
+        (ROOT / corpus / tool / "manifest.json").read_text())
+    labels = CORPORA[corpus]
     out = []
     for rec in manifest["records"]:
         if rec.get("error"):
@@ -96,30 +104,38 @@ def _regraded(tool):
         key = f"{rec['doc_id']}_{rec['dpi']}"
         if key not in stored["pages"]:
             continue
-        text = (ROOT / "out_real" / tool / rec["text_file"]).read_text()
+        text = (ROOT / corpus / tool / rec["text_file"]).read_text()
         out.append((key, stored["pages"][key],
-                    score.grade_page(truth(rec["doc_id"]), text)))
+                    score.grade_page(truth(rec["doc_id"], labels), text)))
     return out
 
 
-@pytest.mark.parametrize("tool", ["claude", "gpt", "docling", "unstructured",
-                                  "marker", "tesseract", "textlayer"])
-def test_published_scores_regenerate_from_the_published_parser_output(tool):
+#: (corpus, tool) pairs that actually ship output. The generated corpus has no
+#: textlayer column: its pages are rendered image-only, so there is no layer
+#: to return and the control does not appear in that table.
+CORPUS_TOOLS = (
+    [("out_real", t) for t in ["claude", "gpt", "docling", "unstructured",
+                               "marker", "tesseract", "textlayer"]]
+    + [("out", t) for t in ["claude", "gpt", "docling", "unstructured",
+                            "marker", "tesseract"]])
+
+
+@pytest.mark.parametrize("corpus,tool", CORPUS_TOOLS)
+def test_published_scores_regenerate_from_both_published_corpora(corpus, tool):
     # The numbers quoted in the prose are re-derived here from the raw text
     # committed beside them. If a future edit changes the grader without
     # regenerating scores.json, or edits scores.json by hand, this fails.
-    pages = _regraded(tool)
-    assert pages, f"{tool}: no page was compared, so this proves nothing"
+    pages = _regraded(tool, corpus)
+    assert pages, f"{corpus}/{tool}: no page compared, so this proves nothing"
     for key, page, graded in pages:
         for name in GRADED_COUNTS:
             assert graded[name] == page[name], (
-                f"{tool} {key}: regenerated {name}={graded[name]}, "
+                f"{corpus} {tool} {key}: regenerated {name}={graded[name]}, "
                 f"scores.json says {page[name]}")
 
 
-@pytest.mark.parametrize("tool", ["claude", "gpt", "docling", "unstructured",
-                                  "marker", "tesseract", "textlayer"])
-def test_every_published_field_verdict_regenerates(tool):
+@pytest.mark.parametrize("corpus,tool", CORPUS_TOOLS)
+def test_every_published_field_verdict_regenerates(corpus, tool):
     """The counts are a summary and the verdicts are the evidence.
 
     Two graders can agree on how many values were CORRUPT and disagree about
@@ -128,8 +144,8 @@ def test_every_published_field_verdict_regenerates(tool):
     row" is a claim about identity, not about a count. scores.json ships the
     map, so it is compared.
     """
-    pages = _regraded(tool)
-    assert pages, f"{tool}: no page was compared, so this proves nothing"
+    pages = _regraded(tool, corpus)
+    assert pages, f"{corpus}/{tool}: no page compared, so this proves nothing"
     for key, page, graded in pages:
         want, got = page["fields"], graded["fields"]
         assert set(got) == set(want), (
@@ -151,3 +167,25 @@ def test_the_corpus_is_six_pages_and_425_labeled_values():
     assert len(DOCS) == 6
     total = sum(score.grade_page(truth(d), "")["n_fields"] for d in DOCS)
     assert total == 425, f"corpus holds {total} labeled values, prose says 425"
+
+
+def test_the_documented_suite_size_is_the_collected_count():
+    """README.md and SAMPLE_RUN.md both state how many tests the suite has,
+    and SAMPLE_RUN.md shows the run that printed it. The count is collected
+    here, in a child process over the whole tests directory, so this test
+    measures the same suite however it is itself invoked."""
+    import re
+    import subprocess
+    r = subprocess.run(
+        [sys.executable, "-m", "pytest", "--collect-only", "-q",
+         "-p", "no:cacheprovider", str(ROOT / "tests")],
+        capture_output=True, text=True, cwd=ROOT)
+    assert r.returncode == 0, r.stdout[-2000:] + r.stderr[-2000:]
+    m = re.search(r"^(\d+) tests? collected", r.stdout, re.M)
+    assert m, r.stdout[-2000:]
+    n = int(m.group(1))
+    readme = (ROOT / "README.md").read_text()
+    sample = (ROOT / "SAMPLE_RUN.md").read_text()
+    assert f"The suite is {n} tests," in readme
+    assert f"The suite is {n} tests," in sample
+    assert re.search(rf"^{n} passed in [\d.]+s$", sample, re.M)

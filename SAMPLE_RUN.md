@@ -1,8 +1,13 @@
 # SAMPLE_RUN
 
 Captured output. Nothing here is retyped, tidied or reordered; the blocks are
-what the commands printed on 2026-08-18, on Python 3.13.7 and pdftotext
-25.03.0, from the commands shown above them exactly as shown.
+what the commands printed on 2026-09-13 (the test-suite block on 2026-09-23),
+on Python 3.13.7 and pdftotext 25.03.0, from the commands shown above them
+exactly as shown.
+
+These blocks are checked. `check_readme_numbers.py` rebuilds every figure in
+them from `out_real/*.json` and requires the exact string, so a block that
+stops being what the command prints fails CI.
 
 Two alterations, and they are the only two. `cloud_cost.py` prints the absolute
 directory of each run; those paths appear here as `<repo>`, and you will see
@@ -35,6 +40,11 @@ GROUND TRUTH FIRST. Every sum evaluated against the hand-labeled values.
 not a parser: it returns the text layer already inside the PDF and does no
 work at all, in zero seconds.
 
+With one qualification that the `rows` column is there to expose: a row whose
+anchor never appears is graded against the whole page instead, so its cells can
+be credited without the row being found: `Unstructured` anchors only 42 of the
+75 rows. Read `recovered` and `rows` together, not `recovered` alone.
+
 ```
 $ python3 score.py --corpus real/pages --out out_real
 parser            dpi  fields  recovered  absent  corrupt  typed  misplcd  quiet%      rows  s/page
@@ -59,9 +69,12 @@ quiet%     (typed + misplaced) / all misses
 wrote out_real/scores.json
 ```
 
-Three of seven tools lose to doing nothing. Docling, Unstructured and Tesseract
-all score below the control, which is the finding this corpus was built to be
-able to state.
+One of six parsers loses to doing nothing, and two more only draw with it.
+Docling, Unstructured and Tesseract all score below the control; on a paired
+McNemar exact test over the same 425 values only Docling's gap clears the noise
+(p = 0.009, against 0.072 and 0.053). Ranking below the control and being
+measurably worse than it are different claims, and this is the finding the
+corpus was built to be able to state, in the weaker form the numbers support.
 
 ## Does each parser's version still add up?
 
@@ -80,24 +93,24 @@ parser        page            holds  survives  broken  incomplete
 -----------------------------------------------------------------
 claude        census29_sales      2         0       0           0
 claude        census29_wages      4         0       1           1
-...  (30 more per-page rows)
+...  (35 more per-page rows)
 unstructured  census29_wages      0         0       0           6
 unstructured  fdic2023_balance     12         0       0           0
 unstructured  fdic_balance        6         0       1           0
-unstructured  fdic_earnings      16         1      10          42
-unstructured  fdic_income         2         0       4           3
+unstructured  fdic_earnings      37         5      13          14
+unstructured  fdic_income         5         0       2           2
 
 COHERENCE ACROSS PAGES. Every term from the SAME parser.
 
 parser          holds  survives  broken  incomplete
 ---------------------------------------------------
-claude              6         0       1           0
-docling             6         0       1           0
-gpt                 5         0       2           0
-marker              6         0       1           0
-tesseract           4         0       2           1
-textlayer           6         0       1           0
-unstructured        6         0       1           0
+claude              7         0       0           0
+docling             7         0       0           0
+gpt                 6         0       1           0
+marker              7         0       0           0
+tesseract           5         0       1           1
+textlayer           7         0       0           0
+unstructured        7         0       0           0
 
 HOLDS       every figure in the sum came back right
 SURVIVES    a figure came back WRONG and the sum still balances
@@ -186,19 +199,19 @@ expensive one on both, because a 33x11 landscape table costs output tokens.
 
 ## The tests
 
-The suite is 56 tests, pure standard library, no network, about 20 seconds. Most pin a
-specific way the grader or the arithmetic checker can be wrong.
+The suite is 80 tests, pure standard library, no network, about 22 seconds.
+Most pin a specific way the grader or the arithmetic checker can be wrong.
 
 ```
 $ python -m pytest -q
-..........................................                               [100%]
-56 passed in 21.06s
+........................................................................ [ 90%]
+........                                                                 [100%]
+80 passed in 21.53s
 ```
 
-README.md maps each claim to the test that enforces it. Three of those tests
-are mutation-checked: making `canon` strip accounting parentheses, dropping
-`join_thousands`' trailing lookahead, and hand-editing one number in
-`scores.json` each turn a passing test red.
+README.md maps each claim to the test that enforces it. Fourteen of those tests
+are mutation-checked, and the README names the edit for each: the edit that
+removes the rule, applied to the file, makes the named test fail.
 
 They do not cover the hosted-model columns, and nothing can: those endpoints
 do not return the same bytes twice, so their output is committed as evidence.

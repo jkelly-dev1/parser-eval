@@ -30,7 +30,7 @@ honest sample.
 What a good corpus needs, learned from the first one:
   - handwriting on a poor scan. It divides the tool families completely;
     without it the comparison collapses into "everything works".
-  - INTERNAL ARITHMETIC. Pages whose figures must sum to a printed total let
+  - Internal arithmetic. Pages whose figures must sum to a printed total let
     the labels be VERIFIED before any parser is graded, and the same sums then
     become the loud-versus-quiet test.
   - a born-digital page with a text layer, to measure what a parser loses by

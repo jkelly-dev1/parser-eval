@@ -3,7 +3,8 @@
   "version": "poppler pdftotext 25.03.0 -layout",
   "source": "pdf",
   "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
-  "total_seconds": 0.0,
+  "total_seconds": 0.06,
+  "this_run_seconds": 0.0,
   "records": [
     {
       "doc_id": "census29_sales",

@@ -12,12 +12,12 @@ page that has a text layer it beats three of the four local tools. All seven
 are invoked through one contract, over one frozen corpus, and graded by one
 script.
 
-> Status: complete and unreviewed. The machinery, the corpus and the > results
-are all present. A real-document corpus is not usable here because > its sources
-cannot be redistributed; this one ships with the code, and >
-`Sample_Documents/PROVENANCE.txt` states the basis for every document. > Nothing
-here has been reviewed by anyone but its author, and the numbers > below should
-be read with that in mind.
+> Status: complete and unreviewed. The machinery, the corpus and the results
+> are all present. A real-document corpus is not usable here because its
+> sources cannot be redistributed; this one ships with the code, and
+> `Sample_Documents/PROVENANCE.txt` states the basis for every document.
+> Nothing here has been reviewed by anyone but its author, and the numbers
+> below should be read with that in mind.
 
 ## What makes this different from a parser leaderboard
 
@@ -46,6 +46,18 @@ arithmetic then becomes the loud-versus-quiet test.
 Six real pages, 425 hand-labeled values, rendered at 300 DPI. Percentage of
 values recovered in the right row. Full write-up in `FINDINGS.txt`.
 
+A row is located by its anchor, which is its label, and its cells are then
+looked for in that row's block of the output, so a value cannot be credited to
+a row it was not printed in. One exception is worth knowing before reading the
+table. A row whose anchor never appears is graded against the whole page
+instead, so its cells can be credited without the row being found:
+`Unstructured` anchors only 42 of the 75 rows. `score.py` takes that
+deliberately: if the anchor is the thing that was misread, the cells beside it
+should still be able to score. But it cuts the way you would not want: a tool
+that loses row structure has fewer rows that CAN be scored strictly, and none
+of its values can be counted MISPLACED. The three tools that anchor every row
+are judged under the strict rule throughout.
+
 | page | fields | gpt | claude | marker | **textlayer** | unstructured | docling | tesseract |
 |---|---|---|---|---|---|---|---|---|
 | fdic2023_balance * | 65 | 100.0% | 100.0% | 92.3% | **100.0%** | 95.4% | 95.4% | 98.5% |
@@ -63,25 +75,34 @@ values recovered in the right row. Full write-up in `FINDINGS.txt`.
   it.** `textlayer` is the control: it returns the text layer already in the
   file and does no work. It recovers 78.1% of the corpus. Docling recovers 71.5%
   and that gap is real (McNemar exact, paired over the same 425 values, p =
-  0.009). Tesseract and Unstructured land on 74.6% and neither is
+  0.009). Tesseract and Unstructured both land on 74.6% and neither is
   distinguishable from doing nothing at all (p = 0.072 and p = 0.053), which is
   a weaker claim than "they lose" and a strange enough result on its own. On the
   born-digital page the control scores 100% and ties the hosted models, and
-  every tool that *processes* that page does worse. Marker's 0.4-second runtimes
-  on pages with a text layer are direct evidence it is relaying that layer
-  rather than reading the page.
-- **The same tool, 1000x slower, depending on the file.** Marker takes 0.4s on
-  a page with a text layer and 405s on one without, because it only starts its
-  vision model when it has to. Nothing in its interface tells you which run
+  every *local* tool that processes that page does worse. Marker's sub-second
+  runtimes on the pages it relays are direct evidence it is returning that layer
+  instead of reading the page, though not on every such page; see the next
+  bullet.
+- **The same tool, 1000x slower, depending on the file.** Marker takes under a
+  second on three of the four FDIC pages and 405.8s on a census schedule with no
+  text layer. It is not a clean rule: `fdic_balance` also carries a text layer,
+  and Marker spent 52.3 seconds on it. So "it only starts its vision model when
+  it has to" is the shape of the behavior and not a guarantee: the one
+  counterexample is in Marker's own manifest, on the page where Marker scores
+  64.9% against the layer's 91.9%. Nothing in its interface tells you which run
   you are about to get.
 - **Handwriting is a different problem.** On the 1929 hand-filled schedules
   Tesseract recovers 9.1% and the hosted models 88-100%. The tool family is
   the whole decision.
-- **The quiet failures were real but rare.** Docling read two cells of one row
-  as 945 and 285 where the page prints 935 and 295: errors of +10 and -10 that
-  cancel, so the row still adds up and the extraction passes. Hosted models
-  produced no quiet failures: 5 broken sums, 0 survived. The control breaks none
-  at all.
+- **The quiet failures were real, rare, and none of them beat an exact check.**
+  Eleven rule instances survived a wrong figure. Seven of them carry a token a
+  downstream cast would REJECT, so they are loud where it counts. The other four
+  are genuinely quiet, and all four walked through the same declared tolerance
+  of 5 on the earnings column sums rather than past an exact check. That is the
+  honest version of the result this project was built to find: the exact checks
+  held, and every quiet survivor came through a hole whose size was declared in
+  advance. Hosted models produced no quiet failures: 5 broken sums, 0 survived.
+  The control breaks none at all.
 - **Structure is a separate skill from reading.** Tesseract finds 73 of 75 rows,
   more than any other local tool, and still recovers only 74.6%. Docling
   recovers less and put 56 character-perfect values in the wrong row, every one
@@ -116,9 +137,11 @@ documents at 150 DPI and 3 of 10 at 300. One content error in 267 values.
   mostly quiet: 113 of 171 misses still parse as the value they replaced,
   including a date four days wrong.
 - **The VLMs have no 150 DPI cliff.** Claude scores 342 of 342 at both. GPT's
-  only four errors are all at 150 and all the same mistake. An *inserted*
-  character (`PO-17733` -> `PO-117733`), which is a different failure from OCR's
-  confusion of similar glyphs.
+  only four errors are all at 150, and three of the four are the same mistake:
+  an inserted character (`PO-17733` -> `PO-117733`), which is a different
+  failure from OCR's confusion of similar glyphs. The fourth is not an insertion
+  at all but a dropped comma inside a description, so even a four-error sample
+  does not have one failure mode.
 - **The hosted models are not reproducible and the local one is.** The same
   page twice: Marker returns identical bytes; the two hosted endpoints
   disagree with themselves. That points at inference configuration, not
@@ -126,10 +149,10 @@ documents at 150 DPI and 3 of 10 at 300. One content error in 267 values.
 
 ## Claims backed by tests
 
-The suite is 56 tests, pure standard library, no network, about 20 seconds. Most of them pin a specific way the
-GRADER or the ARITHMETIC CHECKER can be wrong rather than anything about a
-parser, which is what a comparison project should expect: the instrument is
-the part most likely to be measuring the wrong thing.
+The suite is 80 tests, pure standard library, no network, about 22 seconds.
+Most of them pin a specific way the GRADER or the ARITHMETIC CHECKER can be
+wrong, not anything about a parser, which is what a comparison project should
+expect: the instrument is the part most likely to be measuring the wrong thing.
 
 | Claim | Test |
 | --- | --- |
@@ -156,12 +179,24 @@ the part most likely to be measuring the wrong thing.
 | Every source document has a statement of rights | `tests/test_corpus.py::test_every_source_document_has_a_statement_of_rights` |
 | The control recovers nothing where there is no text layer | `tests/test_corpus.py::test_the_control_recovers_nothing_where_there_is_no_text_layer` |
 | The control does recover text where there is one | `tests/test_corpus.py::test_the_control_does_recover_text_where_there_is_a_layer` |
-| The published scores regenerate from the published output -- every count, not only the headline one | `tests/test_corpus.py::test_published_scores_regenerate_from_the_published_parser_output` (mutation-checked: change any of `ok`, `corrupt`, `absent`, `misplaced`, `corrupt_typed`, `rows_anchored` in `scores.json` and it fails) |
+| The published scores regenerate from the published output -- every count, not only the headline one | `tests/test_corpus.py::test_published_scores_regenerate_from_both_published_corpora` (mutation-checked: change any of `ok`, `corrupt`, `absent`, `misplaced`, `corrupt_typed`, `rows_anchored` in `scores.json` and it fails) |
 | And every per-field verdict, so two graders cannot agree on HOW MANY values were corrupt while disagreeing about WHICH | `tests/test_corpus.py::test_every_published_field_verdict_regenerates` (mutation-checked: flip one field from OK to ABSENT, leaving every count correct, and it fails) |
 | The corpus is six pages and 425 labeled values | `tests/test_corpus.py::test_the_corpus_is_six_pages_and_425_labeled_values` |
+| A look-alike made only of other fields' correct text is not this field's corruption | `tests/test_grader.py::test_a_look_alike_made_only_of_other_fields_text_is_not_a_corruption` (mutation-checked: make `mask_claimed` a no-op and it fails) |
+| A token inside a multi-word value belongs to that value, not to a look-alike of some other field | `tests/test_grader.py::test_a_token_inside_a_multi_word_value_is_claimed_by_that_value` (mutation-checked: drop the claimed-parts guard in `grade_page` and it fails) |
+| An accent is folded, so the parser that read the page CORRECTLY is not the one scored corrupt | `tests/test_grader.py::test_an_accent_is_folded_so_the_correct_read_is_not_scored_corrupt` (mutation-checked: drop the NFD pass in `fold` and it fails) |
+| A sum that misses by half a unit is BROKEN unless the page itself asks for a tolerance | `tests/test_reconcile.py::test_a_sum_that_misses_by_half_a_unit_is_broken_unless_the_page_asks_otherwise` (mutation-checked: widen the default tolerance to 5.0 and it fails) |
+| A figure the parser never returned makes the rule INCOMPLETE, not BROKEN -- a check that could not run caught nothing | `tests/test_reconcile.py::test_a_value_the_parser_never_returned_makes_the_rule_incomplete_not_broken` (mutation-checked: report the missing figure as BROKEN and it fails) |
+| Six parsers BROKEN plus one INCOMPLETE on one rule is the same checker-defect signature as seven BROKEN | `tests/test_reconcile.py::test_the_unanimity_check_sees_a_mixed_broken_and_incomplete_signature` (mutation-checked: narrow the predicate back to BROKEN-only and it fails) |
+| Both published corpora regenerate: the generated purchase-order corpus behind the resolution table as well as the real one | `tests/test_corpus.py::test_published_scores_regenerate_from_both_published_corpora[out-docling]` (mutation-checked: change one page count in `out/scores.json` and it fails) |
 | A model with no price is reported unpriced, not charged zero | `tests/test_cost_and_coherence.py::test_a_model_with_no_price_is_reported_unpriced_not_charged_zero` |
 | A dated model snapshot prices as its base model | `tests/test_cost_and_coherence.py::test_a_dated_snapshot_prices_as_its_base_model` |
 | Prices carry the date they were verified | `tests/test_cost_and_coherence.py::test_prices_carry_the_date_they_were_verified` |
+| A broken label set makes the label check exit non-zero, and the shipped labels exit zero | `tests/test_reconcile.py::test_a_broken_label_set_makes_the_label_check_exit_non_zero` |
+| A page that raises is recorded as that page's error and the run continues | `tests/test_adapters.py::test_a_page_that_raises_is_recorded_and_the_run_continues` |
+| A successful re-run removes the old traceback | `tests/test_adapters.py::test_a_successful_rerun_removes_the_old_traceback` |
+| The suite size this README and SAMPLE_RUN.md state is the number of tests collected | `tests/test_corpus.py::test_the_documented_suite_size_is_the_collected_count` |
+| A manifest's total is the sum of the pages it lists, in every shipped manifest | `tests/test_adapters.py::test_the_manifest_merges_and_totals_its_own_records`, `::test_every_shipped_manifest_totals_its_own_records` |
 
 What these tests do not cover, because saying so is the point of the project:
 the hosted-model columns. Those endpoints do not return the same bytes twice, so
@@ -228,7 +263,7 @@ pages, and each one earns its place by a result that would be missing without
 it.
 
 1. **Handwriting on a poor scan.** `census29_wages` and `census29_sales`, two
-   These are 1929 Census of Manufactures schedules filled in by hand in pencil, with
+   1929 Census of Manufactures schedules filled in by hand in pencil, with
    struck-through corrections and marginal notes in other hands. This property
    divides the tool families; it does not rank them: on the wages sheet, GPT
    93.2% and Claude 88.6% against Marker 38.6%, Docling 34.1%, Unstructured
@@ -236,7 +271,7 @@ it.
    to return. A corpus without a page like this collapses into "everything
    works".
 2. **Internal arithmetic.** 105 rules the pages assert about themselves, plus
-   There are 7 identities that run between pages, all holding against the hand labels.
+   7 identities that run between pages, all holding against the hand labels.
    This is what makes the ground truth verified rather than careful, and it
    was not decorative: four labels were typed wrong and the arithmetic caught
    all four.
@@ -244,9 +279,9 @@ it.
    the FDIC's 2023 annual report, and it is the same publication as the 1956
    balance sheet, 67 years apart, which is closer to a controlled comparison
    than a corpus of real documents usually gets. It answered its question
-   sharply: the control scores 100% there, ties both hosted models, and beats
-   every local parser: Docling and Unstructured 95.4%, Marker and Tesseract
-   92.3%.
+   sharply: the control scores 100.0% there, ties both hosted models, and
+   beats every local parser: Tesseract 98.5%, Docling 95.4%, Unstructured
+   95.4%, Marker 92.3%.
 4. **A dense multi-column table.** `fdic_earnings`, Table 114, 33 rows by 11
    numeric columns printed landscape on a portrait page. It carries 69 of the
    105 rules on its own, in two directions, and it is where the spread is

@@ -3,7 +3,8 @@
   "version": "docling 2.120.1 (docling-core 2.91.0)",
   "source": "pdf",
   "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
-  "total_seconds": 105.4,
+  "total_seconds": 105.44,
+  "this_run_seconds": 105.4,
   "records": [
     {
       "doc_id": "PO00000",

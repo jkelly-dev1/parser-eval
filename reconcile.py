@@ -59,7 +59,7 @@ def num(s: str) -> float:
     figures in a sentence, not losses. So the parentheses must WRAP the whole
     token, contain nothing but a number, and "(Note 3)" is not a figure at all.
 
-    And the parenthetical must not carry a currency sign. That is what
+    The parenthetical must also not carry a currency sign. That is what
     separates the two conventions, and the corpus is unanimous on it: every
     accounting negative on the 2023 balance sheet is bare, (29,569), (19,228),
     (2,985,415), (2,958,199), because the column header carries the units,
@@ -78,13 +78,11 @@ def num(s: str) -> float:
     inner = t[1:-1].strip() if t.startswith("(") and t.endswith(")") else None
     neg = inner is not None and re.fullmatch(r"\s*[\d,. ]*\d[\d,. ]*", inner)
     body = inner if neg else t
-    # A figure contains no letters, and saying so is not pedantry. The line
-    # below deletes every character that is not a digit, a point or a minus,
-    # which means ANY string with a digit somewhere in it used to yield a
-    # number: "(Note 3)" parsed as 3.0. The paragraph above says that is not a
-    # figure at all, and until this guard existed the code did not agree, so a
-    # caller that guards num() with try/except never saw the failure it was
-    # guarding against, it saw a plausible wrong value instead.
+    # A figure contains no letters. The line below deletes every character
+    # that is not a digit, a point or a minus, so without this guard any
+    # string with a digit in it would yield a number: "(Note 3)" would parse
+    # as 3.0, and a caller that guards num() with try/except would see a
+    # plausible wrong value instead of the failure.
     if re.search(r"[A-Za-z]", body):
         raise ValueError(f"not a number: {s!r}")
     t2 = re.sub(r"[^\d.\-]", "", body.replace(" ", ""))
@@ -261,15 +259,14 @@ def check_identities(spec_file: Path, truths: dict,
             val, st, note = pull(want_ref)
         except KeyError:
             val, st, note = num(want_ref), "OK", None
-        if True:
-            if st == "MISSING":
-                status = "INCOMPLETE"
+        if st == "MISSING":
+            status = "INCOMPLETE"
+            notes.append(note)
+            want = 0.0
+        else:
+            want = val
+            if note:
                 notes.append(note)
-                want = 0.0
-            else:
-                want = val
-                if note:
-                    notes.append(note)
         if status != "INCOMPLETE":
             got_sum = sum(terms)
             if abs(got_sum - want) > 0.005:

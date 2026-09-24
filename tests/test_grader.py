@@ -8,7 +8,8 @@ protects and watching this file go red.
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
 import score                                                    # noqa: E402
 
 
@@ -112,11 +113,20 @@ def test_the_thousands_rule_is_off_unless_the_page_asks_for_it():
 def test_no_page_in_this_corpus_asks_for_the_thousands_rule():
     """It stays for the Slovak cash-flow page in Sample_Documents, which uses
     the convention and is not labeled. If a truth file ever sets the flag,
-    this is where to say why."""
-    import glob
+    this is where to say why.
+
+    The globs are anchored on ROOT, and the count is asserted before the flag
+    is, so the test cannot pass over an empty file list when pytest runs from
+    another directory.
+    """
     import json
-    asked = [f for f in glob.glob("real/pages/*.truth.json") + glob.glob("corpus/*.truth.json")
-             if json.load(open(f)).get("space_thousands")]
+    truths = (sorted((ROOT / "real" / "pages").glob("*.truth.json"))
+              + sorted((ROOT / "corpus").glob("*.truth.json")))
+    assert len(truths) >= 6, (
+        f"found only {len(truths)} truth files under {ROOT}; this test cannot "
+        f"say anything about a corpus it did not read")
+    asked = [f.name for f in truths
+             if json.loads(f.read_text()).get("space_thousands")]
     assert asked == [], f"these pages ask for the thousands rule: {asked}"
 
 
@@ -126,4 +136,80 @@ def test_formatting_that_carries_no_information_is_stripped():
 
 
 def test_but_a_leading_minus_is_never_stripped():
+    assert score.canon("-20.00") != score.canon("20.00")
+
+
+# --------------------------------------------------------------------------
+# Three grader rules whose removal would move scores and nothing else would
+# notice. Each test below fails when its rule is removed.
+# --------------------------------------------------------------------------
+
+
+def test_a_look_alike_made_only_of_other_fields_text_is_not_a_corruption():
+    """mask_claimed(), pinned. Mutation: `return line` and this goes red.
+
+    A quiet error is expensive precisely because it is plausible, so the
+    grader must not MANUFACTURE plausible ones. A line that is entirely
+    another field's correct text contains no characters of its own, and a
+    window cut out of it is evidence about that other field and nothing else.
+    Without the mask, a bank page whose address reads "1000 Walnut Kansas Cty"
+    supplies a one-edit look-alike for the branch name the parser never
+    returned, and the page scores a quiet error it did not commit.
+    """
+    printed = "1000 Walnut Kansas City"
+    line = "1000 Walnut Kansas Cty"        # entirely another field, read right
+    others = [line]
+    status, got, _ = score.classify_miss(
+        printed, score.tokens_of(line), [line], set(), True, others)
+    assert status == "ABSENT", (
+        f"a window cut out of another field's correct text was reported as "
+        f"this field's corruption: {got!r}")
+
+
+def test_a_token_inside_a_multi_word_value_is_claimed_by_that_value():
+    """The claimed-parts guard in grade_page(), pinned.
+
+    Mutation: drop the `parts` union from grade_page and this goes red.
+    "1000 Walnut" is one labeled value, so the bare token "1000" belongs to it
+    and is not free to be reported as a corruption of check numbers 1001 and
+    1002 in turn, which would invent quiet errors from an address the parser
+    read correctly.
+
+    This goes through grade_page rather than classify_miss. The guard is a line
+    in grade_page that builds `claimed`; a test that assembled `claimed` itself
+    and passed it to classify_miss would prove the mechanism works and pin
+    nothing, because deleting the production line would not touch it.
+
+    The guard only ever moves a verdict from CORRUPT to ABSENT, which is the
+    safe direction: it can understate the quiet count and never inflate it.
+    """
+    truth = {"doc_id": "synthetic", "rows": [],
+             "printed": {"branch_address": "1000 Walnut",
+                         "check_1": "1001", "check_2": "1002"}}
+    # A parser that returned ONLY the address, and returned it correctly.
+    graded = score.grade_page(truth, "1000 Walnut\n")
+    verdicts = {k: v["status"] for k, v in graded["fields"].items()}
+    assert verdicts["branch_address"] == "OK"
+    assert verdicts["check_1"] == "ABSENT", (
+        f"the token 1000, which belongs to the address, was reported as a "
+        f"corruption of check_1: {graded['fields']['check_1']}")
+    assert verdicts["check_2"] == "ABSENT"
+
+
+def test_an_accent_is_folded_so_the_correct_read_is_not_scored_corrupt():
+    """NFD combining-mark stripping in fold(), pinned.
+
+    Mutation: drop the NFD pass and this goes red. The Slovak cash-flow page
+    prints its auditor with a hacek; some parsers return it, some drop it, and
+    the hand label is typed in ASCII. Unfolded, the parsers that read the page
+    correctly would score CORRUPT and the one that loses the diacritic would
+    score OK, which is the grader inverting the result it is there to measure.
+    """
+    label = "RNDr. Jozef Pleska, CSc."
+    returned = "auditor: RNDr. Jozef Ple\u0161k\u00e1, CSc. signed"
+    assert score.substr_match(label, score.lines_of(returned)), (
+        "a correctly-read accented name did not match its ASCII hand label")
+    # Nothing in this corpus is distinguished only by an accent, so folding
+    # costs no discrimination. A leading minus still must not fold away,
+    # which is the line between "formatting" and "content".
     assert score.canon("-20.00") != score.canon("20.00")

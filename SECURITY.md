@@ -84,8 +84,7 @@ a public thread.
 
 For a SECURITY concern, use GitHub's private vulnerability reporting: the
 "Report a vulnerability" button on the Security tab. It opens an advisory
-visible only to the maintainer, and it is the same channel every repository in
-this portfolio uses.
+visible only to the maintainer.
 
 For a FACTUAL correction, a wrong number, a mislabeled value, a rights argument
 that does not hold, open a pull request. This is a demonstration and a personal

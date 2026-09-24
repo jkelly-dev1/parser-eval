@@ -12,7 +12,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # This job installs nothing at all: score.py, reconcile.py and
+  # This job installs pytest and nothing else. score.py, reconcile.py and
   # cloud_cost.py are pure standard library on purpose: every published
   # number except the two hosted columns can be re-derived by a reader with
   # nothing but a Python interpreter and this repository. If that ever stops
@@ -28,9 +28,10 @@ jobs:
         python-version: ["3.11", "3.12", "3.13"]
 
     steps:
-      - uses: actions/checkout@v7
+      # Actions are pinned to a full commit SHA, because a tag can be moved.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: actions/setup-python@v7
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -49,19 +50,18 @@ jobs:
 
       # The ground truth checks itself before any parser is graded. 105
       # arithmetic rules the documents assert about themselves, plus 7 that
-      # run between pages. These caught four of the author's own labeling
-      # errors on a 1956 scan, which is the reason the corpus was chosen for
-      # pages that carry internal arithmetic at all.
+      # run between pages. The corpus was chosen for pages that carry
+      # internal arithmetic, so the labels can be checked this way at all.
       #
       # The result is asserted by grep rather than by exit code, because a
       # checker that declines to run a rule and a checker that agrees with it
-      # both exit zero. That confusion is defect 17 in this project's own
-      # history: a rule silently skipped 7 of 33 rows and reported a clean
-      # pass over the other 26.
+      # both exit zero.
       - name: Labels satisfy the documents' own arithmetic
         run: |
           python3 reconcile.py --corpus real/pages | tee /tmp/labels.txt
-          grep -q "0 label errors found" /tmp/labels.txt
+          # Anchored on the left, because "0 label errors found" is a
+          # substring of "10 label errors found".
+          grep -qE '(^|[^0-9])0 label errors found' /tmp/labels.txt
 
       # Re-derive the published numbers from the published parser output, then
       # require git to report no change. README.md and FINDINGS.txt quote
@@ -85,15 +85,15 @@ jobs:
   # parser in the comparison that CI can honestly re-run: the other six are
   # either gigabytes of model weights or a paid endpoint that does not return
   # the same bytes twice. It is also the most important row in the table; it
-  # does no work, and three of the seven tools score below it.
+  # does no work, and README.md reports which parsers score below it.
   control:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: actions/setup-python@v7
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
 
@@ -117,12 +117,18 @@ jobs:
       # reason beside it is how a check quietly stops checking.
       - name: The control reproduces its committed output exactly
         run: |
+          python3 adapters/run_textlayer.py --corpus real/pages --out /tmp/textlayer
+          diff -r --exclude=manifest.json out_real/textlayer /tmp/textlayer
 
       # A README is prose and drifts; out_real/*.json is evidence and does not.
       # This rebuilds each published figure from the JSON and requires the
       # exact string, so a re-run that shifts a number fails loudly rather than
-      # leaving the document quietly wrong.
-      - name: README numbers match the shipped results
-        run: python check_readme_numbers.py
-          python3 adapters/run_textlayer.py --corpus real/pages --out /tmp/textlayer
-          diff -r --exclude=manifest.json out_real/textlayer /tmp/textlayer
+      # leaving the document quietly wrong. It reads all five summary
+      # surfaces, not just the README, because the other four quote the same
+      # artifacts.
+      #
+      # `run:` is a block scalar so that a second command added below it runs
+      # as its own line instead of being folded into this one.
+      - name: Summary-document numbers match the shipped results
+        run: |
+          python3 check_readme_numbers.py

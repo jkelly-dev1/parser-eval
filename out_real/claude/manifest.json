@@ -3,7 +3,8 @@
   "version": "claude-opus-5 (anthropic 0.122.0), effort=medium",
   "source": "png",
   "note": "Wall-clock seconds are on a 12-core CPU with no GPU, and include model load on the first page of the run.",
-  "total_seconds": 344.3,
+  "total_seconds": 344.33,
+  "this_run_seconds": 344.3,
   "records": [
     {
       "doc_id": "census29_sales",

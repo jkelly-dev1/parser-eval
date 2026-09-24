@@ -231,7 +231,7 @@ def canon(s: str) -> str:
 # narrow. The parens must enclose the entire token and contain nothing but a
 # number, so "(Note 3)" is not a figure.
 #
-# And the parenthetical carries no currency sign. That is what separates an
+# The parenthetical also carries no currency sign. That is what separates an
 # accounting negative from a figure stated inside prose parentheses, and this
 # corpus is unanimous: the 2023 balance sheet's negatives are bare, (29,569),
 # (19,228), (2,985,415), (2,958,199), because the column header carries the
@@ -351,10 +351,6 @@ def shape_of(printed: str) -> str:
     if INT_RE.match(printed):
         return "int"
     return "text"
-
-
-_SHAPE_RE = {"money": MONEY_RE, "date": DATE_RE, "po": PO_RE,
-             "sku": SKU_RE, "int": INT_RE}
 
 
 def mask_claimed(line: str, other_texts: list[str]) -> str:
@@ -588,7 +584,7 @@ def grade_page(truth: dict, text: str) -> dict:
                                       for v in r["cells"].values()]
     claimed = ({v.lower() for v in every} | {nocomma(v.lower()) for v in every}
                | {canon(v) for v in every})
-    # And the tokens inside a multi-word value are claimed too. The bank
+    # The tokens inside a multi-word value are claimed too. The bank
     # statement's street is "1000 Walnut", and without this the token "1000"
     # was free to be reported as a corruption of check number 1001, 1002 and
     # 1003 in turn. Three quiet errors invented out of an address the parser

@@ -19,6 +19,17 @@ labels were typed wrong during the work and all four were caught that way.
 -----------------------------
 Percentage of labeled values recovered, in the right row.
 
+ONE QUALIFICATION BELONGS BEFORE THE TABLE, NOT AFTER IT. A row is found by its
+anchor and its cells are looked for in that row's block, so a value cannot be
+credited to a row it was not printed in. A row whose anchor never appears is
+graded against the whole page instead, so its cells can be credited without the
+row being found: Unstructured anchors only 42 of the 75 rows. score.py takes
+that on purpose -- if the anchor is the thing that was misread, the cells beside
+it should still be able to score -- but it cuts the way you would not want. A
+tool that loses row structure has fewer rows that can be scored strictly and no
+values that can be counted MISPLACED, while the tools that anchor every row are
+judged strictly throughout. Section 5 is the column to read beside this one.
+
   page                fields    gpt claude marker textlyr unstr docling tess
   fdic2023_balance*       65  100.0  100.0   92.3   100.0  95.4    95.4  98.5
   fdic_balance            37  100.0  100.0   64.9    91.9  89.2    91.9  78.4
@@ -38,7 +49,8 @@ and they are the only tools that read handwriting at all. That is the headline
 and it is not the interesting part.
 
 
-2. THE CONTROL IS THE FINDING: THREE OF SEVEN TOOLS LOSE TO DOING NOTHING
+2. THE CONTROL IS THE FINDING:
+   ONE OF THE SIX PARSERS LOSES TO DOING NOTHING, AND TWO MORE ONLY DRAW WITH IT
 ---------------------------------------------------------------------------
 A scanned PDF often arrives with a text layer somebody else's OCR put there
 years ago. `textlayer` is not a parser: it runs pdftotext over the file and
@@ -52,17 +64,27 @@ starting its vision model.
   Docling scores 66.2%, Tesseract 84.5% and Unstructured 83.6%. On
   fdic_balance the control and Docling tie exactly, 91.9% each.
 
-Three of the four local tools are worse than the answer already sitting in the
-file, at 6 to 18 seconds a page against zero. On the born-digital page every
-tool that processes it does worse than the file it was given: Docling 95.4%,
-Marker 92.3%, Tesseract 92.3%, against the layer's 100%.
+Three of the four local tools come in below the answer already sitting in the
+file, at 6 to 18 seconds a page against zero -- but only ONE of those gaps
+survives a paired test. McNemar exact over the same 425 values: Docling
+p = 0.009, and Tesseract and Unstructured p = 0.072 and p = 0.053. So Docling
+loses to doing nothing and the other two only draw with it, which is a weaker
+claim than "they lose" and a stranger one. Ranking below the control and being
+measurably worse than it are different statements, and this table supports the
+first for three tools and the second for one.
+
+On the born-digital page, the control scores 100.0% there, ties both hosted
+models, and beats every local parser: Tesseract 98.5%, Docling 95.4%,
+Unstructured 95.4%, Marker 92.3%.
 
 WHAT THIS DOES NOT SAY. It does not say those tools are broken, and it is not
 an argument against them. Relaying an existing text layer is fast, cheap and
 usually right, and a production system probably should. It says that on a page
 with a text layer, "Docling scored 91.9%" and "Docling read the page" are
 different claims, and only the control separates them. On the FDIC pages,
-Marker's and Docling's figures are a 99-100% subset of the embedded layer.
+Marker's and Docling's figures are a 97-100% subset of the embedded layer.
+(Per page: Marker 99.0-100%, Docling 97.1-100%. The low end is Docling on
+fdic_balance, 33 of the 34 values it got right.)
 
 THE CONTROL ALSO MARKS THE FLOOR. On the two 1929 census schedules -- real
 photographs of paper with no text layer at all -- it scores 0.0% and every
@@ -72,11 +94,19 @@ question, which is why the born-digital page was added.
 
 3. THE SAME TOOL, A THOUSAND TIMES SLOWER, DEPENDING ON THE FILE
 -------------------------------------------------------------------
-Marker took 0.4, 0.3 and 0.4 seconds on the three FDIC pages and 405.8 and
-275.9 seconds on the two census schedules. Same tool, same machine, same run.
-It has a vision model, surya-2 served through llama.cpp, and it invokes it
-only when there is no text layer to relay. The 1000x is not variance; it is
-two different programs behind one command.
+Marker took 0.3, 0.4, 0.4 seconds on three of the four FDIC pages, 52.3 seconds
+on the fourth, and 405.8 and 275.9 seconds on the two census schedules. Same
+tool, same machine, same run. It has a vision model, surya-2 served through
+llama.cpp, and it invokes it only when there is no text layer to relay. The
+1000x is not variance; it is two different programs behind one command.
+
+THE FOURTH FDIC PAGE IS THE INTERESTING ONE. fdic_balance carries an OCR text
+layer of 3,699 characters, which index.json records, and Marker still spent
+52.3 seconds on it and scored 64.9% against that layer's 91.9%. So "it relays
+when it can and reads when it must" describes the shape of the behavior and not
+a rule the tool follows: on one of the four pages it did neither cheaply nor
+well. A capacity plan built on the sub-second case has a counterexample inside
+this corpus, which is the more useful thing to know than the 1000x.
 
 FOR CAPACITY PLANNING THAT IS THE WHOLE STORY. A queue of scanned-with-OCR
 documents runs at sub-second-per-page; the same queue of camera-captured or
@@ -96,48 +126,53 @@ same-shape look-alike). The arithmetic asks the further question: does the
 error break a sum the document asserts about itself?
 
   parser        holds  survives  broken  incomplete   (105 within-page rules)
-  gpt             103         0       2           0
-  claude          100         0       4           1
-  marker           82         2       2          19
-  textlayer        92         2       1          10
-  docling          54         2       9          40
-  unstructured     36         1      15          53
-  tesseract        26         0      10          69
+  gpt             104         0       1           0
+  claude          101         0       3           1
+  marker           83         2       1          19
+  textlayer        93         2       0          10
+  docling          87         2       0          16
+  unstructured     60         5      16          24
+  tesseract        62         0      18          25
 
 SURVIVES is the category that matters: a figure came back wrong and the
-arithmetic still balanced, so nothing downstream can tell. Seven rule
-instances survived, and they are not all equally alarming. FOUR OF THE SEVEN
-ARE ONE OCR ARTIFACT: Marker and the text layer both returned the earnings
-page's bottom line as "2,027,324!", a stray exclamation mark picked up from a
-speck on the 1956 scan, in two rules each. The digits are right and the
-arithmetic holds, but the token would FAIL a downstream cast to a number
-(`typed: false` in the scores), so it is loud where it counts. Marker inherits
-it because it is relaying that text layer, which is section 2 again.
+arithmetic still balanced, so nothing downstream can tell. Eleven rule
+instances survived, and they are not all equally alarming. SEVEN OF THE ELEVEN
+ARE PUNCTUATION PICKED OFF THE SCAN: Marker and the text layer both returned
+the earnings page's bottom line as "2,027,324!", a stray exclamation mark from
+a speck on the 1956 scan, in two rules each; Unstructured returned an operating
+earnings total as "2,424}" in three more. The digits are right and the
+arithmetic holds, but those tokens would FAIL a downstream cast to a number
+(`typed: false` in the scores), so they are loud where it counts. Marker
+inherits its two because it is relaying that text layer, which is section 2
+again.
 
-THE OTHER THREE ARE THE REAL THING: wrong digits, arithmetic intact, and the
-value would cast cleanly into a numeric field. All three are on the 1956
+THE OTHER FOUR ARE THE REAL THING: wrong digits, arithmetic intact, and the
+value would cast cleanly into a numeric field. All four are on the 1956
 earnings table.
 
-  DOCLING READ TWO CELLS WRONG IN A WAY THAT CANCELS. On the losses total row
-  it returned Alaska as 945 (printed 935) and Puerto Rico as 285 (printed
-  295). Plus ten and minus ten. The row still adds to 993,534, the extraction
-  passes every check, and two figures are wrong. This is the error class the
-  whole exercise was built to find, and it is not a contrived one -- it is two
-  ordinary digit misreads that happened to land in opposite directions in the
-  same row.
+  ALL FOUR SURVIVED BECAUSE OF A TOLERANCE, AND THAT IS A COST WE CHOSE.
+  Docling and Unstructured each read 490 for 491 and 1,355 for 1,352 -- four
+  rule instances between them, every one a value a numeric field would accept
+  without complaint. The earnings table prints rounded thousands, so its column
+  sums cannot be checked exactly; they carry tolerance 5 and by construction
+  cannot see an error smaller than 5. All four walked through that gap.
 
-  TWO MORE SURVIVED BECAUSE OF A TOLERANCE, AND THAT IS A COST WE CHOSE.
-  Docling read 490 for 491 and Unstructured 1,355 for 1,352, both of them
-  values a numeric field would accept without complaint. The earnings table
-  prints rounded thousands, so its column sums cannot be checked exactly; they
-  carry tolerance 5 and by construction cannot see an error smaller than 5.
-  Both of these walked through that gap. THE EXACT CHECKS ON THE SAME PAGE DID
-  THEIR JOB: the 33 row identities close to the unit, and it was one of those
-  that caught Docling's canceling pair. Where a page lets you check exactly,
-  check exactly; a tolerance is a hole with a documented size.
+  THAT IS THE WHOLE QUIET-FAILURE INVENTORY, AND IT IS WORTH SAYING PLAINLY
+  WHAT IT DOES NOT CONTAIN. No error in this corpus defeated an EXACT check.
+  The 33 row identities on the earnings table close to the unit and caught
+  everything put in front of them; the four quiet survivors came through a hole
+  whose size was declared in advance, and the other seven are loud to anything
+  that casts them. Where a page lets you check exactly, check exactly; a
+  tolerance is a hole with a documented size, and on this corpus the
+  documented hole is the only one anything got through.
 
-THE HOSTED MODELS PRODUCED NO QUIET FAILURES AT ALL. Between them 6 sums broke
-and 0 survived: when they are wrong, the arithmetic says so. That is a
+  EVERY FIGURE IN THIS SECTION IS RE-DERIVED FROM out_real/reconcile.json BY
+  check_readme_numbers.py, including the eleven, the seven and the four. The
+  inventory is the kind of claim that is easy to describe from memory and hard
+  to notice going stale, so it is not described from memory.
+
+THE HOSTED MODELS PRODUCED NO QUIET FAILURES AT ALL. Between them five sums
+broke and 0 survived: when they are wrong, the arithmetic says so. That is a
 different and more useful failure profile than being right more often.
 
 CROSS-PAGE COHERENCE. Seven identities tie the 1956 income statement to the
@@ -153,17 +188,29 @@ control hold all 7. GPT breaks 1. Tesseract breaks 1 and cannot run another.
   parser        rows anchored   values in the WRONG row   values missing
   gpt                  75/75                          0                3
   claude               69/75                          1                1
-  docling              49/75                         46               71
+  docling              49/75                         56               44
   textlayer            47/75                          0               88
   marker               44/75                          8               64
-  unstructured         42/75                         10               96
-  tesseract            73/75                          7              146
+  unstructured         42/75                         11               71
+  tesseract            73/75                          7               72
+
+  "values missing" is the ABSENT column: nothing like the value came back.
+  A CORRUPT value is neither missing nor in the wrong row and is counted in
+  neither of the last two columns, so these rows do not add to 425.
 
 Tesseract finds 73 of 75 rows -- more than any other local tool -- and still
 recovers only 74.6%: it preserves the shape of the page and misreads the
 contents. Docling does the opposite, recovering figures while losing the row
 they belong to: it put 56 exactly-correct values in the wrong row, every one
-of them on the wide landscape table. A figure in the wrong row is a quiet error by
+of them on the wide landscape table.
+
+A CAVEAT ON THIS COLUMN FOR THE TWO TOOLS THAT MERGE ROWS. Where a parser runs
+two printed rows together, row_blocks awards the merged line to whichever row
+claims it first and the other row's cells are then MISPLACED against a line
+that carries their own label. On fdic_earnings that accounts for 8 of
+Unstructured's 9 and 3 of Tesseract's 7. DOCLING'S 56 ARE NOT THAT: none of the
+56 sits on a line carrying its own row label, so they are genuine wrong-row
+placements and the sentence above stands as written. A figure in the wrong row is a quiet error by
 construction: it is character-perfect, so nothing that compares text can see
 it, and it is only wrong relative to a structure the parser has already lost.
 

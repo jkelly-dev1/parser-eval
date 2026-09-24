@@ -3,13 +3,13 @@
 
     envs/docling/bin/python adapters/run_docling.py
 
-Default pipeline, deliberately. Docling has knobs, OCR engine, table structure
-model, cell matching, and tuning them for this corpus would answer a question
-nobody asked ("how well can Docling be made to do on ten synthetic purchase
-orders?") instead of the one that matters ("what does a team get when they
-install it and point it at a scan?"). The only thing set explicitly is that
-OCR must run, because every page here is an image with no text layer and a
-silent no-OCR fallback would be recorded as a parser that returned nothing.
+Default pipeline. Docling has knobs, OCR engine, table structure model, cell
+matching, and tuning them for this corpus would answer a question nobody asked
+("how well can Docling be made to do on ten synthetic purchase orders?")
+instead of the one that matters ("what does a team get when they install it and
+point it at a scan?"). The only thing set explicitly is that OCR must run,
+because every page here is an image with no text layer and a silent no-OCR
+fallback would be recorded as a parser that returned nothing.
 
 Markdown is the output because it is Docling's own primary export and it keeps
 the table as a table. The grader flattens the pipes back out.
