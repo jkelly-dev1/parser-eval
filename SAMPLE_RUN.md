@@ -1,17 +1,18 @@
 # SAMPLE_RUN
 
 Captured output. Nothing here is retyped, tidied or reordered; the blocks are
-what the commands printed on 2026-09-13 (the test-suite block on 2026-09-23),
-on Python 3.13.7 and pdftotext 25.03.0, from the commands shown above them
-exactly as shown.
+what the commands printed on 2026-09-27, except the control's re-run, captured
+on 2026-09-13, on Python 3.13.7 and pdftotext 25.03.0, from the commands shown
+above them exactly as shown.
 
-These blocks are checked. `check_readme_numbers.py` rebuilds every figure in
-them from `out_real/*.json` and requires the exact string, so a block that
-stops being what the command prints fails CI.
+These blocks are checked. `check_readme_numbers.py` rebuilds their tables from
+`out_real/*.json` and requires each row of the score, reconcile, coherence and
+cost tables exactly as the command prints it, column spacing included, so a
+table that stops being what the command prints fails CI.
 
 Two alterations, and they are the only two. `cloud_cost.py` prints the absolute
 directory of each run; those paths appear here as `<repo>`, and you will see
-your own. Long tables are cut where an explicit `...` marker says so and nowhere
+your own. Output is cut where an explicit `...` marker says so and nowhere
 else.
 
 Every block below is free and needs no network. The two hosted models are the
@@ -32,6 +33,8 @@ GROUND TRUTH FIRST. Every sum evaluated against the hand-labeled values.
 
   6 documents checked, 0 label errors found.
 
+...  (then the same parser tables as the next block, graded from the
+     default out_real/scores.json; cut here)
 ```
 
 ## Every parser, scored
@@ -49,13 +52,13 @@ be credited without the row being found: `Unstructured` anchors only 42 of the
 $ python3 score.py --corpus real/pages --out out_real
 parser            dpi  fields  recovered  absent  corrupt  typed  misplcd  quiet%      rows  s/page
 ---------------------------------------------------------------------------------------------------
-claude            300     425      97.9%       1        7      6        1     78%    69/75     57.4
-docling           300     425      71.5%      44       21     19       56     62%    49/75     18.4
-gpt               300     425      98.4%       3        4      4        0     57%    75/75     64.1
-marker            300     425      79.8%      64       14     12        8     23%    44/75    122.5
-tesseract         300     425      74.6%      72       29     24        7     29%    73/75      1.3
+claude            300     425      97.9%       2        7      6        0     67%    69/75     57.4
+docling           300     425      70.6%      48       21     19       56     60%    49/75     18.4
+gpt               300     425      98.4%       4        3      3        0     43%    75/75     64.1
+marker            300     425      79.5%      65       14     12        8     23%    44/75    122.5
+tesseract         300     425      74.6%      73       29     24        6     28%    73/75      1.3
 textlayer         300     425      78.1%      88        5      4        0      4%    47/75      0.0
-unstructured      300     425      74.6%      71       26     20       11     29%    42/75      6.6
+unstructured      300     425      73.6%      75       26     20       11     28%    42/75      6.6
 
 recovered  the printed value came back, in the right row
 absent     nothing like it came back           -- a hole, loud
@@ -63,18 +66,19 @@ corrupt    a same-shape look-alike came back
 typed      of those, the ones a downstream cast would ACCEPT
            -- the rest carry a character the field cannot hold
            (a quantity read as '#'), and are loud
-misplcd    the exact value came back in ANOTHER row: quiet
+misplcd    the exact value came back in ANOTHER row -- quiet
 quiet%     (typed + misplaced) / all misses
 
 wrote out_real/scores.json
 ```
 
-One of six parsers loses to doing nothing, and two more only draw with it.
+Two of six parsers lose to doing nothing, and one more only draws with it.
 Docling, Unstructured and Tesseract all score below the control; on a paired
-McNemar exact test over the same 425 values only Docling's gap clears the noise
-(p = 0.009, against 0.072 and 0.053). Ranking below the control and being
-measurably worse than it are different claims, and this is the finding the
-corpus was built to be able to state, in the weaker form the numbers support.
+McNemar exact test over the same 425 values Docling's and Unstructured's gaps
+clear the noise (p = 0.002 and 0.014) and Tesseract's does not (p = 0.072).
+Ranking below the control and being measurably worse than it are different
+claims, and this is the finding the corpus was built to be able to state, in
+the weaker form the numbers support.
 
 ## Does each parser's version still add up?
 
@@ -97,7 +101,7 @@ claude        census29_wages      4         0       1           1
 unstructured  census29_wages      0         0       0           6
 unstructured  fdic2023_balance     12         0       0           0
 unstructured  fdic_balance        6         0       1           0
-unstructured  fdic_earnings      37         5      13          14
+unstructured  fdic_earnings      33         5      11          20
 unstructured  fdic_income         5         0       2           2
 
 COHERENCE ACROSS PAGES. Every term from the SAME parser.
@@ -199,17 +203,17 @@ expensive one on both, because a 33x11 landscape table costs output tokens.
 
 ## The tests
 
-The suite is 80 tests, pure standard library, no network, about 22 seconds.
+The suite is 130 tests, pure standard library, no network.
 Most pin a specific way the grader or the arithmetic checker can be wrong.
 
 ```
 $ python -m pytest -q
-........................................................................ [ 90%]
-........                                                                 [100%]
-80 passed in 21.53s
+........................................................................ [ 55%]
+..........................................................               [100%]
+130 passed in 21.68s
 ```
 
-README.md maps each claim to the test that enforces it. Fourteen of those tests
+README.md maps each claim to the test that enforces it. Seventeen of those tests
 are mutation-checked, and the README names the edit for each: the edit that
 removes the rule, applied to the file, makes the named test fail.
 

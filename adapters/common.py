@@ -10,7 +10,7 @@ takes the same arguments, reads the same frozen corpus, and writes one .txt of
 whatever text the parser produced plus one record with the wall-clock time and
 the version of the thing that produced it.
 
-Text is the common denominator on purpose. Docling emits Markdown, Unstructured
+Text is the common denominator. Docling emits Markdown, Unstructured
 emits a list of typed elements, Marker emits Markdown, Tesseract emits plain
 text. Grading whichever structured form each one prefers would grade four
 different things. Grading the text they all can produce asks the one question
@@ -131,6 +131,12 @@ def run(parser_name: str, version: str, extract, *, source: str = "pdf"):
                                t_all)
     print(f"\n{parser_name}: {len(records)} pages in "
           f"{manifest['this_run_seconds']}s -> {args.out}")
+    # One failed page is a finding about that page and the run goes on. A
+    # run in which EVERY page failed produced nothing to grade, and exiting 0
+    # would let a script or CI step treat it as a completed run.
+    if records and all(r["error"] for r in records):
+        print(f"{parser_name}: every page failed")
+        return 1
     return 0
 
 def _write_manifest(args, parser_name, version, source, records, t_all):

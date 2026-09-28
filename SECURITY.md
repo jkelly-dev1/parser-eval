@@ -79,8 +79,9 @@ numbers; it produces different ones. They are committed for that reason, and
 
 ## Reporting
 
-Issues are disabled on this repository, so neither of the two channels below is
-a public thread.
+Issues are disabled on this repository. A security report goes through the
+private channel below; a factual correction goes through a pull request, which
+is public.
 
 For a SECURITY concern, use GitHub's private vulnerability reporting: the
 "Report a vulnerability" button on the Security tab. It opens an advisory

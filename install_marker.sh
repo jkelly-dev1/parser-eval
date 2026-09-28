@@ -2,7 +2,7 @@
 # Marker (marker-pdf) into its own venv, CPU torch first for the same reason
 # as the other two. Marker WANTS A GPU; section 4a of the next-projects file
 # flags it as the parser that may have to be reported as "not run, and why".
-# This script finds out which it is rather than assuming.
+# This script finds out which it is instead of assuming.
 set -euo pipefail
 cd "$(dirname "$0")"
 P=envs/marker/bin/pip

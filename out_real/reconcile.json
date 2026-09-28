@@ -232,10 +232,10 @@
     },
     "fdic_earnings": {
       "counts": {
-        "HOLDS": 69,
+        "HOLDS": 67,
         "SURVIVES": 0,
         "BROKEN": 0,
-        "INCOMPLETE": 0
+        "INCOMPLETE": 2
       },
       "detail": [
         {
@@ -352,10 +352,9 @@
         },
         {
           "name": "losses_total.puerto_rico",
-          "status": "HOLDS",
+          "status": "INCOMPLETE",
           "notes": [
-            "loss_l_lc.puerto_rico landed in another row",
-            "sum 295.00 vs printed 295.00 (tolerance 5)"
+            "loss_l_lc.puerto_rico ABSENT"
           ]
         },
         {
@@ -696,10 +695,9 @@
         },
         {
           "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
-          "status": "HOLDS",
+          "status": "INCOMPLETE",
           "notes": [
-            "puerto_rico landed in another row",
-            "sum 32,018.00 vs printed 32,018.00"
+            "puerto_rico ABSENT"
           ]
         },
         {
@@ -905,6 +903,8 @@
           "name": "persons_engaged",
           "status": "INCOMPLETE",
           "notes": [
+            "hw_salaried_female ABSENT",
+            "hw_wage_earners_female ABSENT",
             "hw_persons_total ABSENT"
           ]
         },
@@ -1848,17 +1848,17 @@
   "gpt": {
     "census29_sales": {
       "counts": {
-        "HOLDS": 2,
+        "HOLDS": 1,
         "SURVIVES": 0,
         "BROKEN": 0,
-        "INCOMPLETE": 0
+        "INCOMPLETE": 1
       },
       "detail": [
         {
           "name": "fuel_total_cost",
-          "status": "HOLDS",
+          "status": "INCOMPLETE",
           "notes": [
-            "sum 66.00 vs printed 66.00"
+            "hw_fuel_total_cost ABSENT"
           ]
         },
         {
@@ -3878,10 +3878,10 @@
     },
     "fdic_earnings": {
       "counts": {
-        "HOLDS": 46,
+        "HOLDS": 45,
         "SURVIVES": 0,
-        "BROKEN": 13,
-        "INCOMPLETE": 10
+        "BROKEN": 12,
+        "INCOMPLETE": 12
       },
       "detail": [
         {
@@ -4005,11 +4005,10 @@
         },
         {
           "name": "losses_total.puerto_rico",
-          "status": "BROKEN",
+          "status": "INCOMPLETE",
           "notes": [
-            "loss_l_lc.puerto_rico landed in another row",
-            "loss_allother.puerto_rico read as '188' (printed '138')",
-            "sum 345.00 vs printed 295.00 (tolerance 5)"
+            "loss_l_lc.puerto_rico ABSENT",
+            "loss_allother.puerto_rico read as '188' (printed '138')"
           ]
         },
         {
@@ -4377,10 +4376,9 @@
         },
         {
           "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
-          "status": "HOLDS",
+          "status": "INCOMPLETE",
           "notes": [
-            "puerto_rico landed in another row",
-            "sum 32,018.00 vs printed 32,018.00"
+            "puerto_rico ABSENT"
           ]
         },
         {
@@ -5481,6 +5479,7 @@
           "notes": [
             "hw_salaried_female ABSENT",
             "hw_wage_earners_male ABSENT",
+            "hw_wage_earners_female ABSENT",
             "hw_persons_total ABSENT"
           ]
         },
@@ -5691,10 +5690,10 @@
     },
     "fdic_earnings": {
       "counts": {
-        "HOLDS": 37,
+        "HOLDS": 33,
         "SURVIVES": 5,
-        "BROKEN": 13,
-        "INCOMPLETE": 14
+        "BROKEN": 11,
+        "INCOMPLETE": 20
       },
       "detail": [
         {
@@ -5820,10 +5819,10 @@
         },
         {
           "name": "losses_total.puerto_rico",
-          "status": "BROKEN",
+          "status": "INCOMPLETE",
           "notes": [
-            "loss_allother.puerto_rico read as '188' (printed '138')",
-            "sum 345.00 vs printed 295.00 (tolerance 5)"
+            "loss_l_lc.puerto_rico ABSENT",
+            "loss_allother.puerto_rico read as '188' (printed '138')"
           ]
         },
         {
@@ -5867,9 +5866,9 @@
         },
         {
           "name": "losses_total.other",
-          "status": "HOLDS",
+          "status": "INCOMPLETE",
           "notes": [
-            "sum 92.00 vs printed 91.00 (tolerance 5)"
+            "loss_s_xfer.other ABSENT"
           ]
         },
         {
@@ -5915,9 +5914,9 @@
         },
         {
           "name": "losses_total.continental_us",
-          "status": "HOLDS",
+          "status": "INCOMPLETE",
           "notes": [
-            "sum 992,216.00 vs printed 992,213.00 (tolerance 5)"
+            "loss_l_xfer.continental_us ABSENT"
           ]
         },
         {
@@ -6183,24 +6182,24 @@
         },
         {
           "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
-          "status": "HOLDS",
+          "status": "INCOMPLETE",
           "notes": [
-            "sum 101,830.00 vs printed 101,830.00"
+            "other ABSENT"
           ]
         },
         {
           "name": "us_equals_areas_plus_continental[Losses and charge-offs]",
-          "status": "HOLDS",
+          "status": "INCOMPLETE",
           "notes": [
-            "sum 32,018.00 vs printed 32,018.00"
+            "puerto_rico ABSENT"
           ]
         },
         {
           "name": "us_equals_areas_plus_continental[Transfers to reserve accounts]",
-          "status": "BROKEN",
+          "status": "INCOMPLETE",
           "notes": [
-            "us read as '462,940' (printed '452,940')",
-            "sum 452,940.00 vs printed 462,940.00"
+            "continental_us ABSENT",
+            "us read as '462,940' (printed '452,940')"
           ]
         },
         {

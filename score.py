@@ -6,13 +6,13 @@
 
 What is being measured, in one sentence: for each value printed on the page,
 did the parser's text output bring that value back, and when it did not, is
-what came back instead OBVIOUSLY BROKEN or QUIETLY WRONG.
+what came back instead OBVIOUSLY BROKEN or SILENTLY WRONG.
 
 The second half is the part nobody publishes. A check that only inspects the
 extracted payload is blind to a value that is internally consistent and wrong,
 and those are precisely the errors that reach production. A parser leaderboard
 reports one number, accuracy, and by that measure a parser with half the error
-rate and twice the quiet fraction looks twice as good while being MORE
+rate and twice the silent fraction looks twice as good while being MORE
 dangerous. So every miss here is classified:
 
     ABSENT   the value is simply not in the output. A downstream extractor
@@ -21,7 +21,7 @@ dangerous. So every miss here is classified:
              "1,159.18" read as "1,159.16", "HB-1040Z" as "HB-1O40Z". Well
              formed, in range, and wrong. This is the expensive kind.
 
-Corrupt is split again, because half of it is not quiet. A same-length
+Corrupt is split again, because half of it is not silent. A same-length
 look-alike can still be something no field could ever hold: a quantity
 returned as "#" is CORRUPT by shape and LOUD in practice, since int("#")
 raises. Each corrupt miss therefore carries typed=true/false. Whether the
@@ -29,7 +29,7 @@ returned characters could belong to that field at all, judged against the
 printed value and not against a schema, and only the typed ones count toward
 quiet%.
 
-Corrupt is a candidate, not a verdict. Whether a corrupt value survives an
+Corrupt is a candidate verdict. Whether a corrupt value survives an
 arithmetic cross-check is a question about a whole extracted payload, and this
 script grades text. A misread unit price that no longer multiplies out to the
 printed amount would be caught by an arithmetic cross-check; one in a field
@@ -133,7 +133,7 @@ def fold(s: str, space_thousands: bool = False) -> str:
     # that on whitespace yields one token with the tags welded on, which
     # matches nothing and costs the parser most of a table it actually read.
     #
-    # A tag becomes a SPACE rather than nothing, so <td>a</td><td>b</td> is
+    # A tag becomes a SPACE instead of nothing, so <td>a</td><td>b</td> is
     # two tokens and not "ab".
     s = re.sub(r"<[^>]+>", " ", s)
     # Space-separated thousands are one number, not three tokens: on a page
@@ -178,12 +178,12 @@ def tokens_of(line: str) -> list[str]:
     zero. A field the parser read perfectly must not be scored as a miss
     because of a missing space.
 
-    Parens around a number are not punctuation, they are the minus sign.
+    Parens around a number are the minus sign, not punctuation.
     Stripping them here while canon() kept them made the grader contradict
     itself: the FDIC 2023 balance sheet prints an unrealized loss as
     "(29,569)", every one of the seven tools returned exactly that, and every
     one was scored CORRUPT with `got` identical to `printed`. Twenty-eight
-    rule instances across the run became "quiet failures" that never happened.
+    rule instances across the run became "silent failures" that never happened.
     A wholly-parenthesized figure is therefore kept intact and canon() turns
     it into a negative. Unless it carries a currency sign, which is how this
     corpus writes an amount inside prose parentheses rather than a loss in a
@@ -211,7 +211,7 @@ def canon(s: str) -> str:
 
     NOT dropped: a leading minus. "-20.00" and "20.00" are different amounts,
     and a grader that folded the sign away would score a sign flip, the most
-    expensive quiet error a financial document can carry, as a correct read.
+    expensive silent error a financial document can carry, as a correct read.
 
     Accounting parentheses are that same sign and become one: "(29,569)"
     canonicalizes to "-29569". This is what lets a parser that returns the
@@ -257,7 +257,7 @@ def concat_match(printed: str, toks: list[str]) -> bool:
     210": same digits, different spaces. Scored token by token those are
     misses, and the reconciliation pass then reads them as figures that came
     back wrong while the row still balances, which is the signature of the
-    quiet error this exercise hunts, produced by spacing alone.
+    silent error this exercise hunts, produced by spacing alone.
 
     Concatenation is bounded to four tokens and to values of four digits or
     more so that "34" can never be assembled out of a "3" and a "4" sitting in
@@ -295,6 +295,102 @@ def token_match(printed: str, toks: list[str]) -> bool:
 def substr_match(printed: str, lines: list[str]) -> bool:
     p = re.sub(r"\s+", " ", fold(printed)).strip().lower()
     return any(p in ln.lower() for ln in lines)
+
+
+class Occurrences:
+    """The page's tokens and line text, each usable by ONE field.
+
+    A printed value is matched anywhere in its scope, so a match takes the
+    occurrence it matched: a value printed once credits one field, and one
+    "11" cannot credit all twelve monthly fields whose value is "11". Tokens and line substrings are
+    two pools: a single-token value takes a token, a multi-word value takes a
+    span of its line. grade_page decides the order in which fields are
+    graded, and so which field gets a shared occurrence.
+    """
+
+    def __init__(self, lines: list[str]):
+        self.lines = lines
+        self.line_toks = [tokens_of(ln) for ln in lines]
+        self.toks = [(i, j, t) for i, row in enumerate(self.line_toks)
+                     for j, t in enumerate(row)]
+        self.used_toks: set[tuple[int, int]] = set()
+        self.used_spans: dict[int, list[tuple[int, int]]] = {}
+
+    def peek(self, printed: str, scope: range, multiword: bool) -> bool:
+        """Is there an untaken occurrence in scope? Takes nothing.
+
+        MISPLACED is a miss, not a credit, so finding the value in another
+        row must not use it up: when it did, row 4's check took the only "37"
+        on the page, which was row 28's, and row 28 was then scored as having
+        read "37" as "37".
+        """
+        saved = (set(self.used_toks),
+                 {k: list(v) for k, v in self.used_spans.items()})
+        found = (self.take_span(printed, scope) if multiword
+                 else self.take_token(printed, scope))
+        self.used_toks, self.used_spans = saved
+        return found
+
+    def take_token(self, printed: str, scope: range) -> bool:
+        p, pc = printed.lower(), canon(printed)
+        pn = nocomma(p)
+        free = [(i, j, t) for i, j, t in self.toks
+                if i in scope and (i, j) not in self.used_toks]
+        # A word joined to the next by a dash. fold() turns an em dash into a
+        # hyphen, and GPT wrote the 1956 earnings table's column head as
+        # "Other areas\u2014Alaska": one token, "areas-Alaska", so "Alaska"
+        # never matched and the look-alike search then found "Alaska" at
+        # distance zero and scored a correct read as CORRUPT. A value made of
+        # letters may also match one part of a token whose parts are all
+        # letters. The hyphen itself must stay: row labels printed with an em
+        # dash match their truth, written with a hyphen, only through it.
+        alpha = p.isalpha()
+        for i, j, t in free:
+            tl = t.lower()
+            if tl == p or nocomma(tl) == pn or canon(t) == pc or (
+                    alpha and "-" in tl
+                    and all(part.isalpha() for part in tl.split("-"))
+                    and p in tl.split("-")):
+                self.used_toks.add((i, j))
+                return True
+        if not NUMERIC_RE.match(printed.strip()) or len(pc.lstrip("-")) < 4:
+            return False
+        # concat_match's rule, over tokens nobody has taken: 2-4 tokens that
+        # sit next to each other on ONE line and concatenate to the number.
+        # Adjacent on the page, not adjacent in the list of untaken tokens:
+        # once a token between two others is taken, those two are not
+        # neighbors, and joining them would build "12345" out of the "12" and
+        # "345" around a "5" that another field already took.
+        for i, j, _ in free:
+            row = self.line_toks[i]
+            acc, ids = "", []
+            for jj in range(j, min(j + 4, len(row))):
+                if (i, jj) in self.used_toks:
+                    break
+                acc += canon(row[jj])
+                ids.append((i, jj))
+                if acc == pc:
+                    self.used_toks.update(ids)
+                    return True
+                if len(acc) > len(pc):
+                    break
+        return False
+
+    def take_span(self, printed: str, scope: range) -> bool:
+        p = re.sub(r"\s+", " ", fold(printed)).strip().lower()
+        if not p:
+            return False
+        for i in scope:
+            ln = self.lines[i].lower()
+            taken = self.used_spans.setdefault(i, [])
+            start = ln.find(p)
+            while start != -1:
+                end = start + len(p)
+                if all(end <= s or start >= e for s, e in taken):
+                    taken.append((start, end))
+                    return True
+                start = ln.find(p, start + 1)
+        return False
 
 
 def is_multiword(printed: str, space_thousands: bool = False) -> bool:
@@ -392,7 +488,7 @@ def classify_miss(printed: str, toks: list[str], lines: list[str],
     field's correct value is never reported as this field's corruption. That
     guard matters here specifically: the corpus is built so that rows 2 and 3
     carry near-identical amounts, and without it every one of those pairs
-    would score as a quiet error on a page the parser read perfectly.
+    would score as a silent error on a page the parser read perfectly.
 
     `other_texts` is the same set unfolded, used to mask multi-word
     candidates: see mask_claimed().
@@ -426,7 +522,7 @@ def classify_miss(printed: str, toks: list[str], lines: list[str],
     # zero recognized as the letter O. That token fails the SKU pattern
     # precisely BECAUSE it is corrupt, so the shape filter discarded it and
     # the field was scored ABSENT. A classifier that can only see corruption
-    # which stays inside the schema would report the quiet errors as loud
+    # which stays inside the schema would report the silent errors as loud
     # ones, which is the exact inversion of what this script exists to
     # measure.
     #
@@ -441,7 +537,7 @@ def classify_miss(printed: str, toks: list[str], lines: list[str],
         # rule is suspended there. It has to be: the only content errors
         # Docling made on this corpus are single-digit quantities, and a
         # blanket rule against short values would report the one parser that
-        # fails quietly as the one that fails loudly.
+        # fails silently as the one that fails loudly.
         return "ABSENT", None, None
     pc = canon(printed)
     limit = max(1, len(pc) // 3)
@@ -473,17 +569,17 @@ def stays_in_alphabet(printed: str, got: str) -> bool:
     """Could `got` pass for a legitimate value of the field that printed
     `printed`, or is it visible junk?
 
-    Corrupt is not the same as quiet and conflating them overstates the whole
+    Corrupt is not the same as silent and conflating them overstates the whole
     thesis. Docling's only content errors on the synthetic corpus are the
     quantity 9 returned as "#", the quantity 9 returned as "x", and the
     quantity 33 returned as "3e3" with a Greek epsilon. Those are same-length
     look-alikes, so the miss classifier calls them CORRUPT, and counting every
-    CORRUPT as quiet reported Docling as failing 100% quietly. Nothing
+    CORRUPT as silent reported Docling as failing 100% silently. Nothing
     downstream would be fooled for an instant: int("#") raises, and so does
     every other cast anyone would put on a quantity. The error is loud the
     moment a type touches it.
 
-    The test is deliberately derived from the PRINTED value rather than from a
+    The test is derived from the PRINTED value rather than from a
     schema, because the truth files carry no types and inventing them would be
     inventing the answer. A digits-only value may come back as digits and its
     own separators; a value with letters may come back with letters. A
@@ -493,7 +589,7 @@ def stays_in_alphabet(printed: str, got: str) -> bool:
     This is not the shape filter that was removed. That one discarded the
     candidate and scored the field ABSENT, which hid "LN-10NY" read as
     "LN-1ONY". Letters and digits where letters and digits belong, which is
-    exactly the dangerous case and is still counted quiet here. This splits
+    exactly the dangerous case and is still counted silent here. This splits
     the CORRUPT bucket for reporting and discards nothing.
     """
     got = (got or "").strip()
@@ -538,6 +634,14 @@ def row_blocks(lines: list[str], rows: list[dict],
     if the anchor is the thing that was misread, the cells beside it should
     still be able to score.
     """
+    anchors = _row_anchors(lines, rows, space_thousands)
+    return {i: (lines[w.start:w.stop] if w else [])
+            for i, w in _row_windows(lines, rows, anchors).items()}
+
+
+def _row_anchors(lines: list[str], rows: list[dict],
+                 space_thousands: bool = False) -> dict[int, int]:
+    """The line each row is anchored on, chosen as row_blocks describes."""
     anchors: dict[int, int] = {}
     used: set[int] = set()
     for i, row in enumerate(rows):
@@ -563,16 +667,28 @@ def row_blocks(lines: list[str], rows: list[dict],
         if best_n is not None:
             anchors[i] = best_n
             used.add(best_n)
+    return anchors
+
+
+def _row_windows(lines, rows, anchors) -> dict[int, range | None]:
+    """Each anchored row's window as a line range; None when unanchored."""
     order = sorted(anchors.items(), key=lambda kv: kv[1])
-    blocks: dict[int, list[str]] = {}
+    out: dict[int, range | None] = {}
     for pos, (idx, n) in enumerate(order):
         end = order[pos + 1][1] if pos + 1 < len(order) else min(len(lines), n + 4)
         end = min(end, n + 4)
-        blocks[idx] = lines[n:max(end, n + 1)]
+        out[idx] = range(n, max(end, n + 1))
     for i in range(len(rows)):
-        blocks.setdefault(i, [])
-    return blocks
+        out.setdefault(i, None)
+    return out
 
+
+def row_block_spans(lines: list[str], rows: list[dict],
+                    space_thousands: bool = False) -> dict[int, range | None]:
+    """row_blocks' windows as line ranges, so a take() on a row's cell uses
+    up an occurrence at its position on the page. None for an unanchored row,
+    whose cells are graded against the whole page, as row_blocks says."""
+    return _row_windows(lines, rows, _row_anchors(lines, rows, space_thousands))
 
 def grade_page(truth: dict, text: str) -> dict:
     space_thousands = bool(truth.get("space_thousands", False))
@@ -587,21 +703,28 @@ def grade_page(truth: dict, text: str) -> dict:
     # The tokens inside a multi-word value are claimed too. The bank
     # statement's street is "1000 Walnut", and without this the token "1000"
     # was free to be reported as a corruption of check number 1001, 1002 and
-    # 1003 in turn. Three quiet errors invented out of an address the parser
+    # 1003 in turn. Three silent errors invented out of an address the parser
     # read correctly. The guard only ever moves a verdict from CORRUPT to
-    # ABSENT, which is the safe direction: it can understate the quiet count,
+    # ABSENT, which is the safe direction: it can understate the silent count,
     # never inflate it.
     parts = [t for v in every for t in v.split() if len(t) > 1]
     claimed |= ({t.lower() for t in parts} | {nocomma(t.lower()) for t in parts}
                 | {canon(t) for t in parts}) - {""}
 
     fields: dict[str, dict] = {}
+    occ = Occurrences(lines)
+    page = range(len(lines))
 
-    def grade(name: str, want: str, scope_lines: list[str] | None) -> None:
+    def take(want: str, scope: range) -> bool:
+        if is_multiword(want, space_thousands):
+            return occ.take_span(want, scope)
+        return occ.take_token(want, scope)
+
+    def grade(name: str, want: str, scope: range | None) -> None:
+        scope_lines = [lines[i] for i in scope] if scope else None
         sl = scope_lines if scope_lines else lines
         toks = [t for ln in sl for t in tokens_of(ln)]
-        hit = (substr_match(want, sl) if is_multiword(want, space_thousands)
-               else token_match(want, toks))
+        hit = take(want, scope if scope else page)
         if hit:
             fields[name] = {"printed": want, "status": "OK"}
             return
@@ -615,14 +738,30 @@ def grade_page(truth: dict, text: str) -> dict:
         # Docling does this exactly once on this corpus and Unstructured does
         # it repeatedly, and neither would show up as an error at all if the
         # grader only asked whether the page's characters came back.
-        elsewhere = (substr_match(want, lines) if is_multiword(want, space_thousands)
-                     else token_match(want, all_toks))
+        elsewhere = bool(scope_lines) and occ.peek(
+            want, page, is_multiword(want, space_thousands))
         mine = (want.lower(), nocomma(want.lower()), canon(want))
         others = {c for c in claimed if c not in mine}
         other_texts = [v for v in every if v.lower() not in mine]
         if elsewhere and scope_lines:
             fields[name] = {"printed": want, "status": "MISPLACED",
                             "got": want, "distance": 0}
+            return
+        # Present, but only as an occurrence another field already took. The
+        # value is on the page once and two fields share it; one was credited.
+        # This field is missing a copy, not misread: without this, the
+        # look-alike search below found the taken occurrence itself and scored
+        # CORRUPT with `got` equal to `printed`, as in "read as '37' (printed
+        # '37')", and reconcile.py then counted a failure that never happened.
+        multiword = is_multiword(want, space_thousands)
+        # One line at a time, as take_token joins: a regrouped number is read
+        # from neighboring tokens on one line, never across a line break.
+        present = (substr_match(want, lines) if multiword
+                   else any(token_match(want, tokens_of(ln)) for ln in lines))
+        if present:
+            fields[name] = {"printed": want, "status": "ABSENT", "got": None,
+                            "distance": None,
+                            "note": "its only copy credited another field"}
             return
         status, cand, dist = classify_miss(want, toks or all_toks, sl or lines,
                                            others, bool(scope_lines),
@@ -632,14 +771,24 @@ def grade_page(truth: dict, text: str) -> dict:
         if status == "CORRUPT":
             fields[name]["typed"] = stays_in_alphabet(want, cand)
 
-    for f, want in printed.items():
-        grade(f, want, None)
-
     n_rows = len(rows)
     blocks = row_blocks(lines, rows, space_thousands)
+    spans = row_block_spans(lines, rows, space_thousands)
+    # The order decides who gets a shared occurrence, so the field whose
+    # location is known goes first: an anchored row's cells, graded inside
+    # the row's own lines; then the page's printed fields, matched anywhere;
+    # then the cells of rows whose anchor never appeared, which are graded
+    # against the whole page as row_blocks describes.
     for i, r in enumerate(rows):
-        for f, want in r["cells"].items():
-            grade(f"rows[{i}].{f}", want, blocks[i])
+        if spans[i]:
+            for f, want in r["cells"].items():
+                grade(f"rows[{i}].{f}", want, spans[i])
+    for f, want in printed.items():
+        grade(f, want, None)
+    for i, r in enumerate(rows):
+        if not spans[i]:
+            for f, want in r["cells"].items():
+                grade(f"rows[{i}].{f}", want, None)
 
     ok = sum(1 for v in fields.values() if v["status"] == "OK")
     corrupt = sum(1 for v in fields.values() if v["status"] == "CORRUPT")
@@ -658,7 +807,16 @@ def grade_page(truth: dict, text: str) -> dict:
     }
 
 
-def summarize(pages: list[dict]) -> dict:
+def summarize(pages: list[dict], errored_fields: int = 0) -> dict:
+    """`errored_fields` is the field count of the pages this parser raised on.
+
+    Both recovery figures are reported:
+    `recovery` over the pages the parser returned, and
+    `recovery_including_errors`, which counts every field of an errored page as
+    not recovered. A crash is a real failure of the parser and a different one
+    from a misread; the first figure says how well it reads, the second how
+    much of the corpus a pipeline would actually get back.
+    """
     n = sum(p["n_fields"] for p in pages)
     ok = sum(p["ok"] for p in pages)
     corrupt = sum(p["corrupt"] for p in pages)
@@ -666,30 +824,49 @@ def summarize(pages: list[dict]) -> dict:
     misplaced = sum(p["misplaced"] for p in pages)
     typed = sum(p["corrupt_typed"] for p in pages)
     miss = corrupt + absent + misplaced
-    # Quiet = type-valid corrupt + misplaced, and both terms are arguments.
+    # Silent = type-valid corrupt + misplaced, and both terms are arguments.
     #
     # MISPLACED, because a value with perfect characters sitting in another
     # row is present, well formed and wrong, and no OCR metric sees it.
     #
-    # TYPE-VALID, because the rest of the CORRUPT bucket is not quiet at all.
+    # TYPE-VALID, because the rest of the CORRUPT bucket is not silent at all.
     # A quantity returned as "#" is a same-length look-alike and is counted
     # CORRUPT, but int("#") raises and the error announces itself. Counting it
-    # quiet inflated exactly the number this exercise exists to report. The
+    # silent inflated exactly the number this exercise exists to report. The
     # split is in stays_in_alphabet().
     #
     # ABSENT produces a hole, which anything downstream can see. Whether a
-    # given quiet error then survives an arithmetic cross-check is a question
-    # about a whole payload and is deliberately not answered here.
+    # given silent error then survives an arithmetic cross-check is a question
+    # about a whole payload and is not answered here.
     return {
         "pages": len(pages), "fields": n, "ok": ok,
         "corrupt": corrupt, "absent": absent, "misplaced": misplaced,
         "corrupt_typed": typed, "corrupt_junk": corrupt - typed,
         "recovery": round(ok / n, 4) if n else 0.0,
+        "fields_on_errored_pages": errored_fields,
+        "recovery_including_errors": (round(ok / (n + errored_fields), 4)
+                                      if n + errored_fields else 0.0),
         "quiet_fraction_of_misses": (round((typed + misplaced) / miss, 4)
                                      if miss else None),
         "rows_anchored": sum(p["rows_anchored"] for p in pages),
         "rows": sum(p["n_rows"] for p in pages),
     }
+
+
+def format_row(name: str, dpi, s: dict) -> str:
+    """One line of the score table, as main() prints it.
+
+    A function rather than an inline print so that check_readme_numbers.py
+    can hold SAMPLE_RUN.md's captured table to exactly this layout.
+    """
+    q = ("   -" if s["quiet_fraction_of_misses"] is None
+         else f"{s['quiet_fraction_of_misses'] * 100:6.0f}%")
+    return (f"{name:<16}{dpi:>5}{s['fields']:>8}"
+            f"{(100 * s['ok'] / s['fields'] if s['fields'] else 0.0):10.1f}%"
+            f"{s['absent']:>8}{s['corrupt']:>9}"
+            f"{s['corrupt_typed']:>7}{s['misplaced']:>9}{q:>8}"
+            f"{s['rows_anchored']:>6}/{s['rows']:<3}"
+            f"{s['seconds_per_page']:>8.1f}")
 
 
 def main() -> int:
@@ -736,20 +913,31 @@ def main() -> int:
 
         by_dpi: dict[int, list[dict]] = {}
         secs: dict[int, list[float]] = {}
+        errored: dict[int, int] = {}
         for rec in man["records"]:
             if rec.get("error"):
+                truth = truths[rec["doc_id"]]
+                errored[rec["dpi"]] = errored.get(rec["dpi"], 0) + (
+                    len(truth["printed"])
+                    + sum(len(r["cells"]) for r in truth.get("rows", [])))
                 continue
             text = (d / rec["text_file"]).read_text()
             g = grade_page(truths[rec["doc_id"]], text)
             g["dpi"] = rec["dpi"]
             by_dpi.setdefault(rec["dpi"], []).append(g)
             secs.setdefault(rec["dpi"], []).append(rec["seconds"])
+        # A resolution this parser raised on for EVERY page still has fields
+        # it failed to return, and must still appear in the second figure.
+        for k in errored:
+            by_dpi.setdefault(k, [])
+            secs.setdefault(k, [])
         report[d.name] = {
             "version": man["version"], "source": man["source"],
             "errors": [r for r in man["records"] if r.get("error")],
-            "by_dpi": {str(k): {**summarize(v),
-                                "seconds_per_page": round(
-                                    sum(secs[k]) / len(secs[k]), 2)}
+            "by_dpi": {str(k): {**summarize(v, errored.get(k, 0)),
+                                "seconds_per_page": (round(
+                                    sum(secs[k]) / len(secs[k]), 2)
+                                    if secs[k] else 0.0)}
                        for k, v in sorted(by_dpi.items())},
             "pages": {f"{g['doc_id']}_{g['dpi']}": g
                       for v in by_dpi.values() for g in v},
@@ -762,17 +950,14 @@ def main() -> int:
     print("-" * len(hdr))
     for name, r in report.items():
         for dpi, s in r["by_dpi"].items():
-            q = ("   -" if s["quiet_fraction_of_misses"] is None
-                 else f"{s['quiet_fraction_of_misses'] * 100:6.0f}%")
-            print(f"{name:<16}{dpi:>5}{s['fields']:>8}"
-                  f"{s['ok'] / s['fields'] * 100:10.1f}%"
-                  f"{s['absent']:>8}{s['corrupt']:>9}"
-                  f"{s['corrupt_typed']:>7}{s['misplaced']:>9}{q:>8}"
-                  f"{s['rows_anchored']:>6}/{s['rows']:<3}"
-                  f"{s['seconds_per_page']:>8.1f}")
+            print(format_row(name, dpi, s))
         if r["errors"]:
             print(f"{name:<16}  {len(r['errors'])} page(s) failed outright: "
                   f"{r['errors'][0]['error'].splitlines()[0][:60]}")
+            for dpi, s in r["by_dpi"].items():
+                print(f"{name:<16}{dpi:>5}  recovered counting those pages' "
+                      f"{s['fields_on_errored_pages']} fields as not "
+                      f"recovered: {s['recovery_including_errors'] * 100:.1f}%")
     for name, n in dead.items():
         print(f"{name:<16}  NOT GRADED: {n} page(s) ran without raising and "
               f"returned no text at all. A run that produces nothing is a "

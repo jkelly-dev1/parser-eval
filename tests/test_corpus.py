@@ -139,7 +139,7 @@ def test_every_published_field_verdict_regenerates(corpus, tool):
     """The counts are a summary and the verdicts are the evidence.
 
     Two graders can agree on how many values were CORRUPT and disagree about
-    WHICH ONES, and the per-field map is what the quiet-failure argument is
+    WHICH ONES, and the per-field map is what the silent-failure argument is
     actually built on. "Docling put 56 character-perfect values in the wrong
     row" is a claim about identity, not about a count. scores.json ships the
     map, so it is compared.
@@ -169,6 +169,24 @@ def test_the_corpus_is_six_pages_and_425_labeled_values():
     assert total == 425, f"corpus holds {total} labeled values, prose says 425"
 
 
+def test_every_published_percentage_is_computed_from_the_counts(monkeypatch):
+    """scores.json stores `recovery` rounded to four places, and a percentage
+    printed from the rounded ratio can differ from one printed from the
+    counts: 313 of 425 is 73.647%, but 100 * 0.7365 prints as 73.7. score.py
+    prints the counts, so the figures checker must too, at every call site."""
+    import check_readme_numbers as crn
+    b = {"ok": 313, "fields": 425, "recovery": round(313 / 425, 4),
+         "seconds_per_page": 1.0}
+    assert "%.1f" % (100.0 * b["recovery"]) == "73.7"
+    assert "%.1f" % crn.recovered(b) == "73.6"
+    fake = {t: {"by_dpi": {crn.DPI: b}} for t in crn.TOOLS}
+    monkeypatch.setattr(crn, "load", lambda name: fake)
+    (_, _, row), _ = crn.rows_corpus()
+    assert "73.6%" in row and "73.7%" not in row, row
+    src = (ROOT / "check_readme_numbers.py").read_text()
+    assert '["recovery"]' not in src, "a figure is printed from the rounded ratio"
+
+
 def test_the_documented_suite_size_is_the_collected_count():
     """README.md and SAMPLE_RUN.md both state how many tests the suite has,
     and SAMPLE_RUN.md shows the run that printed it. The count is collected
@@ -188,4 +206,34 @@ def test_the_documented_suite_size_is_the_collected_count():
     sample = (ROOT / "SAMPLE_RUN.md").read_text()
     assert f"The suite is {n} tests," in readme
     assert f"The suite is {n} tests," in sample
+    # The figures checker names the count as the one it does not derive.
+    checker = (ROOT / "check_readme_numbers.py").read_text()
+    assert f"README.md states it as {n}." in checker
     assert re.search(rf"^{n} passed in [\d.]+s$", sample, re.M)
+
+
+@pytest.mark.parametrize("corpus,tool", CORPUS_TOOLS)
+def test_every_graded_page_is_in_the_stored_scores(corpus, tool):
+    """The regeneration test compares the pages scores.json holds, so a page
+    deleted from it would drop out of that comparison unnoticed. The stored
+    pages must be exactly the manifest's successful ones."""
+    stored = json.loads((ROOT / corpus / "scores.json").read_text())[tool]
+    manifest = json.loads(
+        (ROOT / corpus / tool / "manifest.json").read_text())
+    expected = {f"{r['doc_id']}_{r['dpi']}" for r in manifest["records"]
+                if not r.get("error")}
+    assert set(stored["pages"]) == expected
+
+
+@pytest.mark.parametrize("corpus,tool", CORPUS_TOOLS)
+def test_the_per_dpi_totals_are_the_sum_of_their_pages(corpus, tool):
+    """The tables quote by_dpi, and nothing else recomputed it from the
+    pages, so an edited recovery figure passed every other test."""
+    stored = json.loads((ROOT / corpus / "scores.json").read_text())[tool]
+    for dpi, b in stored["by_dpi"].items():
+        pages = [p for k, p in stored["pages"].items()
+                 if k.endswith(f"_{dpi}")]
+        assert b["pages"] == len(pages), dpi
+        assert b["fields"] == sum(p["n_fields"] for p in pages), dpi
+        assert b["ok"] == sum(p["ok"] for p in pages), dpi
+        assert b["recovery"] == round(b["ok"] / b["fields"], 4), dpi

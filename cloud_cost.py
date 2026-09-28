@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -44,17 +45,22 @@ PRICES_VERIFIED = "2026-08-11"
 
 
 def price_for(model: str) -> tuple[float, float] | None:
-    """Exact match first, then the longest prefix that matches.
+    """Exact match first, then a priced id followed only by a date.
 
-    Responses come back with a dated id, "gpt-5.6-sol-2026-xx-xx", and a
-    lookup that only did exact matches would silently price those at zero. A
+    Responses come back with a dated id, "claude-opus-5-20260101", and a
+    lookup that only did exact matches would silently price those at zero. The
+    remainder must be a date and nothing else: a bare prefix match priced
+    "gpt-5.4-mini" as "gpt-5.4" and "claude-opus-50" as "claude-opus-5". A
     model with no entry returns None and is REPORTED AS UNPRICED rather than
     counted as free.
     """
     if model in PRICES:
         return PRICES[model]
-    hits = [k for k in PRICES if model.startswith(k)]
-    return PRICES[max(hits, key=len)] if hits else None
+    for k in sorted(PRICES, key=len, reverse=True):
+        if (model.startswith(k)
+                and re.fullmatch(r"-\d{4}-?\d{2}-?\d{2}", model[len(k):])):
+            return PRICES[k]
+    return None
 
 
 def report(out_dir: Path) -> dict | None:
@@ -63,7 +69,15 @@ def report(out_dir: Path) -> dict | None:
         return None
     rows = json.loads(usage_file.read_text())
     if not rows:
-        return None
+        # A run in which every page failed before its usage was recorded.
+        # Omitting it would make the total look complete; it is reported,
+        # and main() fails the exit code on it.
+        print(f"\n{out_dir}")
+        print("  EMPTY: usage.json holds no records, so this run's cost is "
+              "unknown and is not in any total below")
+        return {"dir": str(out_dir), "pages": 0, "input_tokens": 0,
+                "output_tokens": 0, "cost_usd": 0.0, "unpriced": [],
+                "empty": True}
 
     total_in = total_out = 0.0
     cost = 0.0
@@ -87,7 +101,8 @@ def report(out_dir: Path) -> dict | None:
     print(f"  per page: {int(total_in / n):>6} in {int(total_out / n):>6} out"
           f"   ${cost / n:.4f}")
     for m in sorted(unpriced):
-        print(f"  WARNING: no price on file for {m!r}; counted as $0.00")
+        print(f"  WARNING: no price on file for {m!r}; its pages are not in "
+              f"the cost above")
     return {"dir": str(out_dir), "pages": n, "input_tokens": int(total_in),
             "output_tokens": int(total_out), "cost_usd": round(cost, 4),
             "unpriced": sorted(unpriced)}
@@ -110,7 +125,10 @@ def main() -> int:
     if len(totals) > 1:
         grand = sum(t["cost_usd"] for t in totals)
         print(f"\n{'=' * 49}\n  ALL RUNS: ${grand:.4f}")
-    return 0
+    # An unpriced run, or one with no usage records at all, makes every total
+    # above an undercount, so the exit code says so and a CI step running this
+    # can fail on it.
+    return 1 if any(t["unpriced"] or t.get("empty") for t in totals) else 0
 
 
 if __name__ == "__main__":

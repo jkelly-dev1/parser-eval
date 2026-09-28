@@ -6,12 +6,12 @@
 This is a paid run. Every page is one API call. Cost is reported per page from
 the response's own usage figures by cloud_cost.py; nothing here estimates.
 
-Why Opus 5 and not sonnet. The pair is price-matched on purpose: claude-opus-5
-at $5/$25 per million tokens against gpt-5.6-sol at $5/$30: identical input
-price, 20% apart on output. Running a cheaper model on one side and the
-flagship on the other would make the cost column meaningless. Sonnet 5 is the
-interesting third run and it is not this one. The prices, and the date they
-were verified, are in cloud_cost.py.
+Why Opus 5 and not sonnet. The pair is price-matched: claude-opus-5 at $5/$25
+per million tokens against gpt-5.6-sol at $5/$30: identical input price, 20%
+apart on output. Running a cheaper model on one side and the flagship on the
+other would make the cost column meaningless. Sonnet 5 is the interesting third
+run and it is not this one. The prices, and the date they were verified, are in
+cloud_cost.py.
 
 Effort is medium, and it is a choice that costs money. Thinking tokens bill as
 output. Low would be cheaper and would understate what the model can do on the
@@ -28,7 +28,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from cloud import PROMPT, _api_key, b64, drive, page_bytes, record  # noqa: E402
+from cloud import PROMPT, _api_key, b64, drive, finish, page_bytes  # noqa: E402
 
 MODEL = "claude-opus-5"
 EFFORT = "medium"
@@ -65,17 +65,16 @@ def extract(job) -> str:
             ],
         }],
     )
-    # A refusal is not a transcription and must not be graded as one. Checking
-    # stop_reason before touching content is the documented order: a refusal
-    # returns HTTP 200 with empty or partial content, so scoring it would
-    # report a declined request as a 0% page.
-    if resp.stop_reason == "refusal":
-        raise RuntimeError(
-            f"refusal: {getattr(resp.stop_details, 'category', None)}")
+    # A refusal returns HTTP 200 with empty or partial content, and a
+    # max_tokens stop is a page cut off mid-transcription; cloud.finish()
+    # records the usage and refuses both.
     text = "".join(b.text for b in resp.content if b.type == "text")
-    record(job, resp.model, resp.usage.input_tokens, resp.usage.output_tokens,
-           resp.stop_reason)
-    return text
+    return finish(job, resp.model, resp.usage.input_tokens,
+                  resp.usage.output_tokens, resp.stop_reason, text,
+                  refused=resp.stop_reason == "refusal",
+                  truncated=resp.stop_reason == "max_tokens",
+                  detail=getattr(getattr(resp, "stop_details", None),
+                                 "category", None))
 
 
 if __name__ == "__main__":

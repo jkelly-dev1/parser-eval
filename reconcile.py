@@ -5,7 +5,7 @@
 
 This is the question a payload-only check cannot answer; score.py splits a
 parser's misses into ABSENT (a hole, loud) and CORRUPT (a same-shape
-look-alike, quiet). But "quiet" there means quiet to a reader comparing text.
+look-alike, silent). But "silent" there means silent to a reader comparing text.
 The check that actually runs in production is arithmetic: something downstream
 adds up the line items and compares them with the printed total. So for every
 corrupted value, there is a further question:
@@ -52,7 +52,7 @@ def num(s: str) -> float:
     1956 income statement writes its deductions, but a balance sheet that
     prints both signs in the same column cannot be rearranged into one.
 
-    The test is deliberately narrow, and the counter-examples are already in
+    The test is narrow, and the counter-examples are already in
     the corpus. Note 4 of the 1956 income statement states two amounts inside
     prose parentheses, "($1,157,700,000)" and "($657,500,000)", and the 1956
     balance sheet states a third, "($2,562,146)". All three are positive
@@ -101,7 +101,7 @@ def cell_lookup(truth: dict) -> dict[str, tuple[int, str]]:
     unique: the FDIC earnings table prints "All other", "Recoveries" and
     "Transfers to reserve accounts" TWICE each, once under securities and once
     under loans. Building this map from anchors alone let the second row
-    quietly overwrite the first, so a sum naming "All other.us" resolved to
+    silently overwrite the first, so a sum naming "All other.us" resolved to
     whichever row was labeled last and checked the wrong cell, while reporting
     HOLDS. `key` disambiguates those rows for reference purposes only;
     score.py still matches parser output on `anchor`, which is what the page
@@ -143,13 +143,13 @@ def tolerance_of(spec: dict) -> float:
     and inconsistent in the thousands it prints. Refusing a tolerance there
     does not buy strictness, it just throws away 36 checks.
 
-    What the tolerance costs, stated plainly: a sum with tolerance 5 cannot
-    see an error smaller than 5. A parser that reads 10,008 as 10,003 passes
-    it. Most misreads are not that kind, they hit a leading digit, drop a
-    digit, or merge two cells, and move the sum by thousands, but "verified
-    by arithmetic" means something weaker for these sums than for the exact
-    ones, and any write-up must say so. On the earnings page the exact claim
-    belongs to the 33 row identities instead, which close to the unit.
+    What the tolerance costs: a sum with tolerance 5 cannot see an error
+    smaller than 5. A parser that reads 10,008 as 10,003 passes it. Most
+    misreads are not that kind, they hit a leading digit, drop a digit, or
+    merge two cells, and move the sum by thousands, but "verified by
+    arithmetic" means something weaker for these sums than for the exact ones,
+    and any write-up must say so. On the earnings page the exact claim belongs
+    to the 33 row identities instead, which close to the unit.
     """
     return float(spec.get("tolerance", 0.005))
 
@@ -291,8 +291,8 @@ def check_sums(truth: dict, fields: dict | None) -> list[dict]:
 
         A sum may name a table cell ("Capital.y2016") or a scalar field on the
         page ("beginning_balance"). The bank statement's summary block is the
-        second kind: it is not a table, it is six labeled amounts that must
-        add up to a seventh.
+        second kind: six labeled amounts, not a table, that must add up to a
+        seventh.
         """
         if key in lut:
             i, name = lut[key]
@@ -309,7 +309,7 @@ def check_sums(truth: dict, fields: dict | None) -> list[dict]:
         # the remainder back to the deduction) because a - b = c rearranges to
         # c + b = a, which has one term on the right and fits `equals`.
         #
-        # That rearrangement runs out at four terms. Table 114's bottom line is
+        # That rearrangement runs out at four terms. Table 114's last line is
         # net current operating earnings plus recoveries minus losses equals
         # net profits before income taxes. Every rearrangement of it leaves two
         # terms on one side, and no field on the page holds their subtotal, so
@@ -429,11 +429,11 @@ def check_sums(truth: dict, fields: dict | None) -> list[dict]:
                 # terms are blank and the fourth must equal the total. The
                 # checker reported 62 rules where the page asserts 69 and said
                 # nothing about the 7 it dropped, which is the failure this
-                # project keeps meeting: a check that quietly declines.
+                # project keeps meeting: a check that silently declines.
                 #
                 # `equals` MUST be present, with no total there is nothing to
                 # check against, and at least one term must be present, so a
-                # wholly blank row is skipped rather than asserting 0 = 0.
+                # wholly blank row is skipped instead of asserting 0 = 0.
                 if spec["equals"] not in r["cells"]:
                     continue
                 have = [c for c in spec["of"] if c in r["cells"]]
@@ -508,6 +508,15 @@ def check_sums(truth: dict, fields: dict | None) -> list[dict]:
     return out
 
 
+def format_counts(parser: str, c: dict, doc: str | None = None) -> str:
+    """One line of the per-page table (with doc) or the cross-page table
+    (without), as main() prints it, so check_readme_numbers.py can hold
+    SAMPLE_RUN.md's captured blocks to exactly this layout."""
+    page = f"{doc:<14}" if doc is not None else ""
+    return (f"{parser:<14}{page}{c['HOLDS']:>7}{c['SURVIVES']:>10}"
+            f"{c['BROKEN']:>8}{c['INCOMPLETE']:>12}")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--corpus", type=Path, default=HERE / "real" / "pages")
@@ -566,8 +575,7 @@ def main() -> int:
             c = {k: sum(1 for x in res if x["status"] == k)
                  for k in ("HOLDS", "SURVIVES", "BROKEN", "INCOMPLETE")}
             report.setdefault(parser, {})[doc] = {"counts": c, "detail": res}
-            print(f"{parser:<14}{doc:<14}{c['HOLDS']:>7}{c['SURVIVES']:>10}"
-                  f"{c['BROKEN']:>8}{c['INCOMPLETE']:>12}")
+            print(format_counts(parser, c, doc))
             if args.verbose:
                 for x in res:
                     if x["status"] != "HOLDS":
@@ -595,8 +603,7 @@ def main() -> int:
              for k in ("HOLDS", "SURVIVES", "BROKEN", "INCOMPLETE")}
         report.setdefault(parser, {})["cross_page"] = {"counts": c,
                                                        "detail": res}
-        print(f"{parser:<14}{c['HOLDS']:>7}{c['SURVIVES']:>10}"
-              f"{c['BROKEN']:>8}{c['INCOMPLETE']:>12}")
+        print(format_counts(parser, c))
         if args.verbose:
             for x in res:
                 if x["status"] != "HOLDS":

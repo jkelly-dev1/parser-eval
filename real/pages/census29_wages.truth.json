@@ -3,7 +3,7 @@
   "source": "Sample_Documents/RG29-2790961-2926-1929-504-00025.jpg (1929 Census of Manufactures schedule, sheet 2; NARA catalog 50607213, 'Texas: Industry No. 504 - Steel Engraving'; Use and Access both Unrestricted)",
   "kind": "scanned",
   "text_layer": "none",
-  "labeling": "Hand-labeled by reading the 300 DPI render at magnification. THE HANDWRITTEN ENTRIES ARE THE POINT: every value below except the printed form labels was written by hand in 1929, in ink and pencil, by more than one person. THE LABELS ARE CHECKED BY THE FORM'S OWN ARITHMETIC -- seven sums the sheet asserts about itself, including one written by a clerk in the margin. Values are labeled WITHOUT thousands separators because the writer did not use them: the sheet reads 14500, not 14,500.",
+  "labeling": "Hand-labeled by reading the 300 DPI render at magnification. THE HANDWRITTEN ENTRIES ARE THE POINT: every value below except the printed form labels was written by hand in 1929, in ink and pencil, by more than one person. THE LABELS ARE CHECKED BY THE FORM'S OWN ARITHMETIC -- six sums the sheet asserts about itself, including one written by a clerk in the margin. Values are labeled WITHOUT thousands separators because the writer did not use them: the sheet reads 14500, not 14,500.",
   "printed": {
     "form_item_5": "PERSONS ENGAGED",
     "form_item_7": "SALARIES AND WAGES",
@@ -52,7 +52,7 @@
   },
   "rows": [],
   "reconciliation": {
-    "note": "Seven relationships the sheet asserts about itself, all in handwriting. Two are worth singling out. The monthly employment check multiplies out to a figure a clerk pencilled into a box (132 = twelve months at 11), and the 9750 beside the salary aggregate is that same clerk adding the two salaried lines. SO THE ANNOTATIONS ARE CHECKABLE TOO, which is unusual: a marginal note written by a second hand in 1929 verifies the labels taken from the first.",
+    "note": "Six relationships the sheet asserts about itself, all in handwriting. Two are worth singling out. The monthly employment check multiplies out to a figure a clerk pencilled into a box (132 = twelve months at 11), and the 9750 beside the salary aggregate is that same clerk adding the two salaried lines. SO THE ANNOTATIONS ARE CHECKABLE TOO, which is unusual: a marginal note written by a second hand in 1929 verifies the labels taken from the first.",
     "sums": [
       {
         "name": "salaried_male",

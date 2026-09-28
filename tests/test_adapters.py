@@ -95,3 +95,108 @@ def test_every_shipped_manifest_totals_its_own_records():
         m = json.loads(path.read_text())
         total = round(sum(r["seconds"] for r in m["records"]), 2)
         assert m["total_seconds"] == pytest.approx(total), path
+
+
+def test_both_hosted_adapters_record_usage_then_refuse_a_stop_that_is_not_a_page():
+    """One output handler for both providers. A refused or truncated page was
+    billed, so its usage is recorded before the page is refused."""
+    import cloud
+    cloud.USAGE.clear()
+    job = {"doc_id": "d", "dpi": 300}
+    assert cloud.finish(job, "m", 10, 5, "end_turn", "text",
+                        refused=False, truncated=False) == "text"
+    with pytest.raises(RuntimeError, match="refusal"):
+        cloud.finish(job, "m", 11, 0, "refusal", "", refused=True,
+                     truncated=False)
+    with pytest.raises(RuntimeError, match="truncated"):
+        cloud.finish(job, "m", 12, 99, "max_tokens", "half a pa",
+                     refused=False, truncated=True)
+    assert [u["input_tokens"] for u in cloud.USAGE] == [10, 11, 12]
+    cloud.USAGE.clear()
+
+
+def test_a_partial_rerun_merges_usage_instead_of_erasing_it(tmp_path):
+    """A --only run covers one page; the cost of the others must survive."""
+    import cloud
+    path = tmp_path / "usage.json"
+    old = [{"doc_id": "a", "dpi": 300, "input_tokens": 1},
+           {"doc_id": "b", "dpi": 300, "input_tokens": 2}]
+    path.write_text(json.dumps(old))
+    merged = cloud.merge_usage(path, [{"doc_id": "b", "dpi": 300,
+                                       "input_tokens": 5}])
+    assert [(r["doc_id"], r["input_tokens"]) for r in merged] == [("a", 1),
+                                                                  ("b", 5)]
+    path.write_text(json.dumps({"rows": old}))
+    with pytest.raises(ValueError, match="list of usage rows"):
+        cloud.merge_usage(path, [])
+
+
+def test_the_driver_writes_the_merged_usage_and_returns_the_run_exit_code(
+        tmp_path, monkeypatch):
+    """drive() is what run_claude and run_gpt call: its exit code is the
+    run's, and the usage it writes keeps the pages this run did not cover."""
+    import argparse
+    import cloud
+    (tmp_path / "usage.json").write_text(json.dumps(
+        [{"doc_id": "a", "dpi": 300, "input_tokens": 1, "output_tokens": 1}]))
+
+    def run(parser_name, version, extract, *, source):
+        assert source == "png"
+        cloud.USAGE.append({"doc_id": "b", "dpi": 300, "input_tokens": 2,
+                            "output_tokens": 2})
+        return 1
+    monkeypatch.setattr(cloud, "parse_args",
+                        lambda name: argparse.Namespace(out=tmp_path))
+    monkeypatch.setattr(cloud, "run", run)
+    cloud.USAGE.clear()
+    assert cloud.drive("claude", "v", None) == 1
+    rows = json.loads((tmp_path / "usage.json").read_text())
+    assert [r["doc_id"] for r in rows] == ["a", "b"]
+    cloud.USAGE.clear()
+
+
+def test_the_claude_adapter_refuses_a_page_cut_off_by_the_token_limit(monkeypatch):
+    """max_tokens is a truncated page, as GPT's `incomplete` is."""
+    import types
+    import cloud
+    import run_claude             # anthropic is imported only inside client()
+    resp = types.SimpleNamespace(
+        stop_reason="max_tokens", model="claude-opus-5",
+        usage=types.SimpleNamespace(input_tokens=7, output_tokens=8),
+        content=[types.SimpleNamespace(type="text", text="half")],
+        stop_details=None)
+    fake = types.SimpleNamespace(messages=types.SimpleNamespace(
+        create=lambda **k: resp))
+    monkeypatch.setattr(run_claude, "client", lambda: fake)
+    monkeypatch.setattr(run_claude, "page_bytes", lambda job: b"png")
+    cloud.USAGE.clear()
+    with pytest.raises(RuntimeError, match="truncated"):
+        run_claude.extract({"doc_id": "d", "dpi": 300})
+    assert cloud.USAGE[-1]["output_tokens"] == 8
+    cloud.USAGE.clear()
+
+
+def test_the_gpt_adapter_records_a_truncated_page_then_refuses_it(monkeypatch):
+    import types
+    import cloud
+    import run_gpt                # openai is imported only inside client()
+    resp = types.SimpleNamespace(
+        status="incomplete", model="gpt-5.6-sol", output_text="half",
+        usage=types.SimpleNamespace(input_tokens=3, output_tokens=4),
+        incomplete_details="max_output_tokens")
+    fake = types.SimpleNamespace(responses=types.SimpleNamespace(
+        create=lambda **k: resp))
+    monkeypatch.setattr(run_gpt, "client", lambda: fake)
+    monkeypatch.setattr(run_gpt, "page_bytes", lambda job: b"png")
+    cloud.USAGE.clear()
+    with pytest.raises(RuntimeError, match="truncated"):
+        run_gpt.extract({"doc_id": "d", "dpi": 300})
+    assert cloud.USAGE[-1]["input_tokens"] == 3
+    cloud.USAGE.clear()
+
+
+def test_a_run_in_which_every_page_failed_exits_non_zero(tmp_path, monkeypatch):
+    """One failed page leaves the run at 0; a run with nothing to grade is 1."""
+    def extract(job):
+        raise RuntimeError("nothing works")
+    assert _run(monkeypatch, _corpus(tmp_path), tmp_path / "out", extract) == 1

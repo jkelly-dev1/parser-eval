@@ -22,7 +22,7 @@ Manifest format. A list of objects, each naming one page:
 directory as well as the document.
 
 Why so few pages. Ground truth for a real document has to be hand-labeled, and
-hand-labeling is where an evaluation quietly becomes fiction: label 200 pages
+hand-labeling is where an evaluation silently becomes fiction: label 200 pages
 carelessly and the error bars belong to the labeler rather than to the parser.
 A handful of pages labeled by reading them character for character is a small,
 honest sample.
@@ -32,7 +32,7 @@ What a good corpus needs, learned from the first one:
     without it the comparison collapses into "everything works".
   - Internal arithmetic. Pages whose figures must sum to a printed total let
     the labels be VERIFIED before any parser is graded, and the same sums then
-    become the loud-versus-quiet test.
+    become the loud-versus-silent test.
   - a born-digital page with a text layer, to measure what a parser loses by
     rasterizing a page it could have read directly.
   - a dense multi-column table, which is where low resolution does its damage.

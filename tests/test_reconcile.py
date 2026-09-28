@@ -99,7 +99,7 @@ def test_no_rule_fails_identically_for_every_parser():
     """The signature of a checker defect, asserted rather than described.
 
     FINDINGS section 8: "A single sign convention read two ways manufactures
-    quiet failures that never happened, across every tool at once, and the
+    silent failures that never happened, across every tool at once, and the
     only tell is that all seven fail one field identically." Seven independent
     tools do not agree on a mistake. When they do, the checker made it.
     """
@@ -250,3 +250,28 @@ def test_a_broken_label_set_makes_the_label_check_exit_non_zero(
     monkeypatch.setattr(reconcile, "check_sums", one_broken)
     assert reconcile.main() == 2
     assert "REFUSING TO GRADE" in capsys.readouterr().out
+
+
+def test_an_unparseable_value_makes_its_rule_incomplete_and_the_run_goes_on():
+    """The claim the num() test above only half makes: an unparseable figure,
+    as a term or as the target, fails ONE rule as INCOMPLETE, and the other
+    rules on the page are still evaluated."""
+    truth = {
+        "doc_id": "synthetic",
+        "printed": {"a": "100.00", "b": "50.00", "total": "150.00",
+                    "c": "10", "d": "20", "cd": "30"},
+        "rows": [],
+        "reconciliation": {"sums": [
+            {"name": "t", "of": ["a", "b"], "equals": "total"},
+            {"name": "u", "of": ["c", "d"], "equals": "cd"}]},
+    }
+    ok = {k: {"status": "OK", "printed": v}
+          for k, v in truth["printed"].items()}
+    as_term = dict(ok, a={"status": "CORRUPT", "got": "11311-",
+                          "printed": "100.00"})
+    assert [r["status"] for r in reconcile.check_sums(truth, as_term)] == [
+        "INCOMPLETE", "HOLDS"]
+    as_target = dict(ok, total={"status": "CORRUPT", "got": "11311-",
+                                "printed": "150.00"})
+    assert [r["status"] for r in reconcile.check_sums(truth, as_target)] == [
+        "INCOMPLETE", "HOLDS"]

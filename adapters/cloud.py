@@ -47,7 +47,7 @@ from common import parse_args, run                              # noqa: E402
 LONG_EDGE = 2576
 
 # The one instruction, verbatim. It asks for a transcription and not an
-# extraction on purpose: score.py grades whether the values printed on the page
+# extraction: score.py grades whether the values printed on the page
 # came back as text, which is exactly what it asks the four local parsers. A
 # prompt naming the fields would be asking the models an easier question than
 # the parsers were asked, and the comparison would be worthless.
@@ -116,11 +116,49 @@ def record(job: dict, model: str, in_tok: int, out_tok: int,
     })
 
 
+def finish(job: dict, model: str, in_tok: int, out_tok: int, stop: str | None,
+           text: str, *, refused: bool, truncated: bool, detail=None) -> str:
+    """The output handling both adapters share, in one place.
+
+    Usage is recorded FIRST: a refused or truncated page was still billed, and
+    leaving it out of usage.json would under-report the cost. Then a refusal
+    or a truncation raises, because neither is a transcription: grading a
+    declined request or a page cut off by the token limit would report the
+    provider's stop condition as a parser's accuracy.
+    """
+    record(job, model, in_tok, out_tok, stop)
+    if refused:
+        raise RuntimeError(f"refusal: {detail}")
+    if truncated:
+        raise RuntimeError(f"truncated ({stop}): {detail}")
+    return text
+
+
+def merge_usage(path: Path, new: list) -> list:
+    """This run's rows over the rows already on file, keyed by (doc_id, dpi).
+
+    A run limited with --only or --limit covers some pages; overwriting the
+    file would erase the cost of every other page, the same way the manifest
+    is merged rather than replaced.
+    """
+    rows = {}
+    if path.exists():
+        old = json.loads(path.read_text())
+        if not isinstance(old, list):
+            raise ValueError(f"{path}: expected a list of usage rows")
+        for r in old:
+            rows[(r["doc_id"], r["dpi"])] = r
+    for r in new:
+        rows[(r["doc_id"], r["dpi"])] = r
+    return [rows[k] for k in sorted(rows)]
+
+
 def drive(parser_name: str, version: str, extract) -> int:
-    """Run the corpus, then write usage.json beside the manifest."""
+    """Run the corpus, then merge this run's usage into usage.json."""
     args = parse_args(parser_name)          # same argv, same answer as run()
     rc = run(parser_name, version, extract, source="png")
-    (args.out / "usage.json").write_text(json.dumps(USAGE, indent=2) + "\n")
+    path = args.out / "usage.json"
+    path.write_text(json.dumps(merge_usage(path, USAGE), indent=2) + "\n")
     tot_in = sum(u["input_tokens"] for u in USAGE)
     tot_out = sum(u["output_tokens"] for u in USAGE)
     print(f"tokens: {tot_in} in, {tot_out} out over {len(USAGE)} page(s)"

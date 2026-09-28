@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Unstructured with the PDF/image extras into its own venv. Separate venv on
-# purpose: unstructured, docling and marker pin overlapping heavy dependencies
+# Unstructured with the PDF/image extras into its own venv. A separate venv,
+# because unstructured, docling and marker pin overlapping heavy dependencies
 # and a resolver conflict between two of them must not turn into "we could not
 # run the third".
 set -euo pipefail

@@ -13,12 +13,11 @@ concurrency:
 
 jobs:
   # This job installs pytest and nothing else. score.py, reconcile.py and
-  # cloud_cost.py are pure standard library on purpose: every published
-  # number except the two hosted columns can be re-derived by a reader with
-  # nothing but a Python interpreter and this repository. If that ever stops
-  # being true this job goes red, which is the signal that "you can check my
-  # arithmetic without installing 5.8 GB of virtualenvs" has quietly become
-  # false.
+  # cloud_cost.py are pure standard library: every published number except the
+  # two hosted columns can be re-derived by a reader with nothing but a Python
+  # interpreter and this repository. If that ever stops being true this job
+  # goes red, which is the signal that "you can check my arithmetic without
+  # installing 5.8 GB of virtualenvs" has silently become false.
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -36,8 +35,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       # pytest is the only install, and the only one there will ever be. The
-      # grader, the reconciler and the cost script are pure standard library
-      # on purpose. If this line ever needs a second package, the claim that a
+      # grader, the reconciler and the cost script are pure standard
+      # library. If this line ever needs a second package, the claim that a
       # reader can recheck the arithmetic with an interpreter and this
       # repository alone has stopped being true.
       - name: Install pytest only
@@ -53,9 +52,9 @@ jobs:
       # run between pages. The corpus was chosen for pages that carry
       # internal arithmetic, so the labels can be checked this way at all.
       #
-      # The result is asserted by grep rather than by exit code, because a
-      # checker that declines to run a rule and a checker that agrees with it
-      # both exit zero.
+      # The grep asserts that no label error was found. It counts documents,
+      # not rules, so a rule that silently stopped running is caught by the
+      # `git diff` on out_real/reconcile.json further down, not here.
       - name: Labels satisfy the documents' own arithmetic
         run: |
           python3 reconcile.py --corpus real/pages | tee /tmp/labels.txt
@@ -77,7 +76,8 @@ jobs:
 
       # Free, no key, no network: it reads the token counts already stored
       # beside the hosted runs. It fails if a stored usage record stops
-      # parsing, which is how a published dollar figure goes quietly missing.
+      # parsing or a usage.json holds no records, which is how a published
+      # dollar figure goes silently missing.
       - name: Cost re-computes from the stored token counts
         run: python3 cloud_cost.py --all
 
@@ -105,7 +105,7 @@ jobs:
       # BIT-FOR-BIT, not "close enough". pdftotext over a committed PDF is
       # deterministic, so the shipped textlayer output is exactly what a
       # reader regenerates. This is the one place the corpus, a parser and a
-      # committed result can be checked against each other end to end.
+      # committed result can be checked against each other through the whole pipeline.
       #
       # It writes to a temp directory rather than over out_real/textlayer, so
       # a failure leaves the evidence intact to be compared against.
@@ -114,7 +114,7 @@ jobs:
       # wall-clock seconds per page, which cannot be identical between two
       # runs and says nothing about whether the text came back right. Every
       # file that carries a measurement is compared. An exclusion without a
-      # reason beside it is how a check quietly stops checking.
+      # reason beside it is how a check silently stops checking.
       - name: The control reproduces its committed output exactly
         run: |
           python3 adapters/run_textlayer.py --corpus real/pages --out /tmp/textlayer
@@ -123,7 +123,7 @@ jobs:
       # A README is prose and drifts; out_real/*.json is evidence and does not.
       # This rebuilds each published figure from the JSON and requires the
       # exact string, so a re-run that shifts a number fails loudly rather than
-      # leaving the document quietly wrong. It reads all five summary
+      # leaving the document silently wrong. It reads all five summary
       # surfaces, not just the README, because the other four quote the same
       # artifacts.
       #

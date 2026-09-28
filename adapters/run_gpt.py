@@ -19,7 +19,7 @@ verified.
 
 Read the model page for modality, not the price table. The pricing page's own
 "Images" column was wrong about the GPT-5 family when this was written; it
-implied the model could not take image input, which it plainly can, since that
+implied the model could not take image input, which it can, since that
 is the whole of what this adapter does.
 """
 
@@ -29,7 +29,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from cloud import PROMPT, _api_key, b64, drive, page_bytes, record  # noqa: E402
+from cloud import PROMPT, _api_key, b64, drive, finish, page_bytes  # noqa: E402
 
 MODEL = "gpt-5.6-sol"
 EFFORT = "medium"
@@ -65,16 +65,14 @@ def extract(job) -> str:
             ],
         }],
     )
+    # An incomplete response is a page cut off by the output budget;
+    # cloud.finish() records the usage and refuses it.
     u = resp.usage
-    record(job, resp.model, u.input_tokens, u.output_tokens,
-           getattr(resp, "status", None))
-    # An incomplete response is a truncated page, not a bad parser. If the
-    # model ran out of output budget the transcription stops mid-page, and
-    # grading that as recovery would report a token limit as an accuracy
-    # finding. Raise so the record carries the error and score.py skips it.
-    if getattr(resp, "status", None) == "incomplete":
-        raise RuntimeError(f"incomplete: {getattr(resp, 'incomplete_details', None)}")
-    return resp.output_text
+    status = getattr(resp, "status", None)
+    return finish(job, resp.model, u.input_tokens, u.output_tokens, status,
+                  resp.output_text, refused=False,
+                  truncated=status == "incomplete",
+                  detail=getattr(resp, "incomplete_details", None))
 
 
 if __name__ == "__main__":

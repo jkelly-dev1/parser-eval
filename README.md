@@ -16,10 +16,10 @@ script.
 > are all present. A real-document corpus is not usable here because its
 > sources cannot be redistributed; this one ships with the code, and
 > `Sample_Documents/PROVENANCE.txt` states the basis for every document.
-> Nothing here has been reviewed by anyone but its author, and the numbers
-> below should be read with that in mind.
+> Nothing here has been reviewed by anyone but its author, so the numbers
+> below have had no check beyond the author's own.
 
-## What makes this different from a parser leaderboard
+## How this differs from a parser leaderboard
 
 A leaderboard reports accuracy. This grades every miss by how it fails:
 
@@ -39,7 +39,7 @@ same-shape look-alike and is loud the moment anything casts it.
 arithmetic: when a parser gets a figure wrong, does the error break a sum the
 document asserts about itself? Ground truth that checks itself is worth
 looking for; it verifies the labels before any parser is graded, and the same
-arithmetic then becomes the loud-versus-quiet test.
+arithmetic then becomes the loud-versus-silent test.
 
 ## Results on the real corpus
 
@@ -55,29 +55,29 @@ instead, so its cells can be credited without the row being found:
 deliberately: if the anchor is the thing that was misread, the cells beside it
 should still be able to score. But it cuts the way you would not want: a tool
 that loses row structure has fewer rows that CAN be scored strictly, and none
-of its values can be counted MISPLACED. The three tools that anchor every row
-are judged under the strict rule throughout.
+of its values can be counted MISPLACED. The one tool that anchors every row,
+GPT (75 of 75 at 300 DPI), is judged under the strict rule throughout.
 
 | page | fields | gpt | claude | marker | **textlayer** | unstructured | docling | tesseract |
 |---|---|---|---|---|---|---|---|---|
-| fdic2023_balance * | 65 | 100.0% | 100.0% | 92.3% | **100.0%** | 95.4% | 95.4% | 98.5% |
+| fdic2023_balance * | 65 | 100.0% | 100.0% | 90.8% | **100.0%** | 95.4% | 93.8% | 98.5% |
 | fdic_balance | 37 | 100.0% | 100.0% | 64.9% | **91.9%** | 89.2% | 91.9% | 78.4% |
 | fdic_income | 40 | 97.5% | 97.5% | 47.5% | **92.5%** | 85.0% | 85.0% | 85.0% |
-| fdic_earnings | 207 | 99.0% | 98.6% | 93.2% | **94.7%** | 83.6% | 66.2% | 84.5% |
-| census29_wages | 44 | 93.2% | 88.6% | 38.6% | **0.0%** | 15.9% | 34.1% | 9.1% |
-| census29_sales | 32 | 96.9% | 100.0% | 81.2% | **0.0%** | 25.0% | 68.8% | 34.4% |
-| **corpus** | **425** | **98.4%** | **97.9%** | **79.8%** | **78.1%** | **74.6%** | **71.5%** | **74.6%** |
+| fdic_earnings | 207 | 99.5% | 98.6% | 93.2% | **94.7%** | 82.1% | 66.2% | 84.5% |
+| census29_wages | 44 | 93.2% | 88.6% | 38.6% | **0.0%** | 13.6% | 27.3% | 9.1% |
+| census29_sales | 32 | 93.8% | 100.0% | 81.2% | **0.0%** | 25.0% | 68.8% | 34.4% |
+| **corpus** | **425** | **98.4%** | **97.9%** | **79.5%** | **78.1%** | **73.6%** | **70.6%** | **74.6%** |
 | seconds/page | | 64.1 | 57.4 | 122.5 | **0.0** | 6.6 | 18.4 | 1.3 |
 
 \* born-digital. Every other page is a photograph of paper.
 
-- **One local tool of six loses to doing nothing, and two more only draw with
-  it.** `textlayer` is the control: it returns the text layer already in the
-  file and does no work. It recovers 78.1% of the corpus. Docling recovers 71.5%
-  and that gap is real (McNemar exact, paired over the same 425 values, p =
-  0.009). Tesseract and Unstructured both land on 74.6% and neither is
-  distinguishable from doing nothing at all (p = 0.072 and p = 0.053), which is
-  a weaker claim than "they lose" and a strange enough result on its own. On the
+- **Two of six parsers lose to doing nothing, and one more only draws with it.**
+  `textlayer` is the control: it returns the text layer already in the file and
+  does no work. It recovers 78.1% of the corpus. Docling recovers 70.6% and
+  Unstructured recovers 73.6%, and both gaps are real (McNemar exact, paired
+  over the same 425 values, p = 0.002 and p = 0.014). Tesseract lands on 74.6%
+  and is not distinguishable from doing nothing at all (p = 0.072), which is a
+  weaker claim than "it loses" and a strange enough result on its own. On the
   born-digital page the control scores 100% and ties the hosted models, and
   every *local* tool that processes that page does worse. Marker's sub-second
   runtimes on the pages it relays are direct evidence it is returning that layer
@@ -94,25 +94,26 @@ are judged under the strict rule throughout.
 - **Handwriting is a different problem.** On the 1929 hand-filled schedules
   Tesseract recovers 9.1% and the hosted models 88-100%. The tool family is
   the whole decision.
-- **The quiet failures were real, rare, and none of them beat an exact check.**
+- **The silent failures were real, rare, and none of them beat an exact check.**
   Eleven rule instances survived a wrong figure. Seven of them carry a token a
-  downstream cast would REJECT, so they are loud where it counts. The other four
-  are genuinely quiet, and all four walked through the same declared tolerance
-  of 5 on the earnings column sums rather than past an exact check. That is the
+downstream cast would REJECT, so they are loud where it counts. The other four
+are genuinely quiet, and all four walked through the same declared tolerance
+of 5 on the earnings column sums rather than past an exact check. That is the
   honest version of the result this project was built to find: the exact checks
-  held, and every quiet survivor came through a hole whose size was declared in
+  held, and every silent survivor came through a hole whose size was declared in
   advance. Hosted models produced no quiet failures: 5 broken sums, 0 survived.
-  The control breaks none at all.
+The control breaks none at all.
 - **Structure is a separate skill from reading.** Tesseract finds 73 of 75 rows,
-  more than any other local tool, and still recovers only 74.6%. Docling
+more than any other local tool, and still recovers only 74.6%. Docling
   recovers less and put 56 character-perfect values in the wrong row, every one
   on the wide landscape table.
 - **Cost.** $1.12 for the whole corpus, both hosted models: Claude
   $0.0728/page, GPT $0.1144/page. On the born-digital page that buys nothing,
   because the free control already scores 100%. On the handwritten page it
-  buys the difference between 9% and 93%. Both of those are over all 76
-  labeled values on the 1929 pages, of which 43 are handwritten and 33 are
-  printed form text; handwriting alone, Tesseract recovers 1 of 43.
+  buys the difference between 9% and 93% on the 44 labeled values of the
+wages sheet. Over all 76 labeled values on the 1929 pages, of which 43 are
+handwritten and 33 are printed form text, the pair is 19.7% and 93.4%;
+handwriting alone, Tesseract recovers 1 of 43.
 
 ## Results on the generated corpus
 
@@ -127,14 +128,14 @@ which the real corpus (300 DPI only) does not test:
 | docling | 99.7% | 99.1% | 100% |
 | marker | 99.3%[1] | 100.0%[1] | 100% |
 | unstructured | 71.9% | 72.8% | 28% |
-| tesseract | 50.0% | 96.8% | 66% |
+| tesseract | 49.7% | 96.8% | 66% |
 
 [1] partial: Marker hangs on this hardware and could be driven through 4 of 10
 documents at 150 DPI and 3 of 10 at 300. One content error in 267 values.
 
 - **Resolution is the whole story for raw OCR.** Tesseract nearly doubles
   between 150 and 300 DPI on identical pages, and its 150 DPI failures are
-  mostly quiet: 113 of 171 misses still parse as the value they replaced,
+  mostly silent: 113 of 172 misses still parse as the value they replaced,
   including a date four days wrong.
 - **The VLMs have no 150 DPI cliff.** Claude scores 342 of 342 at both. GPT's
   only four errors are all at 150, and three of the four are the same mistake:
@@ -149,7 +150,7 @@ documents at 150 DPI and 3 of 10 at 300. One content error in 267 values.
 
 ## Claims backed by tests
 
-The suite is 80 tests, pure standard library, no network, about 22 seconds.
+The suite is 130 tests, pure standard library, no network.
 Most of them pin a specific way the GRADER or the ARITHMETIC CHECKER can be
 wrong, not anything about a parser, which is what a comparison project should
 expect: the instrument is the part most likely to be measuring the wrong thing.
@@ -170,7 +171,7 @@ expect: the instrument is the part most likely to be measuring the wrong thing.
 | A leading minus is never stripped | `tests/test_grader.py::test_but_a_leading_minus_is_never_stripped` |
 | Every sum each page asserts holds against the hand labels | `tests/test_reconcile.py::test_every_sum_each_page_asserts_holds_against_the_hand_labels` |
 | The rules that RAN are counted, not just the ones that passed | `tests/test_reconcile.py::test_the_rules_that_ran_are_counted_not_just_the_ones_that_passed` |
-| An unparseable figure fails one value, not the whole run | `tests/test_reconcile.py::test_an_unparseable_figure_raises_rather_than_crashing_the_whole_run` |
+| An unparseable figure fails one value, not the whole run | `tests/test_reconcile.py::test_an_unparseable_figure_raises_rather_than_crashing_the_whole_run`, `tests/test_reconcile.py::test_an_unparseable_value_makes_its_rule_incomplete_and_the_run_goes_on` (mutation-checked) |
 | A label that merely contains a digit is not a figure | `tests/test_reconcile.py::test_a_label_that_merely_contains_a_digit_is_not_a_figure` (mutation-checked: drop the letter guard in `num` and it fails) |
 | A digit misread as a letter is unparseable, not a smaller number | `tests/test_reconcile.py::test_a_digit_misread_as_a_letter_is_unparseable_not_a_smaller_number` (mutation-checked with the same edit) |
 | No rule fails identically for every parser -- seven independent tools do not agree on a mistake, so when they do the checker made it | `tests/test_reconcile.py::test_no_rule_fails_identically_for_every_parser` |
@@ -192,6 +193,8 @@ expect: the instrument is the part most likely to be measuring the wrong thing.
 | A model with no price is reported unpriced, not charged zero | `tests/test_cost_and_coherence.py::test_a_model_with_no_price_is_reported_unpriced_not_charged_zero` |
 | A dated model snapshot prices as its base model | `tests/test_cost_and_coherence.py::test_a_dated_snapshot_prices_as_its_base_model` |
 | Prices carry the date they were verified | `tests/test_cost_and_coherence.py::test_prices_carry_the_date_they_were_verified` |
+| The cost report prices input and output at their own rates, totals them, and names a model it cannot price | `tests/test_cost_and_coherence.py::test_the_cost_report_prices_each_side_at_its_rate_and_names_what_it_cannot_price` (mutation-checked: swap the two rates in `report` and it fails) |
+| `cloud_cost.py --all` reports every run directory that holds usage records | `tests/test_cost_and_coherence.py::test_all_reads_every_run_directory_that_has_usage_records` (mutation-checked: narrow the `--all` glob to `out/` and it fails) |
 | A broken label set makes the label check exit non-zero, and the shipped labels exit zero | `tests/test_reconcile.py::test_a_broken_label_set_makes_the_label_check_exit_non_zero` |
 | A page that raises is recorded as that page's error and the run continues | `tests/test_adapters.py::test_a_page_that_raises_is_recorded_and_the_run_continues` |
 | A successful re-run removes the old traceback | `tests/test_adapters.py::test_a_successful_rerun_removes_the_old_traceback` |
@@ -266,8 +269,8 @@ it.
    1929 Census of Manufactures schedules filled in by hand in pencil, with
    struck-through corrections and marginal notes in other hands. This property
    divides the tool families; it does not rank them: on the wages sheet, GPT
-   93.2% and Claude 88.6% against Marker 38.6%, Docling 34.1%, Unstructured
-   15.9%, Tesseract 9.1%, and the control 0.0%, because there is no text layer
+   93.2% and Claude 88.6% against Marker 38.6%, Docling 27.3%, Unstructured
+   13.6%, Tesseract 9.1%, and the control 0.0%, because there is no text layer
    to return. A corpus without a page like this collapses into "everything
    works".
 2. **Internal arithmetic.** 105 rules the pages assert about themselves, plus
@@ -276,16 +279,16 @@ it.
    was not decorative: four labels were typed wrong and the arithmetic caught
    all four.
 3. **A born-digital page with a text layer.** `fdic2023_balance`, page 134 of
-   the FDIC's 2023 annual report, and it is the same publication as the 1956
+   the FDIC's 2023 annual report, the same publication as the 1956
    balance sheet, 67 years apart, which is closer to a controlled comparison
    than a corpus of real documents usually gets. It answered its question
    sharply: the control scores 100.0% there, ties both hosted models, and
-   beats every local parser: Tesseract 98.5%, Docling 95.4%, Unstructured
-   95.4%, Marker 92.3%.
+beats every local parser: Tesseract 98.5%, Unstructured 95.4%, Docling
+93.8%, Marker 90.8%.
 4. **A dense multi-column table.** `fdic_earnings`, Table 114, 33 rows by 11
    numeric columns printed landscape on a portrait page. It carries 69 of the
    105 rules on its own, in two directions, and it is where the spread is
-   widest: GPT 99.0% down to Docling 66.2%.
+   widest: GPT 99.5% down to Docling 66.2%.
 
 Documents had to be unambiguously redistributable, and the bar was a positive
 statement of rights rather than the absence of a prohibition. Works of the US
@@ -312,6 +315,26 @@ because some parser's output format was being scored as damage: HTML tags, HTML
 entities, Markdown escapes, diacritics, digit regrouping. If you add a seventh
 parser, assume the first run measures its serializer rather than its accuracy,
 and read its raw output next to the verdict before believing either.
+
+A second one, about the grader. A printed value is matched anywhere on its
+page, so a match has to use up the occurrence it matched: otherwise one "11"
+would credit all twelve monthly entries of "11" on the handwritten columns. So
+a value printed once credits one field, and a field whose value is on the page
+only as a copy another field already used is scored absent, not misread. The
+rule decides part of the headline: without it Unstructured would draw with the
+control instead of losing to it. Even so, a single-digit entry can be credited
+by a stray digit, once.
+
+The same re-scoring fixed one misread the grader invented. GPT wrote a column
+head as "Other areas" and "Alaska" joined by an em dash, which folds to the
+single token "areas-Alaska", and "Alaska" was scored as a silent error at edit
+distance zero. A value made of letters now also matches one part of a
+hyphen-joined token whose parts are all letters, which gives that credit back.
+
+A page a parser raises on leaves the recovery figure and is counted in a second
+one, `recovery_including_errors`, which scores its fields as not recovered;
+`score.py` prints both, and `scores.json` carries both. No page in the
+committed evidence raised, so the two agree everywhere today.
 
 ## Related repositories
 

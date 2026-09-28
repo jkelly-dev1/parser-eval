@@ -1,5 +1,5 @@
 Which document parsers actually READ the page -- measured on six real scanned
 and born-digital pages, 425 hand-labeled values verified by the documents' own
 arithmetic, against a control that returns the embedded text layer and does no
-work at all. One of six parsers loses to the control and two more only draw
+work at all. Two of six parsers lose to the control and one more only draws
 with it.

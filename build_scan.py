@@ -9,15 +9,15 @@ because that is what a user actually feeds a parser. It is the right corpus
 for "which parser reads my documents" and it is USELESS for asking about
 resolution: four of the six pages carry a text layer, one typeset by the
 publisher and three carrying somebody else's OCR, and on those pages the
-parsers that lead the table are relaying that layer rather than looking at
+parsers that lead the table are relaying that layer instead of looking at
 the paper. Changing the DPI of a PNG that nothing reads changes nothing.
 
-That is measured here, not assumed. Adapters/run_textlayer.py returns the
-embedded text layer and does no work at all, and it beats several real
-parsers on exactly those four pages; on the born-digital one it scores 100%,
-which no local parser matches and the two hosted models only tie. The 1929
-schedules have no text layer, so they are the only pages in real/pages/ where
-resolution could matter, and two pages is not a resolution experiment.
+That is measured here. Adapters/run_textlayer.py returns the embedded text
+layer and does no work at all, and it beats several real parsers on exactly
+those four pages; on the born-digital one it scores 100%, which no local parser
+matches and the two hosted models only tie. The 1929 schedules have no text
+layer, so they are the only pages in real/pages/ where resolution could matter,
+and two pages is not a resolution experiment.
 
 This corpus deliberately destroys the text layer. Every page is rendered to an
 image and wrapped back into an image-only PDF, at 150 DPI and at 300 DPI, so
